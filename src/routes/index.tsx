@@ -19,7 +19,7 @@ export const Route = createFileRoute('/')({
         loop
         muted
         playsInline
-        src="/public/animated_gradient.mp4"></video>
+        src="/animated_gradient.mp4"></video>
     </div>
   )
 })
