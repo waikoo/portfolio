@@ -14,7 +14,7 @@ export const Route = createFileRoute('/')({
       </div>
 
       <video
-        className="w-full h-full"
+        className="w-screen h-screen object-cover"
         autoPlay
         loop
         muted
