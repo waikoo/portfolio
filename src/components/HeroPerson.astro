@@ -1,0 +1,17 @@
+---
+const { name, surname, occupation, alignment, color, gridColumn, gridRow } =
+  Astro.props;
+---
+
+<a
+  href=`/${surname.toLowerCase()}`
+  style={`text-align: ${alignment};
+  color: ${color};
+  grid-column: ${gridColumn};
+  grid-row: ${gridRow};`}
+  class=`text-[8rem] gap-0 flex flex-col font-black ${surname.toLowerCase()}-name`
+>
+  <p class="-mb-[5rem]">{name}</p>
+  <p class="m-0">{surname}</p>
+  <span class="text-[3rem] mt-[-0.5rem]">{occupation}</span>
+</a>
