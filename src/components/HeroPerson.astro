@@ -1,17 +1,29 @@
 ---
-const { name, surname, occupation, alignment, color, gridColumn, gridRow } =
-  Astro.props;
+const { name, surname, occupation, color, gridColumn, gridRow } = Astro.props;
 ---
 
-<a
-  href=`/${surname.toLowerCase()}`
-  style={`text-align: ${alignment};
+<div
+  style={`
   color: ${color};
   grid-column: ${gridColumn};
   grid-row: ${gridRow};`}
-  class=`text-[8rem] gap-0 flex flex-col font-black ${surname.toLowerCase()}-name`
+  class=`text-[190px] gap-0 flex flex-col ${surname.toLowerCase()}-name justify-content-start ml-10 mt-6`
 >
-  <p class="-mb-[5rem]">{name}</p>
+  <p class="-mb-[9.5rem]">{name}</p>
   <p class="m-0">{surname}</p>
-  <span class="text-[3rem] mt-[-0.5rem]">{occupation}</span>
-</a>
+  <!-- <span class="text-[3rem] mt-[-0.5rem]">{occupation}</span> -->
+</div>
+
+<style>
+  @font-face {
+    font-family: "Jost";
+    src: url("/fonts/Jost-ExtraLight.ttf") format("truetype");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  div {
+    font-family: "Jost";
+  }
+</style>

@@ -5,34 +5,52 @@ import HeroPerson from "../components/HeroPerson.astro";
 ---
 
 <Layout title="szasz.dev">
-  <main class="relative w-screen h-screen overflow-hidden">
+  <main class="relative w-screen h-screen">
     <HeroBackground />
 
-    <div class="absolute grid place-items-center w-screen h-screen">
-      <div class="grid place-items-center grid-cols-2 grid-rows-2">
-        <div transition:name="hero" transition:animate="none">
+    <div class="w-screen h-screen">
+      <div class="w-full h-full grid place-items-center grid-cols-2">
+        <a
+          transition:name="hero"
+          transition:animate="none"
+          class="h-full w-full bg-[#0d7724] mix-blend-hard-light relative border-[1rem] border-red-800"
+          href="/barna"
+        >
           <HeroPerson
-            name="SZASZ"
+            name="SZÁSZ"
             surname="BARNA"
             occupation="Front-End Developer"
-            alignment="right"
-            color="white"
+            color="#fbd3d3"
             gridColumn="1/2"
             gridRow="1/2"
             transition:name="hero"
           />
+        </a>
+        <div
+          class="absolute w-[575px] h-[575px] bg-[#ffcf25] rounded-full mix-blend-exclusion top-[18rem] left-[18rem]"
+        >
         </div>
 
-        <HeroPerson
-          name="SZASZ"
-          surname="EVELIN"
-          occupation="UI/UX Designer"
-          alignment="left"
-          color="black"
-          gridColumn="2/3"
-          gridRow="2/3"
+        <a
           transition:name="hero"
-        />
+          transition:animate="none"
+          href="/evelin"
+          class="h-full w-full bg-[#fec8ff] col-start-2 col-end-3 row-start-1 row-end-1 mix-blend-overlay border-[1rem]"
+        >
+          <HeroPerson
+            name="SZÁSZ"
+            surname="EVELIN"
+            occupation="UI/UX Designer"
+            color="black"
+            gridColumn="2/3"
+            gridRow="1/2"
+            transition:name="hero"
+          />
+          <div
+            class="absolute w-[575px] h-[575px] bg-[#f20000] rounded-full mix-blend-exclusion top-[19rem] right-[4rem]"
+          >
+          </div>
+        </a>
       </div>
     </div>
   </main>
