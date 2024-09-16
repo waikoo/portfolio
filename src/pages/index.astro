@@ -19,7 +19,6 @@ import HeroPerson from "../components/HeroPerson.astro";
           <HeroPerson
             name="SZÁSZ"
             surname="BARNA"
-            occupation="Front-End Developer"
             color="#fbd3d3"
             gridColumn="1/2"
             gridRow="1/2"
@@ -27,10 +26,16 @@ import HeroPerson from "../components/HeroPerson.astro";
           />
         </a>
         <a
-          class="absolute w-[575px] h-[575px] bg-[#ffcf25] rounded-full mix-blend-exclusion top-[18rem] left-[18rem] cursor-pointer"
+          class="absolute w-[575px] h-[575px] bg-[#ffcf25] rounded-full mix-blend-exclusion top-[18rem] left-[18rem]"
           href="/barna"
         >
         </a>
+        <p
+          class="absolute left-[32rem] top-[35rem] text-[60px] text-right tracking-tight"
+        >
+          <span class="block -mb-[2.6rem]">Front-End</span>
+          <span class="block">Developer</span>
+        </p>
 
         <a
           transition:name="hero"
@@ -41,7 +46,6 @@ import HeroPerson from "../components/HeroPerson.astro";
           <HeroPerson
             name="SZÁSZ"
             surname="EVELIN"
-            occupation="UI/UX Designer"
             color="black"
             gridColumn="2/3"
             gridRow="1/2"
@@ -52,7 +56,27 @@ import HeroPerson from "../components/HeroPerson.astro";
           >
           </div>
         </a>
+        <p
+          class="absolute right-[8rem] top-[35rem] text-[60px] text-right tracking-tight text-white"
+        >
+          <span class="block -mb-[2.6rem]">UI/UX</span>
+          <span class="block">Designer</span>
+        </p>
       </div>
     </div>
   </main>
 </Layout>
+
+<style>
+  @font-face {
+    font-family: "Jost-Bold";
+    src: url("/fonts/Jost-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  p {
+    font-family: "Jost-Bold";
+  }
+</style>
