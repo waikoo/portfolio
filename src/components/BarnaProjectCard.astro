@@ -1,0 +1,69 @@
+---
+import BarnaMenuLinks from "./BarnaMenuLinks.astro";
+const { id, name, description, image, tags, live, github } = Astro.props;
+---
+
+<section class="relative mt-20">
+  <p class="text-[#c3f96a] text-[70px] jost tracking-tighter -mb-5 text-right">
+    {name}
+  </p>
+
+  <div class="w-full h-[1px] bg-[#c3f96a]/20 jost"></div>
+
+  <div class="flex gap-20 mt-4">
+    <div class="w-1/2">
+      <img
+        src={image}
+        alt="a gif of a user flow from the home page to buying a product"
+        class="rounded-[20px]"
+      />
+
+      <BarnaMenuLinks live={live} github={github} />
+    </div>
+
+    <div
+      class="text-[#c3f96a] min-w-1/2 text-right justify-self-end flex flex-col gap-8"
+    >
+      <p>{description.toUpperCase()}</p>
+      <a
+        href="https://github.com/waikoo/thrifty"
+        class="underline underline-offset-2 jost">READ MORE</a
+      >
+      <div class="flex gap-10 text-right w-1/2 flex-wrap-reverse ml-auto">
+        {
+          tags.map((tag) => (
+            <div class="rounded-full bg-black/15 p-2">
+              <span class="jost-semibold">{tag}</span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @font-face {
+    font-family: "Jost-Bold";
+    src: url("/fonts/Jost-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Jost-SemiBold";
+    src: url("/fonts/Jost-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  .jost-semibold {
+    font-family: "Jost-SemiBold";
+  }
+
+  .jost {
+    font-family: "Jost-Bold";
+  }
+</style>

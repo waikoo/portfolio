@@ -1,5 +1,7 @@
 ---
-const { name, surname, color, gridColumn, gridRow } = Astro.props;
+const { name, surname, color, gridColumn, gridRow, small } = Astro.props;
+
+const fontSize = small ? "text-[60px]" : "text-[190px]";
 ---
 
 <div
@@ -7,9 +9,10 @@ const { name, surname, color, gridColumn, gridRow } = Astro.props;
   color: ${color};
   grid-column: ${gridColumn};
   grid-row: ${gridRow};`}
-  class=`text-[190px] gap-0 flex flex-col ${surname.toLowerCase()}-name justify-content-start ml-10 mt-6`
+  class=`${fontSize} gap-0 flex flex-col ${surname.toLowerCase()}-name justify-content-start ml-10 mt-6`
 >
-  <p class="-mb-[9.5rem]">{name}</p>
+  <p class="-mb-[8.5rem]">{name}</p>
+  <!-- <p class="-mb-[9.5rem]">{name}</p> -->
   <p class="m-0">{surname}</p>
 </div>
 

@@ -1,26 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import HeroPerson from "../components/HeroPerson.astro";
 import HeroBackground from "../components/HeroBackground.astro";
+import BarnaNameTag from "../components/BarnaNameTag.astro";
+import BarnaMenu from "../components/BarnaMenu.astro";
+import BarnaProjectCard from "../components/BarnaProjectCard.astro";
+import { projects } from "../projects/data";
 ---
 
-<Layout title="Szasz Barna">
-  <main class="relative w-screen h-screen overflow-hidden">
-    <HeroBackground type="barna" />
+<Layout title="Szász Barna">
+  <main class="relative">
+    <HeroBackground />
+    <div class="bg-[#125721] mix-blend-darken w-screen h-screen relative z-10">
+    </div>
 
-    <div class="absolute grid place-items-center w-screen h-screen">
-      <div class="grid place-items-center grid-cols-2 grid-rows-2">
-        <div transition:name="hero" transition:animate="none">
-          <HeroPerson
-            name="SZASZ"
-            surname="BARNA"
-            occupation="Front-End Developer"
-            alignment="right"
-            color="white"
-            gridColumn="1/2"
-            gridRow="1/2"
-            transition:name="hero"
-          />
+    <div class="absolute top-10">
+      <BarnaNameTag />
+
+      <div class="flex gap-32 relative z-50 mx-auto w-[85%]">
+        <BarnaMenu />
+
+        <div class="-mt-32">
+          {projects.map((project) => <BarnaProjectCard {...project} />)}
         </div>
       </div>
     </div>

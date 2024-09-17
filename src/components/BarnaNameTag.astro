@@ -1,0 +1,35 @@
+---
+import HeroPerson from "../components/HeroPerson.astro";
+---
+
+<div class="relative flex gap-3 pt-10 z-50">
+  <HeroPerson
+    surname="SZÁSZ"
+    name="BARNA"
+    color="#fbd3d3"
+    gridColumn="1/2"
+    gridRow="1/2"
+    small="true"
+    close="true"
+  />
+
+  <div class="grid grid-rows-3 gap-0 jost text-[1.85rem] text-white">
+    <p class="">FRONT</p>
+    <p class="-mt-4">END</p>
+    <p class="-mt-8">DEVELOPER</p>
+  </div>
+</div>
+
+<style>
+  @font-face {
+    font-family: "Jost-Bold";
+    src: url("/fonts/Jost-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  .jost {
+    font-family: "Jost-Bold";
+  }
+</style>
