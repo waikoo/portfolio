@@ -1,23 +1,63 @@
+---
+const { current } = Astro.props;
+
+const isProjects = current.pathname.includes("barna")
+  ? "text-[#c3f96a]"
+  : "text-white";
+const isCV = current.pathname.includes("cv") ? "text-[#c3f96a]" : "text-white";
+const isContact = current.pathname.includes("contact")
+  ? "text-[#c3f96a]"
+  : "text-white";
+const isAbout = current.pathname.includes("about")
+  ? "text-[#c3f96a]"
+  : "text-white";
+
+// const current =
+console.log(current.pathname.includes("barna"));
+---
+
 <aside class="fixed z-10">
   <nav>
-    <ul class="jost text-[100px] tracking-tighter text-right text-white">
-      <li>
+    <ul class="jost text-[100px] tracking-tighter text-white text-right">
+      <li class="flex items-center justify-end">
+        <div class="w-[45px] h-[45px] bg-[#c3f96a] rounded-full opacity-0">
+        </div>
         <a href="/">Home</a>
       </li>
 
-      <li class="-mt-20">
+      <li class={`-mt-20 ${isProjects} flex items-center justify-end`}>
+        {
+          current.pathname.includes("barna") && (
+            <div class="w-[45px] h-[45px] bg-[#c3f96a] rounded-full" />
+          )
+        }
         <a href="/barna">Projects</a>
       </li>
 
-      <li class="-mt-[4.5rem]">
+      <li class={`-mt-[4.5rem] ${isCV} flex items-center justify-end`}>
+        {
+          current.pathname.includes("cv") && (
+            <div class="w-[45px] h-[45px] bg-[#c3f96a] rounded-full" />
+          )
+        }
         <a href="/barna/cv">CV</a>
       </li>
 
-      <li class="-mt-20">
+      <li class={`-mt-20 ${isContact} flex items-center justify-end`}>
+        {
+          current.pathname.includes("contact") && (
+            <div class="w-[45px] h-[45px] bg-[#c3f96a] rounded-full" />
+          )
+        }
         <a href="/barna/contact">Contact</a>
       </li>
 
-      <li class="-mt-[4rem]">
+      <li class={`-mt-[4rem] ${isAbout} flex items-center justify-end`}>
+        {
+          current.pathname.includes("about") && (
+            <div class="w-[45px] h-[45px] bg-[#c3f96a] rounded-full" />
+          )
+        }
         <a href="/barna/about">About Me</a>
       </li>
     </ul>
