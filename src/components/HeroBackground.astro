@@ -1,16 +1,20 @@
 ---
-const { type } = Astro.props;
-
-// const bg = {
-//   barna: "#025514",
-//   evelin: null,
-//   default: "linear-gradient(90deg, #025514 48%, rgba(0, 0, 0, 0) 53%)",
-// };
-// const finalBackground =
-//   type === "barna" ? bg.barna : type === "evelin" ? bg.evelin : bg.default;
+const { video = false } = Astro.props;
 ---
 
-<!-- <video --><!--   class="absolute w-screen h-screen object-cover" --><!--   autoplay --><!--   loop --><!--   muted --><!--   playsinline --><!--   src="/videos/animated_gradient.mp4" --><!-- > --><!-- </video> -->
+{
+  video && (
+    <video
+      class="absolute w-screen h-screen object-cover"
+      autoplay
+      loop
+      muted
+      playsinline
+      src="/videos/animated_gradient.mp4"
+    />
+  )
+}
+
 <img
   src="/images/bubbles.jpg"
   alt="an abstract cluster of red blobs with white speckles, floating against a deep reddish-brown background with smooth, organic shapes"
@@ -18,8 +22,3 @@ const { type } = Astro.props;
   height={1080}
   class="absolute w-screen h-screen object-cover"
 />
-
-<!-- <div -->
-<!--   style={`background: ${finalBackground}`} -->
-<!--   class="absolute w-screen h-screen mix-blend-color transition-opacity bg" -->
-<!-- > -->

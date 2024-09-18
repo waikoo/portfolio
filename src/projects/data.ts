@@ -15,5 +15,14 @@ export const projects = [{
   tags: ["HTML", "CSS", "JAVASCRIPT"],
   live: "https://waikoo.github.io/rock-paper-scissors/",
   github: "https://github.com/waikoo/rock-paper-scissors",
+},
+{
+  id: 3,
+  name: "Guess My Number",
+  description: "A colorful Linux CLI game where users can guess a random number within the constraints of their choosing.",
+  image: "https://raw.githubusercontent.com/waikoo/guess-my-number/main/assets/guess-my-number.gif",
+  tags: ["NODE", "TYPESCRIPT"],
+  live: "",
+  github: "https://github.com/waikoo/guess-my-number",
 }
 ]
