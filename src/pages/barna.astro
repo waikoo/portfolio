@@ -42,7 +42,7 @@ const endpoint = new URL(Astro.request.url);
       <div class="flex gap-32 relative z-50 mx-auto w-[85%] mt-[11rem]">
         <BarnaMenu current={endpoint} />
 
-        <div class="-mt-32 ml-[40rem]">
+        <div class="-mt-[13.5rem] ml-[40rem]">
           {projects.map((project) => <BarnaProjectCard {...project} />)}
         </div>
       </div>
