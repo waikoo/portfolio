@@ -1,6 +1,6 @@
 ---
 import BarnaMenuLinks from "./BarnaMenuLinks.astro";
-const { id, name, description, image, tags, live, github } = Astro.props;
+const { name, description, image, tags, live, github } = Astro.props;
 ---
 
 <section class="relative mt-20">
@@ -26,7 +26,7 @@ const { id, name, description, image, tags, live, github } = Astro.props;
     >
       <p>{description.toUpperCase()}</p>
       <a
-        href="https://github.com/waikoo/thrifty"
+        href={github}
         class="underline underline-offset-2 jost">READ MORE</a
       >
       <div class="flex gap-10 text-right w-[60%] flex-wrap justify-end ml-auto">
