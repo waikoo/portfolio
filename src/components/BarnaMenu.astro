@@ -11,16 +11,13 @@ const isContact = current.pathname.includes("contact")
 const isAbout = current.pathname.includes("about")
   ? "text-[#c3f96a]"
   : "text-white";
-
-// const current =
-console.log(current.pathname.includes("barna"));
 ---
 
 <aside class="fixed z-10">
   <nav>
     <ul class="jost text-[100px] tracking-tighter text-white text-right">
       <li class="flex items-center justify-end">
-        <div class="w-[45px] h-[45px] bg-[#c3f96a] rounded-full opacity-0">
+        <div class="w-[28px] h-[28px] bg-[#c3f96a] rounded-full opacity-0">
         </div>
         <a href="/">Home</a>
       </li>
@@ -28,7 +25,7 @@ console.log(current.pathname.includes("barna"));
       <li class={`-mt-20 ${isProjects} flex items-center justify-end`}>
         {
           current.pathname.includes("barna") && (
-            <div class="w-[45px] h-[45px] bg-[#c3f96a] rounded-full" />
+            <div class="w-[28px] h-[28px] bg-[#c3f96a] rounded-full" />
           )
         }
         <a href="/barna">Projects</a>
@@ -37,7 +34,7 @@ console.log(current.pathname.includes("barna"));
       <li class={`-mt-[4.5rem] ${isCV} flex items-center justify-end`}>
         {
           current.pathname.includes("cv") && (
-            <div class="w-[45px] h-[45px] bg-[#c3f96a] rounded-full" />
+            <div class="w-[28px] h-[28px] bg-[#c3f96a] rounded-full" />
           )
         }
         <a href="/barna/cv">CV</a>
@@ -46,7 +43,7 @@ console.log(current.pathname.includes("barna"));
       <li class={`-mt-20 ${isContact} flex items-center justify-end`}>
         {
           current.pathname.includes("contact") && (
-            <div class="w-[45px] h-[45px] bg-[#c3f96a] rounded-full" />
+            <div class="w-[28px] h-[28px] bg-[#c3f96a] rounded-full" />
           )
         }
         <a href="/barna/contact">Contact</a>
@@ -55,7 +52,7 @@ console.log(current.pathname.includes("barna"));
       <li class={`-mt-[4rem] ${isAbout} flex items-center justify-end`}>
         {
           current.pathname.includes("about") && (
-            <div class="w-[45px] h-[45px] bg-[#c3f96a] rounded-full" />
+            <div class="w-[28px] h-[28px] bg-[#c3f96a] rounded-full" />
           )
         }
         <a href="/barna/about">About Me</a>
