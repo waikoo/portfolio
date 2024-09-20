@@ -8,17 +8,6 @@ import { projects } from "../projects/data";
 const endpoint = new URL(Astro.request.url);
 ---
 
-<script>
-  window.addEventListener("DOMContentLoaded", () => {
-    const circle = document.querySelector(".barna-circle");
-    circle!.classList.add("shrink");
-
-    setTimeout(() => {
-      circle!.classList.add("vanish");
-    }, 500);
-  });
-</script>
-
 <Layout title="Szász Barna">
   <main
     class="absolute bg-[url('/images/bubbles.jpg')] bg-cover bg-no-repeat bg-fixed h-[2000px]"
@@ -48,28 +37,4 @@ const endpoint = new URL(Astro.request.url);
       </div>
     </div>
   </main>
-  <div
-    class="absolute w-[575px] h-[575px] bg-[#ffcf25] rounded-full mix-blend-exclusion top-[18rem] left-[23rem] z-50 -translate-x-20 barna-circle overflow-x-hidden"
-    transition:name="circle"
-  >
-  </div>
 </Layout>
-
-<style>
-  .shrink {
-    width: 28px;
-    height: 28px;
-    transition:
-      transform 0.5s ease,
-      width 0.5s ease,
-      height 0.5s ease,
-      color 0.5s ease;
-    top: 21.5rem;
-    left: 18rem;
-    background-color: #c3f96a;
-  }
-
-  .vanish {
-    opacity: 0;
-  }
-</style>

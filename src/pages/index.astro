@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import HeroBackground from "../components/HeroBackground.astro";
 import HeroPerson from "../components/HeroPerson.astro";
 ---
 
@@ -12,14 +11,14 @@ import HeroPerson from "../components/HeroPerson.astro";
       width={1920}
       height={1080}
       class="absolute w-screen h-screen object-cover"
+      transition:persist
     />
 
     <div class="w-screen h-screen">
       <div class="w-full h-full grid place-items-center grid-cols-2">
         <a
           transition:name="hero"
-          transition:animate="none"
-          class="h-full w-full bg-[#0d7724] mix-blend-hard-light relative border-[1rem] border-red-800"
+          class="h-full w-full bg-[#0d7724] mix-blend-hard-light relative border-[1rem] border-red-800 green-bg"
           href="/barna"
         >
           <HeroPerson
@@ -29,25 +28,26 @@ import HeroPerson from "../components/HeroPerson.astro";
             gridColumn="1/2"
             gridRow="1/2"
           />
+          <a
+            class="absolute w-[575px] h-[575px] bg-[#ffcf25] rounded-full mix-blend-exclusion top-[18rem] left-[18rem]"
+            href="/barna"
+            transition:name="circle"
+          >
+          </a>
         </a>
         <a
-          class="absolute w-[575px] h-[575px] bg-[#ffcf25] rounded-full mix-blend-exclusion top-[18rem] left-[18rem]"
-          href="/barna"
-          transition:name="circle"
-        >
-        </a>
-        <p
           class="absolute left-[32rem] top-[35rem] text-[60px] text-right tracking-tight"
+          href="/barna"
         >
           <span class="block -mb-[2.6rem]">Front-End</span>
           <span class="block">Developer</span>
-        </p>
+        </a>
 
         <a
           transition:name="hero"
           transition:animate="none"
           href="/evelin"
-          class="h-full w-full bg-[#fec8ff] col-start-2 col-end-3 row-start-1 row-end-1 mix-blend-overlay border-[1rem]"
+          class="bg-[#fec8ff] h-full w-full col-start-2 col-end-3 row-start-1 row-end-1 mix-blend-overlay border-[1rem] evelin-bg"
         >
           <HeroPerson
             name="SZÁSZ"
@@ -57,11 +57,11 @@ import HeroPerson from "../components/HeroPerson.astro";
             gridRow="1/2"
             transition:name="hero"
           />
-          <div
-            class="absolute w-[575px] h-[575px] bg-[#f20000] rounded-full mix-blend-exclusion top-[19rem] right-[4rem]"
-          >
-          </div>
         </a>
+        <div
+          class="absolute w-[575px] h-[575px] bg-[#f20000] rounded-full mix-blend-exclusion top-[19rem] right-[4rem]"
+        >
+        </div>
         <p
           class="absolute right-[8rem] top-[35rem] text-[60px] text-right tracking-tight text-white"
         >
@@ -82,7 +82,7 @@ import HeroPerson from "../components/HeroPerson.astro";
     font-display: swap;
   }
 
-  p {
+  a {
     font-family: "Jost-Bold";
   }
 </style>
