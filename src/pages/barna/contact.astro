@@ -1,9 +1,9 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import BarnaNameTag from "../components/BarnaNameTag.astro";
-import BarnaMenu from "../components/BarnaMenu.astro";
-import BarnaProjectCard from "../components/BarnaProjectCard.astro";
-import { projects } from "../projects/data";
+import Layout from "../../layouts/Layout.astro";
+import BarnaNameTag from "../../components/BarnaNameTag.astro";
+import BarnaMenu from "../../components/BarnaMenu.astro";
+import BarnaProjectCard from "../../components/BarnaProjectCard.astro";
+import { projects } from "../../projects/data";
 
 const endpoint = new URL(Astro.request.url);
 ---
@@ -30,12 +30,7 @@ const endpoint = new URL(Astro.request.url);
 
       <div class="flex gap-32 relative z-50 mx-auto w-[85%] mt-[11rem]">
         <BarnaMenu current={endpoint} />
-
-        <div class="-mt-[13.5rem] ml-[40rem]">
-          {projects.map((project) => <BarnaProjectCard {...project} />)}
-        </div>
       </div>
     </div>
   </main>
 </Layout>
-

@@ -1,16 +1,17 @@
 ---
 const { current } = Astro.props;
 
-const isProjects = current.pathname.includes("barna")
+const pathname = current.pathname;
+
+const isProjects =
+  pathname.split("/").length === 2 && pathname.split("/")[1] === "barna"
+    ? "text-[#c3f96a]"
+    : "text-white";
+const isCV = pathname.includes("cv") ? "text-[#c3f96a]" : "text-white";
+const isContact = pathname.includes("contact")
   ? "text-[#c3f96a]"
   : "text-white";
-const isCV = current.pathname.includes("cv") ? "text-[#c3f96a]" : "text-white";
-const isContact = current.pathname.includes("contact")
-  ? "text-[#c3f96a]"
-  : "text-white";
-const isAbout = current.pathname.includes("about")
-  ? "text-[#c3f96a]"
-  : "text-white";
+const isAbout = pathname.includes("about") ? "text-[#c3f96a]" : "text-white";
 ---
 
 <aside class="fixed z-10">
@@ -24,9 +25,10 @@ const isAbout = current.pathname.includes("about")
 
       <li class={`-mt-20 ${isProjects} flex items-center justify-end`}>
         {
-          current.pathname.includes("barna") && (
-            <div class="w-[28px] h-[28px] bg-[#c3f96a] rounded-full" />
-          )
+          current.pathname.split("/").length === 2 &&
+            current.pathname.split("/")[1] === "barna" && (
+              <div class="w-[28px] h-[28px] mr-[18px] bg-[#c3f96a] rounded-full" />
+            )
         }
         <a href="/barna">Projects</a>
       </li>
@@ -34,7 +36,7 @@ const isAbout = current.pathname.includes("about")
       <li class={`-mt-[4.5rem] ${isCV} flex items-center justify-end`}>
         {
           current.pathname.includes("cv") && (
-            <div class="w-[28px] h-[28px] bg-[#c3f96a] rounded-full" />
+            <div class="w-[28px] h-[28px] mr-[18px] bg-[#c3f96a] rounded-full" />
           )
         }
         <a href="/barna/cv">CV</a>
@@ -43,7 +45,7 @@ const isAbout = current.pathname.includes("about")
       <li class={`-mt-20 ${isContact} flex items-center justify-end`}>
         {
           current.pathname.includes("contact") && (
-            <div class="w-[28px] h-[28px] bg-[#c3f96a] rounded-full" />
+            <div class="w-[28px] h-[28px] mr-[18px] bg-[#c3f96a] rounded-full" />
           )
         }
         <a href="/barna/contact">Contact</a>
@@ -52,7 +54,7 @@ const isAbout = current.pathname.includes("about")
       <li class={`-mt-[4rem] ${isAbout} flex items-center justify-end`}>
         {
           current.pathname.includes("about") && (
-            <div class="w-[28px] h-[28px] bg-[#c3f96a] rounded-full" />
+            <div class="w-[28px] h-[28px] mr-[18px] bg-[#c3f96a] rounded-full" />
           )
         }
         <a href="/barna/about">About Me</a>
