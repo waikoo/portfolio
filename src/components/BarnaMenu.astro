@@ -23,38 +23,50 @@ const isAbout = pathname.includes("about") ? "text-[#c3f96a]" : "text-white";
         <a href="/">Home</a>
       </li>
 
-      <li class={`-mt-20 ${isProjects} flex items-center justify-end`}>
+      <li class={`${isProjects} flex items-center justify-end`}>
         {
           current.pathname.split("/").length === 2 &&
             current.pathname.split("/")[1] === "barna" && (
-              <div class="w-[28px] h-[28px] mr-[18px] bg-[#c3f96a] rounded-full" />
+              <div
+                class="w-[28px] h-[28px] mr-[18px] bg-[#c3f96a] rounded-full"
+                transition:name="menuitem"
+              />
             )
         }
         <a href="/barna">Projects</a>
       </li>
 
-      <li class={`-mt-[4.5rem] ${isCV} flex items-center justify-end`}>
+      <li class={`${isCV} mt-[0.4rem] flex items-center justify-end`}>
         {
           current.pathname.includes("cv") && (
-            <div class="w-[28px] h-[28px] mr-[18px] bg-[#c3f96a] rounded-full" />
+            <div
+              class="w-[28px] h-[28px] mr-[18px] bg-[#c3f96a] rounded-full"
+              transition:name="menuitem"
+            />
           )
         }
         <a href="/barna/cv">CV</a>
       </li>
 
-      <li class={`-mt-20 ${isContact} flex items-center justify-end`}>
+      <li class={`${isContact} flex items-center justify-end`}>
         {
           current.pathname.includes("contact") && (
-            <div class="w-[28px] h-[28px] mr-[18px] bg-[#c3f96a] rounded-full" />
+            <div
+              class="w-[28px] h-[28px] mr-[18px] bg-[#c3f96a] rounded-full"
+              transition:name="menuitem"
+            />
           )
         }
         <a href="/barna/contact">Contact</a>
       </li>
 
-      <li class={`-mt-[4rem] ${isAbout} flex items-center justify-end`}>
+      <li class={`${isAbout} flex items-center justify-end`}>
         {
           current.pathname.includes("about") && (
-            <div class="w-[28px] h-[28px] mr-[18px] bg-[#c3f96a] rounded-full" />
+            <div
+              class="w-[28px] h-[28px] mr-[18px] bg-[#c3f96a] rounded-full"
+              transition:name="menuitem"
+            />
           )
         }
         <a href="/barna/about">About Me</a>
@@ -74,5 +86,9 @@ const isAbout = pathname.includes("about") ? "text-[#c3f96a]" : "text-white";
 
   .jost {
     font-family: "Jost-Bold";
+  }
+
+  li {
+    line-height: 0.8;
   }
 </style>
