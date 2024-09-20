@@ -6,7 +6,7 @@ import BarnaMenu from "../../components/BarnaMenu.astro";
 const endpoint = new URL(Astro.request.url);
 ---
 
-<Layout title="Szász Barna">
+<Layout title="Szász Barna's CV">
   <main
     class="absolute bg-[url('/images/bubbles.jpg')] bg-cover bg-no-repeat bg-fixed h-[2000px]"
   >
@@ -28,6 +28,32 @@ const endpoint = new URL(Astro.request.url);
 
       <div class="flex gap-32 relative z-50 mx-auto w-[85%] mt-[11rem]">
         <BarnaMenu current={endpoint} />
+
+        <embed
+          src="/Szasz_Barna_CV.pdf#toolbar=0"
+          width="800"
+          height="auto"
+          title="Szász Barna - Curriculum Vitæ"
+          class="ml-[33rem] -mt-[7rem] z-20 w-[1400px] h-[1550px] relative"
+        />
+        <a
+          href="/Szasz_Barna_CV.pdf"
+          target="_blank"
+          class="absolute right-10 top-10 -mt-[7rem] z-30 flex gap-2 items-center"
+        >
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7 10.577L3.461 7.039L4.169 6.319L6.5 8.65V0H7.5V8.65L9.83 6.32L10.539 7.039L7 10.577ZM1.616 14C1.15533 14 0.771 13.846 0.463 13.538C0.155 13.23 0.000666667 12.8453 0 12.384V9.961H1V12.384C1 12.538 1.064 12.6793 1.192 12.808C1.32 12.9367 1.461 13.0007 1.615 13H12.385C12.5383 13 12.6793 12.936 12.808 12.808C12.9367 12.68 13.0007 12.5387 13 12.384V9.961H14V12.384C14 12.8447 13.846 13.229 13.538 13.537C13.23 13.845 12.8453 13.9993 12.384 14H1.616Z"
+              fill="#272727"></path>
+          </svg>
+          Download
+        </a>
       </div>
     </div>
   </main>
