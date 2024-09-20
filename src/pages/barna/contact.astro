@@ -2,8 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import BarnaNameTag from "../../components/BarnaNameTag.astro";
 import BarnaMenu from "../../components/BarnaMenu.astro";
-import BarnaProjectCard from "../../components/BarnaProjectCard.astro";
-import { projects } from "../../projects/data";
+import BarnaContactItem from "../../components/BarnaContactItem.astro";
 
 const endpoint = new URL(Astro.request.url);
 ---
@@ -25,11 +24,16 @@ const endpoint = new URL(Astro.request.url);
     >
     </div>
 
-    <div class="absolute top-10">
+    <div class="absolute top-10 w-full">
       <BarnaNameTag />
 
       <div class="flex gap-32 relative z-50 mx-auto w-[85%] mt-[11rem]">
         <BarnaMenu current={endpoint} />
+
+        <div class="relative left-[50rem]">
+          <BarnaContactItem title="Email" value="beroer@protonmail.com" />
+          <BarnaContactItem title="GitHub" value="https://github.com/waikoo" />
+        </div>
       </div>
     </div>
   </main>
