@@ -4,32 +4,35 @@ const { name, description, image, tags, live, github } = Astro.props;
 ---
 
 <section class="relative mt-20">
-  <p class="text-[#c3f96a] text-[70px] jost tracking-tighter -mb-5 text-right">
+  <p
+    class="text-[#c3f96a] text-[70px] jost tracking-[-0.1em] -mb-[15px] text-right"
+  >
     {name}
   </p>
 
   <div class="w-full h-[1px] bg-[#c3f96a]/20 jost"></div>
 
-  <div class="flex gap-20 mt-4">
-    <div class="w-1/2">
+  <div class="flex gap-10 mt-4">
+    <div class="w-[80%]">
       <img
         src={image}
+        aspect-ratio="4/3"
         alt="a gif of a user flow from the home page to buying a product"
-        class="rounded-[20px]"
+        class="rounded-[20px] w-full"
       />
-
-      <BarnaMenuLinks live={live} github={github} />
     </div>
 
     <div
-      class="text-[#c3f96a] min-w-1/2 text-right justify-self-end flex flex-col gap-8"
+      class="text-[#c3f96a] w-1/2 text-right justify-self-end flex flex-col gap-8 justify-between"
     >
-      <p>{description.toUpperCase()}</p>
-      <a
-        href={github}
-        class="underline underline-offset-2 jost">READ MORE</a
+      <p class="text-[14px] jost-semibold tracking-[2px] text-white">
+        {description.toUpperCase()}
+      </p>
+
+      <a href={github} class="underline underline-offset-2 jost">READ MORE</a>
+      <div
+        class="flex gap-10 text-right w-full flex-wrap justify-end ml-auto mt-10 align-end"
       >
-      <div class="flex gap-10 text-right w-[60%] flex-wrap justify-end ml-auto">
         {
           tags.map((tag: string) => (
             <div class="rounded-full bg-black/15 p-2">
@@ -40,6 +43,7 @@ const { name, description, image, tags, live, github } = Astro.props;
       </div>
     </div>
   </div>
+  <BarnaMenuLinks live={live} github={github} />
 </section>
 
 <style>

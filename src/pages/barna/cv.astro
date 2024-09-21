@@ -9,6 +9,7 @@ const endpoint = new URL(Astro.request.url);
 <Layout title="Szász Barna's CV">
   <main
     class="absolute bg-[url('/images/bubbles.jpg')] bg-cover bg-no-repeat bg-fixed h-[2000px]"
+    transition:persist
   >
     <video
       class="absolute w-screen h-[2000px] object-cover mix-blend-color-dodge"
@@ -16,6 +17,7 @@ const endpoint = new URL(Astro.request.url);
       loop
       muted
       playsinline
+      transition:persist
       src="/videos/animated_gradient.mp4"></video>
 
     <div

@@ -3,15 +3,17 @@ import HeroPerson from "../components/HeroPerson.astro";
 ---
 
 <div class="fixed flex gap-3 pl-12 z-50">
-  <HeroPerson
-    surname="SZÁSZ"
-    name="BARNA"
-    color="#fbd3d3"
-    gridColumn="1/2"
-    gridRow="1/2"
-    small="true"
-    close="true"
-  />
+  <div transition:name="name">
+    <HeroPerson
+      surname="SZÁSZ"
+      name="BARNA"
+      color="#fbd3d3"
+      gridColumn="1/2"
+      gridRow="1/2"
+      small="true"
+      close="true"
+    />
+  </div>
 
   <div class="grid grid-rows-3 gap-0 jost text-[15px] text-white">
     <p class="">FRONT</p>

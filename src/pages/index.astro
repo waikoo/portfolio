@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import HeroPerson from "../components/HeroPerson.astro";
 ---
 
+<script></script>
+
 <Layout title="szasz.dev">
   <main class="relative w-screen h-screen">
     <img
@@ -21,20 +23,23 @@ import HeroPerson from "../components/HeroPerson.astro";
           class="h-full w-full bg-[#0d7724] mix-blend-hard-light relative border-[1rem] border-red-800 green-bg"
           href="/barna"
         >
-          <HeroPerson
-            name="SZÁSZ"
-            surname="BARNA"
-            color="#fbd3d3"
-            gridColumn="1/2"
-            gridRow="1/2"
-          />
+          <div transition:name="name">
+            <HeroPerson
+              name="SZÁSZ"
+              surname="BARNA"
+              color="#fbd3d3"
+              gridColumn="1/2"
+              gridRow="1/2"
+            />
+          </div>
           <a
-            class="absolute w-[575px] h-[575px] bg-[#ffcf25] rounded-full mix-blend-exclusion top-[18rem] left-[18rem]"
+            class="absolute w-[575px] h-[575px] bg-[#ffcf25] rounded-full mix-blend-exclusion top-[18rem] left-[18rem] hvr-grow barna-circle hover:blur-lg"
             href="/barna"
             transition:name="circle"
           >
           </a>
         </a>
+
         <a
           class="absolute left-[32rem] top-[35rem] text-[60px] text-right tracking-tight"
           href="/barna"
@@ -59,7 +64,7 @@ import HeroPerson from "../components/HeroPerson.astro";
           />
         </a>
         <div
-          class="absolute w-[575px] h-[575px] bg-[#f20000] rounded-full mix-blend-exclusion top-[19rem] right-[4rem]"
+          class="absolute w-[575px] h-[575px] bg-[#f20000] rounded-full hover:rounded-sm mix-blend-exclusion top-[19rem] right-[4rem] hvr-grow evelin-circle"
         >
         </div>
         <p

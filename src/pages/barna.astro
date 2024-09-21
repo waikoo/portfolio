@@ -8,7 +8,18 @@ import { projects } from "../projects/data";
 const endpoint = new URL(Astro.request.url);
 ---
 
-<Layout title="Szász Barna">
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const circle = document.querySelector(".circle");
+    circle!.classList.add("move-circle");
+
+    setTimeout(() => {
+      circle!.classList.add("vanish");
+    }, 500);
+  });
+</script>
+
+<Layout title="Szász Barna's Projects">
   <main
     class="absolute bg-[url('/images/bubbles.jpg')] bg-cover bg-no-repeat bg-fixed h-[2000px]"
   >
@@ -18,6 +29,7 @@ const endpoint = new URL(Astro.request.url);
       loop
       muted
       playsinline
+      transition:persist
       src="/videos/animated_gradient.mp4"></video>
 
     <div
@@ -28,14 +40,37 @@ const endpoint = new URL(Astro.request.url);
     <div class="absolute top-10 w-full">
       <BarnaNameTag />
 
-      <div class="flex gap-32 relative z-50 mx-auto w-[85%] mt-[11rem]">
+      <div class="flex gap-16 relative z-50 mx-auto w-[85%] mt-[11rem]">
         <BarnaMenu current={endpoint} />
 
-        <div class="-mt-[13.5rem] ml-[40rem]">
+        <div class="-mt-[13.5rem] ml-[33rem]">
           {projects.map((project) => <BarnaProjectCard {...project} />)}
         </div>
       </div>
     </div>
+    <!-- <a -->
+    <!--   class="absolute w-[575px] h-[575px] bg-[#ffcf25] rounded-full mix-blend-exclusion top-[18rem] left-[18rem] z-50 circle" -->
+    <!--   href="/barna" -->
+    <!--   transition:name="circle" -->
+    <!-- > -->
   </main>
 </Layout>
 
+<style>
+  .move-circle {
+    transition:
+      color 0.5s ease-in-out,
+      transform 0.5s ease-in-out,
+      width 0.5s ease-in-out,
+      height 0.5s ease-in-out;
+    left: 11rem;
+    top: 20rem;
+    width: 28px;
+    height: 28px;
+    background-color: #c3f96a;
+  }
+
+  .vanish {
+    opacity: 0;
+  }
+</style>

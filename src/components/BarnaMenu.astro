@@ -20,7 +20,7 @@ const isAbout = pathname.includes("about") ? "text-[#c3f96a]" : "text-white";
       <li class="flex items-center justify-end">
         <div class="w-[28px] h-[28px] bg-[#c3f96a] rounded-full opacity-0">
         </div>
-        <a href="/">Home</a>
+        <a href="/" class="">Home</a>
       </li>
 
       <li class={`${isProjects} flex items-center justify-end`}>
@@ -33,7 +33,7 @@ const isAbout = pathname.includes("about") ? "text-[#c3f96a]" : "text-white";
               />
             )
         }
-        <a href="/barna">Projects</a>
+        <a href="/barna" class="">Projects</a>
       </li>
 
       <li class={`${isCV} mt-[0.4rem] flex items-center justify-end`}>
@@ -45,7 +45,7 @@ const isAbout = pathname.includes("about") ? "text-[#c3f96a]" : "text-white";
             />
           )
         }
-        <a href="/barna/cv">CV</a>
+        <a href="/barna/cv" class="">CV</a>
       </li>
 
       <li class={`${isContact} flex items-center justify-end`}>
@@ -57,7 +57,7 @@ const isAbout = pathname.includes("about") ? "text-[#c3f96a]" : "text-white";
             />
           )
         }
-        <a href="/barna/contact">Contact</a>
+        <a href="/barna/contact" class="">Contact</a>
       </li>
 
       <li class={`${isAbout} flex items-center justify-end`}>
@@ -69,7 +69,7 @@ const isAbout = pathname.includes("about") ? "text-[#c3f96a]" : "text-white";
             />
           )
         }
-        <a href="/barna/about">About Me</a>
+        <a href="/barna/about" class="">About Me</a>
       </li>
     </ul>
   </nav>
@@ -89,6 +89,6 @@ const isAbout = pathname.includes("about") ? "text-[#c3f96a]" : "text-white";
   }
 
   li {
-    line-height: 0.8;
+    line-height: 1;
   }
 </style>
