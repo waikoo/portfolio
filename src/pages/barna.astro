@@ -10,18 +10,19 @@ const referer = "";
 ---
 
 <script>
-  window.addEventListener("DOMContentLoaded", () => {
-    const circle = document.querySelector(".circle");
+  const circle = document.querySelector(".barna-circle");
+
+  setTimeout(() => {
     if (circle) {
       circle.classList.add("move-circle");
     }
+  }, 10);
 
-    setTimeout(() => {
-      if (circle) {
-        circle.classList.add("vanish");
-      }
-    }, 500);
-  });
+  setTimeout(() => {
+    if (circle) {
+      circle.classList.add("vanish");
+    }
+  }, 500);
 </script>
 
 <Layout title="Szász Barna's Projects">
@@ -53,11 +54,12 @@ const referer = "";
         </div>
       </div>
     </div>
-    <!-- <a -->
-    <!--   class="absolute w-[575px] h-[575px] bg-[#ffcf25] rounded-full mix-blend-exclusion top-[18rem] left-[18rem] z-50 circle" -->
-    <!--   href="/barna" -->
-    <!--   transition:name="circle" -->
-    <!-- > -->
+    <a
+      class="absolute top-[290px] left-[280px] w-[575px] h-[575px] bg-[#ffcf25] rounded-full mix-blend-exclusion hvr-grow barna-circle z-20 circle"
+      href="/barna"
+      transition:name="circle"
+    >
+    </a>
   </main>
 </Layout>
 
@@ -76,6 +78,6 @@ const referer = "";
   }
 
   .vanish {
-    opacity: 0;
+    display: none;
   }
 </style>
