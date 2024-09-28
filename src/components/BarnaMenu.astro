@@ -1,17 +1,15 @@
 ---
-const { current } = Astro.props;
+const { referer } = Astro.props;
 
-const pathname = current.pathname;
+const { url: currentUrl } = Astro.request;
 
 const isProjects =
-  pathname.split("/").length === 2 && pathname.split("/")[1] === "barna"
-    ? "text-[#c3f96a]"
-    : "text-white";
-const isCV = pathname.includes("cv") ? "text-[#c3f96a]" : "text-white";
-const isContact = pathname.includes("contact")
+  currentUrl.split("/").at(-1) === "barna" ? "text-[#c3f96a]" : "text-white";
+const isCV = currentUrl.includes("cv") ? "text-[#c3f96a]" : "text-white";
+const isContact = currentUrl.includes("contact")
   ? "text-[#c3f96a]"
   : "text-white";
-const isAbout = pathname.includes("about") ? "text-[#c3f96a]" : "text-white";
+const isAbout = currentUrl.includes("about") ? "text-[#c3f96a]" : "text-white";
 ---
 
 <aside class="fixed z-10">
@@ -25,20 +23,19 @@ const isAbout = pathname.includes("about") ? "text-[#c3f96a]" : "text-white";
 
       <li class={`${isProjects} flex items-center justify-end`}>
         {
-          current.pathname.split("/").length === 2 &&
-            current.pathname.split("/")[1] === "barna" && (
-              <div
-                class="w-[28px] h-[28px] mr-[18px] bg-[#c3f96a] rounded-full"
-                transition:name="menuitem"
-              />
-            )
+          currentUrl.split("/").at(-1) === "barna" && (
+            <div
+              class="w-[28px] h-[28px] mr-[18px] bg-[#c3f96a] rounded-full"
+              transition:name="menuitem"
+            />
+          )
         }
         <a href="/barna" class="">Projects</a>
       </li>
 
       <li class={`${isCV} mt-[0.4rem] flex items-center justify-end`}>
         {
-          current.pathname.includes("cv") && (
+          currentUrl.includes("cv") && (
             <div
               class="w-[28px] h-[28px] mr-[18px] bg-[#c3f96a] rounded-full"
               transition:name="menuitem"
@@ -50,7 +47,7 @@ const isAbout = pathname.includes("about") ? "text-[#c3f96a]" : "text-white";
 
       <li class={`${isContact} flex items-center justify-end`}>
         {
-          current.pathname.includes("contact") && (
+          currentUrl.includes("contact") && (
             <div
               class="w-[28px] h-[28px] mr-[18px] bg-[#c3f96a] rounded-full"
               transition:name="menuitem"
@@ -62,7 +59,7 @@ const isAbout = pathname.includes("about") ? "text-[#c3f96a]" : "text-white";
 
       <li class={`${isAbout} flex items-center justify-end`}>
         {
-          current.pathname.includes("about") && (
+          currentUrl.includes("about") && (
             <div
               class="w-[28px] h-[28px] mr-[18px] bg-[#c3f96a] rounded-full"
               transition:name="menuitem"

@@ -3,7 +3,29 @@ import Layout from "../layouts/Layout.astro";
 import HeroPerson from "../components/HeroPerson.astro";
 ---
 
-<script></script>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const barnaCircle = document.querySelector(".barna-circle");
+    const dropBackAmount = "translate-y-[-180%]";
+    const midSizeWidth = "w-[200px]";
+    const midSizeHeight = "h-[200px]";
+
+    // remove initial state:
+    barnaCircle!.classList.remove("translate-y-[500%]", "opacity-0");
+    barnaCircle!.classList.add(dropBackAmount, "opacity-80");
+    barnaCircle!.classList.remove("w-[55px]", "h-[55px]");
+    barnaCircle!.classList.add(midSizeWidth, midSizeHeight);
+
+    setTimeout(() => {
+      barnaCircle!.classList.remove(midSizeWidth, midSizeHeight);
+      barnaCircle!.classList.remove(dropBackAmount, "opacity-80");
+      barnaCircle!.classList.add("translate-y-0", "opacity-100");
+      barnaCircle!.classList.add("w-[575px]", "h-[575px]");
+      barnaCircle!.classList.add("top-[300px]", "left-[300px]");
+    }, 800);
+    // w-[575px] h-[575px]
+  });
+</script>
 
 <Layout title="szasz.dev">
   <main class="relative w-screen h-screen">
@@ -23,17 +45,15 @@ import HeroPerson from "../components/HeroPerson.astro";
           class="h-full w-full bg-[#0d7724] mix-blend-hard-light relative border-[1rem] border-red-800 green-bg"
           href="/barna"
         >
-          <div transition:name="name">
-            <HeroPerson
-              name="SZÁSZ"
-              surname="BARNA"
-              color="#fbd3d3"
-              gridColumn="1/2"
-              gridRow="1/2"
-            />
-          </div>
+          <HeroPerson
+            name="SZÁSZ"
+            surname="BARNA"
+            color="#fbd3d3"
+            gridColumn="1/2"
+            gridRow="1/2"
+          />
           <a
-            class="absolute w-[575px] h-[575px] bg-[#ffcf25] rounded-full mix-blend-exclusion top-[18rem] left-[18rem] hvr-grow barna-circle hover:blur-lg"
+            class="absolute w-[55px] h-[55px] bg-[#ffcf25] rounded-full mix-blend-exclusion top-[45rem] left-[35rem] hvr-grow barna-circle transform translate-y-[500%] opacity-0 transition-all duration-1000 forwards"
             href="/barna"
             transition:name="circle"
           >
@@ -49,8 +69,6 @@ import HeroPerson from "../components/HeroPerson.astro";
         </a>
 
         <a
-          transition:name="hero"
-          transition:animate="none"
           href="/evelin"
           class="bg-[#fec8ff] h-full w-full col-start-2 col-end-3 row-start-1 row-end-1 mix-blend-overlay border-[1rem] evelin-bg"
         >
@@ -89,5 +107,8 @@ import HeroPerson from "../components/HeroPerson.astro";
 
   a {
     font-family: "Jost-Bold";
+  }
+
+  .barna-circle {
   }
 </style>
