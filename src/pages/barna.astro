@@ -23,6 +23,18 @@ const referer = "";
       circle.classList.add("vanish");
     }
   }, 500);
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
+      }
+    });
+  });
+  const elements = document.querySelectorAll(".barna-project");
+  elements.forEach((el) => observer.observe(el));
 </script>
 
 <Layout title="Szász Barna's Projects">
@@ -79,5 +91,12 @@ const referer = "";
 
   .vanish {
     display: none;
+  }
+  .barna-circle {
+    opacity: 0;
+    transition: all 1s;
+  }
+  .show {
+    opacity: 1;
   }
 </style>
