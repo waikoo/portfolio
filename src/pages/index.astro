@@ -3,6 +3,15 @@ import Layout from "../layouts/Layout.astro";
 import HeroPerson from "../components/HeroPerson.astro";
 ---
 
+<script>
+  import { animate, spring } from "motion";
+
+  animate(".barna-circle", { y: -500 }, { easing: spring() });
+  animate(".evelin-circle", { y: -500 }, { easing: spring() });
+
+  animate(".barna-occupation", { opacity: 100, x: 200 }, { duration: 1.5 });
+  animate(".evelin-occupation", { opacity: 100, x: 200 }, { duration: 1.5 });
+</script>
 <Layout title="szasz.dev">
   <main class="relative w-screen h-screen">
     <img
@@ -29,14 +38,14 @@ import HeroPerson from "../components/HeroPerson.astro";
             gridRow="1/2"
           />
           <a
-            class="absolute w-[575px] h-[575px] bg-[#ffcf25] rounded-full mix-blend-exclusion top-[32%] left-[15%] hvr-grow barna-circle"
+            class="absolute w-[575px] h-[575px] bg-[#ffcf25] rounded-full mix-blend-exclusion top-[82%] left-[15%] hvr-grow barna-circle"
             href="/barna"
             transition:name="circle"
           >
           </a>
 
           <a
-            class="absolute left-[32rem] top-[35rem] text-[60px] text-right tracking-tight"
+            class="absolute left-[20rem] top-[35rem] text-[60px] text-right tracking-tight barna-occupation opacity-0"
             href="/barna"
           >
             <span class="block -mb-[2.6rem]">Front-End</span>
@@ -57,11 +66,11 @@ import HeroPerson from "../components/HeroPerson.astro";
             />
           </a>
           <div
-            class="absolute w-[575px] h-[575px] bg-[#f20000] rounded-full hover:rounded-sm mix-blend-exclusion top-[19rem] right-[4rem] hvr-grow evelin-circle"
+            class="absolute w-[575px] h-[575px] bg-[#f20000] rounded-full mix-blend-exclusion top-[82%] right-[4rem] hvr-grow evelin-circle"
           >
           </div>
           <p
-            class="absolute right-[8rem] top-[35rem] text-[60px] text-right tracking-tight text-white"
+            class="absolute right-[21rem] top-[35rem] text-[60px] text-right tracking-tight text-white evelin-occupation opacity-0"
           >
             <span class="block -mb-[2.6rem]">UI/UX</span>
             <span class="block">Designer</span>
@@ -82,27 +91,6 @@ import HeroPerson from "../components/HeroPerson.astro";
 
     a {
       font-family: "Jost-Bold";
-    }
-
-    .ease-in {
-      --ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
-    }
-
-    .barna-circle {
-      --bounce-effect: cubic-bezier(0.68, -0.55, 0.27, 1.55);
-      transition:
-        transform 1.3s var(--bounce-effect),
-        opacity 1.3s var(--bounce-effect),
-        width 1.3s var(--bounce-effect),
-        height 1.3s var(--bounce-effect);
-    }
-    /* Set the default initial state */
-    transform: translateY(-100%);
-    transform: scale(0.5); /* Shrink the circle initially */
-    opacity: 0; /* Make it invisible initially */
-
-    .down {
-      transform: translateY(120%);
     }
   </style>
 </Layout>
