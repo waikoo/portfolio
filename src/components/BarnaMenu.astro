@@ -1,4 +1,6 @@
 ---
+import "@fontsource/jost/700.css";
+
 const { referer } = Astro.props;
 
 const { url: currentUrl } = Astro.request;
@@ -73,16 +75,9 @@ const isAbout = currentUrl.includes("about") ? "text-[#c3f96a]" : "text-white";
 </aside>
 
 <style>
-  @font-face {
-    font-family: "Jost-Bold";
-    src: url("/fonts/Jost-Bold.ttf") format("truetype");
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-  }
-
   .jost {
-    font-family: "Jost-Bold";
+    font-family: "Jost", sans-serif;
+    font-weight: 700;
   }
 
   li {

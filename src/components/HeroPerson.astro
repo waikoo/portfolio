@@ -1,4 +1,5 @@
 ---
+import "@fontsource/jost/200.css";
 const { name, surname, color, gridColumn, gridRow, small } = Astro.props;
 
 const fontSize = small ? "text-[23px]" : "text-[190px]";
@@ -16,15 +17,8 @@ const fontSize = small ? "text-[23px]" : "text-[190px]";
 </div>
 
 <style>
-  @font-face {
-    font-family: "Jost";
-    src: url("/fonts/Jost-ExtraLight.ttf") format("truetype");
-    font-weight: 200;
-    font-style: normal;
-    font-display: swap;
-  }
-
   div {
-    font-family: "Jost";
+    font-family: "Jost", sans-serif;
+    font-weight: 200;
   }
 </style>

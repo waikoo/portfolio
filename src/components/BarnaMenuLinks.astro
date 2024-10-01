@@ -1,5 +1,6 @@
 ---
 const { live, github } = Astro.props;
+import "@fontsource/jost/600.css";
 ---
 
 <div class="mt-10 flex gap-5 jost-semibold items-stretch">
@@ -41,15 +42,8 @@ const { live, github } = Astro.props;
 </div>
 
 <style>
-  @font-face {
-    font-family: "Jost-SemiBold";
-    src: url("/fonts/Jost-SemiBold.ttf") format("truetype");
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-  }
-
   .jost-semibold {
-    font-family: "Jost-SemiBold";
+    font-family: "Jost", sans-serif;
+    font-weight: 600;
   }
 </style>

@@ -1,4 +1,6 @@
 ---
+import "@fontsource/jost/700.css";
+import "@fontsource/jost/600.css";
 import BarnaMenuLinks from "./BarnaMenuLinks.astro";
 const { name, description, image, tags, live, github } = Astro.props;
 ---
@@ -64,28 +66,14 @@ const { name, description, image, tags, live, github } = Astro.props;
 </section>
 
 <style>
-  @font-face {
-    font-family: "Jost-Bold";
-    src: url("/fonts/Jost-Bold.ttf") format("truetype");
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: "Jost-SemiBold";
-    src: url("/fonts/Jost-SemiBold.ttf") format("truetype");
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-  }
-
   .jost-semibold {
-    font-family: "Jost-SemiBold";
+    font-family: "Jost", sans-serif;
+    font-weight: 600;
   }
 
   .jost {
-    font-family: "Jost-Bold";
+    font-family: "Jost", sans-serif;
+    font-weight: 700;
   }
 
   .project {

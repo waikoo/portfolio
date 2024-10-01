@@ -1,5 +1,7 @@
 ---
 const { title, value } = Astro.props;
+import "@fontsource/jost/700.css";
+import "@fontsource/roboto";
 ---
 
 <div class="flex flex-col mt-10">
@@ -12,27 +14,13 @@ const { title, value } = Astro.props;
 </div>
 
 <style>
-  @font-face {
-    font-family: "Jost-Bold";
-    src: url("/fonts/Jost-Bold.ttf") format("truetype");
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: "Roboto";
-    src: url("/fonts/Roboto-Regular.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-
   .jost-bold {
-    font-family: "Jost-Bold";
+    font-family: "Jost", sans-serif;
+    font-weight: 700;
   }
 
   .roboto {
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
   }
 </style>

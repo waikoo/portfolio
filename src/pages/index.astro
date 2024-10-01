@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import HeroPerson from "../components/HeroPerson.astro";
+import "@fontsource/jost/700.css";
 ---
 
 <script>
@@ -38,7 +39,7 @@ import HeroPerson from "../components/HeroPerson.astro";
             gridRow="1/2"
           />
           <a
-            class="absolute w-[575px] h-[575px] bg-[#ffcf25] rounded-full mix-blend-exclusion top-[82%] left-[15%] hvr-grow barna-circle"
+            class="absolute w-[575px] h-[575px] bg-[#ffcf25] rounded-full mix-blend-exclusion top-[92%] left-[15%] barna-circle block transition-transform"
             href="/barna"
             transition:name="circle"
           >
@@ -66,7 +67,7 @@ import HeroPerson from "../components/HeroPerson.astro";
             />
           </a>
           <div
-            class="absolute w-[575px] h-[575px] bg-[#f20000] rounded-full mix-blend-exclusion top-[82%] right-[4rem] hvr-grow evelin-circle"
+            class="absolute w-[575px] h-[575px] bg-[#f20000] rounded-full mix-blend-exclusion top-[92%] right-[4rem] hvr-grow evelin-circle"
           >
           </div>
           <p
@@ -81,16 +82,20 @@ import HeroPerson from "../components/HeroPerson.astro";
   </main>
 
   <style>
-    @font-face {
-      font-family: "Jost-Bold";
-      src: url("/fonts/Jost-Bold.ttf") format("truetype");
-      font-weight: 700;
-      font-style: normal;
-      font-display: swap;
-    }
+    /* @font-face { */
+    /*   font-family: "Jost-Bold"; */
+    /*   src: url("/fonts/Jost-Bold.ttf") format("truetype"); */
+    /*   font-weight: 700; */
+    /*   font-style: normal; */
+    /*   font-display: swap; */
+    /* } */
 
-    a {
-      font-family: "Jost-Bold";
+    .barna-occupation,
+    .evelin-occupation {
+      /* font-family: "Jost-Bold"; */
+      font-family: "Jost", sans-serif;
+      font-weight: 700;
+      /* font-weight: 700; */
     }
   </style>
 </Layout>
