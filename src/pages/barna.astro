@@ -39,16 +39,18 @@ const referer = "";
 
 <Layout title="Szász Barna's Projects">
   <main
-    class="absolute bg-[url('/images/bubbles.jpg')] bg-cover bg-no-repeat bg-fixed h-[2000px]"
+    class="absolute w-screen bg-[url('/images/bubbles.jpg')] bg-cover bg-no-repeat bg-fixed h-[2000px]"
   >
-    <video
-      class="absolute w-screen h-[2000px] object-cover mix-blend-color-dodge"
-      autoplay
-      loop
-      muted
-      playsinline
-      transition:persist
-      src="/videos/animated_gradient.mp4"></video>
+    <div class="w-screen">
+      <video
+        class="absolute w-full h-[2000px] object-cover mix-blend-color-dodge"
+        autoplay
+        loop
+        muted
+        playsinline
+        transition:persist
+        src="/videos/animated_gradient.mp4"></video>
+    </div>
 
     <div
       class="bg-[#206433] mix-blend-darken w-screen h-[2000px] relative z-10"

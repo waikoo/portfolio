@@ -3,7 +3,26 @@ import BarnaMenuLinks from "./BarnaMenuLinks.astro";
 const { name, description, image, tags, live, github } = Astro.props;
 ---
 
-<section class="relative mt-20">
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+        } else {
+          entry.target.classList.remove("in-view");
+        }
+      });
+    });
+
+    const projects = document.querySelectorAll(".project");
+    projects.forEach((project) => {
+      observer.observe(project);
+    });
+  });
+</script>
+
+<section class="relative mt-20 project">
   <p
     class="text-[#c3f96a] text-[70px] jost tracking-[-0.1em] -mb-[15px] text-right barna-project"
   >
@@ -71,4 +90,28 @@ const { name, description, image, tags, live, github } = Astro.props;
     font-family: "Jost-Bold";
   }
 
+  .project {
+    --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 0;
+    transform: translateX(-200px);
+    transition:
+      opacity 0.5s var(--ease-out-quad),
+      transform 0.5s var(--ease-out-quad);
+  }
+
+  .project.in-view {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
 </style>

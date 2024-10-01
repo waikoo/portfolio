@@ -3,29 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import HeroPerson from "../components/HeroPerson.astro";
 ---
 
-<script>
-  window.addEventListener("DOMContentLoaded", () => {
-    const barnaCircle = document.querySelector(".barna-circle");
-    const dropBackAmount = "translate-y-[-180%]";
-    const midSizeWidth = "w-[200px]";
-    const midSizeHeight = "h-[200px]";
-
-    // remove initial state:
-    barnaCircle!.classList.remove("translate-y-[500%]", "opacity-0");
-    barnaCircle!.classList.add(dropBackAmount, "opacity-80");
-    barnaCircle!.classList.remove("w-[55px]", "h-[55px]");
-    barnaCircle!.classList.add(midSizeWidth, midSizeHeight);
-
-    setTimeout(() => {
-      barnaCircle!.classList.remove(midSizeWidth, midSizeHeight);
-      barnaCircle!.classList.remove(dropBackAmount, "opacity-80");
-      barnaCircle!.classList.add("translate-y-0", "opacity-100");
-      barnaCircle!.classList.add("w-[575px]", "h-[575px]");
-      barnaCircle!.classList.add("top-[275px]", "left-[255px]");
-    }, 900);
-  });
-</script>
-
 <Layout title="szasz.dev">
   <main class="relative w-screen h-screen">
     <img
@@ -52,62 +29,80 @@ import HeroPerson from "../components/HeroPerson.astro";
             gridRow="1/2"
           />
           <a
-            class="absolute w-[55px] h-[55px] bg-[#ffcf25] rounded-full mix-blend-exclusion top-[45rem] left-[35rem] hvr-grow barna-circle transform translate-y-[500%] opacity-0 transition-all duration-1000 forwards"
+            class="absolute w-[575px] h-[575px] bg-[#ffcf25] rounded-full mix-blend-exclusion top-[32%] left-[15%] hvr-grow barna-circle"
             href="/barna"
             transition:name="circle"
           >
           </a>
-        </a>
 
-        <a
-          class="absolute left-[32rem] top-[35rem] text-[60px] text-right tracking-tight"
-          href="/barna"
-        >
-          <span class="block -mb-[2.6rem]">Front-End</span>
-          <span class="block">Developer</span>
-        </a>
+          <a
+            class="absolute left-[32rem] top-[35rem] text-[60px] text-right tracking-tight"
+            href="/barna"
+          >
+            <span class="block -mb-[2.6rem]">Front-End</span>
+            <span class="block">Developer</span>
+          </a>
 
-        <a
-          href="/evelin"
-          class="bg-[#fec8ff] h-full w-full col-start-2 col-end-3 row-start-1 row-end-1 mix-blend-overlay border-[1rem] evelin-bg"
-        >
-          <HeroPerson
-            name="SZÁSZ"
-            surname="EVELIN"
-            color="black"
-            gridColumn="2/3"
-            gridRow="1/2"
-            transition:name="hero"
-          />
+          <a
+            href="/evelin"
+            class="bg-[#fec8ff] h-full w-full col-start-2 col-end-3 row-start-1 row-end-1 mix-blend-overlay border-[1rem] evelin-bg"
+          >
+            <HeroPerson
+              name="SZÁSZ"
+              surname="EVELIN"
+              color="black"
+              gridColumn="2/3"
+              gridRow="1/2"
+              transition:name="hero"
+            />
+          </a>
+          <div
+            class="absolute w-[575px] h-[575px] bg-[#f20000] rounded-full hover:rounded-sm mix-blend-exclusion top-[19rem] right-[4rem] hvr-grow evelin-circle"
+          >
+          </div>
+          <p
+            class="absolute right-[8rem] top-[35rem] text-[60px] text-right tracking-tight text-white"
+          >
+            <span class="block -mb-[2.6rem]">UI/UX</span>
+            <span class="block">Designer</span>
+          </p>
         </a>
-        <div
-          class="absolute w-[575px] h-[575px] bg-[#f20000] rounded-full hover:rounded-sm mix-blend-exclusion top-[19rem] right-[4rem] hvr-grow evelin-circle"
-        >
-        </div>
-        <p
-          class="absolute right-[8rem] top-[35rem] text-[60px] text-right tracking-tight text-white"
-        >
-          <span class="block -mb-[2.6rem]">UI/UX</span>
-          <span class="block">Designer</span>
-        </p>
       </div>
     </div>
   </main>
+
+  <style>
+    @font-face {
+      font-family: "Jost-Bold";
+      src: url("/fonts/Jost-Bold.ttf") format("truetype");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    a {
+      font-family: "Jost-Bold";
+    }
+
+    .ease-in {
+      --ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+
+    .barna-circle {
+      --bounce-effect: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      transition:
+        transform 1.3s var(--bounce-effect),
+        opacity 1.3s var(--bounce-effect),
+        width 1.3s var(--bounce-effect),
+        height 1.3s var(--bounce-effect);
+    }
+    /* Set the default initial state */
+    transform: translateY(-100%);
+    transform: scale(0.5); /* Shrink the circle initially */
+    opacity: 0; /* Make it invisible initially */
+
+    .down {
+      transform: translateY(120%);
+    }
+  </style>
 </Layout>
-
-<style>
-  @font-face {
-    font-family: "Jost-Bold";
-    src: url("/fonts/Jost-Bold.ttf") format("truetype");
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  a {
-    font-family: "Jost-Bold";
-  }
-
-  .barna-circle {
-  }
-</style>
