@@ -4,21 +4,19 @@ const { name, description, image, tags, live, github } = Astro.props;
 ---
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in-view");
-        } else {
-          entry.target.classList.remove("in-view");
-        }
-      });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in-view");
+      } else {
+        entry.target.classList.remove("in-view");
+      }
     });
+  });
 
-    const projects = document.querySelectorAll(".project");
-    projects.forEach((project) => {
-      observer.observe(project);
-    });
+  const projects = document.querySelectorAll(".project");
+  projects.forEach((project) => {
+    observer.observe(project);
   });
 </script>
 
