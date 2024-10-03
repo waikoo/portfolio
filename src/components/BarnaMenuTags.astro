@@ -1,0 +1,27 @@
+---
+const { tags } = Astro.props;
+---
+
+<div
+  class="text-[#c3f96a] flex gap-10 text-right w-full flex-wrap justify-end ml-auto mt-10 align-end"
+>
+  {
+    tags.map((tag: string) => (
+      <div class="rounded-full bg-black/15 p-2">
+        <span class="jost-semibold">{tag}</span>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .jost-semibold {
+    font-family: "Jost", sans-serif;
+    font-weight: 600;
+  }
+
+  .jost {
+    font-family: "Jost", sans-serif;
+    font-weight: 700;
+  }
+</style>

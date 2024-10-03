@@ -2,7 +2,8 @@
 import "@fontsource/jost/700.css";
 import "@fontsource/jost/600.css";
 import BarnaMenuLinks from "./BarnaMenuLinks.astro";
-const { name, description, image, tags, live, github } = Astro.props;
+import BarnaMenuTags from "./BarnaMenuTags.astro";
+const { name, description, src, tags, live, github } = Astro.props;
 ---
 
 <script>
@@ -31,73 +32,69 @@ const { name, description, image, tags, live, github } = Astro.props;
 
   <div class="w-full h-[1px] bg-[#c3f96a]/20 jost"></div>
 
-  <div class="flex gap-10 mt-4">
-    <div class="w-[80%]">
-      <img
-        src={image}
-        aspect-ratio="4/3"
-        alt="a gif of a user flow from the home page to buying a product"
-        class="rounded-[20px] w-full"
-      />
-    </div>
+  <div class="flex flex-col gap-10 mt-4">
+    <div class="full gap-10 justify-between flex">
+      <div class="aspect-video h-[400px]">
+        <video
+          class="rounded-[20px]"
+          autoplay
+          loop
+          muted
+          playsinline
+          transition:persist
+          width={640}
+        >
+          <source type="video/mp4; codecs=av01" src={src[0]} />
+          <source type="video/mp4" src={src[1]} />
+        </video>
+        <BarnaMenuLinks live={live} github={github} />
+      </div>
 
-    <div
-      class="text-[#c3f96a] w-1/2 text-right justify-self-end flex flex-col gap-8 justify-between"
-    >
-      <p class="text-[14px] jost-semibold tracking-[2px] text-white">
-        {description.toUpperCase()}
-      </p>
+      <div class="text-[#c3f96a] text-right flex flex-col gap-8">
+        <p class="text-[14px] jost-semibold tracking-[2px] text-white">
+          {description.toUpperCase()}
+        </p>
 
-      <a href={github} class="underline underline-offset-2 jost">READ MORE</a>
-      <div
-        class="flex gap-10 text-right w-full flex-wrap justify-end ml-auto mt-10 align-end"
-      >
-        {
-          tags.map((tag: string) => (
-            <div class="rounded-full bg-black/15 p-2">
-              <span class="jost-semibold">{tag}</span>
-            </div>
-          ))
-        }
+        <a href={github} class="underline underline-offset-2 jost">READ MORE</a>
+        <BarnaMenuTags tags={tags} />
       </div>
     </div>
   </div>
-  <BarnaMenuLinks live={live} github={github} />
-</section>
 
-<style>
-  .jost-semibold {
-    font-family: "Jost", sans-serif;
-    font-weight: 600;
-  }
+  <style>
+    .jost-semibold {
+      font-family: "Jost", sans-serif;
+      font-weight: 600;
+    }
 
-  .jost {
-    font-family: "Jost", sans-serif;
-    font-weight: 700;
-  }
+    .jost {
+      font-family: "Jost", sans-serif;
+      font-weight: 700;
+    }
 
-  .project {
-    --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    opacity: 0;
-    transform: translateX(-200px);
-    transition:
-      opacity 0.5s var(--ease-out-quad),
-      transform 0.5s var(--ease-out-quad);
-  }
-
-  .project.in-view {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  @keyframes fade-in {
-    from {
+    .project {
+      --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
       opacity: 0;
-      transform: translateX(-100px);
+      transform: translateX(-200px);
+      transition:
+        opacity 0.5s var(--ease-out-quad),
+        transform 0.5s var(--ease-out-quad);
     }
-    to {
+
+    .project.in-view {
       opacity: 1;
-      transform: translateX(0px);
+      transform: translateX(0);
     }
-  }
-</style>
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateX(-100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+    }
+  </style>
+</section>
