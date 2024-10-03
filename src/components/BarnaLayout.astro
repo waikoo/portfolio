@@ -1,0 +1,74 @@
+---
+import BarnaNameTag from "../components/BarnaNameTag.astro";
+import BarnaMenu from "../components/BarnaMenu.astro";
+import BarnaProjectCard from "../components/BarnaProjectCard.astro";
+import { projects } from "../projects/data";
+
+const referer = "";
+---
+
+<main
+  class="absolute w-screen bg-[url('/images/bubbles.jpg')] bg-cover bg-no-repeat bg-fixed h-[2000px]"
+>
+  <div class="w-screen">
+    <video
+      class="absolute w-full h-[2000px] object-cover mix-blend-color-dodge"
+      autoplay
+      loop
+      muted
+      playsinline
+      transition:persist
+    >
+      <source
+        type="video/video/mp4; codecs=av01"
+        src="/videos/animated_gradient_av1.mp4"
+      />
+      <source type="video/mp4" src="/videos/animated_gradient.mp4" />
+    </video>
+  </div>
+
+  <div class="bg-[#206433] mix-blend-darken w-screen h-[2000px] relative z-10">
+  </div>
+
+  <div class="absolute top-10 w-full">
+    <BarnaNameTag />
+
+    <div class="flex gap-16 relative z-50 mx-auto w-[85%] mt-[11rem]">
+      <BarnaMenu referer={referer} />
+
+      <slot />
+    </div>
+  </div>
+  <a
+    class="absolute top-[290px] left-[280px] w-[575px] h-[575px] bg-[#ffcf25] rounded-full mix-blend-exclusion hvr-grow barna-circle z-20 circle"
+    href="/barna"
+    transition:name="circle"
+  >
+  </a>
+</main>
+
+<style>
+  .move-circle {
+    transition:
+      color 0.5s ease-in-out,
+      transform 0.5s ease-in-out,
+      width 0.5s ease-in-out,
+      height 0.5s ease-in-out;
+    left: 11rem;
+    top: 20rem;
+    width: 28px;
+    height: 28px;
+    background-color: #c3f96a;
+  }
+
+  .vanish {
+    display: none;
+  }
+  .barna-circle {
+    opacity: 0;
+    transition: all 1s;
+  }
+  .show {
+    opacity: 1;
+  }
+</style>

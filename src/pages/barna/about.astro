@@ -1,35 +1,10 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import BarnaNameTag from "../../components/BarnaNameTag.astro";
-import BarnaMenu from "../../components/BarnaMenu.astro";
+import BarnaLayout from "../../components/BarnaLayout.astro";
 
 const endpoint = new URL(Astro.request.url);
 ---
 
 <Layout title="About Szász Barna">
-  <main
-    class="absolute bg-[url('/images/bubbles.jpg')] bg-cover bg-no-repeat bg-fixed h-[2000px]"
-  >
-    <video
-      class="absolute w-screen h-[2000px] object-cover mix-blend-color-dodge"
-      autoplay
-      loop
-      muted
-      playsinline
-      transition:persist
-      src="/videos/animated_gradient.mp4"></video>
-
-    <div
-      class="bg-[#206433] mix-blend-darken w-screen h-[2000px] relative z-10"
-    >
-    </div>
-
-    <div class="absolute top-10">
-      <BarnaNameTag />
-
-      <div class="flex gap-32 relative z-50 mx-auto w-[85%] mt-[11rem]">
-        <BarnaMenu current={endpoint} />
-      </div>
-    </div>
-  </main>
+  <BarnaLayout />
 </Layout>
