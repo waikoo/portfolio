@@ -15,14 +15,18 @@ import "@fontsource/jost/700.css";
 </script>
 <Layout title="szasz.dev">
   <main class="relative w-screen h-screen">
-    <img
-      src="/images/bubbles.jpg"
-      alt="an abstract cluster of red blobs with white speckles, floating against a deep reddish-brown background with smooth, organic shapes"
-      width={1920}
-      height={1080}
-      class="absolute w-screen h-screen object-cover"
-      transition:persist
-    />
+    <picture>
+      <source type="image/avif" srcset="/images/bubbles.avif" />
+      <source type="image/webp" srcset="/images/bubbles.webp" />
+      <img
+        src="/images/bubbles.jpg"
+        alt="an abstract cluster of red blobs with white speckles, floating against a deep reddish-brown background with smooth, organic shapes"
+        width={1920}
+        height={1080}
+        class="absolute w-screen h-screen object-cover"
+        transition:persist
+      />
+    </picture>
 
     <div class="w-screen h-screen">
       <div class="w-full h-full grid place-items-center grid-cols-2">
@@ -82,20 +86,10 @@ import "@fontsource/jost/700.css";
   </main>
 
   <style>
-    /* @font-face { */
-    /*   font-family: "Jost-Bold"; */
-    /*   src: url("/fonts/Jost-Bold.ttf") format("truetype"); */
-    /*   font-weight: 700; */
-    /*   font-style: normal; */
-    /*   font-display: swap; */
-    /* } */
-
     .barna-occupation,
     .evelin-occupation {
-      /* font-family: "Jost-Bold"; */
       font-family: "Jost", sans-serif;
       font-weight: 700;
-      /* font-weight: 700; */
     }
   </style>
 </Layout>
