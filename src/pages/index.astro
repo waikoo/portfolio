@@ -1,7 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import HeroPerson from "../components/HeroPerson.astro";
+import HeroEvelin from "../components/HeroEvelin.astro";
+import HeroBubblesImage from "../components/HeroBubblesImage.astro";
 import "@fontsource/jost/700.css";
+import HeroBarna from "../components/HeroBarna.astro";
 ---
 
 <script>
@@ -13,74 +15,15 @@ import "@fontsource/jost/700.css";
   animate(".barna-occupation", { opacity: 100, x: 200 }, { duration: 1.5 });
   animate(".evelin-occupation", { opacity: 100, x: 200 }, { duration: 1.5 });
 </script>
+
 <Layout title="szasz.dev">
   <main class="relative w-screen h-screen">
-    <picture>
-      <source type="image/avif" srcset="/images/bubbles.avif" />
-      <source type="image/webp" srcset="/images/bubbles.webp" />
-      <img
-        src="/images/bubbles.jpg"
-        alt="an abstract cluster of red blobs with white speckles, floating against a deep reddish-brown background with smooth, organic shapes"
-        width={1920}
-        height={1080}
-        class="absolute w-screen h-screen object-cover"
-        transition:persist
-      />
-    </picture>
+    <HeroBubblesImage src="/images/bubbles.jpg" />
 
     <div class="w-screen h-screen">
       <div class="w-full h-full grid place-items-center grid-cols-2 relative">
-        <a
-          transition:name="hero"
-          class="h-full w-full bg-[#0d7724] mix-blend-hard-light relative border-[1rem] border-red-800 green-bg"
-          href="/barna"
-        >
-          <HeroPerson
-            name="SZÁSZ"
-            surname="BARNA"
-            color="#fbd3d3"
-            gridColumn="1/2"
-            gridRow="1/2"
-          />
-          <a
-            class="absolute w-[575px] h-[575px] bg-[#ffcf25] rounded-full mix-blend-exclusion bottom-[-44%] left-[15%] barna-circle block"
-            href="/barna"
-            transition:name="circle"
-          >
-          </a>
-
-          <a
-            class="absolute left-[20rem] top-[35rem] text-[60px] text-right tracking-tight barna-occupation opacity-0"
-            href="/barna"
-          >
-            <span class="block -mb-[2.6rem]">Front-End</span>
-            <span class="block">Developer</span>
-          </a>
-
-          <a
-            href="/evelin"
-            class="bg-[#fec8ff] h-full w-full col-start-2 col-end-3 row-start-1 row-end-1 mix-blend-overlay border-[1rem] evelin-bg"
-          >
-            <HeroPerson
-              name="SZÁSZ"
-              surname="EVELIN"
-              color="black"
-              gridColumn="2/3"
-              gridRow="1/2"
-              transition:name="hero"
-            />
-          </a>
-          <div
-            class="absolute w-[575px] h-[575px] bg-[#f20000] rounded-full mix-blend-exclusion bottom-[-44%] right-[4rem] evelin-circle"
-          >
-          </div>
-          <p
-            class="absolute right-[21rem] top-[35rem] text-[60px] text-right tracking-tight text-white evelin-occupation opacity-0"
-          >
-            <span class="block -mb-[2.6rem]">UI/UX</span>
-            <span class="block">Designer</span>
-          </p>
-        </a>
+        <HeroBarna fullName="SZÁSZ BARNA" />
+        <HeroEvelin fullName="SZÁSZ EVELIN" />
       </div>
     </div>
   </main>

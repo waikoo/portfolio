@@ -1,0 +1,42 @@
+---
+import "@fontsource/jost/200.css";
+import HeroName from "./HeroName.astro";
+import { extractName } from "../utils/extractName.js";
+
+const { fullName } = Astro.props;
+const { name, surname } = extractName(fullName);
+const lowerCaseSurname = surname.toLowerCase();
+---
+
+<a
+  transition:name="hero"
+  class="h-full w-full bg-[#0d7724] mix-blend-hard-light relative border-[1rem] border-red-800 green-bg"
+>
+  <HeroName
+    name={name}
+    surname={surname}
+    color="#fbd3d3"
+    gridColumn="1/2"
+    gridRow="1/2"
+  />
+  <a
+    class="absolute w-[575px] h-[575px] bg-[#ffcf25] rounded-full mix-blend-exclusion bottom-[-44%] left-[15%] barna-circle block"
+    href={`/${lowerCaseSurname}`}
+    transition:name="circle"
+  >
+  </a>
+
+  <a
+    class="absolute left-[20rem] top-[35rem] text-[60px] text-right tracking-tight barna-occupation opacity-0"
+    href={`/${lowerCaseSurname}`}
+  >
+    <span class="block -mb-[2.6rem]">Front-End</span>
+    <span class="block">Developer</span>
+  </a>
+</a>
+<style>
+  .barna-occupation {
+    font-family: "Jost", sans-serif;
+    font-weight: 700;
+  }
+</style>
