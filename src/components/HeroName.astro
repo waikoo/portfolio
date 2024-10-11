@@ -3,6 +3,8 @@ import "@fontsource/jost/200.css";
 const { name, surname, color, gridColumn, gridRow, small } = Astro.props;
 
 const fontSize = small ? "text-[23px]" : "text-[190px]";
+
+const evelinBlendMode = surname === "EVELIN" ? "mix-blend-difference" : "";
 ---
 
 <div
@@ -10,7 +12,7 @@ const fontSize = small ? "text-[23px]" : "text-[190px]";
   color: ${color};
   grid-column: ${gridColumn};
   grid-row: ${gridRow};`}
-  class=`${fontSize} gap-0 flex flex-col ${surname.toLowerCase()}-name justify-content-start ml-10 mt-5`
+  class=`${fontSize} gap-0 flex flex-col ${surname.toLowerCase()}-name justify-content-start ml-10 mt-5 ${evelinBlendMode}`
 >
   <p class="-mb-[9.5rem]">{name}</p>
   <p class="m-0">{surname}</p>
