@@ -1,4 +1,7 @@
 ---
+import IconArrowMobile from "./IconArrowMobile.astro";
+import IconArrowTablet from "./IconArrowTablet.astro";
+
 const { iconColor } = Astro.props;
 const lowerOpacityIconColor = `${iconColor}25`;
 ---
@@ -6,20 +9,13 @@ const lowerOpacityIconColor = `${iconColor}25`;
 <div>
   <div
     style={{ backgroundColor: lowerOpacityIconColor }}
-    class={`grid place-items-center rounded-full p-[1.20rem] mt-4`}
+    class={`grid place-items-center rounded-full p-[1.20rem] sm:p-[1.70rem] mt-4`}
   >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="10"
-      height="10"
-      fill="none"
-      viewBox="0 0 10 10"
-    >
-      <path
-        fill={iconColor}
-        d="M9 9.75A.75.75 0 009.75 9V2.25a.75.75 0 00-1.5 0v6h-6a.75.75 0 000 1.5H9zM.47 1.53l8 8 1.06-1.06-8-8L.47 1.53z"
-      ></path>
-    </svg>
+    <IconArrowMobile iconColor={iconColor} className="sm:hidden" />
+
+    <IconArrowTablet
+      iconColor={iconColor}
+      className="hidden sm:block lg:hidden"
+    />
   </div>
 </div>
-
