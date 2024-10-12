@@ -4,53 +4,33 @@ import HeroEvelin from "../components/HeroEvelin.astro";
 import HeroBubblesImage from "../components/HeroBubblesImage.astro";
 import "@fontsource/jost/700.css";
 import HeroBarna from "../components/HeroBarna.astro";
+import CursorFollowingCircle from "../components/CursorFollowingCircle.astro";
 ---
 
 <script>
-  import { circleFollowsMouseAndChangesColor } from "../utils/circleFollowsMouseAndChangesColor.ts";
-
   import { animate, spring } from "motion";
 
-  animate(".barna-circle", { y: -500 }, { easing: spring() });
-  animate(".evelin-circle", { y: -500 }, { easing: spring() });
-
-  animate(".barna-occupation", { opacity: 100, x: 200 }, { duration: 1.5 });
-  animate(".evelin-occupation", { opacity: 100, x: 200 }, { duration: 1.5 });
-
-  const circle = document.querySelector(".follow-circle") as HTMLDivElement;
-  document.addEventListener("mousemove", (e) =>
-    circleFollowsMouseAndChangesColor(e, circle),
-  );
+  // animate(".barna-circle", { y: -500 }, { easing: spring() });
+  // animate(".evelin-circle", { y: -500 }, { easing: spring() });
+  //
+  // animate(".barna-occupation", { opacity: 100, x: 200 }, { duration: 1.5 });
+  // animate(".evelin-occupation", { opacity: 100, x: 200 }, { duration: 1.5 });
+  //
 </script>
 
 <Layout title="szasz.dev">
   <main class="relative w-screen h-screen">
     <HeroBubblesImage src="/images/bubbles.jpg" />
 
-    <div class="w-screen h-screen">
-      <div class="w-full h-full grid place-items-center grid-cols-2 relative">
+    <div class="w-screen h-[100dvh]">
+      <div
+        class="w-full h-full grid place-items-center md:grid-cols-1 md:grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 relative"
+      >
         <HeroBarna fullName="SZÁSZ BARNA" />
         <HeroEvelin fullName="SZÁSZ EVELIN" />
       </div>
     </div>
-    <div class="follow-circle"></div>
+
+    <CursorFollowingCircle />
   </main>
-
-  <style>
-    .barna-occupation,
-    .evelin-occupation {
-      font-family: "Jost", sans-serif;
-      font-weight: 700;
-    }
-
-    .follow-circle {
-      position: absolute;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: red;
-      pointer-events: none;
-      transition: transform 0.1s ease-out;
-    }
-  </style>
 </Layout>
