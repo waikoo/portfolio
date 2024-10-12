@@ -1,0 +1,24 @@
+---
+const { surname, className } = Astro.props;
+
+const bg = surname === "BARNA" ? "bg-[#0D7724] " : "bg-[#39076D] ";
+
+const blendModes =
+  surname === "BARNA"
+    ? "mix-blend-hard-light brightness-[110%]"
+    : "mix-blend-multiply brightness-[100%]";
+---
+
+<a
+  class={`flex-1 w-full h-[50dvh] grid justify-end items-end p-6 py-5 ${className} relative`}
+  href={`/${surname.toLowerCase()}`}
+>
+  <article class={`h-full w-full ${bg} ${blendModes} absolute`}>
+    <div
+      class={`${surname === "EVELIN" ? "bg-[#FEC8FF] mix-blend-saturation w-screen h-full" : ""}`}
+    >
+    </div>
+  </article>
+
+  <slot />
+</a>

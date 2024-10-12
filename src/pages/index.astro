@@ -1,10 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import HeroEvelin from "../components/HeroEvelin.astro";
 import HeroBubblesImage from "../components/HeroBubblesImage.astro";
 import "@fontsource/jost/700.css";
-import HeroBarna from "../components/HeroBarna.astro";
 import CursorFollowingCircle from "../components/CursorFollowingCircle.astro";
+import HeroPerson from "../components/HeroPerson.astro";
+import HeroBackground from "../components/HeroBackground.astro";
 ---
 
 <script>
@@ -19,18 +19,23 @@ import CursorFollowingCircle from "../components/CursorFollowingCircle.astro";
 </script>
 
 <Layout title="szasz.dev">
-  <main class="relative w-screen h-screen">
-    <HeroBubblesImage src="/images/bubbles.jpg" />
+  <main class="relative w-screen h-[100dvh]">
+    <!-- <HeroBubblesImage src="/images/bubbles.jpg" /> -->
+    <HeroBackground />
 
-    <div class="w-screen h-[100dvh]">
-      <div
-        class="w-full h-full grid place-items-center md:grid-cols-1 md:grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 relative"
-      >
-        <HeroBarna fullName="SZÁSZ BARNA" />
-        <HeroEvelin fullName="SZÁSZ EVELIN" />
-      </div>
+    <div class="w-full h-full grid grid-cols-1 grid-rows-2">
+      <HeroPerson
+        fullName="SZÁSZ BARNA"
+        className="col-start-1 col-end-2 row-start-1 row-end-2"
+        occupation="Front-End Developer"
+      />
+      <HeroPerson
+        fullName="SZÁSZ EVELIN"
+        className="col-start-1 col-end-2 row-start-2 row-end-3"
+        occupation="UI/UX Designer"
+      />
     </div>
 
-    <CursorFollowingCircle />
+    <!-- <CursorFollowingCircle /> -->
   </main>
 </Layout>

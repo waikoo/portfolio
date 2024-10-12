@@ -1,19 +1,10 @@
----
-const { video = false } = Astro.props;
----
-
-{
-  video && (
-    <video
-      class="absolute w-screen h-screen object-cover"
-      autoplay
-      loop
-      muted
-      playsinline
-      src="/videos/animated_gradient.mp4"
-    />
-  )
-}
+<video
+  class="absolute w-screen h-screen object-cover mix-blend-color-dodge z-[1]"
+  autoplay
+  loop
+  muted
+  playsinline
+  src="/videos/animated_gradient.mp4"></video>
 
 <img
   src="/images/bubbles.jpg"

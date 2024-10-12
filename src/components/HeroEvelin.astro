@@ -2,6 +2,7 @@
 import "@fontsource/jost/200.css";
 import HeroName from "./HeroName.astro";
 import { extractName } from "../utils/extractName.js";
+import HeroCircle from "./HeroCircle.astro";
 
 const { fullName } = Astro.props;
 const { name, surname } = extractName(fullName);
@@ -10,7 +11,8 @@ const lowerCaseSurname = surname.toLowerCase();
 
 <a
   href={`/${lowerCaseSurname}`}
-  class="bg-[#fec8ff] h-full w-full col-start-2 col-end-3 row-start-1 row-end-1 mix-blend-overlay evelin-bg"
+  transition:name="hero"
+  class="bg-[#fec8ff] h-full w-full col-start-2 col-end-3 row-start-1 row-end-2 mix-blend-overlay evelin-bg relative"
 >
   <HeroName
     name={name}
@@ -21,25 +23,3 @@ const lowerCaseSurname = surname.toLowerCase();
     transition:name="hero"
   />
 </a>
-<div
-  class="absolute w-[575px] h-[575px] bg-[#FEC8FF] rounded-full mix-blend-saturation bottom-[-44%] right-[4rem] evelin-circle"
->
-</div>
-<div
-  class="absolute w-[575px] h-[575px] bg-[#39076D] rounded-full mix-blend-multiply bottom-[-44%] right-[4rem] evelin-circle"
->
-</div>
-<a
-  class="absolute right-[21rem] top-[35rem] text-[60px] text-right tracking-tight text-white evelin-occupation opacity-0"
-  href={`/${lowerCaseSurname}`}
->
-  <span class="block -mb-[2.6rem]">UI/UX</span>
-  <span class="block">Designer</span>
-</a>
-
-<style>
-  .evelin-occupation {
-    font-family: "Jost", sans-serif;
-    font-weight: 700;
-  }
-</style>

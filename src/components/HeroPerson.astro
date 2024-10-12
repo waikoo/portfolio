@@ -1,0 +1,85 @@
+---
+import "@fontsource/jost/200.css";
+import "@fontsource/jost/700.css";
+import { extractName } from "../utils/extractName";
+import HeroPersonBg from "./HeroPersonBg.astro";
+import HeroPersonName from "./HeroPersonName.astro";
+import HeroCircle from "./HeroCircle.astro";
+
+const { fullName, className, occupation } = Astro.props;
+
+const { name: familyName, surname } = extractName(fullName);
+const lowerCaseSurname = surname.toLowerCase();
+
+interface Colors {
+  barna: {
+    name: string;
+    occupation: string;
+  };
+  evelin: {
+    name: string;
+    occupation: string;
+  };
+}
+const colors: Colors = {
+  barna: {
+    name: "#9B991A",
+    occupation: "#D3D118",
+  },
+  evelin: {
+    name: "#955FA3",
+    occupation: "#E296F5",
+  },
+} as const;
+
+const color = colors[lowerCaseSurname as keyof typeof colors];
+const iconColor = color.occupation;
+---
+
+<HeroPersonBg surname={surname} className={className}>
+  <section class="translate-y-[70px] z-10">
+    <p style={{ color: color.name }} class="relative z-10">
+      {familyName}
+    </p>
+    <p style={{ color: color.name }} class="z-10 -translate-y-11">
+      {surname}
+    </p>
+
+    <div
+      class={`justify-self-end z-10 flex items-center gap-3 -translate-y-[90px] ${surname === "EVELIN" ? "translate-x-4" : ""}`}
+    >
+      <HeroCircle iconColor={iconColor} />
+      <div class="text-right">
+        <p
+          class="occupation mt-5 z-10"
+          style={{
+            color: color.occupation,
+          }}
+        >
+          {occupation.split(" ")[0]}
+        </p>
+        <p
+          class="occupation z-10 -translate-y-3"
+          style={{
+            color: color.occupation,
+          }}
+        >
+          {occupation.split(" ")[1]}
+        </p>
+      </div>
+    </div>
+  </section>
+</HeroPersonBg>
+
+<style>
+  p {
+    font-family: "Jost", sans-serif;
+    font-weight: 200;
+    font-size: 60px;
+  }
+
+  p.occupation {
+    font-weight: 700;
+    font-size: 24px;
+  }
+</style>
