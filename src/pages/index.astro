@@ -1,26 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import HeroBubblesImage from "../components/HeroBubblesImage.astro";
 import "@fontsource/jost/700.css";
 import CursorFollowingCircle from "../components/CursorFollowingCircle.astro";
 import HeroPerson from "../components/HeroPerson.astro";
 import HeroBackground from "../components/HeroBackground.astro";
 ---
 
-<script>
-  import { animate, spring } from "motion";
-
-  // animate(".barna-circle", { y: -500 }, { easing: spring() });
-  // animate(".evelin-circle", { y: -500 }, { easing: spring() });
-  //
-  // animate(".barna-occupation", { opacity: 100, x: 200 }, { duration: 1.5 });
-  // animate(".evelin-occupation", { opacity: 100, x: 200 }, { duration: 1.5 });
-  //
-</script>
-
 <Layout title="szasz.dev">
   <main class="relative w-screen h-[100dvh]">
-    <!-- <HeroBubblesImage src="/images/bubbles.jpg" /> -->
     <HeroBackground />
 
     <div class="w-full h-full grid grid-cols-1 grid-rows-2">
@@ -36,6 +23,6 @@ import HeroBackground from "../components/HeroBackground.astro";
       />
     </div>
 
-    <!-- <CursorFollowingCircle /> -->
+    <CursorFollowingCircle />
   </main>
 </Layout>
