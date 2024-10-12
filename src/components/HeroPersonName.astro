@@ -1,0 +1,19 @@
+---
+import "@fontsource/jost/200.css";
+
+const { familyName, surname, color } = Astro.props;
+---
+
+<p style={{ color: color }} class="relative z-10 text-[60px]">
+  {familyName}
+</p>
+<p style={{ color: color }} class="z-10 -translate-y-11 text-[60px]">
+  {surname}
+</p>
+
+<style>
+  p {
+    font-family: "Jost", sans-serif;
+    font-weight: 200;
+  }
+</style>

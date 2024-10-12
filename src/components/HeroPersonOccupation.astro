@@ -1,0 +1,30 @@
+---
+import HeroCircle from "./HeroCircle.astro";
+
+const { surname, iconColor, occupation } = Astro.props;
+const [first, second] = occupation.split(" ");
+---
+
+<div
+  class={`justify-self-end z-10 flex items-center gap-3 -translate-y-[90px] text-[24px] ${surname === "EVELIN" ? "translate-x-4" : ""}`}
+>
+  <HeroCircle iconColor={iconColor} />
+  <div class="text-right">
+    <p
+      class="occupation mt-5 z-10"
+      style={{
+        color: iconColor,
+      }}
+    >
+      {first}
+    </p>
+    <p
+      class="occupation z-10 -translate-y-3"
+      style={{
+        color: iconColor,
+      }}
+    >
+      {second}
+    </p>
+  </div>
+</div>
