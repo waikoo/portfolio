@@ -1,12 +1,25 @@
 ---
 import Animation from "./Animation.astro";
+const {endpoint} = Astro.props
 ---
 
-<Animation />
-<img
-  src="/images/bubbles.jpg"
-  alt="an abstract cluster of red blobs with white speckles, floating against a deep reddish-brown background with smooth, organic shapes"
-  width={1920}
-  height={1080}
-  class="absolute w-screen h-screen object-cover"
-/>
+<div class="relative isolate">
+  <Animation />
+  <picture>
+    <source type="image/avif" srcset="/images/bubbles.avif" />
+    <source type="image/webp" srcset="/images/bubbles.webp" />
+    <img
+      src="/images/bubbles.jpg"
+      alt="an abstract cluster of red blobs with white speckles, floating against a deep reddish-brown background with smooth, organic shapes"
+      width={1920}
+      height={1080}
+      class="absolute w-screen h-screen object-cover"
+    />
+  </picture>
+  {endpoint === 'EVELIN' ? (
+  <div class="fixed mix-blend-saturation h-screen w-screen bg-[#fec8ff]"></div>
+  <div class="fixed mix-blend-multiply h-screen w-screen bg-[#39076d]"></div>
+  ): endpoint === 'BARNA' ? (
+  <div class="fixed mix-blend-hard-light h-screen w-screen bg-[#0d7724]"></div>
+  ) : null}
+</div>

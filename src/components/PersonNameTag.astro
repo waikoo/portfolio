@@ -1,0 +1,22 @@
+---
+import "@fontsource/jost/700.css";
+import HeroName from "./HeroName.astro";
+import PersonOccupationTag from "./PersonOccupationTag.astro";
+const { familyName, name } = Astro.props;
+
+const reverseFlex = name === "EVELIN" ? "flex-row-reverse" : "flex-row";
+---
+
+<div class={`flex ${reverseFlex} gap-3 z-50 mt-[30px]`}>
+  <HeroName
+    familyName={familyName}
+    name={name}
+    color="#fbd3d3"
+    gridColumn="1/2"
+    gridRow="1/2"
+    small="true"
+    close="true"
+  />
+
+  <PersonOccupationTag name={name} />
+</div>

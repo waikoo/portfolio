@@ -1,0 +1,40 @@
+---
+import PersonNameTag from "./PersonNameTag.astro";
+const { endpoint } = Astro.props;
+const lowercasedEndpoint = endpoint.toLowerCase();
+const { url: currentUrl } = Astro.request;
+const isProjects =
+  currentUrl.split("/").at(-1) === endpoint.toLowerCase()
+    ? "text-[#efd6f5]"
+    : "text-[#e296f5]";
+const isCV = currentUrl.includes("cv") ? "text-[#efd6f5]" : "text-[#e296f5]";
+const isContact = currentUrl.includes("contact")
+  ? "text-[#efd6f5]"
+  : "text-[#e296f5]";
+const isAbout = currentUrl.includes("about")
+  ? "text-[#efd6f5]"
+  : "text-[#e296f5]";
+console.log(isProjects);
+---
+
+<header class="flex justify-between px-[100px] py-3 isolate items-center">
+  <ul class="flex text-[#e296f5] text-[1rem] gap-[20px]">
+    <li>
+      <a href={`/`}>Home</a>
+    </li>
+    <li class={`${isProjects}`}>
+      <a href={`/${lowercasedEndpoint}`}>Projects</a>
+    </li>
+    <li class={`${isCV}`}>
+      <a href={`/${lowercasedEndpoint}/cv`}>CV</a>
+    </li>
+    <li class={`${isContact}`}>
+      <a href={`/${lowercasedEndpoint}/contact`}>Contact</a>
+    </li>
+    <li class={`${isAbout}`}>
+      <a href={`/${lowercasedEndpoint}/about`}>About</a>
+    </li>
+  </ul>
+
+  <PersonNameTag familyName="SZÁSZ" name="EVELIN" />
+</header>

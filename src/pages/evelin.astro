@@ -1,32 +1,8 @@
 ---
+import PersonLayout from "../components/PersonLayout.astro";
 import Layout from "../layouts/Layout.astro";
-// import HeroPerson from "../components/HeroPerson.astro";
-import HeroBackground from "../components/HeroBackground.astro";
 ---
 
-<Layout title="Szasz Barna">
-  <main class="relative w-screen h-screen overflow-hidden">
-    <HeroBackground />
-
-    <div class="absolute grid place-items-center w-screen h-screen">
-      <div class="grid place-items-center grid-cols-2 grid-rows-2">
-        <div
-          transition:name="hero"
-          transition:animate="slide"
-          class="col-start-2 col-end-3 row-start-2 row-end-3"
-        >
-          <!-- <HeroPerson -->
-          <!--   name="SZASZ" -->
-          <!--   surname="EVELIN" -->
-          <!--   occupation="UI/UX Designer" -->
-          <!--   alignment="left" -->
-          <!--   color="black" -->
-          <!--   gridColumn="2/3" -->
-          <!--   gridRow="2/3" -->
-          <!--   transition:name="hero" -->
-          <!-- /> -->
-        </div>
-      </div>
-    </div>
-  </main>
+<Layout title="Szász Evelin">
+  <PersonLayout />
 </Layout>

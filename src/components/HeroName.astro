@@ -1,10 +1,11 @@
 ---
 import "@fontsource/jost/200.css";
-const { name, surname, color, gridColumn, gridRow, small } = Astro.props;
+const { name, familyName, color, gridColumn, gridRow, small } = Astro.props;
 
 const fontSize = small ? "text-[23px]" : "text-[190px]";
 
-const evelinBlendMode = surname === "EVELIN" ? "mix-blend-difference" : "";
+const evelinBlendMode = name === "EVELIN" ? "mix-blend-difference" : "";
+const evelinNoMargin = name === "EVELIN" ? "" : "ml-10";
 ---
 
 <div
@@ -12,10 +13,10 @@ const evelinBlendMode = surname === "EVELIN" ? "mix-blend-difference" : "";
   color: ${color};
   grid-column: ${gridColumn};
   grid-row: ${gridRow};`}
-  class=`${fontSize} gap-0 flex flex-col ${surname.toLowerCase()}-name justify-content-start ml-10 mt-5 ${evelinBlendMode}`
+  class=`${fontSize} gap-0 flex flex-col ${familyName.toLowerCase()}-name justify-content-start ${evelinNoMargin} mt-5 ${evelinBlendMode}`
 >
   <p class="-mb-[56px]">{name}</p>
-  <p class="m-0">{surname}</p>
+  <p class="m-0">{familyName}</p>
 </div>
 
 <style>

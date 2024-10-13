@@ -1,0 +1,28 @@
+---
+import PersonContactItem from "../../components/PersonContactItem.astro";
+import PersonLayout from "../../components/PersonLayout.astro";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Contact Szász Evelin">
+  <PersonLayout>
+    <section
+      class="fixed min-h-[calc(100%-240px)] w-screen grid place-items-center pointer-events-none"
+    >
+      <div
+        class="fixed flex flex-col justify-center items-center w-screen min-h-[100%]"
+      >
+        <PersonContactItem
+          name="Evelin"
+          title="Email"
+          value="neolor@protonmail.com"
+        />
+        <PersonContactItem
+          name="Evelin"
+          title="Dribbble"
+          value="https://dribbble.com/Lyonixa"
+        />
+      </div>
+    </section>
+  </PersonLayout>
+</Layout>

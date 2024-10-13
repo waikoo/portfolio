@@ -1,0 +1,33 @@
+---
+const { title, value, name, className } = Astro.props;
+import "@fontsource/jost/700.css";
+import "@fontsource/roboto";
+
+const titleTextColor = name === "Evelin" ? "text-[#efd6f5]" : "text-[#c3f96a]";
+const contentTextColor = name === "Evelin" ? "text-[#e296f5]" : "text-white";
+---
+
+<div class={`flex flex-col mt-10 ${className}`}>
+  <span
+    class={`${titleTextColor} text-[70px] jost-bold tracking-[-5px] text-center`}
+    >{title}</span
+  >
+
+  <div class={`${contentTextColor} text-[20px] roboto`}>
+    <a class="" href={value.includes("@") ? `mailto:${value}` : value}>
+      {value}
+    </a>
+  </div>
+</div>
+
+<style>
+  .jost-bold {
+    font-family: "Jost", sans-serif;
+    font-weight: 700;
+  }
+
+  .roboto {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+  }
+</style>
