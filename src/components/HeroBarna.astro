@@ -4,18 +4,18 @@ import HeroName from "./HeroName.astro";
 import { extractName } from "../utils/extractName.js";
 
 const { fullName } = Astro.props;
-const { name, surname } = extractName(fullName);
-const lowerCaseSurname = surname.toLowerCase();
+const { name, familyName } = extractName(fullName);
+const lowerCaseFamilyname = familyName.toLowerCase();
 ---
 
 <a
-  href={`/${lowerCaseSurname}`}
+  href={`/${lowerCaseFamilyname}`}
   transition:name="hero"
   class="h-full w-full bg-[#0d7724] mix-blend-hard-light relative green-bg col-start-1 col-end-2 row-start-1 row-end-2"
 >
   <HeroName
     name={name}
-    surname={surname}
+    familyName={familyName}
     color="#fbd3d3"
     gridColumn="1/2"
     gridRow="1/2"

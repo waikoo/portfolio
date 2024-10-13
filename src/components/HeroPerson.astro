@@ -7,8 +7,8 @@ import HeroPersonOccupation from "./HeroPersonOccupation.astro";
 
 const { fullName, className, occupation } = Astro.props;
 
-const { name: familyName, surname } = extractName(fullName);
-const lowerCaseSurname = surname.toLowerCase();
+const { name, familyName } = extractName(fullName);
+const lowerCaseName = name.toLowerCase();
 
 const colors = {
   barna: {
@@ -21,19 +21,15 @@ const colors = {
   },
 } as const;
 
-const color = colors[lowerCaseSurname as keyof typeof colors];
+const color = colors[lowerCaseName as keyof typeof colors];
 ---
 
-<HeroPersonBg surname={surname} className={className}>
+<HeroPersonBg name={name} className={className}>
   <section class="translate-y-[70px] lg:translate-y-[110px] z-10">
-    <HeroPersonName
-      familyName={familyName}
-      surname={surname}
-      color={color.name}
-    />
+    <HeroPersonName familyName={familyName} name={name} color={color.name} />
 
     <HeroPersonOccupation
-      surname={surname}
+      name={name}
       iconColor={color.occupation}
       occupation={occupation}
     />

@@ -1,7 +1,7 @@
 ---
 import "@fontsource/jost/200.css";
 
-const { familyName, surname, color } = Astro.props;
+const { familyName, name, color } = Astro.props;
 ---
 
 <div
@@ -15,7 +15,7 @@ const { familyName, surname, color } = Astro.props;
     style={{ color: color }}
     class="-translate-y-11 sm:-translate-y-[60px] lg:-translate-y-[80px]"
   >
-    {surname}
+    {name}
   </p>
 </div>
 

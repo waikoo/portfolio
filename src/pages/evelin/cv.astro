@@ -1,8 +1,27 @@
 ---
 import PersonLayout from "../../components/PersonLayout.astro";
+import IconDownload from "../../components/IconDownload.astro";
 import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="Szász Evelin">
-  <PersonLayout />
+  <PersonLayout>
+    <section class="grid justify-center mt-10">
+      <embed
+        src="/Szasz_Barna_CV.pdf#toolbar=0"
+        width="800"
+        height="500"
+        title="Szász Evelin - Curriculum Vitæ"
+        class="z-20 w-[1000px] h-[1380px] relative isolate"
+      />
+      <a
+        href="/Szasz_Barna_CV.pdf"
+        target="_blank"
+        class="absolute right-10 top-10 -mt-[7rem] z-30 flex gap-2 items-center"
+      >
+        <IconDownload />
+        Download
+      </a>
+    </section>
+  </PersonLayout>
 </Layout>

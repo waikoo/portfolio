@@ -1,10 +1,10 @@
 ---
 import HeroCircle from "./HeroCircle.astro";
 
-const { surname, iconColor, occupation } = Astro.props;
+const { name, iconColor, occupation } = Astro.props;
 const [first, second] = occupation.split(" ");
 const translateXOnMobile =
-  surname === "EVELIN"
+  name === "EVELIN"
     ? "translate-x-4 sm:translate-x-[52px] sm:translate-x-[40px] lg:translate-x-[35px]"
     : "sm:translate-x-[28px] lg:translate-x-[10px]";
 ---

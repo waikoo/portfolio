@@ -4,10 +4,10 @@ import PersonHeader from "../components/PersonHeader.astro";
 const endpoint = "EVELIN";
 ---
 
-<main class="relative w-screen h-screen overflow-visible min-h-[100%]">
+<div class="relative w-screen h-screen overflow-visible min-h-[100%]">
   <HeroBackground endpoint={endpoint} />
 
   <PersonHeader endpoint={endpoint} />
 
   <slot />
-</main>
+</div>
