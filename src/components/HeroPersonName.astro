@@ -4,12 +4,15 @@ import "@fontsource/jost/200.css";
 const { familyName, surname, color } = Astro.props;
 ---
 
-<div class="relative z-10 text-[60px] sm:text-[90px]">
+<div class="relative z-10 text-[60px] sm:text-[90px] lg:text-[110px]">
   <p style={{ color: color }} class="">
     {familyName}
   </p>
 
-  <p style={{ color: color }} class="-translate-y-11 sm:-translate-y-[60px]">
+  <p
+    style={{ color: color }}
+    class="-translate-y-11 sm:-translate-y-[60px] lg:-translate-y-[80px]"
+  >
     {surname}
   </p>
 </div>

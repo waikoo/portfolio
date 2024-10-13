@@ -1,5 +1,6 @@
 ---
 import IconArrowMobile from "./IconArrowMobile.astro";
+import IconArrowSmallDesktop from "./IconArrowSmallDesktop.astro";
 import IconArrowTablet from "./IconArrowTablet.astro";
 
 const { iconColor } = Astro.props;
@@ -9,13 +10,18 @@ const lowerOpacityIconColor = `${iconColor}25`;
 <div>
   <div
     style={{ backgroundColor: lowerOpacityIconColor }}
-    class={`grid place-items-center rounded-full p-[1.20rem] sm:p-[1.70rem] mt-4`}
+    class={`grid place-items-center rounded-full p-[1.20rem] sm:p-[1.70rem] mt-4 lg:mt-0 lg:mr-2`}
   >
     <IconArrowMobile iconColor={iconColor} className="sm:hidden" />
 
     <IconArrowTablet
       iconColor={iconColor}
       className="hidden sm:block lg:hidden"
+    />
+
+    <IconArrowSmallDesktop
+      iconColor={iconColor}
+      className="hidden sm:hidden lg:block xl:hidden"
     />
   </div>
 </div>

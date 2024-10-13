@@ -6,19 +6,25 @@ const bg = surname === "BARNA" ? "bg-[#0D7724] " : "bg-[#39076D] ";
 const blendModes =
   surname === "BARNA"
     ? "mix-blend-hard-light brightness-[110%]"
-    : "mix-blend-multiply brightness-[100%]";
+    : "mix-blend-multiply";
 ---
 
 <a
-  class={`flex-1 w-full h-[50dvh] grid justify-end items-end p-6 sm:p-10 py-5 sm:py-3 ${className} relative`}
+  class={`w-full h-[50dvh] lg:h-[100dvh] grid justify-end items-end p-6 sm:p-10 py-5 sm:py-3 lg:py-[0px] lg:p-16 ${className} relative`}
   href={`/${surname.toLowerCase()}`}
 >
-  <article class={`h-full w-full ${bg} ${blendModes} absolute`}>
+  <article class={`h-full w-full lg:h-[100dvh] ${bg} ${blendModes} absolute`}>
     <div
-      class={`${surname === "EVELIN" ? "bg-[#FEC8FF] mix-blend-saturation w-screen h-full" : ""}`}
+      class={`${surname === "EVELIN" ? "bg-[#FEC8FF] mix-blend-saturation w-screen h-full lg:w-[50vw]" : ""} evelin-bg`}
     >
     </div>
   </article>
 
   <slot />
 </a>
+
+<style>
+  .evelin-bg {
+    filter: hue-rotate(280deg);
+  }
+</style>

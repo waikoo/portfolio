@@ -11,6 +11,7 @@
 
 <style>
   .follow-circle {
+    display: none;
     position: absolute;
     width: 40px;
     height: 40px;
@@ -18,5 +19,11 @@
     background: red;
     pointer-events: none;
     transition: transform 0.1s ease-out;
+  }
+
+  @media (min-width: 1024px) {
+    .follow-circle {
+      display: block;
+    }
   }
 </style>

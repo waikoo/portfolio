@@ -10,15 +10,15 @@ import HeroBackground from "../components/HeroBackground.astro";
   <main class="relative w-screen h-[100dvh]">
     <HeroBackground />
 
-    <div class="w-full h-full grid grid-cols-1 grid-rows-2">
+    <div class="w-full h-full grid grid-cols-1 grid-rows-2 lg:grid-cols-2">
       <HeroPerson
         fullName="SZÁSZ BARNA"
-        className="col-start-1 col-end-2 row-start-1 row-end-2"
+        className="col-start-1 col-end-2 row-start-1 row-end-2 lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-2"
         occupation="Front-End Developer"
       />
       <HeroPerson
         fullName="SZÁSZ EVELIN"
-        className="col-start-1 col-end-2 row-start-2 row-end-3"
+        className="col-start-1 col-end-2 row-start-2 row-end-3 lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-2"
         occupation="UI/UX Designer"
       />
     </div>
