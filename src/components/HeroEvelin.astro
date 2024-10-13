@@ -2,21 +2,20 @@
 import "@fontsource/jost/200.css";
 import HeroName from "./HeroName.astro";
 import { extractName } from "../utils/extractName.js";
-import HeroCircle from "./HeroCircle.astro";
 
 const { fullName } = Astro.props;
-const { name, surname } = extractName(fullName);
-const lowerCaseSurname = surname.toLowerCase();
+const { name, familyName } = extractName(fullName);
+const lowerCaseName = name.toLowerCase();
 ---
 
 <a
-  href={`/${lowerCaseSurname}`}
+  href={`/${lowerCaseName}`}
   transition:name="hero"
   class="bg-[#fec8ff] h-full w-full col-start-2 col-end-3 row-start-1 row-end-2 mix-blend-overlay evelin-bg relative"
 >
   <HeroName
     name={name}
-    surname={surname}
+    familyName={familyName}
     color="#FF4961"
     gridColumn="2/3"
     gridRow="1/2"
