@@ -5,36 +5,7 @@ import BarnaLayout from "../components/BarnaLayout.astro";
 import { projects } from "../projects/data";
 
 // const referer = Astro.request.headers.get("referer");
-const referer = "";
 ---
-
-<script>
-  const circle = document.querySelector(".barna-circle");
-
-  setTimeout(() => {
-    if (circle) {
-      circle.classList.add("move-circle");
-    }
-  }, 10);
-
-  setTimeout(() => {
-    if (circle) {
-      circle.classList.add("vanish");
-    }
-  }, 500);
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      } else {
-        entry.target.classList.remove("show");
-      }
-    });
-  });
-  const elements = document.querySelectorAll(".barna-project");
-  elements.forEach((el) => observer.observe(el));
-</script>
 
 <Layout title="Szász Barna's Projects">
   <BarnaLayout>

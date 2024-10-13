@@ -1,8 +1,7 @@
 ---
 import BarnaNameTag from "../components/BarnaNameTag.astro";
 import BarnaMenu from "../components/BarnaMenu.astro";
-import BarnaProjectCard from "../components/BarnaProjectCard.astro";
-import { projects } from "../projects/data";
+import Animation from "./Animation.astro";
 
 const referer = "";
 ---
@@ -11,20 +10,7 @@ const referer = "";
   class="absolute w-screen bg-[url('/images/bubbles.jpg')] bg-cover bg-no-repeat bg-fixed h-[2000px]"
 >
   <div class="w-screen">
-    <video
-      class="absolute w-full h-[2000px] object-cover mix-blend-color-dodge"
-      autoplay
-      loop
-      muted
-      playsinline
-      transition:persist
-    >
-      <source
-        type="video/mp4; codecs=av01"
-        src="/videos/animated_gradient_av1.mp4"
-      />
-      <source type="video/mp4" src="/videos/animated_gradient.mp4" />
-    </video>
+    <Animation />
   </div>
 
   <div class="bg-[#206433] mix-blend-darken w-screen h-[2000px] relative z-10">
