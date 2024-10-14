@@ -1,0 +1,9 @@
+---
+const { href, isCurrentPage } = Astro.props;
+---
+
+<li>
+  <a class={`${isCurrentPage}`} href={`${href}`}>
+    <slot />
+  </a>
+</li>

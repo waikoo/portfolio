@@ -1,4 +1,5 @@
 ---
+import PersonHeaderLink from "./PersonHeaderLink.astro";
 import PersonNameTag from "./PersonNameTag.astro";
 const { endpoint } = Astro.props;
 const lowercasedEndpoint = endpoint.toLowerCase();
@@ -18,21 +19,17 @@ const isAbout = currentUrl.includes("about")
 
 <header class="flex justify-between px-[100px] py-3 isolate items-center">
   <ul class="flex text-[#e296f5] text-[1rem] gap-[20px]">
-    <li>
-      <a href={`/`}>Home</a>
-    </li>
-    <li class={`${isProjects}`}>
-      <a href={`/${lowercasedEndpoint}`}>Projects</a>
-    </li>
-    <li class={`${isCV}`}>
-      <a href={`/${lowercasedEndpoint}/cv`}>CV</a>
-    </li>
-    <li class={`${isContact}`}>
-      <a href={`/${lowercasedEndpoint}/contact`}>Contact</a>
-    </li>
-    <li class={`${isAbout}`}>
-      <a href={`/${lowercasedEndpoint}/about`}>About</a>
-    </li>
+    <PersonHeaderLink href="/">Home</PersonHeaderLink>
+    <PersonHeaderLink href={`/${lowercasedEndpoint}`}>Projects</PersonHeaderLink
+    >
+    <PersonHeaderLink href={`/${lowercasedEndpoint}/cv`}>CV</PersonHeaderLink>
+
+    <PersonHeaderLink href={`/${lowercasedEndpoint}/contact`}
+      >Contact</PersonHeaderLink
+    >
+    <PersonHeaderLink href={`/${lowercasedEndpoint}/about`}
+      >About</PersonHeaderLink
+    >
   </ul>
 
   <PersonNameTag familyName="SZÁSZ" name="EVELIN" />
