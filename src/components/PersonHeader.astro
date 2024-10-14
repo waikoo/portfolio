@@ -6,7 +6,7 @@ const { endpoint } = Astro.props;
 
 const lowercasedEndpoint = endpoint.toLowerCase();
 const { url: currentUrl } = Astro.request;
-const isOnProjects = currentUrl.includes(endpoint.toLowerCase());
+const isOnProjects = currentUrl.includes(lowercasedEndpoint);
 const isOnCV = currentUrl.includes("cv");
 const isOnContact = currentUrl.includes("contact");
 const isOnAbout = currentUrl.includes("about");
