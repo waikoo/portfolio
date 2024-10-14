@@ -43,7 +43,7 @@ const { id, name, description, src, tags, live, github, color } = Astro.props;
     >
     <PersonProjectCardDescription description={description} github={github} />
     <BarnaMenuTags tags={tags} color={color} />
-    <BarnaMenuLinks live={live} github={github} color={color} />
+    <BarnaMenuLinks live={live} github={github} color={color} id={id} />
   </div>
 </section>
 
