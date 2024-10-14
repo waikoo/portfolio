@@ -40,9 +40,9 @@ const reversedFlex =
 </script>
 
 <header
-  class={`flex justify-between ${reversedFlex} px-[100px] items-center sticky top-0 z-50 isolate`}
+  class={`flex justify-between ${reversedFlex} mx-auto lg:w-[90%] items-center sticky top-0 z-50 isolate`}
 >
-  <ul class={`flex text-[1rem] gap-[20px]`}>
+  <ul class={`flex text-[1rem] gap-[20px] pt-5`}>
     <PersonHeaderLink href="/">Home</PersonHeaderLink>
     <PersonHeaderLink href={`/${lowercasedName}`} isCurrentPage={isOnProjects}
       >Projects</PersonHeaderLink

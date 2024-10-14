@@ -1,27 +1,26 @@
 ---
-const { tags } = Astro.props;
+const { tags, color } = Astro.props;
 ---
 
 <div
-  class="text-[#c3f96a] flex gap-10 text-right w-full flex-wrap justify-end ml-auto mt-10 align-end"
+  style={{ color: color }}
+  class="flex gap-[6px] text-right w-full flex-wrap justify-end ml-auto align-end"
 >
   {
     tags.map((tag: string) => (
-      <div class="rounded-full bg-black/15 p-2">
-        <span class="jost-semibold">{tag}</span>
+      <div
+        class="rounded-full p-1 px-3 mt-[2px] lg:text-[10px]"
+        style={{ backgroundColor: `${color}15` }}
+      >
+        <span class="">{tag}</span>
       </div>
     ))
   }
 </div>
 
 <style>
-  .jost-semibold {
+  span {
     font-family: "Jost", sans-serif;
     font-weight: 600;
-  }
-
-  .jost {
-    font-family: "Jost", sans-serif;
-    font-weight: 700;
   }
 </style>

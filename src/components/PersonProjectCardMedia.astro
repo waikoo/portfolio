@@ -1,0 +1,16 @@
+---
+import PersonProjectCardImage from "./PersonProjectCardImage.astro";
+import PersonProjectCardVideo from "./PersonProjectCardVideo.astro";
+
+const { src, description } = Astro.props;
+---
+
+<div class="place-self-center">
+  {
+    Array.isArray(src) ? (
+      <PersonProjectCardVideo src={src} />
+    ) : (
+      <PersonProjectCardImage src={src} description={description} />
+    )
+  }
+</div>

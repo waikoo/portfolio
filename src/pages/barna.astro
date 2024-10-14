@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import BarnaProjectCard from "../components/BarnaProjectCard.astro";
-import BarnaLayout from "../components/BarnaLayout.astro";
 import { projects } from "../projects/data";
 import PersonLayout from "../components/PersonLayout.astro";
 
@@ -10,7 +9,7 @@ const fullName = "Szász Barna";
 
 <Layout title={`${fullName}'s Projects`}>
   <PersonLayout fullName={fullName}>
-    <div class="lg:max-w-[80%] mx-auto">
+    <div class="lg:max-w-[90%] mx-auto">
       {projects.map((project) => <BarnaProjectCard {...project} />)}
     </div>
   </PersonLayout>

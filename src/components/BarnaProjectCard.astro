@@ -1,9 +1,11 @@
 ---
-import "@fontsource/jost/700.css";
 import "@fontsource/jost/600.css";
 import BarnaMenuLinks from "./BarnaMenuLinks.astro";
 import BarnaMenuTags from "./BarnaMenuTags.astro";
-const { name, description, src, tags, live, github } = Astro.props;
+import PersonProjectCardDescription from "./PersonProjectCardDescription.astro";
+import PersonProjectCardTitle from "./PersonProjectCardTitle.astro";
+import PersonProjectCardMedia from "./PersonProjectCardMedia.astro";
+const { id, name, description, src, tags, live, github, color } = Astro.props;
 ---
 
 <script>
@@ -23,78 +25,56 @@ const { name, description, src, tags, live, github } = Astro.props;
   });
 </script>
 
-<section class="relative mt-20 project">
-  <p
-    class="text-[#c3f96a] text-[70px] jost tracking-[-0.1em] -mb-[15px] text-right barna-project"
+<section
+  class={`relative grid mt-20 project gap-[8px] grid-rows-[auto] items-center justify-items-center ${id === 2 ? "mx-auto grid-cols-[35%_65%] " : "grid-cols-[65%_35%]"}`}
+>
+  <div
+    class={`aspect-video grid ${id === 2 || id === 4 ? "col-start-2 col-end-3 row-start-1 row-end-2" : "col-start-1 col-end-2"}`}
   >
-    {name}
-  </p>
-
-  <div class="w-full h-[1px] bg-[#c3f96a]/20 jost"></div>
-
-  <div class="flex flex-col gap-10 mt-4">
-    <div class="full gap-10 justify-between flex">
-      <div class="aspect-video h-[400px]">
-        <video
-          class="rounded-[20px]"
-          autoplay
-          loop
-          muted
-          playsinline
-          transition:persist
-          width={640}
-        >
-          <source type="video/mp4; codecs=av01" src={src[0]} />
-          <source type="video/mp4" src={src[1]} />
-        </video>
-        <BarnaMenuLinks live={live} github={github} />
-      </div>
-
-      <div class="text-[#c3f96a] text-right flex flex-col gap-8">
-        <p class="text-[14px] jost-semibold tracking-[2px] text-white">
-          {description.toUpperCase()}
-        </p>
-
-        <a href={github} class="underline underline-offset-2 jost">READ MORE</a>
-        <BarnaMenuTags tags={tags} />
-      </div>
-    </div>
+    <PersonProjectCardMedia src={src} description={description} />
   </div>
 
-  <style>
-    .jost-semibold {
-      font-family: "Jost", sans-serif;
-      font-weight: 600;
-    }
-
-    .jost {
-      font-family: "Jost", sans-serif;
-      font-weight: 700;
-    }
-
-    .project {
-      --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      opacity: 0;
-      transform: translateX(-200px);
-      transition:
-        opacity 0.5s var(--ease-out-quad),
-        transform 0.5s var(--ease-out-quad);
-    }
-
-    .project.in-view {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    @keyframes fade-in {
-      from {
-        opacity: 0;
-        transform: translateX(-100px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0px);
-      }
-    }
-  </style>
+  <div
+    class={`text-right flex flex-col gap-[28px] backdrop-blur-lg rounded-[30px] bg-black/5 grid-rows-[auto_auto_auto_auto_auto] ${id === 2 || id === 4 ? "col-start-1 col-end-2 row-start-1 row-end-2" : "col-start-2 col-end-3"} p-[30px]`}
+    style={{ color: color }}
+  >
+    <PersonProjectCardTitle color={color}
+      >{name.toUpperCase()}</PersonProjectCardTitle
+    >
+    <PersonProjectCardDescription description={description} github={github} />
+    <BarnaMenuTags tags={tags} color={color} />
+    <BarnaMenuLinks live={live} github={github} color={color} />
+  </div>
 </section>
+
+<style>
+  .jost-semibold {
+    font-family: "Jost", sans-serif;
+    font-weight: 600;
+  }
+
+  .project {
+    --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 0;
+    transform: translateX(-200px);
+    transition:
+      opacity 0.5s var(--ease-out-quad),
+      transform 0.5s var(--ease-out-quad);
+  }
+
+  .project.in-view {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+</style>

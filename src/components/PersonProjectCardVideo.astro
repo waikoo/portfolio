@@ -1,0 +1,16 @@
+---
+const { src } = Astro.props;
+---
+
+<video
+  class="rounded-[20px] w-[90%] mx-auto"
+  autoplay
+  loop
+  muted
+  playsinline
+  transition:persist
+  width={640}
+>
+  <source type="video/mp4; codecs=av01" src={src[0]} />
+  <source type="video/mp4" src={src[1]} />
+</video>

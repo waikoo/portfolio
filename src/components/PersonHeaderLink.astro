@@ -14,7 +14,7 @@ const homeTextColor = href === "/" ? homeColor : "";
 
 <li>
   <a
-    class={`${isCurrentPage} ${textColor} ${homeTextColor}  flex flex-col relative`}
+    class={`${isCurrentPage} ${textColor} ${homeTextColor} lg:text-[1rem] flex flex-col relative`}
     href={`${href}`}
   >
     <slot />
@@ -22,7 +22,7 @@ const homeTextColor = href === "/" ? homeColor : "";
       isCurrentPage ? (
         <div
           transition:name="circle"
-          class={`absolute h-[10px] w-[10px] block rounded-full m-auto inset-0 mt-8 ${circleColor}`}
+          class={`absolute h-[8px] w-[8px] block rounded-full m-auto inset-0 mt-[1.45rem] ${circleColor}`}
         />
       ) : null
     }
