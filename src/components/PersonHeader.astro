@@ -1,34 +1,35 @@
 ---
 import PersonHeaderLink from "./PersonHeaderLink.astro";
 import PersonNameTag from "./PersonNameTag.astro";
+
 const { endpoint } = Astro.props;
+
 const lowercasedEndpoint = endpoint.toLowerCase();
 const { url: currentUrl } = Astro.request;
-const isProjects =
-  currentUrl.split("/").at(-1) === endpoint.toLowerCase()
-    ? "text-[#efd6f5]"
-    : "text-[#e296f5]";
-const isCV = currentUrl.includes("cv") ? "text-[#efd6f5]" : "text-[#e296f5]";
-const isContact = currentUrl.includes("contact")
-  ? "text-[#efd6f5]"
-  : "text-[#e296f5]";
-const isAbout = currentUrl.includes("about")
-  ? "text-[#efd6f5]"
-  : "text-[#e296f5]";
+const isOnProjects = currentUrl.split("/").at(-1) === endpoint.toLowerCase();
+const isOnCV = currentUrl.includes("cv");
+const isOnContact = currentUrl.includes("contact");
+const isOnAbout = currentUrl.includes("about");
 ---
 
 <header class="flex justify-between px-[100px] py-3 isolate items-center">
   <ul class="flex text-[#e296f5] text-[1rem] gap-[20px]">
     <PersonHeaderLink href="/">Home</PersonHeaderLink>
-    <PersonHeaderLink href={`/${lowercasedEndpoint}`}>Projects</PersonHeaderLink
+    <PersonHeaderLink
+      href={`/${lowercasedEndpoint}`}
+      isCurrentPage={isOnProjects}>Projects</PersonHeaderLink
     >
-    <PersonHeaderLink href={`/${lowercasedEndpoint}/cv`}>CV</PersonHeaderLink>
+    <PersonHeaderLink href={`/${lowercasedEndpoint}/cv`} isCurrentPage={isOnCV}
+      >CV</PersonHeaderLink
+    >
 
-    <PersonHeaderLink href={`/${lowercasedEndpoint}/contact`}
-      >Contact</PersonHeaderLink
+    <PersonHeaderLink
+      href={`/${lowercasedEndpoint}/contact`}
+      isCurrentPage={isOnContact}>Contact</PersonHeaderLink
     >
-    <PersonHeaderLink href={`/${lowercasedEndpoint}/about`}
-      >About</PersonHeaderLink
+    <PersonHeaderLink
+      href={`/${lowercasedEndpoint}/about`}
+      isCurrentPage={isOnAbout}>About</PersonHeaderLink
     >
   </ul>
 
