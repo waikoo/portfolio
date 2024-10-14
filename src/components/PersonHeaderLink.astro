@@ -1,13 +1,16 @@
 ---
+import "@fontsource/jost/400.css";
 const { href, isCurrentPage } = Astro.props;
 
-const circleColor = href.includes("evelin") ? "bg-[#efd6f5]" : "bg-green-200";
-const textColor = isCurrentPage ? "text-[#efd6f5]" : "text-[#e296f5]";
+const circleColor = href.includes("evelin") ? "bg-[#efd6f5]" : "bg-[#D9D62D]";
+const evelinTextColor = isCurrentPage ? "text-[#efd6f5]" : "text-[#e296f5]";
+const barnaTextColor = isCurrentPage ? "text-[#D9D62D]" : "text-white";
+const textColor = href.includes("barna") ? barnaTextColor : evelinTextColor;
 ---
 
 <li>
   <a
-    class={`${isCurrentPage} ${textColor} flex flex-col relative`}
+    class={`${isCurrentPage} ${textColor} ${evelinTextColor} flex flex-col relative`}
     href={`${href}`}
   >
     <slot />
@@ -21,3 +24,10 @@ const textColor = isCurrentPage ? "text-[#efd6f5]" : "text-[#e296f5]";
     }
   </a>
 </li>
+
+<style>
+  li {
+    font-family: "Jost", sans-serif;
+    font-weight: 400;
+  }
+</style>

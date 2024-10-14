@@ -3,14 +3,15 @@ import Layout from "../layouts/Layout.astro";
 import BarnaProjectCard from "../components/BarnaProjectCard.astro";
 import BarnaLayout from "../components/BarnaLayout.astro";
 import { projects } from "../projects/data";
+import PersonLayout from "../components/PersonLayout.astro";
 
-// const referer = Astro.request.headers.get("referer");
+const fullName = "Szász Barna";
 ---
 
-<Layout title="Szász Barna's Projects">
-  <BarnaLayout>
-    <div class="-mt-[13.5rem] ml-[33rem]">
+<Layout title={`${fullName}'s Projects`}>
+  <PersonLayout fullName={fullName}>
+    <div class="lg:max-w-[80%] mx-auto">
       {projects.map((project) => <BarnaProjectCard {...project} />)}
     </div>
-  </BarnaLayout>
+  </PersonLayout>
 </Layout>

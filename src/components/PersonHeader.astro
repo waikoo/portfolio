@@ -34,7 +34,7 @@ const isOnAbout = currentUrl.includes("about");
 <header
   class="flex justify-between px-[100px] items-center sticky top-0 z-50 isolate"
 >
-  <ul class="flex text-[#e296f5] text-[1rem] gap-[20px]">
+  <ul class={`flex text-[1rem] gap-[20px]`}>
     <PersonHeaderLink href="/">Home</PersonHeaderLink>
     <PersonHeaderLink
       href={`/${lowercasedEndpoint}`}
