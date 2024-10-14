@@ -12,7 +12,28 @@ const isOnContact = currentUrl.includes("contact");
 const isOnAbout = currentUrl.includes("about");
 ---
 
-<header class="flex justify-between px-[100px] py-3 isolate items-center">
+<script>
+  window.addEventListener("scroll", () => {
+    const header = document.querySelector("header");
+    if (header) {
+      if (window.scrollY > 0) {
+        header.classList.add("bg-[#15000c]");
+        header.classList.add("bg-opacity-80");
+        header.classList.add("drop-shadow-md");
+        header.classList.add("z-50");
+      } else {
+        header.classList.remove("bg-[#15000c]");
+        header.classList.remove("bg-opacity-80");
+        header.classList.remove("drop-shadow-md");
+        header.classList.remove("z-50");
+      }
+    }
+  });
+</script>
+
+<header
+  class="flex justify-between px-[100px] items-center sticky top-0 z-50 isolate"
+>
   <ul class="flex text-[#e296f5] text-[1rem] gap-[20px]">
     <PersonHeaderLink href="/">Home</PersonHeaderLink>
     <PersonHeaderLink
@@ -35,3 +56,9 @@ const isOnAbout = currentUrl.includes("about");
 
   <PersonNameTag familyName="SZÁSZ" name="EVELIN" />
 </header>
+
+<style>
+  header {
+    transition: background-color 0.2s ease-out;
+  }
+</style>
