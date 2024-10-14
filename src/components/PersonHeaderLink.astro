@@ -6,11 +6,15 @@ const circleColor = href.includes("evelin") ? "bg-[#efd6f5]" : "bg-[#D9D62D]";
 const evelinTextColor = isCurrentPage ? "text-[#efd6f5]" : "text-[#e296f5]";
 const barnaTextColor = isCurrentPage ? "text-[#D9D62D]" : "text-white";
 const textColor = href.includes("barna") ? barnaTextColor : evelinTextColor;
+const homeColor = Astro.request.url.toString().includes("barna")
+  ? "text-white"
+  : "text-[#e296f5]";
+const homeTextColor = href === "/" ? homeColor : "";
 ---
 
 <li>
   <a
-    class={`${isCurrentPage} ${textColor} ${evelinTextColor} flex flex-col relative`}
+    class={`${isCurrentPage} ${textColor} ${homeTextColor}  flex flex-col relative`}
     href={`${href}`}
   >
     <slot />

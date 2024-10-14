@@ -2,19 +2,17 @@
 const { name } = Astro.props;
 const textAlign =
   name === "EVELIN" ? "justify-items-end" : "justify-items-start";
-const textColor = name === "EVELIN" ? `text-[#e296f5]` : `text-green`;
+const textColor = name === "EVELIN" ? `text-[#e296f5]` : `text-white`;
 ---
 
-<div
-  class={`grid grid-rows-3 gap-0 jost text-[15px] ${textColor} ${textAlign}`}
->
+<div class={`grid grid-rows-3 gap-0 text-[15px] ${textColor} ${textAlign}`}>
   <p class="">{name === "BARNA" ? "FRONT" : "UI"}</p>
   <p class="-mt-2">{name === "BARNA" ? "END" : "UX"}</p>
   <p class="-mt-4">{name === "BARNA" ? "DEVELOPER" : "DESIGNER"}</p>
 </div>
 
 <style>
-  .jost {
+  div {
     font-family: "Jost", sans-serif;
     font-weight: 700;
   }
