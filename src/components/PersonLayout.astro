@@ -1,13 +1,16 @@
 ---
 import HeroBackground from "../components/HeroBackground.astro";
 import PersonHeader from "../components/PersonHeader.astro";
-const endpoint = "EVELIN";
+import { extractName } from "../utils/extractName";
+
+const { fullName } = Astro.props;
+const { name } = extractName(fullName);
 ---
 
 <div class="relative w-screen h-screen overflow-visible min-h-[100%]">
-  <HeroBackground endpoint={endpoint} />
+  <HeroBackground endpoint={name.toUpperCase()} />
 
-  <PersonHeader endpoint={endpoint} />
+  <PersonHeader endpoint={name} />
 
   <slot />
 </div>
