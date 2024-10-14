@@ -2,10 +2,12 @@
 import PersonContactItem from "../../components/PersonContactItem.astro";
 import PersonLayout from "../../components/PersonLayout.astro";
 import Layout from "../../layouts/Layout.astro";
+
+const fullName = "Szász Evelin";
 ---
 
-<Layout title="Contact Szász Evelin">
-  <PersonLayout>
+<Layout title={`Contact ${fullName}`}>
+  <PersonLayout fullName={fullName}>
     <section
       class="fixed min-h-[calc(100%-240px)] w-screen grid place-items-center pointer-events-none"
     >

@@ -1,8 +1,10 @@
 ---
 import PersonLayout from "../../components/PersonLayout.astro";
 import Layout from "../../layouts/Layout.astro";
+
+const fullName = "Szász Evelin";
 ---
 
-<Layout title="Szász Evelin">
-  <PersonLayout />
+<Layout title={`About ${fullName}`}>
+  <PersonLayout fullName={fullName} />
 </Layout>
