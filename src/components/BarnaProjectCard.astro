@@ -6,18 +6,23 @@ import PersonProjectCardDescription from "./PersonProjectCardDescription.astro";
 import PersonProjectCardTitle from "./PersonProjectCardTitle.astro";
 import PersonProjectCardMedia from "./PersonProjectCardMedia.astro";
 const { id, name, description, src, tags, live, github, color } = Astro.props;
+
+const projectWrapper =
+  id === 2 ? "mx-auto grid-cols-[35%_65%] " : "grid-cols-[65%_35%]";
+const mediaWrapper =
+  id === 2 || id === 4
+    ? "col-start-2 col-end-3 row-start-1 row-end-2"
+    : "col-start-1 col-end-2";
+const textWrapper =
+  id === 2 || id === 4
+    ? "col-start-1 col-end-2 row-start-1 row-end-2"
+    : "col-start-2 col-end-3";
 ---
 
 <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("in-view");
-      } else {
-        entry.target.classList.remove("in-view");
-      }
-    });
-  });
+  import { addClass } from "../utils/addClass";
+
+  const observer = new IntersectionObserver((elements) => addClass(elements));
 
   const projects = document.querySelectorAll(".project");
   projects.forEach((project) => {
@@ -26,16 +31,14 @@ const { id, name, description, src, tags, live, github, color } = Astro.props;
 </script>
 
 <section
-  class={`relative grid mt-20 project gap-[8px] grid-rows-[auto] items-center justify-items-center ${id === 2 ? "mx-auto grid-cols-[35%_65%] " : "grid-cols-[65%_35%]"}`}
+  class={`relative grid mt-20 project gap-[8px] grid-rows-[auto] items-center justify-items-center ${projectWrapper}`}
 >
-  <div
-    class={`aspect-video grid ${id === 2 || id === 4 ? "col-start-2 col-end-3 row-start-1 row-end-2" : "col-start-1 col-end-2"}`}
-  >
+  <div class={`aspect-video grid ${mediaWrapper}`}>
     <PersonProjectCardMedia src={src} description={description} />
   </div>
 
   <div
-    class={`text-right flex flex-col gap-[28px] backdrop-blur-lg rounded-[30px] bg-black/5 grid-rows-[auto_auto_auto_auto_auto] ${id === 2 || id === 4 ? "col-start-1 col-end-2 row-start-1 row-end-2" : "col-start-2 col-end-3"} p-[30px]`}
+    class={`text-right flex flex-col gap-[28px] backdrop-blur-lg rounded-[30px] bg-black/5 grid-rows-[auto_auto_auto_auto_auto] ${textWrapper} p-[30px]`}
     style={{ color: color }}
   >
     <PersonProjectCardTitle color={color}
