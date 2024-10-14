@@ -6,13 +6,16 @@ const textColor = isCurrentPage ? "text-[#efd6f5]" : "text-[#e296f5]";
 ---
 
 <li>
-  <a class={`${isCurrentPage} ${textColor} flex flex-col`} href={`${href}`}>
+  <a
+    class={`${isCurrentPage} ${textColor} flex flex-col relative`}
+    href={`${href}`}
+  >
     <slot />
     {
       isCurrentPage ? (
         <div
           transition:name="circle"
-          class={`h-[10px] w-[10px] block rounded-full mx-auto mt-[8px] ${circleColor}`}
+          class={`absolute h-[10px] w-[10px] block rounded-full m-auto inset-0 mt-8 ${circleColor}`}
         />
       ) : null
     }
