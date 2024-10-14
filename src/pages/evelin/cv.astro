@@ -2,20 +2,22 @@
 import PersonLayout from "../../components/PersonLayout.astro";
 import IconDownload from "../../components/IconDownload.astro";
 import Layout from "../../layouts/Layout.astro";
+
+const fullName = "Szász Evelin";
 ---
 
-<Layout title="Szász Evelin">
-  <PersonLayout>
+<Layout title={`${fullName}'s CV`}>
+  <PersonLayout fullName={fullName}>
     <section class="grid justify-center mt-10 isolate">
       <embed
-        src="/Szasz_Barna_CV.pdf#toolbar=0"
+        src="/Szasz_Evelin_CV.pdf#toolbar=0"
         width="800"
         height="500"
         title="Szász Evelin - Curriculum Vitæ"
         class="z-20 w-[1000px] h-[1380px] relative isolate"
       />
       <a
-        href="/Szasz_Barna_CV.pdf"
+        href="/Szasz_Evelin_CV.pdf"
         target="_blank"
         class="absolute right-10 top-10 -mt-[7rem] z-30 flex gap-2 items-center"
       >
