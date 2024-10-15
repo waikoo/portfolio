@@ -5,12 +5,10 @@ import PersonProjectCardVideo from "./PersonProjectCardVideo.astro";
 const { src, description, id } = Astro.props;
 ---
 
-<div class="">
-  {
-    Array.isArray(src) ? (
-      <PersonProjectCardVideo src={src} id={id} />
-    ) : (
-      <PersonProjectCardImage src={src} description={description} />
-    )
-  }
-</div>
+{
+  Array.isArray(src) ? (
+    <PersonProjectCardVideo src={src} id={id} />
+  ) : (
+    <PersonProjectCardImage src={src} description={description} />
+  )
+}
