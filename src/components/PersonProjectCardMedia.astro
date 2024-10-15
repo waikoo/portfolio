@@ -2,13 +2,13 @@
 import PersonProjectCardImage from "./PersonProjectCardImage.astro";
 import PersonProjectCardVideo from "./PersonProjectCardVideo.astro";
 
-const { src, description } = Astro.props;
+const { src, description, id } = Astro.props;
 ---
 
-<div class="place-self-center">
+<div class="">
   {
     Array.isArray(src) ? (
-      <PersonProjectCardVideo src={src} />
+      <PersonProjectCardVideo src={src} id={id} />
     ) : (
       <PersonProjectCardImage src={src} description={description} />
     )

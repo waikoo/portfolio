@@ -8,15 +8,23 @@ import PersonProjectCardMedia from "./PersonProjectCardMedia.astro";
 const { id, name, description, src, tags, live, github, color } = Astro.props;
 
 const projectWrapper =
-  id === 2 ? "mx-auto grid-cols-[35%_65%] " : "grid-cols-[65%_35%]";
+  id === 2
+    ? "mx-auto grid-cols-[1fr_4fr] "
+    : id === 3
+      ? "grid-cols-[5fr_2fr]"
+      : id === 4
+        ? "grid-cols[4fr_1fr]"
+        : "grid-cols-[4fr_1fr]";
 const mediaWrapper =
   id === 2 || id === 4
     ? "col-start-2 col-end-3 row-start-1 row-end-2"
     : "col-start-1 col-end-2";
 const textWrapper =
   id === 2 || id === 4
-    ? "col-start-1 col-end-2 row-start-1 row-end-2 gap-[20px]"
-    : "col-start-2 col-end-3 gap-[28px]";
+    ? "col-start-1 col-end-2 row-start-1 row-end-2 gap-[20px] text-left"
+    : "col-start-2 col-end-3 gap-[28px] text-right";
+const textWrapperGrid =
+  id === 4 ? "grid-rows-[auto_auto_auto]" : "grid-rows-[auto_auto_auto]";
 ---
 
 <script>
@@ -31,22 +39,28 @@ const textWrapper =
 </script>
 
 <section
-  class={`relative grid mt-20 project gap-[8px] grid-rows-[auto] items-center justify-items-center ${projectWrapper}`}
+  class={`relative grid mt-20 project gap-[30px] grid-rows-[auto] items-center backdrop-blur-lg rounded-[30px] bg-black/5 p-[30px] ${projectWrapper}`}
 >
-  <div class={`aspect-video grid ${mediaWrapper}`}>
-    <PersonProjectCardMedia src={src} description={description} />
+  <div class={`grid ${mediaWrapper} place-items-center `}>
+    <PersonProjectCardMedia src={src} description={description} id={id} />
   </div>
 
   <div
-    class={`text-right flex flex-col backdrop-blur-lg rounded-[30px] bg-black/5 grid-rows-[auto_auto_auto_auto_auto] ${textWrapper} p-[30px]`}
+    class={`grid ${textWrapperGrid} h-full items-stretch ${textWrapper}`}
     style={{ color: color }}
   >
     <PersonProjectCardTitle color={color}
       >{name.toUpperCase()}</PersonProjectCardTitle
     >
-    <PersonProjectCardDescription description={description} github={github} />
-    <BarnaMenuTags tags={tags} color={color} />
-    <BarnaMenuLinks live={live} github={github} color={color} id={id} />
+    <PersonProjectCardDescription
+      description={description}
+      github={github}
+      id={id}
+    />
+    <div class="flex flex-col gap-[30px]">
+      <BarnaMenuTags tags={tags} color={color} id={id} />
+      <BarnaMenuLinks live={live} github={github} color={color} id={id} />
+    </div>
   </div>
 </section>
 

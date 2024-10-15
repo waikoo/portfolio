@@ -31,7 +31,7 @@ export const projects = [{
 {
   id: 4,
   name: "Format Colors",
-  description: "A Chrome extension that matches unique color names to hsl values serving as a tool for frontendmentor.io challenges.",
+  description: "A Chrome extension that matches unique color names to hsl values serving as a tool for frontendmentor.io challenges. The user can choose between SCSS and CSS variables, that are automatically copied to their clipboard.",
   src: ["/videos/format_colors_av1.mp4", "/videos/format_colors.mp4"],
   tags: ["HTML", "CSS", "JAVASCRIPT"],
   live: "",

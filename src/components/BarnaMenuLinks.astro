@@ -2,9 +2,12 @@
 import "@fontsource/jost/600.css";
 
 const { live, github, color, id } = Astro.props;
+const alignment = id === 2 || id === 4 ? "justify-end" : "justify-start";
 ---
 
-<div class="flex flex-row-reverse gap-5 jost-semibold items-stretch">
+<div
+  class={`flex flex-row-reverse gap-5 jost-semibold items-stretch w-full ${alignment}`}
+>
   {
     id === 3 ? null : (
       <a

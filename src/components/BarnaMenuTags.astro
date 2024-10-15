@@ -1,10 +1,12 @@
 ---
-const { tags, color } = Astro.props;
+const { tags, color, id } = Astro.props;
+
+const alignment = id === 2 || id === 4 ? "justify-start" : "justify-end";
 ---
 
 <div
   style={{ color: color }}
-  class="flex gap-[6px] text-right w-full flex-wrap justify-end ml-auto align-end"
+  class={`flex gap-[6px] text-right w-full flex-wrap items-center ${alignment}`}
 >
   {
     tags.map((tag: string) => (
