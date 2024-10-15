@@ -13,7 +13,7 @@ const projectWrapper =
     : id === 3
       ? "grid-cols-[5fr_2fr]"
       : id === 4
-        ? "grid-cols[4fr_1fr]"
+        ? "grid-cols[4fr_1fr] 2xl:grid-cols-[2fr_2fr]"
         : "grid-cols-[4fr_1fr]";
 const mediaWrapper =
   id === 2 || id === 4
@@ -46,7 +46,7 @@ const textWrapperGrid =
   </div>
 
   <div
-    class={`grid ${textWrapperGrid} h-full items-stretch ${textWrapper}`}
+    class={`grid ${textWrapperGrid} h-full items-stretch content-center ${textWrapper}`}
     style={{ color: color }}
   >
     <PersonProjectCardTitle color={color}

@@ -3,13 +3,12 @@ const { src, id } = Astro.props;
 ---
 
 <video
-  class="rounded-[20px]"
+  class={`rounded-[20px] ${id === 4 ? "w-[200px] 2xl:w-[387px]" : "w-[640px]"} 2xl:w-[987px]`}
   autoplay
   loop
   muted
   playsinline
   transition:persist
-  width={id === 4 ? 200 : 640}
 >
   <source type="video/mp4; codecs=av01" src={src[0]} />
   <source type="video/mp4" src={src[1]} />
