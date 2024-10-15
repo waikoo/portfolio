@@ -15,8 +15,8 @@ const mediaWrapper =
     : "col-start-1 col-end-2";
 const textWrapper =
   id === 2 || id === 4
-    ? "col-start-1 col-end-2 row-start-1 row-end-2"
-    : "col-start-2 col-end-3";
+    ? "col-start-1 col-end-2 row-start-1 row-end-2 gap-[20px]"
+    : "col-start-2 col-end-3 gap-[28px]";
 ---
 
 <script>
@@ -38,7 +38,7 @@ const textWrapper =
   </div>
 
   <div
-    class={`text-right flex flex-col gap-[28px] backdrop-blur-lg rounded-[30px] bg-black/5 grid-rows-[auto_auto_auto_auto_auto] ${textWrapper} p-[30px]`}
+    class={`text-right flex flex-col backdrop-blur-lg rounded-[30px] bg-black/5 grid-rows-[auto_auto_auto_auto_auto] ${textWrapper} p-[30px]`}
     style={{ color: color }}
   >
     <PersonProjectCardTitle color={color}

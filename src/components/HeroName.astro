@@ -2,7 +2,7 @@
 import "@fontsource/jost/400.css";
 const { name, familyName, color, gridColumn, gridRow, small } = Astro.props;
 
-const fontSize = small ? "text-[20px]" : "text-[190px]";
+const fontSize = small ? "lg:text-[20px]" : "text-[190px]";
 
 const evelinBlendMode = name === "EVELIN" ? "mix-blend-difference" : "";
 ---

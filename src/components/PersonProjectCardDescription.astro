@@ -4,15 +4,13 @@ import "@fontsource/jost/400.css";
 const { description, github } = Astro.props;
 ---
 
-<p
-  class="lg:text-[12px] tracking-[1px] text-white translate-y-4 w-[90%] ml-auto"
->
+<p class="lg:text-[16px] text-white translate-y-4 w-[85%] ml-auto">
   {description}
 </p>
 
 <a
   href={github}
-  class="underline underline-offset-2 lg:text-[12px] text-[#eaebd1] tracking-wide"
+  class="underline underline-offset-2 lg:text-[13px] text-[#eaebd1] tracking-wide"
   >Read More</a
 >
 
@@ -23,6 +21,6 @@ const { description, github } = Astro.props;
   }
 
   p {
-    line-height: 0.95;
+    line-height: 1.2;
   }
 </style>
