@@ -1,6 +1,7 @@
 ---
 import PersonLinks from "./PersonLinks.astro";
 import PersonNameTag from "./PersonNameTag.astro";
+import IconHamburger from "./IconHamburger.astro";
 
 const { familyName, name } = Astro.props;
 
@@ -34,13 +35,17 @@ const lowercasedName = name.toLowerCase();
 
 <header class={`sticky top-0 z-50 isolate`}>
   <div
-    class={`mx-auto lg:w-[90%] flex flex-row justify-between items-center -translate-y-[12px]`}
+    class={`mx-auto sm:w-[90%] flex flex-row justify-between items-center -translate-y-[12px] py-6`}
   >
     <PersonNameTag
       familyName={familyName.toUpperCase()}
       name={name.toUpperCase()}
     />
-    <PersonLinks lowercasedName={lowercasedName} />
+    <PersonLinks lowercasedName={lowercasedName} className="hidden lg:block" />
+    <IconHamburger
+      name={lowercasedName}
+      className="lg:hidden h-full flex flex-col justify-center mt-3"
+    />
   </div>
 </header>
 
