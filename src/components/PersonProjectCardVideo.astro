@@ -1,9 +1,11 @@
 ---
 const { src, id } = Astro.props;
+const videoWidth =
+  id === 4 ? "w-[200px] 2xl:w-[350px]" : "w-[640px] 2xl:w-[987px]";
 ---
 
 <video
-  class={`rounded-[20px] ${id === 4 ? "w-[200px] 2xl:w-[387px]" : "w-[640px]"} 2xl:w-[987px]`}
+  class={`rounded-[20px] ${videoWidth}`}
   autoplay
   loop
   muted
