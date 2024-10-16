@@ -17,12 +17,9 @@ const projectWrapper =
         : "grid-cols-[4fr_1fr]";
 const mediaWrapper =
   id === 2 || id === 4
-    ? "lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-2"
+    ? "lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-5"
     : "lg:col-start-1 lg:col-end-2";
-const textWrapper =
-  id === 2 || id === 4
-    ? "col-start-1 col-end-2 row-start-1 row-end-2 gap-[20px] text-left"
-    : "col-start-2 col-end-3 gap-[28px] text-right";
+const isInverted = id === 2 || id === 4;
 ---
 
 <script>
@@ -37,33 +34,39 @@ const textWrapper =
 </script>
 
 <section
-  class={`relative grid project gap-[30px] grid-rows-[auto] items-center justify-items-center backdrop-blur-lg rounded-[30px] bg-black/5 p-[30px] grid-cols-1 `}
+  class={`relative grid project gap-[30px] grid-rows-[auto] items-center justify-items-center backdrop-blur-lg rounded-[30px] bg-black/5 p-[30px] grid-cols-1 lg:grid-cols-2`}
 >
-  <div class={`grid ${mediaWrapper} place-items-center row-start-4 row-end-5`}>
+  <div
+    class={`grid ${mediaWrapper} place-items-center row-start-4 row-end-5 ${isInverted ? "" : "lg:cols-start-1 lg:cols-end-2 lg:row-start-1 lg:row-end-5"}`}
+  >
     <PersonProjectCardMedia src={src} description={description} id={id} />
   </div>
 
-  <PersonProjectCardTitle color={color} className="row-start-1 row-end-2"
+  <PersonProjectCardTitle
+    color={color}
+    isInverted={isInverted}
+    className={`row-start-1 row-end-2 ${isInverted ? "lg:col-start-1 lg:col-end-2" : "lg:col-start-2 lg:col-end-3 "} lg:row-start-1 lg:row-end-2`}
     >{name.toUpperCase()}</PersonProjectCardTitle
   >
   <PersonProjectCardDescription
     description={description}
     github={github}
+    isInverted={isInverted}
     id={id}
-    className="row-start-2 row-end-3"
+    className={`row-start-2 row-end-3 ${isInverted ? "lg:col-start-1 lg:col-end-2" : "lg:col-start-2 lg:col-end-3"}  lg:row-start-2 lg:row-end-3`}
   />
   <BarnaMenuTags
     tags={tags}
     color={color}
     id={id}
-    className="row-start-3 row-end-4"
+    className={`row-start-3 row-end-4 ${isInverted ? "lg:col-start-1 lg:col-end-2" : "lg:col-start-2 lg:col-end-3"}  lg:row-start-3 lg:row-end-4`}
   />
   <BarnaMenuLinks
     live={live}
     github={github}
     color={color}
     id={id}
-    className="row-start-5 row-end-6"
+    className={`row-start-5 row-end-6 ${isInverted ? "lg:col-start-1 lg:col-end-2" : "lg:col-start-2 lg:col-end-3"}  lg:row-start-4 lg:row-end-5`}
   />
 </section>
 
