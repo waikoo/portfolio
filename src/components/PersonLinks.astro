@@ -1,7 +1,7 @@
 ---
 import PersonHeaderLink from "./PersonHeaderLink.astro";
 
-const { lowercasedName, className } = Astro.props;
+const { lowercasedName, className, isHamburger } = Astro.props;
 const { url: currentUrl } = Astro.request;
 const isOnProjects = currentUrl.includes(lowercasedName);
 const isOnCV = currentUrl.includes("cv");
@@ -10,19 +10,26 @@ const isOnAbout = currentUrl.includes("about");
 ---
 
 <ul class={`flex text-[1rem] gap-[20px] pt-6 ${className}`}>
-  <PersonHeaderLink href="/">Home</PersonHeaderLink>
-  <PersonHeaderLink href={`/${lowercasedName}`} isCurrentPage={isOnProjects}
-    >Projects</PersonHeaderLink
+  <PersonHeaderLink isHamburger={isHamburger} href="/">Home</PersonHeaderLink>
+  <PersonHeaderLink
+    isHamburger={isHamburger}
+    href={`/${lowercasedName}`}
+    isCurrentPage={isOnProjects}>Projects</PersonHeaderLink
   >
-  <PersonHeaderLink href={`/${lowercasedName}/cv`} isCurrentPage={isOnCV}
-    >CV</PersonHeaderLink
+  <PersonHeaderLink
+    isHamburger={isHamburger}
+    href={`/${lowercasedName}/cv`}
+    isCurrentPage={isOnCV}>CV</PersonHeaderLink
   >
 
   <PersonHeaderLink
+    isHamburger={isHamburger}
     href={`/${lowercasedName}/contact`}
     isCurrentPage={isOnContact}>Contact</PersonHeaderLink
   >
-  <PersonHeaderLink href={`/${lowercasedName}/about`} isCurrentPage={isOnAbout}
-    >About</PersonHeaderLink
+  <PersonHeaderLink
+    isHamburger={isHamburger}
+    href={`/${lowercasedName}/about`}
+    isCurrentPage={isOnAbout}>About</PersonHeaderLink
   >
 </ul>

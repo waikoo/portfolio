@@ -1,20 +1,34 @@
 ---
 import "@fontsource/jost/400.css";
-const { href, isCurrentPage } = Astro.props;
+const { href, isCurrentPage, isHamburger } = Astro.props;
 
 const circleColor = href.includes("evelin") ? "bg-[#efd6f5]" : "bg-[#D9D62D]";
 const evelinTextColor = isCurrentPage ? "text-[#efd6f5]" : "text-[#e296f5]";
 const barnaTextColor = isCurrentPage ? "text-[#D9D62D]" : "text-white";
+
 const textColor = href.includes("barna") ? barnaTextColor : evelinTextColor;
-const homeColor = Astro.request.url.toString().includes("barna")
-  ? "text-white"
-  : "text-[#e296f5]";
-const homeTextColor = href === "/" ? homeColor : "";
+
+const url = Astro.request.url.toString();
+const homeColor =
+  url.includes("barna") && !isHamburger
+    ? "text-white"
+    : url.includes("evelin") && !isHamburger
+      ? "text-[#e296f5]"
+      : "text-black";
+
+const homeTextColor =
+  href === "/"
+    ? homeColor
+    : isHamburger && isCurrentPage
+      ? "text-white"
+      : isHamburger && !isCurrentPage
+        ? "text-black"
+        : "";
 ---
 
 <li>
   <a
-    class={`${isCurrentPage} ${textColor} ${homeTextColor} lg:text-[17px] flex flex-col relative`}
+    class={`${textColor} ${homeTextColor} lg:text-[17px] flex flex-col relative`}
     href={`${href}`}
   >
     <slot />

@@ -34,10 +34,10 @@ const isInverted = id === 2 || id === 4;
 </script>
 
 <section
-  class={`relative grid project gap-[30px] grid-rows-[auto] items-center justify-items-center backdrop-blur-lg rounded-[30px] bg-black/5 p-[30px] grid-cols-1 lg:grid-cols-2`}
+  class={`relative grid project gap-[30px] grid-rows-[auto] items-center justify-items-center backdrop-blur-lg rounded-[30px] bg-black/5 p-[30px] grid-cols-1 ${isInverted ? "lg:grid-cols-[1fr_4fr]" : "lg:grid-cols-[4fr_1fr]"}`}
 >
   <div
-    class={`grid ${mediaWrapper} place-items-center row-start-4 row-end-5 ${isInverted ? "" : "lg:cols-start-1 lg:cols-end-2 lg:row-start-1 lg:row-end-5"}`}
+    class={`grid ${mediaWrapper} place-items-center row-start-4 row-end-5 ${isInverted ? "" : "lg:cols-start-1 lg:cols-end-2 lg:row-start-1 lg:row-end-5"} ${id === 4 ? "justify-self-center" : ""}`}
   >
     <PersonProjectCardMedia src={src} description={description} id={id} />
   </div>

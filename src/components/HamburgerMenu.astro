@@ -1,0 +1,39 @@
+---
+import PersonLinks from "../components/PersonLinks.astro";
+import IconClose from "../components/IconClose.astro";
+
+const { fullName } = Astro.props;
+---
+
+<script>
+  const hamburgerMenu = document.querySelector(".hamburger-menu");
+  const closeIcon = document.querySelector(".icon-close");
+
+  if (closeIcon && hamburgerMenu) {
+    closeIcon.addEventListener("click", () => {
+      hamburgerMenu.classList.add("hidden");
+    });
+  }
+  if (hamburgerMenu) {
+    hamburgerMenu.addEventListener("click", (e) => {
+      if (e.target === hamburgerMenu) {
+        hamburgerMenu.classList.add("hidden");
+      }
+    });
+  }
+</script>
+
+<div
+  class="z-[120] fixed inset-0 bg-black bg-opacity-70 hamburger-menu hidden lg:hidden"
+>
+  <section
+    class="min-h-[100dvh] w-[70%] sm:w-[30%] ml-auto bg-[#9b991a] relative"
+  >
+    <PersonLinks
+      lowercasedName={fullName.split(" ")[1]}
+      className="flex-col justify-center h-[100dvh] items-center"
+      isHamburger={true}
+    />
+    <IconClose className="absolute top-5 right-5 icon-close" />
+  </section>
+</div>

@@ -13,6 +13,8 @@ const lowercasedName = name.toLowerCase();
   const headerBgOnScroll = currentUrl.toString().includes("barna")
     ? "bg-[#0D1205]"
     : "bg-[#15000c]";
+
+  // sticky header styles
   window.addEventListener("scroll", () => {
     const header = document.querySelector("header");
     if (header) {
@@ -31,6 +33,15 @@ const lowercasedName = name.toLowerCase();
       }
     }
   });
+
+  const hamburgerIcon = document.querySelector(".hamburger-icon");
+  const hamburgerMenu = document.querySelector(".hamburger-menu");
+
+  if (hamburgerIcon && hamburgerMenu) {
+    hamburgerIcon.addEventListener("click", () => {
+      hamburgerMenu.classList.remove("hidden");
+    });
+  }
 </script>
 
 <header class={`sticky top-0 z-50 isolate`}>
@@ -41,10 +52,13 @@ const lowercasedName = name.toLowerCase();
       familyName={familyName.toUpperCase()}
       name={name.toUpperCase()}
     />
-    <PersonLinks lowercasedName={lowercasedName} className="hidden lg:flex" />
+    <PersonLinks
+      lowercasedName={lowercasedName}
+      className="hidden lg:flex lg:flex-row"
+    />
     <IconHamburger
       name={lowercasedName}
-      className="lg:hidden h-full flex flex-col justify-center mt-3"
+      className="lg:hidden h-full flex flex-col justify-center mt-3 hamburger-icon"
     />
   </div>
 </header>
