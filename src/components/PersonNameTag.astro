@@ -8,7 +8,9 @@ const reverseFlex = name === "EVELIN" ? "flex-row-reverse" : "flex-row";
 const textColor = name === "EVELIN" ? "#fbd3d3" : "#fffb20";
 ---
 
-<div class={`flex ${reverseFlex} gap-[0.35rem] z-50 mt-[30px]`}>
+<div
+  class={`flex ${reverseFlex} items-center gap-[0.35rem] z-50 sm:mt-[0px] lg:mt-[30px] translate-y-[12px]`}
+>
   <HeroName
     familyName={familyName}
     name={name}

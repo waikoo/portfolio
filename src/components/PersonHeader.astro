@@ -1,17 +1,10 @@
 ---
-import PersonHeaderLink from "./PersonHeaderLink.astro";
+import PersonLinks from "./PersonLinks.astro";
 import PersonNameTag from "./PersonNameTag.astro";
 
 const { familyName, name } = Astro.props;
 
 const lowercasedName = name.toLowerCase();
-const { url: currentUrl } = Astro.request;
-const isOnProjects = currentUrl.includes(lowercasedName);
-const isOnCV = currentUrl.includes("cv");
-const isOnContact = currentUrl.includes("contact");
-const isOnAbout = currentUrl.includes("about");
-const reversedFlex =
-  lowercasedName === "barna" ? "flex-row-reverse" : "flex-row";
 ---
 
 <script>
@@ -41,31 +34,13 @@ const reversedFlex =
 
 <header class={`sticky top-0 z-50 isolate`}>
   <div
-    class={`mx-auto lg:w-[90%] flex justify-between ${reversedFlex} items-center -translate-y-[12px]`}
+    class={`mx-auto lg:w-[90%] flex flex-row justify-between items-center -translate-y-[12px]`}
   >
-    <ul class={`flex text-[1rem] gap-[20px] pt-5`}>
-      <PersonHeaderLink href="/">Home</PersonHeaderLink>
-      <PersonHeaderLink href={`/${lowercasedName}`} isCurrentPage={isOnProjects}
-        >Projects</PersonHeaderLink
-      >
-      <PersonHeaderLink href={`/${lowercasedName}/cv`} isCurrentPage={isOnCV}
-        >CV</PersonHeaderLink
-      >
-
-      <PersonHeaderLink
-        href={`/${lowercasedName}/contact`}
-        isCurrentPage={isOnContact}>Contact</PersonHeaderLink
-      >
-      <PersonHeaderLink
-        href={`/${lowercasedName}/about`}
-        isCurrentPage={isOnAbout}>About</PersonHeaderLink
-      >
-    </ul>
-
     <PersonNameTag
       familyName={familyName.toUpperCase()}
       name={name.toUpperCase()}
     />
+    <PersonLinks lowercasedName={lowercasedName} />
   </div>
 </header>
 

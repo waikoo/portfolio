@@ -2,7 +2,7 @@
 import "@fontsource/jost/400.css";
 const { name, familyName, color, gridColumn, gridRow, small } = Astro.props;
 
-const fontSize = small ? "lg:text-[20px]" : "text-[190px]";
+const fontSize = small ? "sm:text-[17px] lg:text-[20px]" : "text-[190px]";
 
 const evelinBlendMode = name === "EVELIN" ? "mix-blend-difference" : "";
 ---
@@ -12,10 +12,10 @@ const evelinBlendMode = name === "EVELIN" ? "mix-blend-difference" : "";
   color: ${color};
   grid-column: ${gridColumn};
   grid-row: ${gridRow};`}
-  class=`${fontSize} gap-0 flex flex-col justify-content-start mt-5 text-right ${evelinBlendMode}`
+  class=`${fontSize} gap-0 flex flex-col justify-content-start text-right ${evelinBlendMode}`
 >
-  <p class="-mb-[48px]">{name}</p>
-  <p class="m-0">{familyName}</p>
+  <p class="sm:-mb-[40px] lg:-mb-[48px]">{name}</p>
+  <p class="lg:m-0">{familyName}</p>
 </div>
 
 <style>
