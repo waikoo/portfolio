@@ -23,8 +23,6 @@ const textWrapper =
   id === 2 || id === 4
     ? "col-start-1 col-end-2 row-start-1 row-end-2 gap-[20px] text-left"
     : "col-start-2 col-end-3 gap-[28px] text-right";
-const textWrapperGrid =
-  id === 4 ? "grid-rows-[auto_auto_auto]" : "grid-rows-[auto_auto_auto]";
 ---
 
 <script>
@@ -46,7 +44,7 @@ const textWrapperGrid =
   </div>
 
   <div
-    class={`grid ${textWrapperGrid} h-full items-stretch content-center ${textWrapper}`}
+    class={`grid grid-rows-[auto_auto_auto] h-full items-stretch content-center ${textWrapper}`}
     style={{ color: color }}
   >
     <PersonProjectCardTitle color={color}
