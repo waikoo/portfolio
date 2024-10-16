@@ -9,7 +9,7 @@ const fullName = "Szász Barna";
 
 <Layout title={`${fullName}'s Projects`}>
   <PersonLayout fullName={fullName}>
-    <div class="lg:max-w-[960px] 2xl:max-w-[1400px] mx-auto">
+    <div class="lg:max-w-[960px] 2xl:max-w-[1400px] mx-auto pb-20">
       {projects.map((project) => <BarnaProjectCard {...project} />)}
     </div>
   </PersonLayout>
