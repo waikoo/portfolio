@@ -17,8 +17,8 @@ const projectWrapper =
         : "grid-cols-[4fr_1fr]";
 const mediaWrapper =
   id === 2 || id === 4
-    ? "col-start-2 col-end-3 row-start-1 row-end-2"
-    : "col-start-1 col-end-2";
+    ? "lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-2"
+    : "lg:col-start-1 lg:col-end-2";
 const textWrapper =
   id === 2 || id === 4
     ? "col-start-1 col-end-2 row-start-1 row-end-2 gap-[20px] text-left"
@@ -37,29 +37,34 @@ const textWrapper =
 </script>
 
 <section
-  class={`relative grid project gap-[30px] grid-rows-[auto] items-center backdrop-blur-lg rounded-[30px] bg-black/5 p-[30px] ${projectWrapper}`}
+  class={`relative grid project gap-[30px] grid-rows-[auto] items-center justify-items-center backdrop-blur-lg rounded-[30px] bg-black/5 p-[30px] grid-cols-1 `}
 >
-  <div class={`grid ${mediaWrapper} place-items-center `}>
+  <div class={`grid ${mediaWrapper} place-items-center row-start-4 row-end-5`}>
     <PersonProjectCardMedia src={src} description={description} id={id} />
   </div>
 
-  <div
-    class={`grid grid-rows-[auto_auto_auto] h-full items-stretch content-center ${textWrapper}`}
-    style={{ color: color }}
+  <PersonProjectCardTitle color={color} className="row-start-1 row-end-2"
+    >{name.toUpperCase()}</PersonProjectCardTitle
   >
-    <PersonProjectCardTitle color={color}
-      >{name.toUpperCase()}</PersonProjectCardTitle
-    >
-    <PersonProjectCardDescription
-      description={description}
-      github={github}
-      id={id}
-    />
-    <div class="flex flex-col gap-[30px]">
-      <BarnaMenuTags tags={tags} color={color} id={id} />
-      <BarnaMenuLinks live={live} github={github} color={color} id={id} />
-    </div>
-  </div>
+  <PersonProjectCardDescription
+    description={description}
+    github={github}
+    id={id}
+    className="row-start-2 row-end-3"
+  />
+  <BarnaMenuTags
+    tags={tags}
+    color={color}
+    id={id}
+    className="row-start-3 row-end-4"
+  />
+  <BarnaMenuLinks
+    live={live}
+    github={github}
+    color={color}
+    id={id}
+    className="row-start-5 row-end-6"
+  />
 </section>
 
 <style>

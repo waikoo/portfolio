@@ -1,18 +1,18 @@
 ---
 import "@fontsource/jost/400.css";
 
-const { description, github, id } = Astro.props;
+const { description, github, id, className } = Astro.props;
 const autoMargin = id === 2 || id === 4 ? "mr-auto" : "ml-auto";
 ---
 
-<div class={`flex gap-[4px] flex-col`}>
-  <p class={`lg:text-[16px] text-white ${autoMargin}`}>
+<div class={`flex sm:gap-[20px] lg:gap-[4px] flex-col ${className}`}>
+  <p class={`sm:text-[16px] text-white ${autoMargin} sm:text-center`}>
     {description}
   </p>
 
   <a
     href={`${github}?tab=readme-ov-file#readme`}
-    class="underline underline-offset-2 lg:text-[13px] text-[#eaebd1] tracking-wide"
+    class="underline underline-offset-2 sm:text-[13px] text-[#eaebd1] tracking-wide sm:text-center"
     >Read More</a
   >
 </div>

@@ -1,12 +1,12 @@
 ---
 import "@fontsource/jost/700.css";
 
-const { color } = Astro.props;
+const { color, className } = Astro.props;
 ---
 
 <p
   style={{ color: color }}
-  class={`lg:text-[32px] tracking-[-0.1em] -mb-[15px] barna-project`}
+  class={`sm:text-[32px] tracking-[-0.1em] -mb-[15px] barna-project ${className}`}
 >
   <slot />
 </p>
