@@ -6,9 +6,11 @@ import PersonProjectCardDescription from "./PersonProjectCardDescription.astro";
 import PersonProjectCardTitle from "./PersonProjectCardTitle.astro";
 import PersonProjectCardMedia from "./PersonProjectCardMedia.astro";
 import IconArrow from "./IconArrow.astro";
+import { extractName } from "../utils/extractName";
 const { id, name, description, src, tags, live, github, color, fullName } =
   Astro.props;
-
+const { name: firstName } = extractName(fullName);
+const lowerCasedName = firstName.toLowerCase();
 const isInverted = id === 2 || id === 4;
 const mediaWrapper = isInverted
   ? "lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-5"
@@ -69,7 +71,7 @@ const projectWrapper =
     fullName.split(" ")[1].toLowerCase() === "evelin" ? (
       <IconArrow
         isInverted={isInverted}
-        className={` row-start-3 row-end-4 ${isInverted ? "justify-self-start lg:col-start-1 lg:col-end-2" : "justify-self-end lg:col-start-2 lg:col-end-3"}  lg:row-start-3 lg:row-end-4`}
+        className={` row-start-3 row-end-4 ${isInverted ? "justify-self-start lg:col-start-1 lg:col-end-2" : "justify-self-end lg:col-start-2 lg:col-end-3"}  ${lowerCasedName === "evelin" ? "lg:row-start-4 lg:row-end-5" : "lg:row-start-3 lg:row-end-4"}`}
       />
     ) : null
   }

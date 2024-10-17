@@ -1,7 +1,8 @@
 ---
 import "@fontsource/jost/400.css";
 
-const { description, github, id, className, isInverted, name } = Astro.props;
+const { description, github, id, className, isInverted, name } =
+  Astro.props;
 const autoMargin = id === 2 || id === 4 ? "mr-auto" : "ml-auto";
 const invertTextAlign = isInverted ? "lg:text-left" : "lg:text-right";
 ---
