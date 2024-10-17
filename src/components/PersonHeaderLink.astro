@@ -31,13 +31,13 @@ const circleColor = isHamburger
     : "bg-[#D9D62D]";
 
 const circlePosition = isHamburger
-  ? "left-[-10px] translate-y-[20px]"
+  ? "left-[-15px] sm:left-[-12px] translate-y-[15px] sm:translate-y-[16px]"
   : "inset-0 m-auto mt-[1.55rem]";
 ---
 
 <li>
   <a
-    class={`${getTextColor(href, isCurrentPage, isHamburger)} sm:text-[32px] lg:text-[17px] flex flex-col relative`}
+    class={`${getTextColor(href, isCurrentPage, isHamburger)} ${isHamburger ? 'text-[26px]' : 'sm:text-[32px]'} lg:text-[17px] flex flex-col relative`}
     href={`${href}`}
   >
     <slot />
