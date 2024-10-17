@@ -3,10 +3,10 @@ const { className, isInverted } = Astro.props;
 ---
 
 <div
-  class={`${className} flex ${isInverted ? "flex-row-reverse" : "flex-row"} items-center gap-[10px]`}
+  class={`${className} flex ${isInverted ? "lg:flex-row-reverse" : "lg:flex-row"} items-center gap-[10px] cursor-pointer transition-all duration-200 hover:drop-shadow-[0px_0px_3px_#e296f5]`}
 >
   <div
-    class={`border-[#e296f5] border-[1px] rounded-full p-[12px] ${isInverted ? "rotate-90" : ""}`}
+    class={`border-[#e296f5] border-[1px] rounded-full p-[12px] ${isInverted ? "lg:rotate-90" : ""}`}
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"

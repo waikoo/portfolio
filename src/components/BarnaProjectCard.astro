@@ -7,6 +7,7 @@ import PersonProjectCardTitle from "./PersonProjectCardTitle.astro";
 import PersonProjectCardMedia from "./PersonProjectCardMedia.astro";
 import IconArrow from "./IconArrow.astro";
 import { extractName } from "../utils/extractName";
+
 const { id, name, description, src, tags, live, github, color, fullName } =
   Astro.props;
 const { name: firstName } = extractName(fullName);
@@ -28,14 +29,17 @@ const projectWrapper =
 
   const observer = new IntersectionObserver((elements) => addClass(elements));
 
-  const projects = document.querySelectorAll(".project");
+  const projects = document.querySelectorAll(
+    ".project",
+  ) as NodeListOf<HTMLSectionElement>;
+
   projects.forEach((project) => {
     observer.observe(project);
   });
 </script>
 
 <section
-  class={`relative grid project gap-[30px] grid-rows-[auto] items-center justify-items-center backdrop-blur-lg rounded-[30px] bg-black/5 sm:p-[30px] p-[12px] grid-cols-1 ${projectWrapper}`}
+  class={`relative grid project gap-[30px] grid-rows-[auto] items-center justify-items-center backdrop-blur-lg rounded-[30px] bg-black/5 sm:p-[30px] p-[12px] grid-cols-1 hover:bg-black/30 transition-all duration-300 ${projectWrapper}`}
 >
   <div
     class={`grid ${mediaWrapper} place-items-center row-start-4 row-end-5 ${isInverted ? "" : "lg:cols-start-1 lg:cols-end-2 lg:row-start-1 lg:row-end-5"} ${id === 4 ? "justify-self-center" : ""}`}
@@ -55,6 +59,7 @@ const projectWrapper =
     isInverted={isInverted}
     id={id}
     name={name}
+    firstName={lowerCasedName}
     className={`row-start-2 row-end-3 ${isInverted ? "lg:col-start-1 lg:col-end-2" : "lg:col-start-2 lg:col-end-3"}  lg:row-start-2 lg:row-end-3`}
   />
   {
@@ -71,7 +76,7 @@ const projectWrapper =
     fullName.split(" ")[1].toLowerCase() === "evelin" ? (
       <IconArrow
         isInverted={isInverted}
-        className={` row-start-3 row-end-4 ${isInverted ? "justify-self-start lg:col-start-1 lg:col-end-2" : "justify-self-end lg:col-start-2 lg:col-end-3"}  ${lowerCasedName === "evelin" ? "lg:row-start-4 lg:row-end-5" : "lg:row-start-3 lg:row-end-4"}`}
+        className={`row-start-5 row-end-6 justify-self-end ${isInverted ? "lg:justify-self-start lg:col-start-1 lg:col-end-2" : "lg:justify-self-end lg:col-start-2 lg:col-end-3"}  ${lowerCasedName === "evelin" ? "lg:row-start-4 lg:row-end-5" : "lg:row-start-3 lg:row-end-4"}`}
       />
     ) : null
   }

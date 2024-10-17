@@ -1,8 +1,12 @@
 ---
 import PersonLinks from "../components/PersonLinks.astro";
 import IconClose from "../components/IconClose.astro";
+import { extractName } from "../utils/extractName";
 
 const { fullName } = Astro.props;
+const { name } = extractName(fullName);
+const bgColor =
+  name.toLowerCase() === "evelin" ? "bg-[#995ea2]" : "bg-[#9b991a]";
 ---
 
 <script>
@@ -27,7 +31,7 @@ const { fullName } = Astro.props;
   class="z-[120] fixed inset-0 bg-black bg-opacity-70 hamburger-menu hidden lg:hidden"
 >
   <section
-    class="min-h-[100dvh] w-[70%] sm:w-[30%] ml-auto bg-[#9b991a] relative"
+    class={`min-h-[100dvh] w-[70%] sm:w-[30%] ml-auto ${bgColor} relative`}
   >
     <PersonLinks
       lowercasedName={fullName.split(" ")[1].toLowerCase()}
