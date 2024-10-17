@@ -6,12 +6,12 @@ const alignment = id === 2 || id === 4 ? "lg:justify-start" : "lg:justify-end";
 
 <div
   style={{ color: color }}
-  class={`flex gap-[6px] text-right w-full flex-wrap items-center sm:justify-center ${alignment} ${className}`}
+  class={`flex gap-[6px] text-right w-full flex-wrap items-center justify-center ${alignment} ${className}`}
 >
   {
     tags.map((tag: string) => (
       <div
-        class="rounded-full p-1 px-3 mt-[2px] sm:text-[11px] 2xl:text-[16px] tracking-[1px]"
+        class="rounded-full p-1 px-3 mt-[2px] text-[11px] 2xl:text-[16px] tracking-[1px]"
         style={{ backgroundColor: `${color}15` }}
       >
         <span class="">{tag}</span>

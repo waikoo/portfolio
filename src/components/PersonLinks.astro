@@ -9,27 +9,27 @@ const isOnContact = currentUrl.includes("contact");
 const isOnAbout = currentUrl.includes("about");
 ---
 
-<ul class={`flex text-[1rem] gap-[20px] pt-6 ${className}`}>
-  <PersonHeaderLink isHamburger={isHamburger} href="/">Home</PersonHeaderLink>
+<ul class={`flex text-[1rem] pt-6 ${className}`}>
+  <PersonHeaderLink href="/" isHamburger={isHamburger}>Home</PersonHeaderLink>
   <PersonHeaderLink
-    isHamburger={isHamburger}
     href={`/${lowercasedName}`}
-    isCurrentPage={isOnProjects}>Projects</PersonHeaderLink
+    isCurrentPage={isOnProjects}
+    isHamburger={isHamburger}>Projects</PersonHeaderLink
   >
   <PersonHeaderLink
-    isHamburger={isHamburger}
     href={`/${lowercasedName}/cv`}
-    isCurrentPage={isOnCV}>CV</PersonHeaderLink
+    isCurrentPage={isOnCV}
+    isHamburger={isHamburger}>CV</PersonHeaderLink
   >
 
   <PersonHeaderLink
-    isHamburger={isHamburger}
     href={`/${lowercasedName}/contact`}
-    isCurrentPage={isOnContact}>Contact</PersonHeaderLink
+    isCurrentPage={isOnContact}
+    isHamburger={isHamburger}>Contact</PersonHeaderLink
   >
   <PersonHeaderLink
-    isHamburger={isHamburger}
     href={`/${lowercasedName}/about`}
-    isCurrentPage={isOnAbout}>About</PersonHeaderLink
+    isCurrentPage={isOnAbout}
+    isHamburger={isHamburger}>About</PersonHeaderLink
   >
 </ul>

@@ -46,7 +46,7 @@ const lowercasedName = name.toLowerCase();
 
 <header class={`sticky top-0 z-50 isolate`}>
   <div
-    class={`mx-auto sm:w-[90%] flex flex-row justify-between items-center -translate-y-[12px] py-6`}
+    class={`mx-auto w-[90%] flex flex-row justify-between items-center -translate-y-[12px] py-6`}
   >
     <PersonNameTag
       familyName={familyName.toUpperCase()}
@@ -54,7 +54,7 @@ const lowercasedName = name.toLowerCase();
     />
     <PersonLinks
       lowercasedName={lowercasedName}
-      className="hidden lg:flex lg:flex-row"
+      className="hidden lg:flex lg:flex-row gap-[20px]"
     />
     <IconHamburger
       name={lowercasedName}

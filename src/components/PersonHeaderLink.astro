@@ -2,33 +2,42 @@
 import "@fontsource/jost/400.css";
 const { href, isCurrentPage, isHamburger } = Astro.props;
 
-const circleColor = href.includes("evelin") ? "bg-[#efd6f5]" : "bg-[#D9D62D]";
-const evelinTextColor = isCurrentPage ? "text-[#efd6f5]" : "text-[#e296f5]";
-const barnaTextColor = isCurrentPage ? "text-[#D9D62D]" : "text-white";
+const getTextColor = (
+  href: string,
+  isCurrentPage: boolean,
+  isHamburger: boolean,
+) => {
+  if (href === "/") {
+    const url = Astro.request.url.toString();
+    if (isHamburger) {
+      return url.includes("barna") ? "text-black" : "";
+    }
+    return url.includes("barna") ? "text-white" : "text-[#e296f5]";
+  }
+  if (isHamburger) {
+    return isCurrentPage ? "text-white" : "text-black";
+  }
+  if (href.includes("evelin")) {
+    return isCurrentPage ? "text-[#efd6f5]" : "text-[#e296f5]";
+  }
+  if (href.includes("barna")) {
+    return isCurrentPage ? "text-[#D9D62D]" : "text-white";
+  }
+};
+const circleColor = isHamburger
+  ? "bg-white"
+  : href.includes("evelin")
+    ? "bg-[#efd6f5]"
+    : "bg-[#D9D62D]";
 
-const textColor = href.includes("barna") ? barnaTextColor : evelinTextColor;
-
-const url = Astro.request.url.toString();
-const homeColor =
-  url.includes("barna") && !isHamburger
-    ? "text-white"
-    : url.includes("evelin") && !isHamburger
-      ? "text-[#e296f5]"
-      : "text-black";
-
-const homeTextColor =
-  href === "/"
-    ? homeColor
-    : isHamburger && isCurrentPage
-      ? "text-white"
-      : isHamburger && !isCurrentPage
-        ? "text-black"
-        : "";
+const circlePosition = isHamburger
+  ? "left-[-10px] translate-y-[20px]"
+  : "inset-0 m-auto mt-[1.55rem]";
 ---
 
 <li>
   <a
-    class={`${textColor} ${homeTextColor} lg:text-[17px] flex flex-col relative`}
+    class={`${getTextColor(href, isCurrentPage, isHamburger)} sm:text-[32px] lg:text-[17px] flex flex-col relative`}
     href={`${href}`}
   >
     <slot />
@@ -36,7 +45,7 @@ const homeTextColor =
       isCurrentPage ? (
         <div
           transition:name="circle"
-          class={`absolute h-[8px] w-[8px] block rounded-full m-auto inset-0 mt-[1.55rem] ${circleColor}`}
+          class={`absolute h-[8px] w-[8px] block rounded-full ${circlePosition} ${circleColor}`}
         />
       ) : null
     }
