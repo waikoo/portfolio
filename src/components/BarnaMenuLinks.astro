@@ -2,15 +2,16 @@
 import "@fontsource/jost/600.css";
 
 const { live, github, color, id, className } = Astro.props;
+const hideCliProjectsGithub = id === 3 ? "hidden" : ""
 ---
 
 <div
-  class={`flex flex-row-reverse gap-5 jost-semibold items-stretch justify-between sm:justify-auto w-full ${className}`}
+  class={`flex flex-row-reverse gap-5 jost-semibold items-stretch justify-between sm:justify-start w-full ${className}`}
 >
   <a
     style={{ backgroundColor: color }}
     href={live}
-    class={`p-[8px] px-[11px] 2xl:px-[13px] text-black rounded-full text-[13px] sm:text-[1rem] jost-semibold flex items-center gap-2 drop-shadow-[5px_5px_8px_rgba(0,0,0,0.60)] ${id === 3 ? "invisible" : ""}`}
+    class={`p-[8px] px-[11px] 2xl:px-[13px] text-black rounded-full text-[13px] sm:text-[1rem] jost-semibold flex items-center gap-2 drop-shadow-[5px_5px_8px_rgba(0,0,0,0.60)] ${hideCliProjectsGithub}`}
   >
     <svg
       width="16"
