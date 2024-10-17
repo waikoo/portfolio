@@ -6,16 +6,18 @@ const autoMargin = id === 2 || id === 4 ? "mr-auto" : "ml-auto";
 const invertTextAlign = isInverted ? "lg:text-left" : "lg:text-right";
 ---
 
-<div class={`flex sm:gap-[20px] lg:gap-[16px] flex-col ${className}`}>
+<div
+  class={`flex gap-[12px] sm:gap-[20px] lg:gap-[16px] flex-col text-[#eaebd1] ${className}`}
+>
   <p
-    class={`text-[16px] 2xl:text-[21px] text-white ${autoMargin} text-center ${invertTextAlign}`}
+    class={`text-[15px] sm:text-[16px] 2xl:text-[21px] ${autoMargin} text-center ${invertTextAlign}`}
   >
     {description}
   </p>
 
   <a
     href={`${github}?tab=readme-ov-file#readme`}
-    class={`underline underline-offset-2 text-[13px] 2xl:text-[18px] text-[#eaebd1] tracking-wide text-center ${invertTextAlign}`}
+    class={`underline underline-offset-2 text-[14px] sm:text-[13px] 2xl:text-[18px] tracking-wide text-center ${invertTextAlign}`}
     >Read More</a
   >
 </div>

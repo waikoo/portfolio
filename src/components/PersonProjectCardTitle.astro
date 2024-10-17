@@ -3,13 +3,13 @@ import "@fontsource/jost/700.css";
 
 const { color, className, isInverted } = Astro.props;
 const justifySelf = isInverted
-  ? "lg:justify-self-start text-left"
-  : "lg:justify-self-end text-right";
+  ? "lg:justify-self-start lg:text-left"
+  : "lg:justify-self-end lg:text-right";
 ---
 
 <p
   style={{ color: color }}
-  class={`text-[32px] 2xl:text-[46px] tracking-[-0.1em] barna-project ${justifySelf} ${className}`}
+  class={`text-[28px] sm:text-[32px] 2xl:text-[46px] tracking-[-0.1em] barna-project text-center ${justifySelf} ${className}`}
 >
   <slot />
 </p>
