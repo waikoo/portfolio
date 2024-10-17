@@ -1,7 +1,7 @@
 ---
 import "@fontsource/jost/400.css";
 
-const { description, github, id, className, isInverted } = Astro.props;
+const { description, github, id, className, isInverted, name } = Astro.props;
 const autoMargin = id === 2 || id === 4 ? "mr-auto" : "ml-auto";
 const invertTextAlign = isInverted ? "lg:text-left" : "lg:text-right";
 ---
@@ -15,11 +15,16 @@ const invertTextAlign = isInverted ? "lg:text-left" : "lg:text-right";
     {description}
   </p>
 
-  <a
-    href={`${github}?tab=readme-ov-file#readme`}
-    class={`underline underline-offset-2 text-[14px] sm:text-[13px] 2xl:text-[18px] tracking-wide text-center ${invertTextAlign}`}
-    >Read More</a
-  >
+  {
+    name === "barna" ? (
+      <a
+        href={`${github}?tab=readme-ov-file#readme`}
+        class={`underline underline-offset-2 text-[14px] sm:text-[13px] 2xl:text-[18px] tracking-wide text-center ${invertTextAlign}`}
+      >
+        Read More
+      </a>
+    ) : null
+  }
 </div>
 
 <style>

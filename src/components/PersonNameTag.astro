@@ -4,12 +4,11 @@ import HeroName from "./HeroName.astro";
 import PersonOccupationTag from "./PersonOccupationTag.astro";
 const { familyName, name } = Astro.props;
 
-const reverseFlex = name === "EVELIN" ? "flex-row-reverse" : "flex-row";
 const textColor = name === "EVELIN" ? "#fbd3d3" : "#fffb20";
 ---
 
 <div
-  class={`flex ${reverseFlex} items-center gap-[0.35rem] z-50 mt-[0px] translate-y-[12px]`}
+  class={`flex items-center gap-[0.35rem] z-50 mt-[0px] translate-y-[12px]`}
 >
   <HeroName
     familyName={familyName}

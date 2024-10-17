@@ -5,7 +5,9 @@ import BarnaMenuTags from "./BarnaMenuTags.astro";
 import PersonProjectCardDescription from "./PersonProjectCardDescription.astro";
 import PersonProjectCardTitle from "./PersonProjectCardTitle.astro";
 import PersonProjectCardMedia from "./PersonProjectCardMedia.astro";
-const { id, name, description, src, tags, live, github, color } = Astro.props;
+import IconArrow from "./IconArrow.astro";
+const { id, name, description, src, tags, live, github, color, fullName } =
+  Astro.props;
 
 const mediaWrapper =
   id === 2 || id === 4
@@ -45,21 +47,38 @@ const isInverted = id === 2 || id === 4;
     github={github}
     isInverted={isInverted}
     id={id}
+    name={name}
     className={`row-start-2 row-end-3 ${isInverted ? "lg:col-start-1 lg:col-end-2" : "lg:col-start-2 lg:col-end-3"}  lg:row-start-2 lg:row-end-3`}
   />
-  <BarnaMenuTags
-    tags={tags}
-    color={color}
-    id={id}
-    className={`row-start-3 row-end-4 ${isInverted ? "lg:col-start-1 lg:col-end-2" : "lg:col-start-2 lg:col-end-3"}  lg:row-start-3 lg:row-end-4`}
-  />
-  <BarnaMenuLinks
-    live={live}
-    github={github}
-    color={color}
-    id={id}
-    className={`row-start-5 row-end-6 ${isInverted ? "lg:col-start-1 lg:col-end-2" : "lg:col-start-2 lg:col-end-3"}  lg:row-start-4 lg:row-end-5`}
-  />
+  {
+    tags ? (
+      <BarnaMenuTags
+        tags={tags}
+        color={color}
+        id={id}
+        className={`row-start-3 row-end-4 ${isInverted ? "lg:col-start-1 lg:col-end-2" : "lg:col-start-2 lg:col-end-3"}  lg:row-start-3 lg:row-end-4`}
+      />
+    ) : null
+  }
+  {
+    fullName.split(" ")[1].toLowerCase() === "evelin" ? (
+      <IconArrow
+        isInverted={isInverted}
+        className={` row-start-3 row-end-4 ${isInverted ? "justify-self-start lg:col-start-1 lg:col-end-2" : "justify-self-end lg:col-start-2 lg:col-end-3"}  lg:row-start-3 lg:row-end-4`}
+      />
+    ) : null
+  }
+  {
+    fullName.split(" ")[1].toLowerCase() === "barna" ? (
+      <BarnaMenuLinks
+        live={live}
+        github={github}
+        color={color}
+        id={id}
+        className={`row-start-5 row-end-6 ${isInverted ? "lg:col-start-1 lg:col-end-2" : "lg:col-start-2 lg:col-end-3"}  lg:row-start-4 lg:row-end-5`}
+      />
+    ) : null
+  }
 </section>
 
 <style>
