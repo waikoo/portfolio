@@ -9,11 +9,16 @@ import IconArrow from "./IconArrow.astro";
 const { id, name, description, src, tags, live, github, color, fullName } =
   Astro.props;
 
-const mediaWrapper =
-  id === 2 || id === 4
-    ? "lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-5"
-    : "lg:col-start-1 lg:col-end-2";
 const isInverted = id === 2 || id === 4;
+const mediaWrapper = isInverted
+  ? "lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-5"
+  : "lg:col-start-1 lg:col-end-2";
+const projectWrapper =
+  id === 4
+    ? "lg:grid-cols-[2fr_3fr]"
+    : isInverted
+      ? "lg:grid-cols-[1fr_4fr]"
+      : "lg:grid-cols-[4fr_1fr]";
 ---
 
 <script>
@@ -28,7 +33,7 @@ const isInverted = id === 2 || id === 4;
 </script>
 
 <section
-  class={`relative grid project gap-[30px] grid-rows-[auto] items-center justify-items-center backdrop-blur-lg rounded-[30px] bg-black/5 sm:p-[30px] p-[12px] grid-cols-1 ${isInverted ? "lg:grid-cols-[1fr_4fr]" : "lg:grid-cols-[4fr_1fr]"}`}
+  class={`relative grid project gap-[30px] grid-rows-[auto] items-center justify-items-center backdrop-blur-lg rounded-[30px] bg-black/5 sm:p-[30px] p-[12px] grid-cols-1 ${projectWrapper}`}
 >
   <div
     class={`grid ${mediaWrapper} place-items-center row-start-4 row-end-5 ${isInverted ? "" : "lg:cols-start-1 lg:cols-end-2 lg:row-start-1 lg:row-end-5"} ${id === 4 ? "justify-self-center" : ""}`}
