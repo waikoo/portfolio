@@ -7,7 +7,7 @@ const { fullName } = Astro.props;
 const { name, familyName } = extractName(fullName);
 ---
 
-<div class="relative w-screen h-screen overflow-visible min-h-[100%]">
+<div class="relative w-full h-screen min-h-[100%] isolate">
   <HeroBackground endpoint={name.toUpperCase()} />
 
   <PersonHeader familyName={familyName} name={name} />
