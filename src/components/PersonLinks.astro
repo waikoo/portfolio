@@ -3,7 +3,7 @@ import PersonHeaderLink from "./PersonHeaderLink.astro";
 
 const { lowercasedName, className, isHamburger } = Astro.props;
 const { url: currentUrl } = Astro.request;
-const isOnProjects = currentUrl.includes(lowercasedName);
+const isOnProjects = currentUrl.split("/").at(-1) === lowercasedName;
 const isOnCV = currentUrl.includes("cv");
 const isOnContact = currentUrl.includes("contact");
 const isOnAbout = currentUrl.includes("about");
