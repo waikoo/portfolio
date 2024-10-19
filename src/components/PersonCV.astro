@@ -1,0 +1,25 @@
+---
+import IconCVDownload from "./IconCVDownload.astro";
+
+const { fullName, imgSrc, pdfSrc } = Astro.props;
+---
+
+<div
+  class="h-full w-[90%] mx-auto isolate grid place-items-center mt-[92px] pb-[92px]"
+>
+  <div class="relative">
+    <picture>
+      <source srcset={imgSrc.replace("jpg", "avif")} type="image/avif" />
+      <source srcset={imgSrc.replace("jpg", "webp")} type="image/webp" />
+      <img src={imgSrc} alt={`${fullName}'s CV`} class="block w-full" />
+    </picture>
+    <a
+      href={pdfSrc}
+      target="_blank"
+      class="absolute right-10 top-10 z-50 flex gap-2 items-center"
+    >
+      <IconCVDownload />
+      Download
+    </a>
+  </div>
+</div>

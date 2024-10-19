@@ -1,36 +1,17 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import BarnaLayout from "../../components/BarnaLayout.astro";
+import PersonLayout from "../../components/PersonLayout.astro";
+import PersonCV from "../../components/PersonCV.astro";
 
-const endpoint = new URL(Astro.request.url);
+const fullName = "Szász Barna";
 ---
 
-<Layout title="Szász Barna's CV">
-  <BarnaLayout>
-    <embed
-      src="/Szasz_Barna_CV.pdf#toolbar=0"
-      width="800"
-      height="500"
-      title="Szász Barna - Curriculum Vitæ"
-      class="ml-[40rem] -mt-[7rem] z-20 w-[1000px] h-[1380px] relative"
+<Layout title={`${fullName}'s CV`}>
+  <PersonLayout fullName={fullName}>
+    <PersonCV
+      fullName={fullName}
+      imgSrc="/images/barna_cv.jpg"
+      pdfSrc="/Szasz_Barna_CV.pdf"
     />
-    <a
-      href="/Szasz_Barna_CV.pdf"
-      target="_blank"
-      class="absolute right-10 top-10 -mt-[7rem] z-30 flex gap-2 items-center"
-    >
-      <svg
-        width="14"
-        height="14"
-        viewBox="0 0 14 14"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M7 10.577L3.461 7.039L4.169 6.319L6.5 8.65V0H7.5V8.65L9.83 6.32L10.539 7.039L7 10.577ZM1.616 14C1.15533 14 0.771 13.846 0.463 13.538C0.155 13.23 0.000666667 12.8453 0 12.384V9.961H1V12.384C1 12.538 1.064 12.6793 1.192 12.808C1.32 12.9367 1.461 13.0007 1.615 13H12.385C12.5383 13 12.6793 12.936 12.808 12.808C12.9367 12.68 13.0007 12.5387 13 12.384V9.961H14V12.384C14 12.8447 13.846 13.229 13.538 13.537C13.23 13.845 12.8453 13.9993 12.384 14H1.616Z"
-          fill="#272727"></path>
-      </svg>
-      Download
-    </a>
-  </BarnaLayout>
+  </PersonLayout>
 </Layout>
