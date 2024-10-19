@@ -1,16 +1,28 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import BarnaLayout from "../../components/BarnaLayout.astro";
-import BarnaContactItem from "../../components/BarnaContactItem.astro";
+import PersonLayout from "../../components/PersonLayout.astro";
+import PersonContactItem from "../../components/PersonContactItem.astro";
+import { extractName } from "../../utils/extractName";
 
-const endpoint = new URL(Astro.request.url);
+const fullName = "Szász Barna";
+const { name } = extractName(fullName);
 ---
 
-<Layout title="Contact Szász Barna">
-  <BarnaLayout>
-    <div class="relative left-[50rem]">
-      <BarnaContactItem title="Email" value="beroer@protonmail.com" />
-      <BarnaContactItem title="GitHub" value="https://github.com/waikoo" />
-    </div>
-  </BarnaLayout>
+<Layout title={`Contact ${fullName}`}>
+  <PersonLayout fullName={fullName}>
+    <main class="relative h-full grid place-items-center">
+      <div class="flex flex-col items-center text-center pb-[200px]">
+        <PersonContactItem
+          name={name}
+          title="Email"
+          value="beroer@protonmail.com"
+        />
+        <PersonContactItem
+          name={name}
+          title="GitHub"
+          value="https://github.com/waikoo"
+        />
+      </div>
+    </main>
+  </PersonLayout>
 </Layout>
