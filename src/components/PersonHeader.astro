@@ -3,16 +3,16 @@ import PersonLinks from "./PersonLinks.astro";
 import PersonNameTag from "./PersonNameTag.astro";
 import IconHamburger from "./IconHamburger.astro";
 
-const { familyName, name } = Astro.props;
+const { familyName, name, color } = Astro.props;
 
 const lowercasedName = name.toLowerCase();
 ---
 
 <script>
-  const currentUrl = new URL(window.location.href);
-  const headerBgOnScroll = currentUrl.toString().includes("barna")
-    ? "bg-[#0D1205]"
-    : "bg-[#1c000c]";
+  import { getHeaderBgOnScroll } from "../utils/getHeaderBgOnScroll";
+
+  const currentUrl = new URL(window.location.href).toString();
+  const headerBgOnScroll = getHeaderBgOnScroll(currentUrl);
 
   // sticky header styles
   window.addEventListener("scroll", () => {
@@ -51,14 +51,17 @@ const lowercasedName = name.toLowerCase();
     <PersonNameTag
       familyName={familyName.toUpperCase()}
       name={name.toUpperCase()}
+      color={color}
     />
     <PersonLinks
       lowercasedName={lowercasedName}
       className="hidden lg:flex lg:flex-row gap-[20px]"
+      color={color}
     />
     <IconHamburger
       name={lowercasedName}
       className="lg:hidden h-full flex flex-col justify-center mt-3 hamburger-icon"
+      color={color}
     />
   </div>
 </header>

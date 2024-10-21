@@ -1,29 +1,9 @@
 ---
 import "@fontsource/jost/400.css";
+import { getHeaderNavLinkTextColor } from "../utils/getHeaderNavLinkTextColor.js";
 const { href, isCurrentPage, isHamburger } = Astro.props;
 
-const getTextColor = (
-  href: string,
-  isCurrentPage: boolean,
-  isHamburger: boolean,
-) => {
-  if (href === "/") {
-    const url = Astro.request.url.toString();
-    if (isHamburger) {
-      return url.includes("barna") ? "text-black" : "";
-    }
-    return url.includes("barna") ? "text-white" : "text-[#e296f5]";
-  }
-  if (isHamburger) {
-    return isCurrentPage ? "text-white" : "text-black";
-  }
-  if (href.includes("evelin")) {
-    return isCurrentPage ? "text-[#efd6f5]" : "text-[#e296f5]";
-  }
-  if (href.includes("barna")) {
-    return isCurrentPage ? "text-[#D9D62D]" : "text-white";
-  }
-};
+const url = Astro.request.url.toString();
 const circleColor = isHamburger
   ? "bg-white"
   : href.includes("evelin")
@@ -33,16 +13,25 @@ const circleColor = isHamburger
 const circlePosition = isHamburger
   ? "left-[-15px] sm:left-[-12px] translate-y-[15px] sm:translate-y-[16px]"
   : "inset-0 m-auto mt-[1.55rem]";
+const textSize = isHamburger ? "text-[26px]" : "sm:text-[32px]";
+const textColor = getHeaderNavLinkTextColor(
+  href,
+  isCurrentPage,
+  isHamburger,
+  url,
+);
 ---
 
 <li>
   <a
-    class={`${getTextColor(href, isCurrentPage, isHamburger)} ${isHamburger ? 'text-[26px]' : 'sm:text-[32px]'} lg:text-[17px] flex flex-col relative`}
+    class={`${textColor} ${textSize} lg:text-[17px] flex flex-col relative`}
     href={`${href}`}
   >
     <slot />
     {
-      isCurrentPage ? (
+      Astro.request.url
+        .toString()
+        .includes("thriftstudio") ? null : isCurrentPage ? (
         <div
           transition:name="circle"
           class={`absolute h-[8px] w-[8px] block rounded-full ${circlePosition} ${circleColor}`}
