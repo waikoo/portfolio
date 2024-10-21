@@ -3,7 +3,7 @@ import PersonHeaderLink from "./PersonHeaderLink.astro";
 
 const { lowercasedName, className, isHamburger } = Astro.props;
 const { url: currentUrl } = Astro.request;
-const isOnProjects = currentUrl.split("/").at(-1) === lowercasedName;
+const isOnProjects = currentUrl.includes("projects");
 const isOnCV = currentUrl.includes("cv");
 const isOnContact = currentUrl.includes("contact");
 const isOnAbout = currentUrl.includes("about");
@@ -12,7 +12,7 @@ const isOnAbout = currentUrl.includes("about");
 <ul class={`flex text-[1rem] pt-6 ${className}`}>
   <PersonHeaderLink href="/" isHamburger={isHamburger}>Home</PersonHeaderLink>
   <PersonHeaderLink
-    href={`/${lowercasedName}`}
+    href={`/${lowercasedName}/projects`}
     isCurrentPage={isOnProjects}
     isHamburger={isHamburger}>Projects</PersonHeaderLink
   >
