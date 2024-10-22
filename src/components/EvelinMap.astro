@@ -1,0 +1,28 @@
+---
+const { title, bgColor } = Astro.props;
+---
+
+<div class="mt-[30px]">
+  <h4
+    class="text-[15px] text-[#0d0d0d] sm:text-[18px] xl:text-[24px] px-[8px] inline-block"
+    style={{ backgroundColor: bgColor }}
+  >
+    {title}
+  </h4>
+  <p class="text-[14px] xl:text-[17px] mt-2 ml-2 whitespace-nowrap"><slot /></p>
+</div>
+
+<style>
+  h4,
+  p {
+    font-family: "Jost", sans-serif;
+  }
+
+  h4 {
+    font-weight: 800;
+  }
+
+  p {
+    font-weight: 400;
+  }
+</style>

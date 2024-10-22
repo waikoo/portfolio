@@ -1,0 +1,42 @@
+---
+import IconTriangleDesktop from "./IconTriangleDesktop.astro";
+import IconTriangleMobile from "./IconTriangleMobile.astro";
+import IconTriangleTablet from "./IconTriangleTablet.astro";
+
+const { title, bgColor } = Astro.props;
+const marginTop = title === "THE PRODUCT" ? "" : "mt-[35px]";
+---
+
+<h3
+  class={`${marginTop} text-[18px] sm:text-[25px] xl:text-[40px] text-[#1e1e1e] relative whitespace-nowrap`}
+>
+  <IconTriangleMobile
+    bgColor={bgColor}
+    className="block sm:hidden absolute top-[6px] left-[-10px]"
+  />
+  <IconTriangleTablet
+    bgColor={bgColor}
+    className="hidden sm:block absolute xl:hidden top-[4px] left-[-18px]"
+  />
+  <IconTriangleDesktop
+    bgColor={bgColor}
+    className="hidden xl:block absolute top-[21px] left-[-20px]"
+  />
+  {title}
+</h3>
+
+<p class="text-[14px] text-[#1e1e1e] xl:text-[17px] xl:w-[557px]">
+  <slot />
+</p>
+
+<style>
+  h3 {
+    font-family: "Jost", sans-serif;
+    font-weight: 800;
+  }
+
+  p {
+    font-family: "Jost", sans-serif;
+    font-weight: 400;
+  }
+</style>

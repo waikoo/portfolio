@@ -1,10 +1,15 @@
 ---
 import PersonHeader from "../../../components/PersonHeader.astro";
 import Layout from "../../../layouts/Layout.astro";
+import EvelinFile from "../../../components/EvelinFile.astro";
 
 const bgColor = "#d2d62e";
 ---
 
 <Layout title="Thriftstudio" bgColor={bgColor}>
   <PersonHeader familyName={"Szász"} name={"Evelin"} color="black" />
+
+  <main class="px-[40px] sm:px-[50px] xl:px-[70px]">
+    <EvelinFile fileTitle="OVERVIEW" bgColor={bgColor} />
+  </main>
 </Layout>

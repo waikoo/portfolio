@@ -20,16 +20,24 @@ const lowercasedName = name.toLowerCase();
     if (header) {
       if (window.scrollY > 0) {
         header.classList.add(headerBgOnScroll);
-        header.classList.add("bg-opacity-80");
-        header.classList.add("drop-shadow-md");
-        header.classList.add("backdrop-blur-sm");
-        header.classList.add("z-50");
+        if (window.location.href.toString().includes("thriftstudio")) {
+          return;
+        } else {
+          header.classList.add("bg-opacity-80");
+          header.classList.add("drop-shadow-md");
+          header.classList.add("backdrop-blur-sm");
+          header.classList.add("z-50");
+        }
       } else {
         header.classList.remove(headerBgOnScroll);
-        header.classList.remove("bg-opacity-80");
-        header.classList.remove("drop-shadow-md");
-        header.classList.remove("backdrop-blur-sm");
-        header.classList.remove("z-50");
+        if (window.location.href.toString().includes("thriftstudio")) {
+          return;
+        } else {
+          header.classList.remove("bg-opacity-80");
+          header.classList.remove("drop-shadow-md");
+          header.classList.remove("backdrop-blur-sm");
+          header.classList.remove("z-50");
+        }
       }
     }
   });

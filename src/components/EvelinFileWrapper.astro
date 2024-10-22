@@ -1,0 +1,28 @@
+---
+const { title, bgColor } = Astro.props;
+---
+
+<article
+  class="relative bg-[#f9f9f9] rounded-[20px_0px_0px_20px] sm:rounded-[20px] xl:py-[110px] xl:px-[120px] sm:p-[50px] text-[#0d0d0d] mx-auto"
+>
+  <div
+    class="absolute top-[-1px] right-[-1px] px-[16px]"
+    style={{ backgroundColor: bgColor }}
+  >
+    <h2
+      class={`text-[26px] sm:text-[35px] xl:text-[55px] tracking-[-6px] px-[12px]]`}
+    >
+      {title}
+    </h2>
+  </div>
+  <section class="pl-[20px] pr-[20px] sm:text-[14px]">
+    <slot />
+  </section>
+</article>
+
+<style>
+  h2 {
+    font-family: "Jost", sans-serif;
+    font-weight: 700;
+  }
+</style>

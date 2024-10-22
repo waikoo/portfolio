@@ -1,0 +1,51 @@
+---
+import EvelinFileSegment from "./EvelinFileSegment.astro";
+import EvelinMap from "./EvelinMap.astro";
+import EvelinFileWrapper from "./EvelinFileWrapper.astro";
+const { fileTitle, bgColor } = Astro.props;
+---
+
+<EvelinFileWrapper title={fileTitle} bgColor={bgColor}>
+  <div class="xl:flex xl:gap-[70px] xl:items-center xl:justify-around mx-auto">
+    <div class="">
+      <EvelinFileSegment title="THE PRODUCT" bgColor={bgColor}>
+        Thriftstudio is an <strong
+          >e-commerce website for a fictional local thrift store</strong
+        >, offering an extensive range of <strong>clothing</strong> and <strong
+          >accessories</strong
+        > for men, women, and kids, from fast fashion to luxury brands. Designed
+        to provide a flexible and comfortable shopping experience through <strong
+          >convenient filters, personalized notifications</strong
+        > on new arrivals and sales, with the option for home delivery or in-store
+        pickup, the website and app bring the joy of thrift shopping right to the
+        users’ fingertips.
+      </EvelinFileSegment>
+
+      <EvelinFileSegment title="THE PROBLEM" bgColor={bgColor}>
+        Users shopping in thrift stores often face frustration due to the <strong
+          >lack of flexibility</strong
+        > in shopping at their own convenience, <strong
+          >missing out on discounts</strong
+        >, and <strong>spending excessive time searching for items</strong>,
+        verifying sizes, labels, and prices.
+      </EvelinFileSegment>
+
+      <EvelinFileSegment title="THE SOLUTION" bgColor={bgColor}>
+        Design a <strong>responsive website</strong> to offer users a flexible and
+        fulfilling shopping experience from their local thrift store, with an additional
+        <strong>admin page</strong> for the thrift store’s employees, where they
+        can easily add, edit and manage the shop’s products and discounts.
+      </EvelinFileSegment>
+    </div>
+
+    <div class="mt-[40px]">
+      <EvelinMap title="ROLE" bgColor={bgColor}>UI UX Designer</EvelinMap>
+      <EvelinMap title="TOOLS" bgColor={bgColor}
+        >Figma, Photoshop, Illustrator</EvelinMap
+      >
+      <EvelinMap title="CONTEXT" bgColor={bgColor}
+        >Google UX Certificate Project</EvelinMap
+      >
+    </div>
+  </div>
+</EvelinFileWrapper>
