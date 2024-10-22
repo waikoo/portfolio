@@ -3,7 +3,7 @@ export const projects = [{
   name: "Thriftstudio",
   description: "A responsive e-commerce website for a local thrift store, with an admin interface.",
   src: "/images/thriftstudio_preview.jpg",
-  projectLink: "",
+  projectLink: "/evelin/projects/thriftstudio",
   color: "#d2d62e"
 },
 {
