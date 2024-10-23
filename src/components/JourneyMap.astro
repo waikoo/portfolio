@@ -1,0 +1,14 @@
+---
+const { className } = Astro.props;
+---
+
+<picture>
+  <source type="image/avif" srcset="/images/journey_map.avif" />
+  <source type="image/webp" srcset="/images/journey_map.webp" />
+  <source type="image/jpg" srcset="/images/journey_map.jpg" />
+  <img
+    src="/images/journey_map.png"
+    alt="user journey map"
+    class={`journey-map ${className}`}
+  />
+</picture>
