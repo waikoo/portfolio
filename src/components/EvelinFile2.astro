@@ -1,0 +1,67 @@
+---
+import EvelinFilePainPoint from "./EvelinFilePainPoint.astro";
+import EvelinFileResearchGoal from "./EvelinFileResearchGoal.astro";
+import EvelinFileWrapper from "./EvelinFileWrapper.astro";
+
+const { fileTitle, bgColor } = Astro.props;
+---
+
+<EvelinFileWrapper title={fileTitle} bgColor={bgColor}>
+  <span class="mt-[60px] xl:mt-[40px] block text-center font-semibold text-[12px] sm:text-[15px] xl:text-[20px]"
+    >METHOD 1.</span
+  >
+  <h3 class="text-center font-extrabold text-[21px] sm:text-[26px] xl:text-[40px]">INTERVIEW</h3>
+  <h4 class="text-right mt-[40px] font-bold text-[17px] sm:text-[21px] xl:text-[32px]">RESEARCH GOALS</h4>
+
+  <ul class="flex flex-col gap-[3px] sm:gap-[6px] xl:gap-[12px] mt-[13px] items-end sm:items-end xl:flex-wrap xl:justify-end xl:flex-row xl:max-w-[950px] xl:ml-auto">
+    <EvelinFileResearchGoal>
+      exploring how users shop at thrift stores</EvelinFileResearchGoal
+    >
+    <EvelinFileResearchGoal
+      >identifying gaps in the online stores they use</EvelinFileResearchGoal
+    >
+    <EvelinFileResearchGoal
+      >discovering ways to enhance their shopping experience</EvelinFileResearchGoal
+    >
+    <EvelinFileResearchGoal
+      >understanding their difficulties with online shopping</EvelinFileResearchGoal
+    >
+    <EvelinFileResearchGoal
+      >identifying challenges they face while shopping in person</EvelinFileResearchGoal
+    >
+  </ul>
+
+  <div class="xl:flex xl:flex-row-reverse xl:justify-between xl:gap-10 xl:mt-[90px]">
+    <p class="text-[13px] text-center border-[1px] border-[#c8c9ac] mt-[30px] p-2 w-1/2 xl:p-8 xl:text-left xl:text-[16px] xl:mt-0">
+      I conducted interviews to understand the users I’m designing for and their
+      needs. A primary user group identified through research was adults who don’t
+      have time to go thrift shopping. This user group confirmed initial
+      assumptions about thrift store customers, but research revealed that time
+      was not the only factor limiting users from going to thrift stores. Other
+      user problems included obligations, interests, or challenges that make it
+      difficult to go to thrift stores in person, or to catch periodic sales and
+      new arrivals.
+    </p>
+
+    <div class="w-1/2">
+      <h4 class="text-left text-[17px] font-bold mt-[50px] sm:text-[21px] xl:text-[32px] xl:mt-0">PAIN POINTS</h4>
+
+      <div class="mt-[15px] flex flex-col gap-[10px]">
+      <EvelinFilePainPoint bgColor={bgColor}>Working adults are too busy to spend time on thrift shopping in person</EvelinFilePainPoint>
+      <EvelinFilePainPoint bgColor={bgColor}>Price, size and labels are often difficult to find or understand in thrift stores</EvelinFilePainPoint>
+      <EvelinFilePainPoint bgColor={bgColor}>Not being able to keep up with discounts, missing them entirely or best items being already sold</EvelinFilePainPoint>
+      </div>
+    </div>
+  </div>
+
+    <h4 class="text-right font-bold text-[21px] xl:text-[32px] mt-[50px]">USER PERSONA</h4>
+</EvelinFileWrapper>
+
+<style>
+  span,
+  h3,
+  h4,
+  p {
+    font-family: "Jost", sans-serif;
+  }
+</style>

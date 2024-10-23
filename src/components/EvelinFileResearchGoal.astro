@@ -1,0 +1,11 @@
+<li class="bg-[#e8e9c4] p-1 px-5 text-[13px] xl:text-[16px] bullet">
+  <slot />
+</li>
+
+<style>
+  .bullet::before {
+    content: "•";
+    color: black;
+    margin-left: -9px;
+  }
+</style>

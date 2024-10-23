@@ -2,6 +2,7 @@
 import PersonHeader from "../../../components/PersonHeader.astro";
 import Layout from "../../../layouts/Layout.astro";
 import EvelinFile from "../../../components/EvelinFile.astro";
+import EvelinFile2 from "../../../components/EvelinFile2.astro";
 
 const bgColor = "#d2d62e";
 ---
@@ -9,7 +10,10 @@ const bgColor = "#d2d62e";
 <Layout title="Thriftstudio" bgColor={bgColor}>
   <PersonHeader familyName={"Szász"} name={"Evelin"} color="black" />
 
-  <main class="px-[40px] sm:px-[50px] xl:px-[70px]">
+  <main
+    class="px-[40px] sm:px-[50px] xl:px-[70px] flex flex-col gap-5 xl:gap-10 items-center"
+  >
     <EvelinFile fileTitle="OVERVIEW" bgColor={bgColor} />
+    <EvelinFile2 fileTitle="RESEARCH" bgColor={bgColor} />
   </main>
 </Layout>

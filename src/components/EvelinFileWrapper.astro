@@ -3,19 +3,20 @@ const { title, bgColor } = Astro.props;
 ---
 
 <article
-  class="relative bg-[#f9f9f9] rounded-[20px_0px_0px_20px] sm:rounded-[20px] xl:py-[110px] xl:px-[120px] sm:p-[50px] text-[#0d0d0d] mx-auto"
+  class={`relative bg-[#f9f9f9] rounded-[20px_0px_20px_20px] sm:rounded-[20px] xl:py-[110px] 2xl:px-[170px] sm:p-[50px] text-[#0d0d0d]`}
 >
   <div
-    class="absolute top-[-1px] right-[-1px] px-[16px]"
+    class="absolute top-[-1px] right-[-1px] px-[8px] xl:px-[16px]"
     style={{ backgroundColor: bgColor }}
   >
     <h2
-      class={`text-[26px] sm:text-[35px] xl:text-[55px] tracking-[-6px] px-[12px]]`}
+      class={`text-[26px] sm:text-[35px] xl:text-[55px] tracking-[-2px] xl:tracking-[-6px] px-[12px]]`}
     >
       {title}
     </h2>
   </div>
-  <section class="pl-[20px] pr-[20px] sm:text-[14px]">
+
+  <section class="pl-[20px] pr-[20px] sm:text-[14px] mx-auto">
     <slot />
   </section>
 </article>
