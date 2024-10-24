@@ -1,0 +1,167 @@
+<script>
+  const competitiveAnalysisElements =
+    document.querySelectorAll<HTMLLIElement>(".ca");
+
+  const picture = document.querySelector("#ca-picture");
+
+  let activeElement: HTMLLIElement | null =
+    document.querySelector<HTMLLIElement>(".ca1");
+
+  const currentModalImage = document.querySelector<HTMLImageElement>(
+    "#ca-modal-picture img",
+  );
+
+  // dynamically set modal image's source to be the clicked image
+  const caImg = document.querySelector<HTMLImageElement>(".ca-image");
+  if (caImg) {
+    caImg.addEventListener("click", (e: MouseEvent) => {
+      if (currentModalImage) {
+        const target = e.currentTarget as HTMLImageElement;
+        if (target) {
+          currentModalImage.src = `/images/${target.src.split("/").at(-1)}`;
+        }
+      }
+    });
+  }
+
+  // toggle through points
+  competitiveAnalysisElements.forEach((el) => {
+    el.addEventListener("click", () => {
+      const imgBase = el.getAttribute("data-img");
+      const style = el.getAttribute("data-style");
+
+      if (imgBase && picture) {
+        const avifSource = picture.querySelector(
+          "source[type='image/avif']",
+        ) as HTMLImageElement;
+        const webpSource = picture.querySelector(
+          "source[type='image/webp']",
+        ) as HTMLImageElement;
+        const img = picture.querySelector("img");
+
+        if (avifSource) avifSource.srcset = `${imgBase}.avif`;
+        if (webpSource) webpSource.srcset = `${imgBase}.webp`;
+        if (img) img.src = `${imgBase}.png`;
+      }
+
+      if (activeElement) {
+        const dataStyle = activeElement.getAttribute("data-style");
+        if (dataStyle) {
+          activeElement.classList.remove(dataStyle);
+        }
+      }
+
+      if (style) {
+        el.classList.add(style);
+        activeElement = el;
+      }
+    });
+  });
+
+  const modalPicture = document.querySelector("#ca-modal-picture");
+  if (modalPicture) {
+    const modalImg = modalPicture.querySelector("img");
+    if (modalImg) {
+      modalImg.src = "/images/CA1.png";
+    }
+  }
+</script>
+<section>
+  <ul
+    class="flex flex-row gap-2 font-semibold text-center overflow-scroll text-[10px] items-center border-[2px] sm:border-[3px] rounded-full p-1 border-[#d2d62e] h-max-content mt-[50px]"
+  >
+    <li
+      class="cursor-pointer ca ca1 p-[0.5rem]"
+      data-img="/images/CA1"
+      data-style="ca1"
+    >
+      GENERAL INFORMATION
+    </li>
+    <li
+      class="cursor-pointer ca whitespace-nowrap"
+      data-img="/images/CA2"
+      data-style="ca2"
+    >
+      FIRST IMPRESSIONS
+    </li>
+    <li
+      class="cursor-pointer ca whitespace-nowrap"
+      data-img="/images/CA3"
+      data-style="ca3"
+    >
+      INTERACTION
+    </li>
+    <li
+      class="cursor-pointer ca whitespace-nowrap"
+      data-img="/images/CA4"
+      data-style="ca4"
+    >
+      VISUAL DESIGN
+    </li>
+    <li
+      class="cursor-pointer ca whitespace-nowrap"
+      data-img="/images/CA5"
+      data-style="ca5"
+    >
+      CONTENT
+    </li>
+  </ul>
+
+  <picture id="ca-picture">
+    <source type="image/avif" srcset="/images/CA1.avif" />
+    <source type="image/webp" srcset="/images/CA1.webp" />
+    <source type="image/jpg" srcset="/images/CA1.jpg" />
+    <img
+      src="/images/CA1.png"
+      alt="competitive analysis"
+      class="ca-image rounded-[7px] mt-2 xl:cursor-pointer"
+    />
+  </picture>
+</section>
+
+<style>
+  .ca1 {
+    background-color: #4d3566;
+    color: white;
+    border-radius: 100px;
+    padding: 0.5rem;
+  }
+  .ca2 {
+    background-color: #373566;
+    color: white;
+    border-radius: 100px;
+    padding: 0.5rem;
+  }
+  .ca3 {
+    background-color: #5d6635;
+    color: white;
+    border-radius: 100px;
+    padding: 0.5rem;
+  }
+  .ca4 {
+    background-color: #66355a;
+    color: white;
+    border-radius: 100px;
+    padding: 0.5rem;
+  }
+  .ca5 {
+    background-color: #355d66;
+    color: white;
+    border-radius: 100px;
+    padding: 0.5rem;
+  }
+
+  /* hide scrollbar */
+  ul::-webkit-scrollbar {
+    display: none;
+  }
+
+  ul {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  * {
+    font-family: "Jost", sans-serif;
+  }
+</style>

@@ -1,0 +1,40 @@
+---
+import IconCloseModal from "./IconCloseModal.astro";
+---
+
+<script>
+  const caImg = document.querySelector(".ca-image");
+  const overlay = document.getElementById("ca-modal");
+
+  if (caImg && overlay instanceof HTMLDialogElement) {
+    caImg.addEventListener("click", () => {
+      overlay.classList.remove("hidden");
+      overlay.classList.add("grid");
+      overlay.showModal();
+    });
+  }
+
+  const closeModalIcon = document.getElementById("close-ca-modal");
+  if (closeModalIcon) {
+    closeModalIcon.addEventListener("click", () => {
+      if (overlay instanceof HTMLDialogElement) {
+        overlay.close();
+        overlay.classList.add("hidden");
+        overlay.classList.remove("grid");
+      }
+    });
+  }
+</script>
+
+<dialog
+  class="overlay fixed hidden bg-white w-screen h-screen place-items-center"
+  id="ca-modal"
+>
+  <IconCloseModal />
+
+  <picture id="ca-modal-picture">
+    <!-- <source type="image/avif" srcset="/images/CA1.avif" /> -->
+    <!-- <source type="image/webp" srcset="/images/CA1.webp" /> -->
+    <img src="/images/CA1.png" alt="Competitive Analysis" />
+  </picture>
+</dialog>

@@ -1,4 +1,6 @@
 ---
+import CompetitiveAnalysis from "./CompetitiveAnalysis.astro";
+import CompetitiveAnalysisModal from "./CompetitiveAnalysisModal.astro";
 import EvelinFilePainPoint from "./EvelinFilePainPoint.astro";
 import EvelinFileResearchGoal from "./EvelinFileResearchGoal.astro";
 import EvelinFileWrapper from "./EvelinFileWrapper.astro";
@@ -144,6 +146,9 @@ const { fileTitle, bgColor } = Astro.props;
   >
     COMPETITIVE ANALYSIS
   </h3>
+
+  <CompetitiveAnalysis />
+  <CompetitiveAnalysisModal />
 </EvelinFileWrapper>
 
 <style>
