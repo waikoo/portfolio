@@ -3,6 +3,7 @@ import PersonHeader from "../../../components/PersonHeader.astro";
 import Layout from "../../../layouts/Layout.astro";
 import EvelinFile from "../../../components/EvelinFile.astro";
 import EvelinFile2 from "../../../components/EvelinFile2.astro";
+import ThriftstudioAside from "../../../components/ThriftstudioAside.astro";
 
 const bgColor = "#d2d62e";
 ---
@@ -15,5 +16,7 @@ const bgColor = "#d2d62e";
   >
     <EvelinFile fileTitle="OVERVIEW" bgColor={bgColor} />
     <EvelinFile2 fileTitle="RESEARCH" bgColor={bgColor} />
+
+    <ThriftstudioAside />
   </main>
 </Layout>
