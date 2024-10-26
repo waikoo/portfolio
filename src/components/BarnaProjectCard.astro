@@ -34,20 +34,6 @@ const projectWrapper =
       : "lg:grid-cols-[4fr_1fr]";
 ---
 
-<script>
-  import { addClass } from "../utils/addClass";
-
-  const observer = new IntersectionObserver((elements) => addClass(elements));
-
-  const projects = document.querySelectorAll(
-    ".project",
-  ) as NodeListOf<HTMLElement>;
-
-  projects.forEach((project) => {
-    observer.observe(project);
-  });
-</script>
-
 <section
   class={`relative grid project gap-[30px] grid-rows-[auto] items-center justify-items-center backdrop-blur-lg rounded-[30px] bg-black/5 sm:p-[30px] p-[12px] grid-cols-1 hover:bg-black/30 transition-all duration-300 ${projectWrapper}`}
 >
@@ -108,30 +94,5 @@ const projectWrapper =
   .jost-semibold {
     font-family: "Jost", sans-serif;
     font-weight: 600;
-  }
-
-  .project {
-    --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    opacity: 0;
-    transform: translateX(-200px);
-    transition:
-      opacity 0.5s var(--ease-out-quad),
-      transform 0.5s var(--ease-out-quad);
-  }
-
-  .project.in-view {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-      transform: translateX(-100px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0px);
-    }
   }
 </style>
