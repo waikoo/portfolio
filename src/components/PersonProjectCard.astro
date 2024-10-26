@@ -40,7 +40,13 @@ const projectWrapper =
   <div
     class={`grid ${mediaWrapper} place-items-center row-start-4 row-end-5 ${isInverted ? "" : "lg:cols-start-1 lg:cols-end-2 lg:row-start-1 lg:row-end-5"} ${id === 4 ? "justify-self-center" : ""}`}
   >
-    <PersonProjectCardMedia src={src} description={description} id={id} />
+    <PersonProjectCardMedia
+      src={src}
+      description={description}
+      id={id}
+      projectLink={projectLink}
+      live={live}
+    />
   </div>
 
   <PersonProjectCardTitle
