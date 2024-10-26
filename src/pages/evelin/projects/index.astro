@@ -1,5 +1,5 @@
 ---
-import BarnaProjectCard from "../../../components/BarnaProjectCard.astro";
+import PersonProjectCard from "../../../components/PersonProjectCard.astro";
 import HamburgerMenu from "../../../components/HamburgerMenu.astro";
 import PersonLayout from "../../../components/PersonLayout.astro";
 import Layout from "../../../layouts/Layout.astro";
@@ -15,7 +15,7 @@ const fullName = "Szász Evelin";
     >
       {
         projects.map((project) => (
-          <BarnaProjectCard fullName={fullName} {...project} />
+          <PersonProjectCard fullName={fullName} {...project} />
         ))
       }
     </div>
