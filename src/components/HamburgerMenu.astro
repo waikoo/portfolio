@@ -5,8 +5,11 @@ import { extractName } from "../utils/extractName";
 
 const { fullName } = Astro.props;
 const { name } = extractName(fullName);
-const bgColor =
-  name.toLowerCase() === "evelin" ? "bg-[#995ea2]" : "bg-[#9b991a]";
+const bgColor = Astro.request.url.toString().includes("thriftstudio")
+  ? "bg-[#d2d62e]"
+  : name.toLowerCase() === "evelin"
+    ? "bg-[#995ea2]"
+    : "bg-[#9b991a]";
 ---
 
 <script>
@@ -15,20 +18,20 @@ const bgColor =
 
   if (closeIcon && hamburgerMenu) {
     closeIcon.addEventListener("click", () => {
-      hamburgerMenu.classList.add("hidden");
+      hamburgerMenu.classList.add("invisible");
     });
   }
   if (hamburgerMenu) {
     hamburgerMenu.addEventListener("click", (e) => {
       if (e.target === hamburgerMenu) {
-        hamburgerMenu.classList.add("hidden");
+        hamburgerMenu.classList.add("invisible");
       }
     });
   }
 </script>
 
 <div
-  class="z-[120] fixed inset-0 bg-black bg-opacity-70 hamburger-menu hidden lg:hidden"
+  class="z-[120] fixed inset-0 bg-black bg-opacity-70 hamburger-menu invisible lg:hidden"
 >
   <section
     class={`min-h-[100dvh] w-[70%] sm:w-[30%] ml-auto ${bgColor} relative`}

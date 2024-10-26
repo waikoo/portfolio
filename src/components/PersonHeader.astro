@@ -45,9 +45,13 @@ const lowercasedName = name.toLowerCase();
   const hamburgerIcon = document.querySelector(".hamburger-icon");
   const hamburgerMenu = document.querySelector(".hamburger-menu");
 
-  if (hamburgerIcon && hamburgerMenu) {
+  if (hamburgerIcon) {
     hamburgerIcon.addEventListener("click", () => {
-      hamburgerMenu.classList.remove("hidden");
+      console.log(hamburgerIcon);
+      console.log(hamburgerMenu);
+      if (hamburgerMenu) {
+        hamburgerMenu.classList.remove("invisible");
+      }
     });
   }
 </script>
@@ -68,7 +72,7 @@ const lowercasedName = name.toLowerCase();
     />
     <IconHamburger
       name={lowercasedName}
-      className="lg:hidden h-full flex flex-col justify-center mt-3 hamburger-icon"
+      className="lg:hidden h-full flex flex-col justify-center mt-3 hamburger-icon z-[90]"
       color={color}
     />
   </div>

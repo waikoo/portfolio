@@ -4,7 +4,9 @@ import Layout from "../../../layouts/Layout.astro";
 import EvelinFile from "../../../components/EvelinFile.astro";
 import EvelinFile2 from "../../../components/EvelinFile2.astro";
 import ThriftstudioAside from "../../../components/ThriftstudioAside.astro";
+import HamburgerMenu from "../../../components/HamburgerMenu.astro";
 
+const fullName = "Szász Evelin";
 const bgColor = "#d2d62e";
 ---
 
@@ -18,5 +20,6 @@ const bgColor = "#d2d62e";
     <EvelinFile2 fileTitle="RESEARCH" bgColor={bgColor} />
 
     <ThriftstudioAside />
+    <HamburgerMenu fullName={fullName} bgColor={bgColor} />
   </main>
 </Layout>
