@@ -13,28 +13,31 @@ const bgColor = Astro.request.url.toString().includes("thriftstudio")
 ---
 
 <script>
-  const hamburgerMenu = document.querySelector(".hamburger-menu");
-  const closeIcon = document.querySelector(".icon-close");
+  const closeHamburgerMenu = () => {
+    const hamburgerMenu = document.querySelector(".hamburger-menu");
+    const closeIcon = document.querySelector(".icon-close");
 
-  if (closeIcon && hamburgerMenu) {
-    closeIcon.addEventListener("click", () => {
-      hamburgerMenu.classList.add("invisible");
-    });
-  }
-  if (hamburgerMenu) {
-    hamburgerMenu.addEventListener("click", (e) => {
-      if (e.target === hamburgerMenu) {
-        hamburgerMenu.classList.add("invisible");
-      }
-    });
-  }
+    if (closeIcon && hamburgerMenu) {
+      closeIcon.addEventListener("click", () => {
+        hamburgerMenu.classList.add("hidden");
+      });
+    }
+    if (hamburgerMenu) {
+      hamburgerMenu.addEventListener("click", (e) => {
+        if (e.target === hamburgerMenu) {
+          hamburgerMenu.classList.add("hidden");
+        }
+      });
+    }
+  };
+  document.addEventListener("astro:page-load", closeHamburgerMenu);
 </script>
 
 <div
-  class="z-[120] fixed inset-0 bg-black bg-opacity-70 hamburger-menu invisible lg:hidden"
+  class="z-[120] fixed inset-0 bg-black bg-opacity-70 hamburger-menu hidden lg:hidden"
 >
   <section
-    class={`min-h-[100dvh] w-[70%] sm:w-[30%] ml-auto ${bgColor} relative`}
+    class={`min-h-[100dvh] w-[70%] sm:w-[30%] ml-auto ${bgColor} right-[-51px] bottom-[-10px] relative`}
   >
     <PersonLinks
       lowercasedName={fullName.split(" ")[1].toLowerCase()}

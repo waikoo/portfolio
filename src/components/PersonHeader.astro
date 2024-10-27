@@ -2,8 +2,11 @@
 import PersonLinks from "./PersonLinks.astro";
 import PersonNameTag from "./PersonNameTag.astro";
 import IconHamburger from "./IconHamburger.astro";
+import HamburgerMenu from "./HamburgerMenu.astro";
 
-const { familyName, name, color, bgColor } = Astro.props;
+const { fullName, color, bgColor } = Astro.props;
+
+const [familyName, name] = fullName.split(" ");
 
 const lowercasedName = name.toLowerCase();
 ---
@@ -33,16 +36,20 @@ const lowercasedName = name.toLowerCase();
     }
   });
 
-  const hamburgerIcon = document.querySelector(".hamburger-icon");
-  const hamburgerMenu = document.querySelector(".hamburger-menu");
+  const attachHamburgerEventListener = () => {
+    const hamburgerIcon = document.querySelector(".hamburger-icon");
+    const hamburgerMenu = document.querySelector(".hamburger-menu");
 
-  if (hamburgerIcon) {
-    hamburgerIcon.addEventListener("click", () => {
-      if (hamburgerMenu) {
-        hamburgerMenu.classList.remove("invisible");
-      }
-    });
-  }
+    if (hamburgerIcon) {
+      hamburgerIcon.addEventListener("click", () => {
+        if (hamburgerMenu) {
+          hamburgerMenu.classList.remove("hidden");
+        }
+      });
+    }
+  };
+
+  document.addEventListener("astro:page-load", attachHamburgerEventListener);
 </script>
 
 <header class={`sticky top-0 z-50`} data-bg-color={bgColor}>
@@ -64,5 +71,6 @@ const lowercasedName = name.toLowerCase();
       className="lg:hidden h-full flex flex-col justify-center mt-3 hamburger-icon z-[90]"
       color={color}
     />
+    <HamburgerMenu fullName={fullName} bgColor={bgColor} />
   </div>
 </header>

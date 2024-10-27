@@ -3,7 +3,6 @@ import Layout from "../../layouts/Layout.astro";
 import PersonProjectCard from "../../components/PersonProjectCard.astro";
 import { projects } from "../../projects/data";
 import PersonLayout from "../../components/PersonLayout.astro";
-import HamburgerMenu from "../../components/HamburgerMenu.astro";
 
 const fullName = "Szász Barna";
 const bgColor = "#0d1205";
@@ -21,6 +20,4 @@ const bgColor = "#0d1205";
       }
     </div>
   </PersonLayout>
-
-  <HamburgerMenu fullName={fullName} />
 </Layout>
