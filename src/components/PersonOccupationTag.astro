@@ -4,14 +4,14 @@ const textColor = name === "EVELIN" ? `text-[#e296f5]` : `text-white`;
 ---
 
 <div
-  class={`grid grid-rows-3 gap-0 text-[11px]  lg:mt-0 ${textColor} justify-items-start`}
+  class={`grid grid-rows-3 gap-0 text-[11px] lg:mt-0 ${textColor} justify-items-start`}
   style={{ color: color }}
 >
-  <p class="translate-y-[7px] lg:mt-[2px]">
+  <p class="translate-y-[7px] lg:mt-[-6px]">
     {name === "BARNA" ? "FRONT" : "UI"}
   </p>
-  <p class="-mt-[1px] lg:-mt-[1px]">{name === "BARNA" ? "END" : "UX"}</p>
-  <p class="-mt-[7px] lg:-mt-[6px]">
+  <p class="-mt-[1px] lg:-mt-[2px]">{name === "BARNA" ? "END" : "UX"}</p>
+  <p class="-mt-[7px] lg:-mt-[5px]">
     {name === "BARNA" ? "DEVELOPER" : "DESIGNER"}
   </p>
 </div>
