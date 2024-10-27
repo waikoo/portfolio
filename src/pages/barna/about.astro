@@ -3,8 +3,9 @@ import Layout from "../../layouts/Layout.astro";
 import BarnaLayout from "../../components/BarnaLayout.astro";
 
 const endpoint = new URL(Astro.request.url);
+const fullName = "Szász Barna";
 ---
 
-<Layout title="About Szász Barna">
+<Layout title={`About ${fullName}`} fullName={fullName}>
   <BarnaLayout />
 </Layout>

@@ -8,7 +8,7 @@ const fullName = "Szász Barna";
 const { name } = extractName(fullName);
 ---
 
-<Layout title={`Contact ${fullName}`}>
+<Layout title={`Contact ${fullName}`} fullName={fullName}>
   <PersonLayout fullName={fullName}>
     <main class="relative h-full grid place-items-center">
       <div class="flex flex-col items-center text-center pb-[200px]">

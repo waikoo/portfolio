@@ -6,7 +6,7 @@ import PersonCV from "../../components/PersonCV.astro";
 const fullName = "Szász Evelin";
 ---
 
-<Layout title={`${fullName}'s CV`}>
+<Layout title={`${fullName}'s CV`} fullName={fullName}>
   <PersonLayout fullName={fullName}>
     <PersonCV
       fullName={fullName}
