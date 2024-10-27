@@ -6,10 +6,11 @@ import PersonLayout from "../../components/PersonLayout.astro";
 import HamburgerMenu from "../../components/HamburgerMenu.astro";
 
 const fullName = "Szász Barna";
+const bgColor = "#0d1205";
 ---
 
 <Layout title={`${fullName}'s Projects`}>
-  <PersonLayout fullName={fullName}>
+  <PersonLayout fullName={fullName} bgColor={bgColor}>
     <div
       class="w-[90%] lg:max-w-[960px] 2xl:max-w-[1400px] mx-auto pb-20 flex flex-col gap-[24px] lg:gap-20 mt-12"
     >

@@ -3,14 +3,14 @@ import HeroBackground from "../components/HeroBackground.astro";
 import PersonHeader from "../components/PersonHeader.astro";
 import { extractName } from "../utils/extractName";
 
-const { fullName } = Astro.props;
+const { fullName, bgColor } = Astro.props;
 const { name, familyName } = extractName(fullName);
 ---
 
 <div class="relative w-full h-screen min-h-[100%] isolate">
   <HeroBackground endpoint={name.toUpperCase()} />
 
-  <PersonHeader familyName={familyName} name={name} />
+  <PersonHeader familyName={familyName} name={name} bgColor={bgColor} />
 
   <slot />
 </div>
