@@ -5,11 +5,8 @@ import { extractName } from "../utils/extractName";
 
 const { fullName } = Astro.props;
 const { name } = extractName(fullName);
-const bgColor = Astro.request.url.toString().includes("thriftstudio")
-  ? "bg-[#d2d62e]"
-  : name.toLowerCase() === "evelin"
-    ? "bg-[#995ea2]"
-    : "bg-[#9b991a]";
+const bgColor =
+  name.toLowerCase() === "evelin" ? "bg-[#995ea2]" : "bg-[#9b991a]";
 ---
 
 <script>
