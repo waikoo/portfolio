@@ -6,6 +6,7 @@ import IconHamburger from "./IconHamburger.astro";
 const { familyName, name, color, bgColor } = Astro.props;
 
 const lowercasedName = name.toLowerCase();
+console.log(bgColor);
 ---
 
 <script>
@@ -14,7 +15,7 @@ const lowercasedName = name.toLowerCase();
     const header = document.querySelector("header");
     if (header) {
       if (window.scrollY > 0) {
-        // header.classList.add(headerBgOnScroll);
+        header.style.backgroundColor = header.dataset.bgColor || "";
         if (window.location.href.toString().includes("thriftstudio")) {
           return;
         } else {
@@ -22,7 +23,7 @@ const lowercasedName = name.toLowerCase();
           header.classList.add("z-50");
         }
       } else {
-        // header.classList.remove(headerBgOnScroll);
+        header.style.backgroundColor = "";
         if (window.location.href.toString().includes("thriftstudio")) {
           return;
         } else {
@@ -38,8 +39,6 @@ const lowercasedName = name.toLowerCase();
 
   if (hamburgerIcon) {
     hamburgerIcon.addEventListener("click", () => {
-      console.log(hamburgerIcon);
-      console.log(hamburgerMenu);
       if (hamburgerMenu) {
         hamburgerMenu.classList.remove("invisible");
       }
@@ -47,7 +46,7 @@ const lowercasedName = name.toLowerCase();
   }
 </script>
 
-<header class={`sticky top-0 z-50`} style={{ backgroundColor: bgColor }}>
+<header class={`sticky top-0 z-50`} data-bg-color={bgColor}>
   <div
     class={`mx-auto w-[90%] flex flex-row justify-between items-center -translate-y-[12px] py-6`}
   >
@@ -68,9 +67,3 @@ const lowercasedName = name.toLowerCase();
     />
   </div>
 </header>
-
-<style>
-  header {
-    transition: background-color 0.2s ease-out;
-  }
-</style>
