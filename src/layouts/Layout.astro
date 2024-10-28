@@ -24,7 +24,7 @@ const { fullName, title, bgColor } = Astro.props;
   </head>
   <body style={{ backgroundColor: bgColor }}>
     <slot />
-    <HamburgerMenu fullName={fullName} bgColor={bgColor} />
+    {!fullName ? null : <HamburgerMenu fullName={fullName} bgColor={bgColor} />}
   </body>
 </html>
 
