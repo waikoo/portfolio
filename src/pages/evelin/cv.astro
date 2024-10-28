@@ -4,10 +4,11 @@ import Layout from "../../layouts/Layout.astro";
 import PersonCV from "../../components/PersonCV.astro";
 
 const fullName = "Szász Evelin";
+const bgColor = "#1c000c";
 ---
 
 <Layout title={`${fullName}'s CV`} fullName={fullName}>
-  <PersonLayout fullName={fullName}>
+  <PersonLayout fullName={fullName} bgColor={bgColor}>
     <PersonCV
       fullName={fullName}
       imgSrc="/images/evelin_cv.jpg"
