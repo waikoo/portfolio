@@ -1,0 +1,41 @@
+---
+import IconCloseModal from "./IconCloseModal.astro";
+const { imgSelector, closeModalId } = Astro.props;
+console.log(closeModalId);
+---
+
+<script>
+  const imgToClickEl = document.querySelector(
+    "[data-img-selector]",
+  ) as HTMLDivElement;
+  const imgToClick = document.querySelector(imgToClickEl.dataset.imgSelector!);
+  const overlay = document.getElementById(imgToClickEl.dataset.closeModalId!);
+
+  if (imgToClick && overlay instanceof HTMLDialogElement) {
+    imgToClick.addEventListener("click", () => {
+      overlay.classList.remove("hidden");
+      overlay.classList.add("grid");
+      overlay.showModal();
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("click", (e) => {
+      const target = e.target as SVGElement;
+      if (target.matches("#close-modal")) {
+        overlay!.classList.add("hidden");
+        overlay!.classList.remove("grid");
+        (overlay! as HTMLDialogElement).close();
+      }
+    });
+  });
+</script>
+
+<dialog
+  class="overlay fixed hidden bg-white w-screen h-screen place-items-center"
+  id={closeModalId}
+>
+  <IconCloseModal />
+  <div data-img-selector={imgSelector} data-close-modal-id={closeModalId}></div>
+  <slot />
+</dialog>
