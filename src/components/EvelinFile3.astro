@@ -4,6 +4,14 @@ import SiteMap from "./SiteMap.astro";
 import Modal from "./Modal.astro";
 import TapToEnlarge from "./TapToEnlarge.astro";
 import TapToEnlargeBig from "./TapToEnlargeBig.astro";
+import EvelinFilePainPoint from "./EvelinFilePainPoint.astro";
+import UserFlow from "./UserFlow.astro";
+import UserFlowModal from "./UserFlowModal.astro";
+import MustardBgTitle from "./MustardBgTitle.astro";
+import BigPictureStoryboard from "./BigPictureStoryboard.astro";
+import BigPictureStoryboardModal from "./BigPictureStoryboardModal.astro";
+import CloseUpStoryboard from "./CloseUpStoryboard.astro";
+import CloseUpStoryboardModal from "./CloseUpStoryboardModal.astro";
 
 const { fileTitle, bgColor } = Astro.props;
 ---
@@ -36,7 +44,7 @@ const { fileTitle, bgColor } = Astro.props;
   </p>
 
   <h4
-    class="text-[17px] sm:text-[21px] xl:text-[32px] text-[#1e1e1e] font-bold mt-[50px]"
+    class="text-right text-[17px] sm:text-[21px] xl:text-[32px] text-[#1e1e1e] font-bold mt-[50px]"
   >
     SITEMAP
   </h4>
@@ -56,6 +64,56 @@ const { fileTitle, bgColor } = Astro.props;
   </Modal>
   <TapToEnlarge className="mt-[22px] sm:hidden" />
   <TapToEnlargeBig className="mt-[22px] hidden sm:flex" />
+
+  <h4
+    class="text-[#1e1e1e] text-[17px] sm:text-[21px] xl:text-[32px] font-bold"
+  >
+    USER FLOW
+  </h4>
+  <EvelinFilePainPoint bgColor={bgColor} className="mt-[30px]"
+    >The primary path to browsing and purchasing a desired item from the thrift
+    store website</EvelinFilePainPoint
+  >
+
+  <UserFlow />
+  <UserFlowModal />
+  <TapToEnlarge className="mt-[22px] sm:hidden" />
+  <TapToEnlargeBig className="mt-[22px] hidden sm:flex" />
+
+  <p
+    class="mt-20 border-[#c8c9ac] p-5 border-[1px] text-[13px] sm:text-[14px] xl:text-[17px]"
+  >
+    The <strong>user flow</strong> provided a <strong
+      >blueprint for how users navigate</strong
+    > through the website to find and purchase products. The following <strong
+      >storyboards illustrate this journey in a real-life context</strong
+    >, showing how users interact with the platform and the environment in which
+    they are using it. While the user flow focuses on the interactions within
+    the digital space, the storyboards depict the <strong
+      >emotions, motivations, and external factors</strong
+    > that shape the overall experience.
+  </p>
+
+  <div
+    class="text-[12px] sm:text-[13px] xl:text-[16px] xl:justify-center xl:flex mt-[70px]"
+  >
+    <p><strong>SCENARIO:</strong></p>
+    <p>
+      A WEBSITE THAT ALLOWS USERS TO QUICKLY SHOP FROM THE THRIFT STORE ON THE
+      GO
+    </p>
+  </div>
+
+  <MustardBgTitle>BIG PICTURE STORYBOARD</MustardBgTitle>
+
+  <BigPictureStoryboard />
+  <BigPictureStoryboardModal />
+  <TapToEnlarge className="mt-[22px] sm:hidden" />
+  <TapToEnlargeBig className="mt-[22px] hidden sm:flex" />
+
+  <MustardBgTitle className="text-right">CLOSE-UP STORYBOARD</MustardBgTitle>
+  <CloseUpStoryboard />
+  <CloseUpStoryboardModal />
 </EvelinFileWrapper>
 
 <style>

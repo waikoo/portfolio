@@ -1,0 +1,15 @@
+---
+const { className } = Astro.props;
+---
+
+<div class={`mt-20 ${className}`}>
+  <span class="font-bold text-[1rem] bg-[#d2d62e] p-3">
+    <slot />
+  </span>
+</div>
+
+<style>
+  * {
+    font-family: "Jost", sans-serif;
+  }
+</style>
