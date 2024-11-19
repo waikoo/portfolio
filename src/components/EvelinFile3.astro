@@ -2,6 +2,8 @@
 import EvelinFileWrapper from "./EvelinFileWrapper.astro";
 import SiteMap from "./SiteMap.astro";
 import Modal from "./Modal.astro";
+import TapToEnlarge from "./TapToEnlarge.astro";
+import TapToEnlargeBig from "./TapToEnlargeBig.astro";
 
 const { fileTitle, bgColor } = Astro.props;
 ---
@@ -52,6 +54,8 @@ const { fileTitle, bgColor } = Astro.props;
   <Modal imgSelector=".sitemap" closeModalId="sitemap-modal">
     <SiteMap />
   </Modal>
+  <TapToEnlarge className="mt-[22px] sm:hidden" />
+  <TapToEnlargeBig className="mt-[22px] hidden sm:flex" />
 </EvelinFileWrapper>
 
 <style>
