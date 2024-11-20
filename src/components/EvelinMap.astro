@@ -10,7 +10,11 @@ const { title, bgColor } = Astro.props;
   >
     {title}
   </h4>
-  <p class="text-[14px] xl:text-[17px] mt-2 ml-2 whitespace-nowrap"><slot /></p>
+  <p
+    class="text-[14px] sm:text-[16px] xl:text-[17px] mt-2 ml-2 whitespace-nowrap"
+  >
+    <slot />
+  </p>
 </div>
 
 <style>
