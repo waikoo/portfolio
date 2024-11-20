@@ -69,7 +69,9 @@ const { fileTitle, bgColor } = Astro.props;
   >
     USER FLOW
   </h4>
-  <EvelinFilePainPoint bgColor={bgColor} className="mt-[30px]"
+  <EvelinFilePainPoint
+    bgColor={bgColor}
+    className="mt-[20px] mb-[50px] sm:text-[14px]"
     >The primary path to browsing and purchasing a desired item from the thrift
     store website</EvelinFilePainPoint
   >
@@ -79,8 +81,13 @@ const { fileTitle, bgColor } = Astro.props;
   <TapToEnlarge className="mt-[22px] sm:hidden" />
   <TapToEnlargeBig className="mt-[22px] hidden sm:flex" />
 
+  <h4
+    class="mt-32 text-[#1e1e1e] text-[17px] sm:text-[21px] xl:text-[32px] font-bold text-right"
+  >
+    STORYBOARDS
+  </h4>
   <p
-    class="mt-20 border-[#c8c9ac] p-5 border-[1px] text-[13px] sm:text-[14px] xl:text-[17px]"
+    class="mt-10 border-[#c8c9ac] p-5 border-[1px] text-[13px] sm:text-[14px] xl:text-[17px]"
   >
     The <strong>user flow</strong> provided a <strong
       >blueprint for how users navigate</strong
@@ -96,8 +103,8 @@ const { fileTitle, bgColor } = Astro.props;
   <div
     class="text-[12px] sm:text-[13px] xl:text-[16px] xl:justify-center xl:flex mt-[70px]"
   >
-    <p><strong>SCENARIO:</strong></p>
-    <p>
+    <p><strong>SCENARIO: </strong></p>
+    <p class="pl-2 font-medium">
       A WEBSITE THAT ALLOWS USERS TO QUICKLY SHOP FROM THE THRIFT STORE ON THE
       GO
     </p>
@@ -113,6 +120,8 @@ const { fileTitle, bgColor } = Astro.props;
   <MustardBgTitle className="text-right">CLOSE-UP STORYBOARD</MustardBgTitle>
   <CloseUpStoryboard />
   <CloseUpStoryboardModal />
+  <TapToEnlarge className="mt-[22px] sm:hidden" />
+  <TapToEnlargeBig className="mt-[22px] hidden sm:flex" />
 </EvelinFileWrapper>
 
 <style>
