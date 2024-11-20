@@ -12,6 +12,7 @@ import BigPictureStoryboard from "./BigPictureStoryboard.astro";
 import BigPictureStoryboardModal from "./BigPictureStoryboardModal.astro";
 import CloseUpStoryboard from "./CloseUpStoryboard.astro";
 import CloseUpStoryboardModal from "./CloseUpStoryboardModal.astro";
+import SiteMapModal from "./SiteMapModal.astro";
 
 const { fileTitle, bgColor } = Astro.props;
 ---
@@ -59,9 +60,7 @@ const { fileTitle, bgColor } = Astro.props;
   </p>
 
   <SiteMap />
-  <Modal imgSelector=".sitemap" closeModalId="sitemap-modal">
-    <SiteMap />
-  </Modal>
+  <SiteMapModal />
   <TapToEnlarge className="mt-[22px] sm:hidden" />
   <TapToEnlargeBig className="mt-[22px] hidden sm:flex" />
 
