@@ -22,7 +22,7 @@ const {
 } = Astro.props;
 const { name: firstName } = extractName(fullName);
 const lowerCasedName = firstName.toLowerCase();
-const isInverted = id === 2 || id === 4;
+const isInverted = id === 0 || id === 2 || id === 4;
 const mediaWrapper = isInverted
   ? "lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-5"
   : "lg:col-start-1 lg:col-end-2";
@@ -69,7 +69,7 @@ const projectWrapper =
       <BarnaMenuTags
         tags={tags}
         color={color}
-        id={id}
+        isInverted={isInverted}
         className={`row-start-3 row-end-4 ${isInverted ? "lg:col-start-1 lg:col-end-2" : "lg:col-start-2 lg:col-end-3"}  lg:row-start-3 lg:row-end-4`}
       />
     ) : null

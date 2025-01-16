@@ -1,7 +1,7 @@
 ---
-const { tags, color, id, className } = Astro.props;
+const { tags, color, className, isInverted } = Astro.props;
 
-const alignment = id === 2 || id === 4 ? "lg:justify-start" : "lg:justify-end";
+const alignment = isInverted ? "lg:justify-start" : "lg:justify-end";
 ---
 
 <div

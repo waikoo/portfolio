@@ -1,4 +1,13 @@
 export const projects = [{
+  id: 0,
+  name: "Quizzical",
+  description: "Quizzical is a trivia game designed to entertain and challenge users with a wide variety of engaging questions across diverse topics.",
+  src: "/images/quizzical.avif",
+  tags: ["SVELTE", "TAILWIND", "TYPESCRIPT"],
+  live: "https://quizzical-wine.vercel.app",
+  color: "#FF90C2"
+},
+{
   id: 1,
   name: "Thriftstudio",
   description: "A responsive e-commerce website for a local thrift store, with an admin interface.",
