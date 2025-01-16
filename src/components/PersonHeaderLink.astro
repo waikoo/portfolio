@@ -1,7 +1,7 @@
 ---
 import "@fontsource/jost/400.css";
 import { getHeaderNavLinkTextColor } from "../utils/getHeaderNavLinkTextColor.js";
-const { href, isCurrentPage, isHamburger } = Astro.props;
+const { href, isCurrentPage, isHamburger, lowercasedName } = Astro.props;
 
 const url = Astro.request.url.toString();
 const circleColor = isHamburger
@@ -14,6 +14,10 @@ const circlePosition = isHamburger
   ? "left-[-15px] sm:left-[-12px] translate-y-[15px] sm:translate-y-[16px]"
   : "inset-0 m-auto mt-[1.55rem]";
 const textSize = isHamburger ? "text-[26px]" : "sm:text-[32px]";
+const dropShadow =
+  lowercasedName === "evelin"
+    ? "hover:drop-shadow-[0px_0px_3px_#e296f5]"
+    : "hover:drop-shadow-[0px_0px_3px_yellow]";
 const textColor = getHeaderNavLinkTextColor(
   href,
   isCurrentPage,
@@ -24,7 +28,7 @@ const textColor = getHeaderNavLinkTextColor(
 
 <li>
   <a
-    class={`${textColor} ${textSize} lg:text-[17px] flex flex-col relative`}
+    class={`${textColor} ${textSize} lg:text-[17px] flex flex-col relative transition-all duration-200 ${dropShadow}`}
     href={`${href}`}
   >
     <slot />

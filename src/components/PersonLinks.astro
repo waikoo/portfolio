@@ -10,17 +10,20 @@ const isOnAbout = currentUrl.includes("about");
 ---
 
 <ul class={`flex text-[1rem] pt-6 ${className}`}>
-  <PersonHeaderLink href="/" isHamburger={isHamburger}>Home</PersonHeaderLink>
+  <PersonHeaderLink href="/" isHamburger={isHamburger} lowercasedName={lowercasedName}>Home</PersonHeaderLink>
   <PersonHeaderLink
     href={`/${lowercasedName}/projects`}
     isCurrentPage={isOnProjects}
     isHamburger={isHamburger}
-    color={color}>Projects</PersonHeaderLink
+    color={color}
+    lowercasedName={lowercasedName}
+    >Projects</PersonHeaderLink
   >
   <PersonHeaderLink
     href={`/${lowercasedName}/cv`}
     isCurrentPage={isOnCV}
     isHamburger={isHamburger}
+    lowercasedName={lowercasedName}
     color={color}>CV</PersonHeaderLink
   >
 
@@ -28,12 +31,14 @@ const isOnAbout = currentUrl.includes("about");
     href={`/${lowercasedName}/contact`}
     isCurrentPage={isOnContact}
     isHamburger={isHamburger}
+    lowercasedName={lowercasedName}
     color={color}>Contact</PersonHeaderLink
   >
   <PersonHeaderLink
     href={`/${lowercasedName}/about`}
     isCurrentPage={isOnAbout}
     isHamburger={isHamburger}
+    lowercasedName={lowercasedName}
     color={color}>About</PersonHeaderLink
   >
 </ul>
