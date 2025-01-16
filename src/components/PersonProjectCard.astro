@@ -38,7 +38,7 @@ const projectWrapper =
   class={`relative grid project gap-[30px] items-center justify-items-center backdrop-blur-lg rounded-[30px] bg-black/5 sm:p-[30px] p-[12px] grid-cols-1 hover:bg-black/30 transition-all duration-300 ${projectWrapper}`}
 >
   <div
-    class={`grid ${mediaWrapper} place-items-center row-start-4 row-end-5 ${isInverted ? "" : "lg:cols-start-1 lg:cols-end-2 lg:row-start-1 lg:row-end-5"} ${id === 4 ? "justify-self-center" : ""}`}
+    class={`grid ${mediaWrapper} place-items-center row-start-4 row-end-5 ${isInverted ? "" : "lg:cols-start-1 lg:cols-end-2 lg:row-start-1 lg:row-end-5"}`}
   >
     <PersonProjectCardMedia
       src={src}
@@ -95,10 +95,3 @@ const projectWrapper =
     ) : null
   }
 </section>
-
-<style>
-  .jost-semibold {
-    font-family: "Jost", sans-serif;
-    font-weight: 600;
-  }
-</style>
