@@ -2,7 +2,7 @@
 import "@fontsource/jost/600.css";
 
 const { live, github, color, id, className } = Astro.props;
-const hideCliProjectsGithub = id === 3 ? "hidden" : "";
+const hideCliProjectsGithub = id === 3 || id === 4 ? "hidden" : "";
 ---
 
 <script>
@@ -22,13 +22,13 @@ const hideCliProjectsGithub = id === 3 ? "hidden" : "";
   }
 </script>
 <div
-  class={`flex flex-row-reverse gap-5 jost-semibold items-stretch justify-between sm:justify-start w-full ${className}`}
+  class={`flex flex-row-reverse gap-5 font-['Jost'] font-semibold items-stretch justify-between sm:justify-start w-full ${className}`}
 >
   <a
     style={{ backgroundColor: color }}
     href={live}
     data-color={color}
-    class={`p-[8px] px-[11px] 2xl:px-[13px] text-black rounded-full text-[13px] sm:text-[1rem] jost-semibold flex items-center gap-2 drop-shadow-[5px_5px_8px_rgba(0,0,0,0.60)] transition-all duration-200 ${hideCliProjectsGithub} link`}
+    class={`p-[8px] px-[11px] 2xl:px-[13px] text-black rounded-full text-[13px] sm:text-[1rem] font-['Jost'] font-semibold flex items-center gap-2 drop-shadow-[5px_5px_8px_rgba(0,0,0,0.60)] transition-all duration-200 ${hideCliProjectsGithub} link hover:shadow-[0_0_7px_--hover-color]`}
   >
     <svg
       width="16"
@@ -54,7 +54,7 @@ const hideCliProjectsGithub = id === 3 ? "hidden" : "";
     }}
     data-color={color}
     href={github}
-    class="rounded-full bg-[#424b38]/10 py-[4px] px-[15px] flex gap-2 items-center border-[1px] backdrop-blur-sm drop-shadow-[5px_5px_5px_rgba(0,0,0,0.60)] transition-all duration-200 hover:bg-black link"
+    class="rounded-full bg-[#424b38]/10 py-[4px] px-[15px] flex gap-2 items-center border-[1px] backdrop-blur-sm drop-shadow-[5px_5px_5px_rgba(0,0,0,0.60)] transition-all duration-200 hover:bg-black link hover:shadow-[0_0_7px_--hover-color]"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -70,14 +70,3 @@ const hideCliProjectsGithub = id === 3 ? "hidden" : "";
     <span class="whitespace-nowrap text-[14px] 2xl:text-[18px]">GITHUB</span>
   </a>
 </div>
-
-<style>
-  .jost-semibold {
-    font-family: "Jost", sans-serif;
-    font-weight: 600;
-  }
-
-  a:hover {
-    drop-shadow: 0px 0px 7px var(--hover-color);
-  }
-</style>
