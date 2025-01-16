@@ -5,6 +5,7 @@ export const projects = [{
   src: "/images/quizzical.avif",
   tags: ["SVELTE", "TAILWIND", "TYPESCRIPT"],
   live: "https://quizzical-wine.vercel.app",
+  github: "https://github.com/waikoo/quizzical",
   color: "#FF90C2"
 },
 {
