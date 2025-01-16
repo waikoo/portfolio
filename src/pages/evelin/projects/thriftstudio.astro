@@ -5,6 +5,8 @@ import EvelinFile from "../../../components/EvelinFile.astro";
 import EvelinFile2 from "../../../components/EvelinFile2.astro";
 import EvelinFile3 from "../../../components/EvelinFile3.astro";
 import ThriftstudioAside from "../../../components/ThriftstudioAside.astro";
+import ThriftstudioHero from "../../../components/ThriftstudioHero.astro";
+import ThriftstudioLogo from "../../../components/ThriftstudioLogo.astro";
 
 const fullName = "Szász Evelin";
 const bgColor = "#d2d62e";
@@ -22,6 +24,10 @@ const bgColor = "#d2d62e";
   <main
     class="px-[40px] sm:px-[50px] xl:px-[70px] flex flex-col gap-5 xl:gap-10 items-center 2xl:max-w-[1536px] mx-auto"
   >
+    <div class="flex flex-col justify-center gap-[30px] sm:gap-[20px] xl:gap-0">
+      <ThriftstudioLogo />
+      <ThriftstudioHero />
+    </div>
     <EvelinFile fileTitle="OVERVIEW" bgColor={bgColor} />
     <EvelinFile2 fileTitle="RESEARCH" bgColor={bgColor} />
     <EvelinFile3 fileTitle="IDEATE" bgColor={bgColor} />
