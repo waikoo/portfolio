@@ -6,7 +6,7 @@ const { fullName, bgColor } = Astro.props;
 const { name } = extractName(fullName);
 ---
 
-<div class="relative w-full h-screen min-h-[100%] isolate">
+<div class="relative w-full min-h-[100%] isolate">
   <HeroBackground endpoint={name.toUpperCase()} />
 
   <PersonHeader fullName={fullName} name={name} bgColor={bgColor} />

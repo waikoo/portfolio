@@ -7,12 +7,14 @@ import EvelinFile3 from "../../../components/EvelinFile3.astro";
 import ThriftstudioAside from "../../../components/ThriftstudioAside.astro";
 import ThriftstudioHero from "../../../components/ThriftstudioHero.astro";
 import ThriftstudioLogo from "../../../components/ThriftstudioLogo.astro";
+import PageYProgressBar from "../../../components/PageYProgressBar.astro";
 
 const fullName = "Szász Evelin";
 const bgColor = "#d2d62e";
 ---
 
 <Layout title="Thriftstudio" bgColor={bgColor} fullName={fullName}>
+  <PageYProgressBar progressBarColor="#f76331" progressBarBgColor={bgColor} />
   <PersonHeader
     fullName={fullName}
     familyName={"Szász"}
