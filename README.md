@@ -1,7 +1,5 @@
 # Portfolio
-<video width="320" height="240" controls>
-  <source src="https://www.szasz.dev/images/portfolio_preview.mp4" type="video/mp4">
-</video>
+![Portfolio preview](public/images/portfolio_preview.mp4)
 
 ## Tech stack
 Astro, TypeScript, Tailwind
