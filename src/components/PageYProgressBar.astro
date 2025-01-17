@@ -1,0 +1,52 @@
+---
+const { progressBarColor, progressBarBgColor } = Astro.props;
+---
+
+<script>
+  let progress = document.querySelector("progress");
+
+  window.addEventListener("scroll", () => {
+    if (progress) {
+      progress.value = window.scrollY / 100;
+    }
+  });
+</script>
+
+<progress
+  value="0"
+  max="100"
+  class="fixed h-[5px] w-full"
+  style={`
+    --progress-color: ${progressBarColor}; 
+    --progress-bg-color: ${progressBarBgColor};
+  `}
+>
+</progress>
+
+<style>
+  progress::-webkit-progress-bar {
+    background-color: var(--progress-bg-color); /* Track bg */
+  }
+
+  progress::-webkit-progress-value {
+    background-color: var(--progress-color); /* Progress bar color */
+  }
+
+  progress::-moz-progress-bar {
+    background-color: var(--progress-bg-color); /* Track bg */
+  }
+
+  progress::-moz-progress-value {
+    background-color: var(--progress-color); /* Progress bar color */
+  }
+
+  progress {
+    /* Track bg */
+    background-color: var(--progress-bg-color);
+  }
+
+  progress::-ms-fill {
+    /* Progress bar color */
+    background-color: var(--progress-color);
+  }
+</style>

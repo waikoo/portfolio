@@ -2,7 +2,7 @@
 import PersonLinks from "./PersonLinks.astro";
 import PersonNameTag from "./PersonNameTag.astro";
 import IconHamburger from "./IconHamburger.astro";
-import HamburgerMenu from "./HamburgerMenu.astro";
+import PageYProgressBar from "./PageYProgressBar.astro";
 
 const { fullName, color, bgColor } = Astro.props;
 
@@ -48,11 +48,11 @@ const lowercasedName = name.toLowerCase();
       });
     }
   };
-
   document.addEventListener("astro:page-load", attachHamburgerEventListener);
 </script>
 
 <header class={`sticky top-0 z-50`} data-bg-color={bgColor}>
+  <PageYProgressBar progressBarColor="#f76331" progressBarBgColor={bgColor} />
   <div
     class={`mx-auto w-[90%] flex flex-row justify-between items-center -translate-y-[12px] py-6`}
   >
