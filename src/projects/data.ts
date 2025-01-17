@@ -23,7 +23,7 @@ export const projects = [{
   name: "Rock, Paper, Scissors",
   description: "A simple and interactive game website where users can play against the computer, track their score, and enjoy a fun, minimalist design.",
   src: ["/videos/rps_av1.mp4", "/videos/rps.mp4"],
-  tags: ["HTML", "SCSS", "JAVASCRIPT"],
+  tags: ["HTML", "SCSS", "TYPESCRIPT"],
   live: "https://waikoo.github.io/rock-paper-scissors/",
   github: "https://github.com/waikoo/rock-paper-scissors",
   color: "#71E5A5"
