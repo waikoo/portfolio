@@ -1,18 +1,10 @@
 ---
 import "@fontsource/jost/400.css";
 import { getHeaderNavLinkTextColor } from "../utils/getHeaderNavLinkTextColor.js";
+import PersonHeaderLinkCurrent from "./PersonHeaderLinkCurrent.astro";
 const { href, isCurrentPage, isHamburger, lowercasedName } = Astro.props;
 
 const url = Astro.request.url.toString();
-const circleColor = isHamburger
-  ? "bg-white"
-  : href.includes("evelin")
-    ? "bg-[#efd6f5]"
-    : "bg-[#D9D62D]";
-
-const circlePosition = isHamburger
-  ? "left-[-15px] sm:left-[-12px] translate-y-[15px] sm:translate-y-[16px]"
-  : "inset-0 m-auto mt-[1.55rem]";
 const textSize = isHamburger ? "text-[26px]" : "sm:text-[32px]";
 const dropShadow =
   lowercasedName === "evelin"
@@ -32,15 +24,10 @@ const textColor = getHeaderNavLinkTextColor(
     href={`${href}`}
   >
     <slot />
-    {
-      Astro.request.url
-        .toString()
-        .includes("thriftstudio") ? null : isCurrentPage ? (
-        <div
-          transition:name="circle"
-          class={`absolute h-[8px] w-[8px] block rounded-full ${circlePosition} ${circleColor}`}
-        />
-      ) : null
-    }
+    <PersonHeaderLinkCurrent
+      isCurrentPage={isCurrentPage}
+      isHamburger={isHamburger}
+      href={href}
+    />
   </a>
 </li>

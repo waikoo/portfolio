@@ -1,0 +1,25 @@
+---
+const { isCurrentPage, isHamburger, href } = Astro.props;
+const circleColor = isHamburger
+  ? "bg-white"
+  : href.includes("evelin")
+    ? "bg-[#efd6f5]"
+    : "bg-[#D9D62D]";
+
+const circlePosition = isHamburger
+  ? "left-[-15px] sm:left-[-12px] translate-y-[15px] sm:translate-y-[16px]"
+  : "inset-0 m-auto mt-[1.55rem]";
+
+const url = Astro.request.url.toString();
+const isOneOfTheProjectsPage =
+  url.includes("thriftstudio") || url.includes("quizzical");
+---
+
+{
+  isOneOfTheProjectsPage ? null : isCurrentPage ? (
+    <div
+      transition:name="circle"
+      class={`absolute h-[8px] w-[8px] block rounded-full ${circlePosition} ${circleColor}`}
+    />
+  ) : null
+}
