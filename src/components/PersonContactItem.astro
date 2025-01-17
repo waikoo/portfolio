@@ -7,27 +7,15 @@ const titleTextColor = name === "Evelin" ? "text-[#efd6f5]" : "text-[#c3f96a]";
 const contentTextColor = name === "Evelin" ? "text-[#e296f5]" : "text-white";
 ---
 
-<div class={`flex flex-col mt-10 ${className}`}>
+<div class={`flex flex-col items-center ${className}`}>
   <span
-    class={`${titleTextColor} text-[70px] jost-bold tracking-[-5px] text-center`}
+    class={`${titleTextColor} text-[70px] font-['Jost'] font-bold tracking-[-5px] text-center`}
     >{title}</span
   >
 
-  <div class={`${contentTextColor} text-[20px] roboto`}>
+  <div class={`${contentTextColor} text-[20px] font-['Roboto'] font-regular`}>
     <a class="" href={value.includes("@") ? `mailto:${value}` : value}>
       {value}
     </a>
   </div>
 </div>
-
-<style>
-  .jost-bold {
-    font-family: "Jost", sans-serif;
-    font-weight: 700;
-  }
-
-  .roboto {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-  }
-</style>

@@ -10,8 +10,12 @@ const { name } = extractName(fullName);
 
 <Layout title={`Contact ${fullName}`} fullName={fullName}>
   <PersonLayout fullName={fullName}>
-    <main class="relative h-full grid place-items-center">
-      <div class="flex flex-col items-center text-center pb-[200px]">
+    <main
+      class="relative min-h-screen flex justify-center items-center content-center"
+    >
+      <div
+        class="flex flex-col gap-[65px] justify-center items-center text-center"
+      >
         <PersonContactItem
           name={name}
           title="Email"
@@ -26,3 +30,10 @@ const { name } = extractName(fullName);
     </main>
   </PersonLayout>
 </Layout>
+
+<style>
+  /*height of header*/
+  main {
+    min-height: calc(100vh - 97.5px);
+  }
+</style>
