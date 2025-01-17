@@ -1,7 +1,7 @@
 ---
 import "@fontsource/jost/600.css";
 
-const { live, github, color, id, className } = Astro.props;
+const { live, github, color, id, className, isInverted } = Astro.props;
 const hideCliProjectsGithub = id === 3 || id === 4 ? "hidden" : "";
 const alignFormatColorsGithubLinkLeft =
   id === 4 ? "flex-row" : "flex-row-reverse";
@@ -25,7 +25,7 @@ const alignFormatColorsGithubLinkLeft =
 </script>
 
 <div
-  class={`flex gap-5 font-['Jost'] font-semibold items-stretch justify-between  ${alignFormatColorsGithubLinkLeft} sm:justify-start w-full ${className}`}
+  class={`flex gap-5 font-['Jost'] font-semibold items-stretch justify-between  ${alignFormatColorsGithubLinkLeft} w-full ${isInverted ? "xl:justify-end" : "sm:justify-start "} ${className}`}
 >
   <a
     style={{ backgroundColor: color }}
