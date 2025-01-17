@@ -1,5 +1,7 @@
 # Portfolio
-![Portfolio preview](/images/portfolio_preview.mp4)
+<video width="320" height="240" controls>
+  <source src="/images/portfolio_preview.mp4" type="video/mp4">
+</video>
 
 ## Tech stack
 Astro, TypeScript, Tailwind
