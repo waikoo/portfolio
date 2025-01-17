@@ -1,0 +1,27 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import PageYProgressBar from "../../../components/PageYProgressBar.astro";
+import PersonHeader from "../../../components/PersonHeader.astro";
+import QuizzicalHeroImg from "../../../components/QuizzicalHeroImg.astro";
+import { extractName } from "../../../utils/extractName";
+
+const fullName = "Szász Evelin";
+const bgColor = "#E1CA02";
+const { name, familyName } = extractName(fullName);
+---
+
+<Layout title="Quizzical" bgColor={bgColor} fullName={fullName}>
+  <PageYProgressBar
+    progressBarColor="#f76331"
+    progressBarBgColor="transparent"
+  />
+  <PersonHeader
+    fullName={fullName}
+    familyName={familyName}
+    name={name}
+    color={bgColor}
+    bgColor={bgColor}
+  />
+
+  <QuizzicalHeroImg />
+</Layout>

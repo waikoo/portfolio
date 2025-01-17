@@ -1,0 +1,29 @@
+<picture>
+  <source srcset="/images/quizzical_hero.avif" type="image/avif" />
+  <source srcset="/images/quizzical_hero.webp" type="image/webp" />
+  <img
+    src="/images/quizzical_hero.png"
+    alt="screenshot of quizzical landing page"
+    class="fixed top-0"
+  />
+</picture>
+
+<style>
+  img {
+    scale: 1.5;
+    transform: translateY(16%);
+  }
+
+  @media (min-width: 640px) {
+    img {
+      scale: 1.28;
+      transform: translateY(7%);
+    }
+  }
+  @media (min-width: 1280px) {
+    img {
+      scale: 1;
+      transform: translateY(0%);
+    }
+  }
+</style>
