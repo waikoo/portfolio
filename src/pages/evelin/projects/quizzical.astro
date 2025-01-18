@@ -24,8 +24,10 @@ const { name, familyName } = extractName(fullName);
     bgColor={bgColor}
   />
 
-  <main>
-    <QuizzicalHeroImg />
-    <EvelinQuizzicalFile fileTitle="OVERVIEW" bgColor={bgColor} />
+  <QuizzicalHeroImg />
+  <main class="px-[40px] sm:px-[50px] mx-auto">
+    <div class="pt-[80px] sm:pt-[88px] xl:pt-[88px] xl:max-w-[1059px] mx-auto">
+      <EvelinQuizzicalFile fileTitle="OVERVIEW" bgColor={bgColor} />
+    </div>
   </main>
 </Layout>
