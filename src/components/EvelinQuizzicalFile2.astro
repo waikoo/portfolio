@@ -2,6 +2,7 @@
 import EnlargedPicture from "./EnlargedPicture.astro";
 import EvelinFileWrapper from "./EvelinFileWrapper.astro";
 import QuizzicalSitemap from "./QuizzicalSitemap.astro";
+import WithBorderParagraph from "./WithBorderParagraph.astro";
 import WithMagnifyingGlass from "./WithMagnifyingGlass.astro";
 
 const { fileTitle, bgColor, cardBgColor } = Astro.props;
@@ -34,11 +35,11 @@ const { fileTitle, bgColor, cardBgColor } = Astro.props;
     SITEMAP
   </h4>
 
-  <p class="border-y-[#E1CA02] border-y-[1px] mx-[-20px] p-[20px] text-[14px]">
+  <WithBorderParagraph>
     The following Sitemap outlines the <strong>main sections</strong> of the game.
     It is designed to <strong>prioritize easy access to key functions</strong> like
     starting a new game or customizing default settings for a personalized experience.
-  </p>
+  </WithBorderParagraph>
 
   <WithMagnifyingGlass>
     <QuizzicalSitemap imgSelector="quizzical-sitemap" />
@@ -51,4 +52,20 @@ const { fileTitle, bgColor, cardBgColor } = Astro.props;
   >
     <QuizzicalSitemap />
   </EnlargedPicture>
+
+  <h4 class="font-bold text-[17px] font-['Jost'] mt-[40px] text-left py-[10px]">
+    USER FLOW
+  </h4>
+
+  <WithBorderParagraph>
+    From the outset, it was evident that <strong
+      >prioritizing speed and efficiency</strong
+    > was essential for this lightweight, single-player, no-login browser game for
+    a
+    <strong>seamless experience</strong>. This requirement guided the decision
+    to implement the game using conditional rendering rather than endpoints. As
+    a result, navigation is confined to the game’s interface, with users unable
+    to move back and forth through the URL. With this approach established, I
+    developed the two primary user flows.
+  </WithBorderParagraph>
 </EvelinFileWrapper>

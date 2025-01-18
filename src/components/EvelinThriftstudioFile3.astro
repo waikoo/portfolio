@@ -13,10 +13,14 @@ import CloseUpStoryboard from "./CloseUpStoryboard.astro";
 import CloseUpStoryboardModal from "./CloseUpStoryboardModal.astro";
 import SiteMapModal from "./SiteMapModal.astro";
 
-const { fileTitle, bgColor } = Astro.props;
+const { fileTitle, bgColor, cardBgColor } = Astro.props;
 ---
 
-<EvelinFileWrapper title={fileTitle} bgColor={bgColor}>
+<EvelinFileWrapper
+  title={fileTitle}
+  bgColor={bgColor}
+  cardBgColor={cardBgColor}
+>
   <h3
     class="mt-[60px] my-[50px] sm:my-[45px] xl:mb-[65px] text-[21px] sm:text-[26px] xl:text-[40px] text-[#1e1e1e] font-extrabold text-center"
   >

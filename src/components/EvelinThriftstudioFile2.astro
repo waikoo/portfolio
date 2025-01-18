@@ -6,16 +6,19 @@ import EvelinFileResearchGoal from "./EvelinFileResearchGoal.astro";
 import EvelinFileWrapper from "./EvelinFileWrapper.astro";
 import JourneyMap from "./JourneyMap.astro";
 import JourneyMapModal from "./JourneyMapModal.astro";
-import Modal from "./Modal.astro";
 import TapToEnlarge from "./TapToEnlarge.astro";
 import TapToEnlargeBig from "./TapToEnlargeBig.astro";
 import UserPersona from "./UserPersona.astro";
 import UserPersonaModal from "./UserPersonaModal.astro";
 
-const { fileTitle, bgColor } = Astro.props;
+const { fileTitle, bgColor, cardBgColor } = Astro.props;
 ---
 
-<EvelinFileWrapper title={fileTitle} bgColor={bgColor}>
+<EvelinFileWrapper
+  title={fileTitle}
+  bgColor={bgColor}
+  cardBgColor={cardBgColor}
+>
   <span
     class="mt-[60px] xl:mt-[40px] block text-center font-semibold text-[12px] sm:text-[15px] xl:text-[20px]"
     >METHOD 1.</span
