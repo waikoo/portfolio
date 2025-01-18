@@ -12,15 +12,8 @@ const evelinBlendMode = name === "EVELIN" ? "mix-blend-difference" : "";
   color: ${color};
   grid-column: ${gridColumn};
   grid-row: ${gridRow};`}
-  class=`${fontSize} gap-0 flex flex-col justify-content-start text-right ${evelinBlendMode}`
+  class=`${fontSize} font-['Jost'] font-regular gap-0 flex flex-col justify-content-start text-right quizzicalFont ${evelinBlendMode}`
 >
   <p class="-mb-[40px] lg:-mb-[48px]">{name}</p>
   <p class="lg:m-0">{familyName}</p>
 </div>
-
-<style>
-  div {
-    font-family: "Jost", sans-serif;
-    font-weight: 400;
-  }
-</style>
