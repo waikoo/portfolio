@@ -1,0 +1,40 @@
+---
+import IconX from "./IconX.astro";
+
+const { imgSelector, modalSelector, modalClose } = Astro.props;
+---
+
+<script is:inline define:vars={{ imgSelector, modalSelector, modalClose }}>
+  window.addEventListener("DOMContentLoaded", () => {
+    const img = document.querySelector(`.${imgSelector}`);
+    const overlay = document.getElementById(modalSelector);
+
+    if (img && overlay instanceof HTMLDialogElement) {
+      img.addEventListener("click", () => {
+        overlay.classList.remove("hidden");
+        overlay.classList.add("grid");
+        overlay.showModal();
+      });
+    }
+
+    const closeModalIcon = document.getElementById(modalClose);
+
+    if (closeModalIcon) {
+      closeModalIcon.addEventListener("click", () => {
+        if (overlay instanceof HTMLDialogElement) {
+          overlay.close();
+          overlay.classList.add("hidden");
+          overlay.classList.remove("grid");
+        }
+      });
+    }
+  });
+</script>
+
+<dialog
+  class="overlay fixed hidden bg-white w-screen h-screen place-items-center"
+  id={modalSelector}
+>
+  <IconX id={modalClose} />
+  <slot />
+</dialog>

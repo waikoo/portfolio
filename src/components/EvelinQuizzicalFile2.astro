@@ -1,0 +1,48 @@
+---
+import EnlargedPicture from "./EnlargedPicture.astro";
+import EvelinFileWrapper from "./EvelinFileWrapper.astro";
+import QuizzicalSitemap from "./QuizzicalSitemap.astro";
+import UnderlinedTitle from "./UnderlinedTitle.astro";
+
+const { fileTitle, bgColor } = Astro.props;
+---
+
+<EvelinFileWrapper title={fileTitle} bgColor={bgColor}>
+  <h3 class="font-extrabold text-[21px] mt-[84px] text-center">
+    INFORMATION ARCHITECTURE
+  </h3>
+  <p
+    class="bg-[#D9D9D9] text-[#001649] font-['Jost'] p-[20px] mx-[-20px] mt-[20px]"
+  >
+    I began by identifying and <strong>laying out all the components</strong> of
+    the game to gain a comprehensive overview. Next, I organized the content and
+    <strong>established a clear hierarchy</strong> to define the navigation, menus,
+    and overall structural layout. This process ensured that all necessary information
+    was accounted for and logically arranged, creating a <strong
+      >solid foundation</strong
+    > for designing
+    <strong>intuitive interactions</strong>.
+  </p>
+
+  <h4
+    class="font-bold text-[17px] font-['Jost'] mt-[40px] text-right py-[10px]"
+  >
+    SITEMAP
+  </h4>
+
+  <p class="border-y-[#E1CA02] border-y-[1px] mx-[-20px] p-[20px] text-[14px]">
+    The following Sitemap outlines the <strong>main sections</strong> of the game.
+    It is designed to <strong>prioritize easy access to key functions</strong> like
+    starting a new game or customizing default settings for a personalized experience.
+  </p>
+
+  <QuizzicalSitemap imgSelector="quizzical-sitemap" />
+
+  <EnlargedPicture
+    imgSelector="quizzical-sitemap"
+    modalSelector="quizzical-sitemap-modal"
+    modalClose="quizzical-sitemap-modal-close"
+  >
+    <QuizzicalSitemap />
+  </EnlargedPicture>
+</EvelinFileWrapper>

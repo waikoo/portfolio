@@ -1,0 +1,13 @@
+---
+const { imgSelector } = Astro.props;
+---
+
+<picture>
+  <source srcset="/images/quizzical_sitemap.avif" type="image/avif" />
+  <source srcset="/images/quizzical_sitemap.webp" type="image/webp" />
+  <img
+    src="/images/quizzical_sitemap.png"
+    alt="Quizzical Sitemap"
+    class={imgSelector}
+  />
+</picture>
