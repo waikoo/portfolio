@@ -1,0 +1,15 @@
+---
+import IconTriangleMobile from "./IconTriangleMobile.astro";
+
+const { triangleColor, className } = Astro.props;
+---
+
+<p
+  class={`font-['Jost'] relative text-[13px] sm:text-[16px] xl:text-[18px] ${className}`}
+>
+  <IconTriangleMobile
+    bgColor={triangleColor}
+    className="absolute top-[3px] left-[-13px] xl:top-[5px]"
+  />
+  <slot />
+</p>

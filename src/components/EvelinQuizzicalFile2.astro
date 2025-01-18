@@ -2,8 +2,11 @@
 import EnlargedPicture from "./EnlargedPicture.astro";
 import EvelinFileWrapper from "./EvelinFileWrapper.astro";
 import QuizzicalSitemap from "./QuizzicalSitemap.astro";
+import QuizzicalUserFlowCustom from "./QuizzicalUserFlowCustom.astro";
+import QuizzicalUserFlowDefault from "./QuizzicalUserFlowDefault.astro";
 import WithBorderParagraph from "./WithBorderParagraph.astro";
 import WithMagnifyingGlass from "./WithMagnifyingGlass.astro";
+import WithSmallTriangle from "./WithSmallTriangle.astro";
 
 const { fileTitle, bgColor, cardBgColor } = Astro.props;
 ---
@@ -68,4 +71,44 @@ const { fileTitle, bgColor, cardBgColor } = Astro.props;
     to move back and forth through the URL. With this approach established, I
     developed the two primary user flows.
   </WithBorderParagraph>
+
+  <div class="flex flex-col gap-[40px] pt-[40px] pb-[80px]">
+    <div class="flex flex-col gap-[20px]">
+      <WithSmallTriangle bgColor={bgColor}
+        ><strong>The primary path to start a new game</strong> (with default settings),
+        including replaying options</WithSmallTriangle
+      >
+
+      <WithMagnifyingGlass>
+        <QuizzicalUserFlowDefault imgSelector="quizzical-default-user-flow" />
+      </WithMagnifyingGlass>
+
+      <EnlargedPicture
+        imgSelector="quizzical-default-user-flow"
+        modalSelector="quizzical-default-user-flow-modal"
+        modalClose="quizzical-default-user-flow-modal-close"
+      >
+        <QuizzicalUserFlowDefault />
+      </EnlargedPicture>
+    </div>
+
+    <div class="flex flex-col gap-[20px]">
+      <WithSmallTriangle triangleColor={bgColor}>
+        <strong>The primary path to play a customized game</strong>, including
+        replaying options
+      </WithSmallTriangle>
+
+      <WithMagnifyingGlass>
+        <QuizzicalUserFlowCustom imgSelector="quizzical-custom-user-flow" />
+      </WithMagnifyingGlass>
+
+      <EnlargedPicture
+        imgSelector="quizzical-custom-user-flow"
+        modalSelector="quizzical-custom-user-flow-modal"
+        modalClose="quizzical-custom-user-flow-modal-close"
+      >
+        <QuizzicalUserFlowCustom />
+      </EnlargedPicture>
+    </div>
+  </div>
 </EvelinFileWrapper>

@@ -1,0 +1,19 @@
+---
+const { imgSelector } = Astro.props;
+---
+
+<picture>
+  <source
+    srcset="/images/quizzical_personalized_user_flow.avif"
+    type="image/avif"
+  />
+  <source
+    srcset="/images/quizzical_personalized_user_flow.webp"
+    type="image/webp"
+  />
+  <img
+    src="/images/quizzical_personalized_user_flow.png"
+    alt="Quizzical Personalized User Flow"
+    class={imgSelector}
+  />
+</picture>
