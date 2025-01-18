@@ -2,6 +2,7 @@
 import Layout from "../../../layouts/Layout.astro";
 import PageYProgressBar from "../../../components/PageYProgressBar.astro";
 import PersonHeader from "../../../components/PersonHeader.astro";
+import EvelinQuizzicalFile from "../../../components/EvelinQuizzicalFile.astro";
 import QuizzicalHeroImg from "../../../components/QuizzicalHeroImg.astro";
 import { extractName } from "../../../utils/extractName";
 
@@ -12,7 +13,7 @@ const { name, familyName } = extractName(fullName);
 
 <Layout title="Quizzical" bgColor={bgColor} fullName={fullName}>
   <PageYProgressBar
-    progressBarColor="#f76331"
+    progressBarColor="#1A2E53"
     progressBarBgColor="transparent"
   />
   <PersonHeader
@@ -20,7 +21,11 @@ const { name, familyName } = extractName(fullName);
     familyName={familyName}
     name={name}
     color={bgColor}
+    bgColor={bgColor}
   />
 
-  <QuizzicalHeroImg />
+  <main>
+    <QuizzicalHeroImg />
+    <EvelinQuizzicalFile fileTitle="OVERVIEW" bgColor={bgColor} />
+  </main>
 </Layout>

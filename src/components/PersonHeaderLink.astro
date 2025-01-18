@@ -9,21 +9,16 @@ const url = Astro.request.url.toString();
 const textSize = isHamburger ? "text-[26px]" : "sm:text-[32px]";
 const boxShadow = getHeaderNavLinkShadow(lowercasedName);
 
-const textColor = getHeaderNavLinkTextColor(
-  href,
-  isCurrentPage,
-  isHamburger,
-  url,
-);
+const textColor = getHeaderNavLinkTextColor(isCurrentPage, isHamburger, url);
 ---
 
-<li class="font-['Jost'] font-regular">
+<li class={`font-['Jost'] font-regular ${textColor}`}>
   <a
-    class={`${textColor} ${textSize} lg:text-[17px] flex flex-col relative transition-all duration-200 ${boxShadow}`}
-    style={{ color: color }}
+    class={`${textSize} lg:text-[17px] flex flex-col relative transition-all duration-200 ${boxShadow}`}
     href={href}
   >
     <slot />
+
     <PersonHeaderLinkCurrent
       isCurrentPage={isCurrentPage}
       isHamburger={isHamburger}

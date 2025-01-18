@@ -1,22 +1,21 @@
 export const getHeaderNavLinkTextColor = (
-  href: string,
   isCurrentPage: boolean,
   isHamburger: boolean,
   currentUrl: string
 ) => {
-  if (href === "/") {
+  if (currentUrl === "/") {
     return getHomeTextColor(isHamburger, currentUrl);
   }
 
-  if (href.includes("thriftstudio") || href.includes('quizzical')) {
-    return getProjectSpecificTextColor(href);
+  if (currentUrl.includes("thriftstudio") || currentUrl.includes('quizzical')) {
+    return getProjectSpecificTextColor(currentUrl);
   }
   if (isHamburger) {
     return isCurrentPage ? "text-white" : "text-black";
   }
 
-  if (href.includes('evelin') || href.includes('barna')) {
-    return getEvelinOrBarnaTextColor(href, isCurrentPage);
+  if (currentUrl.includes('evelin') || currentUrl.includes('barna')) {
+    return getEvelinOrBarnaTextColor(currentUrl, isCurrentPage);
   }
 };
 
@@ -24,20 +23,11 @@ const getHomeTextColor = (isHamburger: boolean, currentUrl: string) => {
   if (isHamburger) {
     return currentUrl.includes("barna") ? "text-black" : "";
   }
-  if (currentUrl.includes("thriftstudio")) {
-    return "text-black";
-  }
-  if (currentUrl.includes("quizzical")) {
-    return "text-[#EBD302]";
-  }
   return currentUrl.includes("barna") ? "text-white" : "text-[#e296f5]";
 };
 
 const getEvelinOrBarnaTextColor = (href: string, isCurrentPage: boolean) => {
   if (href.includes("evelin")) {
-    if (href.includes('quizzical')) {
-      return "text-[#EBD302]"
-    }
     return isCurrentPage ? "text-[#efd6f5]" : "text-[#e296f5]";
   }
   if (href.includes("barna")) {
