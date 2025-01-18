@@ -8,7 +8,6 @@ const { fullName, color, bgColor } = Astro.props;
 const [familyName, name] = fullName.split(" ");
 
 const lowercasedName = name.toLowerCase();
-const isQuizzical = Astro.url.pathname.includes("quizzical");
 ---
 
 <script>
@@ -51,7 +50,7 @@ const isQuizzical = Astro.url.pathname.includes("quizzical");
   document.addEventListener("astro:page-load", attachHamburgerEventListener);
 </script>
 
-<header class={`sticky top-0 z-50`} data-bg-color={bgColor}>
+<header class={`sticky top-0 z-[1]`} data-bg-color={bgColor}>
   <div
     class={`mx-auto w-[80%] sm:w-[90%] flex flex-row justify-between items-center -translate-y-[12px] pt-[0.9rem] sm:py-6 `}
   >
