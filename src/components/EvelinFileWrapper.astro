@@ -1,16 +1,16 @@
 ---
-const { title, bgColor } = Astro.props;
+const { title, bgColor, className } = Astro.props;
 ---
 
 <article
-  class={`relative bg-[#f9f9f9] rounded-[20px_0px_20px_20px] sm:rounded-[20px] xl:py-[110px] 2xl:px-[170px] sm:p-[50px] text-[#0d0d0d] w-full`}
+  class={`relative bg-[#f9f9f9] rounded-[20px_0px_20px_20px] sm:rounded-[20px] xl:py-[110px] sm:p-[50px] text-[#0d0d0d] w-full ${className}`}
 >
   <div
     class="absolute top-[-1px] right-[-1px] px-[8px] xl:px-[16px]"
     style={{ backgroundColor: bgColor }}
   >
     <h2
-      class={`text-[26px] sm:text-[35px] xl:text-[55px] tracking-[-2px] xl:tracking-[-6px] px-[12px]]`}
+      class={`font-['Jost'] font-bold text-[26px] sm:text-[35px] xl:text-[55px] tracking-[-2px] xl:tracking-[-6px] px-[12px]]`}
       id={title.toLowerCase()}
     >
       {title}
@@ -21,10 +21,3 @@ const { title, bgColor } = Astro.props;
     <slot />
   </section>
 </article>
-
-<style>
-  h2 {
-    font-family: "Jost", sans-serif;
-    font-weight: 700;
-  }
-</style>

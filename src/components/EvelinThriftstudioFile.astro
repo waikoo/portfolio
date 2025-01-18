@@ -5,10 +5,18 @@ import EvelinFileWrapper from "./EvelinFileWrapper.astro";
 const { fileTitle, bgColor } = Astro.props;
 ---
 
-<EvelinFileWrapper title={fileTitle} bgColor={bgColor}>
+<EvelinFileWrapper
+  title={fileTitle}
+  bgColor={bgColor}
+  className="2xl:px-[170px]"
+>
   <div class="xl:flex xl:gap-[70px] xl:items-center xl:justify-around mx-auto">
     <div class="mt-[80px] xl:mt-0 sm:mt-[40px]">
-      <EvelinFileSegment title="THE PRODUCT" bgColor={bgColor}>
+      <EvelinFileSegment
+        title="THE PRODUCT"
+        bgColor={bgColor}
+        pClass="xl:w-[557px]"
+      >
         Thriftstudio is an <strong
           >e-commerce website for a fictional local thrift store</strong
         >, offering an extensive range of <strong>clothing</strong> and <strong

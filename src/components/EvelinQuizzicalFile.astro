@@ -1,0 +1,39 @@
+---
+import EvelinFileSegment from "./EvelinFileSegment.astro";
+import EvelinFileWrapper from "./EvelinFileWrapper.astro";
+import EvelinMap from "./EvelinMap.astro";
+
+const { fileTitle, bgColor } = Astro.props;
+---
+
+<EvelinFileWrapper title={fileTitle} bgColor={bgColor}>
+  <div
+    class="pt-[90px] sm:pt-[50px] pb-[45px] px-[10px] xl:py-[10px] xl:max-w-[1059px] mx-auto"
+  >
+    <div class="xl:grid xl:grid-cols-[7fr_4fr] xl:items-center xl:gap-[102px]">
+      <EvelinFileSegment
+        title="THE PRODUCT"
+        bgColor={bgColor}
+        className={"xl:col-start-1 xl:col-end-2"}
+      >
+        Quizzical is a <strong>browser-based trivia game</strong> with a responsive
+        design, that challenges users with engaging questions across various topics.
+        The project began with the game's API as the foundation, providing me the
+        opportunity to independently design the layout and user flow of the game.
+      </EvelinFileSegment>
+
+      <div
+        class="my-[40px] sm:mb-[20px] xl:my-0 xl:col-start-2 xl:col-end-3 xl:row-start-1 xl:row-end-2"
+      >
+        <EvelinMap title="ROLE" bgColor={bgColor}>UI Designer</EvelinMap>
+        <EvelinMap title="TOOLS" bgColor={bgColor}>Figma</EvelinMap>
+        <EvelinMap title="CONTEXT" bgColor={bgColor}
+          ><p>
+            Design created for my husband's “Quizzical” capstone project in
+            Scrimba's Frontend Developer Career Path course
+          </p></EvelinMap
+        >
+      </div>
+    </div>
+  </div>
+</EvelinFileWrapper>
