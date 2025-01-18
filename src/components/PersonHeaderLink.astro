@@ -1,15 +1,14 @@
 ---
 import "@fontsource/jost/400.css";
 import { getHeaderNavLinkTextColor } from "../utils/getHeaderNavLinkTextColor.js";
+import { getHeaderNavLinkShadow } from "../utils/getHeaderNavLinkShadow.js";
 import PersonHeaderLinkCurrent from "./PersonHeaderLinkCurrent.astro";
-const { href, isCurrentPage, isHamburger, lowercasedName } = Astro.props;
+const { href, isCurrentPage, isHamburger, lowercasedName, color } = Astro.props;
 
 const url = Astro.request.url.toString();
 const textSize = isHamburger ? "text-[26px]" : "sm:text-[32px]";
-const dropShadow =
-  lowercasedName === "evelin"
-    ? "hover:drop-shadow-[0px_0px_3px_#e296f5]"
-    : "hover:drop-shadow-[0px_0px_3px_yellow]";
+const boxShadow = getHeaderNavLinkShadow(lowercasedName);
+
 const textColor = getHeaderNavLinkTextColor(
   href,
   isCurrentPage,
@@ -20,7 +19,8 @@ const textColor = getHeaderNavLinkTextColor(
 
 <li class="font-['Jost'] font-regular">
   <a
-    class={`${textColor} ${textSize} lg:text-[17px] flex flex-col relative transition-all duration-200 ${dropShadow}`}
+    class={`${textColor} ${textSize} lg:text-[17px] flex flex-col relative transition-all duration-200 ${boxShadow}`}
+    style={{ color: color }}
     href={`${href}`}
   >
     <slot />
@@ -28,6 +28,7 @@ const textColor = getHeaderNavLinkTextColor(
       isCurrentPage={isCurrentPage}
       isHamburger={isHamburger}
       href={href}
+      url={url}
     />
   </a>
 </li>

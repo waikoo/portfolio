@@ -1,5 +1,5 @@
 ---
-const { isCurrentPage, isHamburger, href } = Astro.props;
+const { isCurrentPage, isHamburger, href, url } = Astro.props;
 const circleColor = isHamburger
   ? "bg-white"
   : href.includes("evelin")
@@ -10,7 +10,6 @@ const circlePosition = isHamburger
   ? "left-[-15px] sm:left-[-12px] translate-y-[15px] sm:translate-y-[16px]"
   : "inset-0 m-auto mt-[1.55rem]";
 
-const url = Astro.request.url.toString();
 const isOneOfTheProjectsPage =
   url.includes("thriftstudio") || url.includes("quizzical");
 ---
