@@ -1,29 +1,47 @@
 <picture>
-  <source srcset="/images/quizzical_hero.avif" type="image/avif" />
-  <source srcset="/images/quizzical_hero.webp" type="image/webp" />
+  <source
+    media="(max-width: 639px)"
+    srcset="/images/quizzical_hero_mobile.avif"
+    type="image/avif"
+  />
+  <source
+    media="(max-width: 639px)"
+    srcset="/images/quizzical_hero_mobile.webp"
+    type="image/webp"
+  />
+  <source
+    media="(max-width: 639px)"
+    srcset="/images/quizzical_hero_mobile.png"
+    type="image/png"
+  />
+  <source
+    media="(max-width: 1279px)"
+    srcset="/images/quizzical_hero_tablet.avif"
+    type="image/avif"
+  />
+  <source
+    media="(max-width: 1279px)"
+    srcset="/images/quizzical_hero_tablet.webp"
+    type="image/webp"
+  />
+  <source
+    media="(max-width: 1279px)"
+    srcset="/images/quizzical_hero_tablet.png"
+    type="image/png"
+  />
+  <source
+    media="(min-width: 1280px)"
+    srcset="/images/quizzical_hero.avif"
+    type="image/avif"
+  />
+  <source
+    media="(min-width: 1280px)"
+    srcset="/images/quizzical_hero.webp"
+    type="image/webp"
+  />
   <img
     src="/images/quizzical_hero.png"
     alt="screenshot of quizzical landing page"
-    class="block"
+    class="block -translate-y-[4rem] sm:-translate-y-[6.5rem]"
   />
 </picture>
-
-<style>
-  img {
-    scale: 1.5;
-    transform: translateY(-4%);
-  }
-
-  @media (min-width: 640px) {
-    img {
-      scale: 1.28;
-      transform: translate(-3.5%, -7%);
-    }
-  }
-  @media (min-width: 1280px) {
-    img {
-      scale: 1;
-      transform: translateY(0%);
-    }
-  }
-</style>
