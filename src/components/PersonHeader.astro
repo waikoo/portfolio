@@ -8,9 +8,12 @@ const { fullName, color, bgColor } = Astro.props;
 const [familyName, name] = fullName.split(" ");
 
 const lowercasedName = name.toLowerCase();
+const pathname = Astro.url.pathname;
+const isQuizzical = pathname.includes("quizzical");
+const isThriftStudio = pathname.includes("thriftstudio");
 ---
 
-<script>
+<script is:inline define:vars={{ isQuizzical, isThriftStudio }}>
   // sticky header styles
   window.addEventListener("scroll", () => {
     const header = document.querySelector("header");
@@ -19,7 +22,7 @@ const lowercasedName = name.toLowerCase();
     if (header) {
       if (window.scrollY > 0) {
         header.style.backgroundColor = header.dataset.bgColor || "";
-        if (window.location.href.toString().includes("quizzical")) {
+        if (isQuizzical) {
           if (lis) {
             lis.forEach((li) => {
               if (li) {
@@ -29,7 +32,7 @@ const lowercasedName = name.toLowerCase();
           }
         }
 
-        if (window.location.href.toString().includes("thriftstudio")) {
+        if (isThriftStudio) {
           return;
         } else {
           header.classList.add("drop-shadow-md");
@@ -38,14 +41,14 @@ const lowercasedName = name.toLowerCase();
       } else {
         // on scroll back to top
         header.style.backgroundColor = "";
-        if (window.location.href.toString().includes("thriftstudio")) {
+        if (isThriftStudio) {
           return;
         } else {
           header.classList.remove("drop-shadow-md");
           header.classList.remove("z-50");
         }
 
-        if (window.location.href.toString().includes("quizzical")) {
+        if (isQuizzical) {
           if (lis) {
             lis.forEach((li) => {
               if (li) {
