@@ -9,6 +9,7 @@ import EvelinQuizzicalFile2 from "../../../components/EvelinQuizzicalFile2.astro
 
 const fullName = "Szász Evelin";
 const bgColor = "#E1CA02";
+const cardBgColor = "#FFF3D4";
 const { name, familyName } = extractName(fullName);
 ---
 
@@ -30,8 +31,16 @@ const { name, familyName } = extractName(fullName);
     <div
       class="mt-[-31px] sm:mt-[-45px] xl:mt-[-12px] mx-auto flex flex-col gap-[30px] sm:gap-[50px] xl:gap-[80px]"
     >
-      <EvelinQuizzicalFile fileTitle="OVERVIEW" bgColor={bgColor} />
-      <EvelinQuizzicalFile2 fileTitle="IDEATE" bgColor={bgColor} />
+      <EvelinQuizzicalFile
+        fileTitle="OVERVIEW"
+        bgColor={bgColor}
+        cardBgColor={cardBgColor}
+      />
+      <EvelinQuizzicalFile2
+        fileTitle="IDEATE"
+        bgColor={bgColor}
+        cardBgColor={cardBgColor}
+      />
     </div>
   </main>
 </Layout>

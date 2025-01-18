@@ -1,9 +1,10 @@
 ---
-const { title, bgColor, className } = Astro.props;
+const { title, bgColor, className, cardBgColor } = Astro.props;
 ---
 
 <article
-  class={`relative bg-[#f9f9f9] rounded-[20px_0px_20px_20px] sm:rounded-[20px] xl:py-[110px] sm:p-[50px] text-[#0d0d0d] w-full ${className}`}
+  style={{ backgroundColor: cardBgColor }}
+  class={`relative rounded-[20px_0px_20px_20px] sm:rounded-[20px] xl:py-[110px] sm:p-[50px] text-[#0d0d0d] w-full ${className}`}
 >
   <div
     class="absolute top-[-1px] right-[-1px] px-[8px] xl:px-[16px]"

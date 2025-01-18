@@ -11,6 +11,7 @@ import PageYProgressBar from "../../../components/PageYProgressBar.astro";
 
 const fullName = "Szász Evelin";
 const bgColor = "#d2d62e";
+const cardBgColor = "#F9F9F9";
 ---
 
 <Layout title="Thriftstudio" bgColor={bgColor} fullName={fullName}>
@@ -30,9 +31,21 @@ const bgColor = "#d2d62e";
       <ThriftstudioLogo />
       <ThriftstudioHero />
     </div>
-    <EvelinThriftstudioFile fileTitle="OVERVIEW" bgColor={bgColor} />
-    <EvelinThriftstudioFile2 fileTitle="RESEARCH" bgColor={bgColor} />
-    <EvelinThriftstudioFile3 fileTitle="IDEATE" bgColor={bgColor} />
+    <EvelinThriftstudioFile
+      fileTitle="OVERVIEW"
+      bgColor={bgColor}
+      cardBgColor={cardBgColor}
+    />
+    <EvelinThriftstudioFile2
+      fileTitle="RESEARCH"
+      bgColor={bgColor}
+      cardBgColor={cardBgColor}
+    />
+    <EvelinThriftstudioFile3
+      fileTitle="IDEATE"
+      bgColor={bgColor}
+      cardBgColor={cardBgColor}
+    />
 
     <ThriftstudioAside />
   </main>

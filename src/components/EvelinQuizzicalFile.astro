@@ -3,10 +3,14 @@ import EvelinFileSegment from "./EvelinFileSegment.astro";
 import EvelinFileWrapper from "./EvelinFileWrapper.astro";
 import EvelinMap from "./EvelinMap.astro";
 
-const { fileTitle, bgColor } = Astro.props;
+const { fileTitle, bgColor, cardBgColor } = Astro.props;
 ---
 
-<EvelinFileWrapper title={fileTitle} bgColor={bgColor}>
+<EvelinFileWrapper
+  title={fileTitle}
+  bgColor={bgColor}
+  cardBgColor={cardBgColor}
+>
   <div
     class="pt-[90px] sm:pt-[50px] pb-[45px] px-[10px] xl:py-[10px] xl:max-w-[1059px] mx-auto"
   >

@@ -2,12 +2,16 @@
 import EnlargedPicture from "./EnlargedPicture.astro";
 import EvelinFileWrapper from "./EvelinFileWrapper.astro";
 import QuizzicalSitemap from "./QuizzicalSitemap.astro";
-import UnderlinedTitle from "./UnderlinedTitle.astro";
+import WithMagnifyingGlass from "./WithMagnifyingGlass.astro";
 
-const { fileTitle, bgColor } = Astro.props;
+const { fileTitle, bgColor, cardBgColor } = Astro.props;
 ---
 
-<EvelinFileWrapper title={fileTitle} bgColor={bgColor}>
+<EvelinFileWrapper
+  title={fileTitle}
+  bgColor={bgColor}
+  cardBgColor={cardBgColor}
+>
   <h3 class="font-extrabold text-[21px] mt-[84px] text-center">
     INFORMATION ARCHITECTURE
   </h3>
@@ -36,7 +40,9 @@ const { fileTitle, bgColor } = Astro.props;
     starting a new game or customizing default settings for a personalized experience.
   </p>
 
-  <QuizzicalSitemap imgSelector="quizzical-sitemap" />
+  <WithMagnifyingGlass>
+    <QuizzicalSitemap imgSelector="quizzical-sitemap" />
+  </WithMagnifyingGlass>
 
   <EnlargedPicture
     imgSelector="quizzical-sitemap"

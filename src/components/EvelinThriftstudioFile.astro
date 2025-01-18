@@ -2,12 +2,13 @@
 import EvelinFileSegment from "./EvelinFileSegment.astro";
 import EvelinMap from "./EvelinMap.astro";
 import EvelinFileWrapper from "./EvelinFileWrapper.astro";
-const { fileTitle, bgColor } = Astro.props;
+const { fileTitle, bgColor, cardBgColor } = Astro.props;
 ---
 
 <EvelinFileWrapper
   title={fileTitle}
   bgColor={bgColor}
+  cardBgColor={cardBgColor}
   className="2xl:px-[170px]"
 >
   <div class="xl:flex xl:gap-[70px] xl:items-center xl:justify-around mx-auto">
