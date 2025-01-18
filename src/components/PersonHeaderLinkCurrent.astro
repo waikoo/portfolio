@@ -1,8 +1,8 @@
 ---
-const { isCurrentPage, isHamburger, href, url } = Astro.props;
+const { isCurrentPage, isHamburger, url } = Astro.props;
 const circleColor = isHamburger
   ? "bg-white"
-  : href.includes("evelin")
+  : url.includes("evelin")
     ? "bg-[#efd6f5]"
     : "bg-[#D9D62D]";
 

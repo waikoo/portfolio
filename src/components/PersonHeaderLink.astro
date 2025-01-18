@@ -21,13 +21,12 @@ const textColor = getHeaderNavLinkTextColor(
   <a
     class={`${textColor} ${textSize} lg:text-[17px] flex flex-col relative transition-all duration-200 ${boxShadow}`}
     style={{ color: color }}
-    href={`${href}`}
+    href={href}
   >
     <slot />
     <PersonHeaderLinkCurrent
       isCurrentPage={isCurrentPage}
       isHamburger={isHamburger}
-      href={href}
       url={url}
     />
   </a>
