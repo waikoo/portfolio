@@ -1,5 +1,7 @@
 ---
 import MagnifyingGlass from "./MagnifyingGlass.astro";
+
+const { className } = Astro.props;
 ---
 
 <script>
@@ -16,7 +18,8 @@ import MagnifyingGlass from "./MagnifyingGlass.astro";
 
   window.addEventListener("resize", updateText);
 </script>
-<figure class="">
+
+<figure class={className}>
   <slot />
   <figcaption
     class="pt-[20px] text-[13px] text-[#8d8d8d] sm:text-[14px] flex items-center justify-center"

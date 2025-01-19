@@ -17,9 +17,11 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   bgColor={bgColor}
   cardBgColor={cardBgColor}
   id={id}
+  paddingX="px-[20px]"
+  paddingY="py-[80px] sm:py-[90px] xl:py-[130px]"
 >
   <h3
-    class="font-extrabold text-[21px] xl:text-[40px] sm:mt-[26px] xl:mt-[84px] text-center"
+    class="font-extrabold text-[21px] xl:text-[40px] sm:mt-[26px] xl:mt-[84px] text-center leading-[20px]"
   >
     INFORMATION ARCHITECTURE
   </h3>
@@ -35,7 +37,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </BlueBg>
 
   <h4
-    class="font-bold text-[17px] sm:text-[21px] xl:text-[32px] font-['Jost'] mt-[40px] text-right py-[10px]"
+    class="font-bold text-[17px] sm:text-[21px] xl:text-[32px] font-['Jost'] mt-[30px] text-right py-[10px]"
   >
     SITEMAP
   </h4>
@@ -46,7 +48,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     starting a new game or customizing default settings for a personalized experience.
   </WithBorderParagraph>
 
-  <WithMagnifyingGlass>
+  <WithMagnifyingGlass className="mt-[20px]">
     <QuizzicalSitemap imgSelector="quizzical-sitemap" />
   </WithMagnifyingGlass>
 
@@ -59,7 +61,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </EnlargedPicture>
 
   <h4
-    class="font-bold text-[17px] sm:text-[21px] xl:text-[32px] font-['Jost'] mt-[40px] sm:mt-[70px] text-left py-[10px] xl:ml-[80px]"
+    class="font-bold text-[17px] sm:text-[21px] xl:text-[32px] font-['Jost'] mt-[30px] sm:mt-[70px] text-left py-[10px] xl:ml-[80px]"
   >
     USER FLOW
   </h4>
@@ -76,9 +78,9 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     developed the two primary user flows.
   </WithBorderParagraph>
 
-  <div class="flex flex-col gap-[40px] pt-[40px] pb-[80px] sm:pb-[40px]">
+  <div class="flex flex-col gap-[30px] pt-[40px] sm:pb-[40px]">
     <div class="flex flex-col gap-[20px]">
-      <WithSmallTriangle triangleColor={bgColor} triangleInside={true}
+      <WithSmallTriangle triangleColor={bgColor}
         ><strong>The primary path to start a new game</strong> (with default settings),
         including replaying options</WithSmallTriangle
       >

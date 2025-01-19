@@ -11,10 +11,10 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   bgColor={bgColor}
   cardBgColor={cardBgColor}
   id={id}
+  paddingX="px-[20px]"
+  paddingY="py-[80px] sm:py-[90px] xl:py-[130px]"
 >
-  <div
-    class="pt-[90px] sm:pt-[50px] pb-[45px] px-[10px] xl:py-[10px] xl:max-w-[1059px] mx-auto"
-  >
+  <div class="px-[10px] xl:py-[10px] xl:max-w-[1059px] mx-auto">
     <div class="xl:grid xl:grid-cols-[7fr_4fr] xl:items-center xl:gap-[102px]">
       <EvelinFileSegment
         title="THE PRODUCT"
@@ -28,12 +28,14 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
       </EvelinFileSegment>
 
       <div
-        class="my-[40px] sm:mb-[20px] xl:my-0 xl:col-start-2 xl:col-end-3 xl:row-start-1 xl:row-end-2"
+        class="mt-[40px] sm:mb-[20px] xl:my-0 xl:col-start-2 xl:col-end-3 xl:row-start-1 xl:row-end-2"
       >
         <EvelinMap title="ROLE" bgColor={bgColor}>UI Designer</EvelinMap>
         <EvelinMap title="TOOLS" bgColor={bgColor}>Figma</EvelinMap>
         <EvelinMap title="CONTEXT" bgColor={bgColor}
-          ><p>
+          ><p
+            class="font-['Jost'] text-[14px] sm:text-[16px] xl:text-[17px] ml-2"
+          >
             Design created for my husband's “Quizzical” capstone project in
             Scrimba's Frontend Developer Career Path course
           </p></EvelinMap

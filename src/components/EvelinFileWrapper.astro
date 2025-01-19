@@ -1,5 +1,6 @@
 ---
-const { title, bgColor, className, cardBgColor, id } = Astro.props;
+const { title, bgColor, className, cardBgColor, id, paddingX, paddingY } =
+  Astro.props;
 ---
 
 <article
@@ -18,7 +19,7 @@ const { title, bgColor, className, cardBgColor, id } = Astro.props;
     </h2>
   </div>
 
-  <section class="px-[20px] sm:text-[14px] mx-auto">
+  <section class={`${paddingX} ${paddingY} sm:text-[14px] mx-auto`}>
     <slot />
   </section>
 </article>
