@@ -2,12 +2,26 @@
 import MagnifyingGlass from "./MagnifyingGlass.astro";
 ---
 
+<script>
+  const updateText = () => {
+    const enlarge = document.querySelector(".enlarge");
+    const tapOrClick = window.matchMedia("(min-width: 1024px)").matches;
+
+    if (enlarge) {
+      enlarge.textContent = tapOrClick ? "Click" : "Tap";
+    }
+  };
+
+  updateText();
+
+  window.addEventListener("resize", updateText);
+</script>
 <figure class="">
   <slot />
   <figcaption
     class="pt-[20px] text-[13px] text-[#8d8d8d] sm:text-[14px] flex items-center justify-center"
   >
     <MagnifyingGlass />
-    <span>Tap to enlarge</span>
+    <span><span class="enlarge"></span> to enlarge</span>
   </figcaption>
 </figure>
