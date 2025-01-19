@@ -39,7 +39,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     SITEMAP
   </h4>
 
-  <WithBorderParagraph>
+  <WithBorderParagraph className="sm:mb-[40px] mx-[-20px]">
     The following Sitemap outlines the <strong>main sections</strong> of the game.
     It is designed to <strong>prioritize easy access to key functions</strong> like
     starting a new game or customizing default settings for a personalized experience.
@@ -57,7 +57,9 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     <QuizzicalSitemap />
   </EnlargedPicture>
 
-  <h4 class="font-bold text-[17px] font-['Jost'] mt-[40px] text-left py-[10px]">
+  <h4
+    class="font-bold text-[17px] sm:text-[17px] font-['Jost'] mt-[40px] sm:mt-[70px] text-left py-[10px]"
+  >
     USER FLOW
   </h4>
 
@@ -73,9 +75,9 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     developed the two primary user flows.
   </WithBorderParagraph>
 
-  <div class="flex flex-col gap-[40px] pt-[40px] pb-[80px]">
+  <div class="flex flex-col gap-[40px] pt-[40px] pb-[80px] sm:pb-[40px]">
     <div class="flex flex-col gap-[20px]">
-      <WithSmallTriangle bgColor={bgColor}
+      <WithSmallTriangle triangleColor={bgColor}
         ><strong>The primary path to start a new game</strong> (with default settings),
         including replaying options</WithSmallTriangle
       >

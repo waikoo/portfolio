@@ -1,3 +1,9 @@
-<p class="border-y-[#E1CA02] border-y-[1px] mx-[-20px] p-[20px] text-[14px]">
+---
+const { className } = Astro.props;
+---
+
+<p
+  class={`border-y-[#E1CA02] border-y-[1px] sm:border-[1px] sm:border-[#E1CA02] p-[20px] text-[14px] ${className}`}
+>
   <slot />
 </p>
