@@ -1,0 +1,13 @@
+---
+const { imgName, imgAlt, imgSelector, className } = Astro.props;
+---
+
+<picture>
+  <source srcset=`/images/${imgName}.avif` type="image/avif" />
+  <source srcset=`/images/${imgName}.webp` type="image/webp" />
+  <img
+    src=`/images/${imgName}.png`
+    alt={imgAlt}
+    class={`${imgSelector} ${className}`}
+  />
+</picture>

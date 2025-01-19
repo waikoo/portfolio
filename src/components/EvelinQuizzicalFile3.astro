@@ -1,0 +1,138 @@
+---
+import BlueBg from "./BlueBg.astro";
+import EnlargedPicture from "./EnlargedPicture.astro";
+import EvelinFileWrapper from "./EvelinFileWrapper.astro";
+import MyImage from "./MyImage.astro";
+import QuizzicalArrowDown from "./QuizzicalArrowDown.astro";
+import QuizzicalWireframes from "./QuizzicalWireframes.astro";
+import WithMagnifyingGlass from "./WithMagnifyingGlass.astro";
+import WithSmallTriangle from "./WithSmallTriangle.astro";
+
+const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
+---
+
+<EvelinFileWrapper
+  title={fileTitle}
+  bgColor={bgColor}
+  cardBgColor={cardBgColor}
+  id={id}
+>
+  <h3
+    class="font-['Jost'] text-[21px] sm:text-[26px] xl:text-[40px] font-extrabold pt-[100px] text-center"
+  >
+    WIREFRAMES
+  </h3>
+
+  <BlueBg>
+    Ensuring a <strong>consistent experience</strong> across all screen sizes was
+    a key priority from the beginning. I adopted a <strong
+      >desktop-first approach</strong
+    >, as the game is not content-heavy, allowing me to focus on every detail
+    and prevent the interface from feeling sparse on larger screens. A <strong
+      >center-positioned layout</strong
+    >
+    was selected for its <strong>scalability</strong>, providing a <strong
+      >balanced and cohesive design</strong
+    >
+    that adapts well across devices. This approach ensures that <strong
+      >users can easily transition between devices</strong
+    > without needing to re-learn the layout, allowing them to focus solely on the
+    game.
+  </BlueBg>
+
+  <WithSmallTriangle
+    triangleColor={bgColor}
+    triangleInside={false}
+    className="mt-[40px] mb-[20px]"
+    >During the wireframing process, I designed the four essential screens that
+    make up the entire structure of the game’s interface</WithSmallTriangle
+  >
+
+  <WithMagnifyingGlass>
+    <QuizzicalWireframes imgSelector="quizzical-wireframes" />
+  </WithMagnifyingGlass>
+
+  <EnlargedPicture
+    imgSelector="quizzical-wireframes"
+    modalSelector="quizzical-wireframes-modal"
+    modalClose="quizzical-wireframes-modal-close"
+  >
+    <QuizzicalWireframes />
+  </EnlargedPicture>
+
+  <h3
+    class="font-['Jost'] text-[21px] sm:text-[26px] xl:text-[40px] font-extrabold pt-[80px] text-center"
+  >
+    STYLE DEFINITION
+  </h3>
+  <BlueBg>
+    With full creative control over the game's aesthetics, I aimed to create a
+    design that felt both <strong>playful and intriguing</strong>, using colors
+    and forms to evoke curiosity. I chose an <strong
+      >abstract visual style</strong
+    > rather than illustrating individual categories to maintain a sense of mystery
+    and engagement for the players. The design approach prioritizes <strong
+      >simplicity, cleanliness, and consistency</strong
+    > throughout.
+  </BlueBg>
+  <h4 class="font-['Jost'] text-[17px] font-bold mt-[40px] py-1">BACKGROUND</h4>
+  <div
+    class="border-y-[#E1CA02] border-y-[1px] sm:border-[1px] sm:border-[#E1CA02] p-[20px] mx-[-20px]"
+  >
+    <picture>
+      <source srcset="/images/quizzical_bg.avif" type="image/avif" />
+      <source srcset="/images/quizzical_bg.webp" type="image/webp" />
+      <img
+        src="/images/quizzical_bg.png"
+        alt="background image used for the quizzical app"
+        class=""
+      />
+    </picture>
+    <p class="mt-[20px] text-[14px] xl:text-[18px]">
+      To align with the conditional rendering architecture, I designed a <strong
+        >single background image</strong
+      > to serve as the <strong>foundation for the entire game</strong>. This
+      choice ensures <strong>visual continuity</strong>, reinforcing the
+      seamless experience even as the interface changes. Since the URL remains
+      static, it was crucial to <strong
+        >ensure that the design transitions felt cohesive</strong
+      >, avoiding any confusion that might arise from appearing to navigate to
+      entirely new pages.
+    </p>
+  </div>
+
+  <h4
+    class="font-['Jost'] text-[17px] sm:text-[21px] xl:text-[32px] font-bold mt-[40px] py-1 leading-[18px] mb-[10px]"
+  >
+    COLORS & TYPOGRAPHY
+  </h4>
+
+  <p class="text-[14px] xl:text-[18px] font-['Jost']">
+    The background image served as the foundation for establishing the color
+    scheme and typography, <strong>setting the overall tone </strong>for the
+    design. The theme blends <strong>modern</strong> and <strong>retro</strong> aesthetics
+    with <strong>vibrant</strong> and <strong>sleek</strong> elements, creating a
+    joyful and refreshing user experience. To enhance the playful aesthetic, I thoughtfully
+    selected a <strong>variety of complementary fonts and colors</strong>,
+    carefully considering their frequency and relevance within the design.
+  </p>
+
+  <MyImage
+    imgName="quizzical_primary_secondary_colors"
+    imgAlt="primary and secondary colors used in the quizzical app"
+    className="mt-[20px]"
+  />
+
+  <section class="grid grid-cols-[auto_1fr] gap-[17px] mt-[40px]">
+    <QuizzicalArrowDown />
+    <div>
+      <h5 class="text-[15px] font-['Jost'] font-bold leading-none">BUTTONS</h5>
+      <p class="text-[14px] font-['Jost'] mt-[11px] leading-[20px]">
+        The "Play" button, as the most important element, incorporates the
+        highest number of distinct colors. From there, <strong
+          >I progressively reduced the number of colors</strong
+        > used to maintain a clear visual hierarchy.
+      </p>
+    </div>
+  </section>
+</EvelinFileWrapper>

@@ -1,4 +1,5 @@
 ---
+import BlueBg from "./BlueBg.astro";
 import EnlargedPicture from "./EnlargedPicture.astro";
 import EvelinFileWrapper from "./EvelinFileWrapper.astro";
 import QuizzicalSitemap from "./QuizzicalSitemap.astro";
@@ -22,9 +23,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   >
     INFORMATION ARCHITECTURE
   </h3>
-  <p
-    class="bg-[#D9D9D9] text-[#001649] text-[14px] xl:text-[18px] font-['Jost'] p-[20px] mx-[-20px] mt-[20px]"
-  >
+  <BlueBg>
     I began by identifying and <strong>laying out all the components</strong> of
     the game to gain a comprehensive overview. Next, I organized the content and
     <strong>established a clear hierarchy</strong> to define the navigation, menus,
@@ -33,7 +32,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
       >solid foundation</strong
     > for designing
     <strong>intuitive interactions</strong>.
-  </p>
+  </BlueBg>
 
   <h4
     class="font-bold text-[17px] sm:text-[21px] xl:text-[32px] font-['Jost'] mt-[40px] text-right py-[10px]"
