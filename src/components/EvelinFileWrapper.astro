@@ -1,5 +1,5 @@
 ---
-const { title, bgColor, className, cardBgColor } = Astro.props;
+const { title, bgColor, className, cardBgColor, id } = Astro.props;
 ---
 
 <article
@@ -12,7 +12,7 @@ const { title, bgColor, className, cardBgColor } = Astro.props;
   >
     <h2
       class={`font-['Jost'] font-bold text-[26px] sm:text-[35px] xl:text-[55px] tracking-[-2px] xl:tracking-[-6px] px-[12px]]`}
-      id={title.toLowerCase()}
+      id={id}
     >
       {title}
     </h2>

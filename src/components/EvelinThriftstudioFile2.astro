@@ -11,13 +11,14 @@ import TapToEnlargeBig from "./TapToEnlargeBig.astro";
 import UserPersona from "./UserPersona.astro";
 import UserPersonaModal from "./UserPersonaModal.astro";
 
-const { fileTitle, bgColor, cardBgColor } = Astro.props;
+const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
 ---
 
 <EvelinFileWrapper
   title={fileTitle}
   bgColor={bgColor}
   cardBgColor={cardBgColor}
+  id={id}
 >
   <span
     class="mt-[60px] xl:mt-[40px] block text-center font-semibold text-[12px] sm:text-[15px] xl:text-[20px]"

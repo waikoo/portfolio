@@ -2,7 +2,7 @@
 import EvelinFileSegment from "./EvelinFileSegment.astro";
 import EvelinMap from "./EvelinMap.astro";
 import EvelinFileWrapper from "./EvelinFileWrapper.astro";
-const { fileTitle, bgColor, cardBgColor } = Astro.props;
+const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
 ---
 
 <EvelinFileWrapper
@@ -10,6 +10,7 @@ const { fileTitle, bgColor, cardBgColor } = Astro.props;
   bgColor={bgColor}
   cardBgColor={cardBgColor}
   className="2xl:px-[170px]"
+  id={id}
 >
   <div class="xl:flex xl:gap-[70px] xl:items-center xl:justify-around mx-auto">
     <div class="mt-[80px] xl:mt-0 sm:mt-[40px]">

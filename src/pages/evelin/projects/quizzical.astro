@@ -6,6 +6,7 @@ import EvelinQuizzicalFile from "../../../components/EvelinQuizzicalFile.astro";
 import QuizzicalHeroImg from "../../../components/QuizzicalHeroImg.astro";
 import { extractName } from "../../../utils/extractName";
 import EvelinQuizzicalFile2 from "../../../components/EvelinQuizzicalFile2.astro";
+import QuizzicalAside from "../../../components/QuizzicalAside.astro";
 
 const fullName = "Szász Evelin";
 const bgColor = "#E1CA02";
@@ -35,12 +36,15 @@ const { name, familyName } = extractName(fullName);
         fileTitle="OVERVIEW"
         bgColor={bgColor}
         cardBgColor={cardBgColor}
+        id="quizzical-overview"
       />
       <EvelinQuizzicalFile2
         fileTitle="IDEATE"
         bgColor={bgColor}
         cardBgColor={cardBgColor}
+        id="quizzical-ideate"
       />
     </div>
+    <QuizzicalAside bgColor={bgColor} />
   </main>
 </Layout>

@@ -8,13 +8,14 @@ import WithBorderParagraph from "./WithBorderParagraph.astro";
 import WithMagnifyingGlass from "./WithMagnifyingGlass.astro";
 import WithSmallTriangle from "./WithSmallTriangle.astro";
 
-const { fileTitle, bgColor, cardBgColor } = Astro.props;
+const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
 ---
 
 <EvelinFileWrapper
   title={fileTitle}
   bgColor={bgColor}
   cardBgColor={cardBgColor}
+  id={id}
 >
   <h3 class="font-extrabold text-[21px] mt-[84px] text-center">
     INFORMATION ARCHITECTURE
