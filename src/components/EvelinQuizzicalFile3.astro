@@ -4,9 +4,11 @@ import EnlargedPicture from "./EnlargedPicture.astro";
 import EvelinFileWrapper from "./EvelinFileWrapper.astro";
 import MyImage from "./MyImage.astro";
 import QuizzicalArrowDown from "./QuizzicalArrowDown.astro";
+import QuizzicalTitle from "./QuizzicalTitle.astro";
 import QuizzicalWireframes from "./QuizzicalWireframes.astro";
 import WithMagnifyingGlass from "./WithMagnifyingGlass.astro";
 import WithSmallTriangle from "./WithSmallTriangle.astro";
+import "@fontsource/monoton";
 
 const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
 ---
@@ -137,4 +139,63 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
       </p>
     </div>
   </section>
+
+  <QuizzicalTitle />
+  <span class="font-['Monoton'] text-center">MONOTON REGULAR</span>
+
+  <p class="text-[14px] py-[20px]">
+    The logo features the <strong>Monoton Regular typeface</strong> with a custom
+    modification. To enhance readability and visual balance, the letter "Q" was styled
+    as an uppercase character but scaled down to match the size of the lowercase
+    letters. This approach was taken because the lowercase "Q" lacked the clarity
+    and coherence of the other letters, <strong>ensuring</strong> the logo remained
+    <strong>both distinctive and legible</strong>.
+  </p>
+
+  <MyImage
+    imgName="quizzical_logo_colors"
+    imgAlt="entire color palette used in the quizzical app"
+    className="mb-[20px]"
+  />
+
+  <MyImage
+    imgName="quizzical_logo_example"
+    imgAlt="the two versions of the logo used in the quizzical app"
+    className="mb-[20px]"
+  />
+
+  <p class="text-[14px]">
+    I envisioned the <strong
+      >large logo being prominently displayed on the start screen</strong
+    >, drawing inspiration from the bold, attention-grabbing designs of board
+    game covers. On subsequent screens, the logo was scaled down and made
+    clickable, serving as <strong>a consistent navigation element</strong> that allows
+    users to quickly return to the start screen. This approach balances <strong
+      >visual impact with functional usability</strong
+    >.
+  </p>
+
+  <MyImage
+    imgName="quizzical_font_mobile_tablet"
+    imgAlt="different fonts used in the quizzical app"
+    className="my-[20px]"
+  />
+
+  <p class="text-[14px]">
+    For the typography I have chosen <strong>three different fonts</strong>,
+    each selected to enhance the <strong>playful and dynamic</strong> feel of the
+    game while maintaining clarity and readability.
+  </p>
+
+  <h5 class="text-[17px] font-bold leading-none mt-[40px] mb-[20px]">
+    COMPONENTS
+  </h5>
+
+  <WithMagnifyingGlass>
+    <MyImage
+      imgName="quizzical_game_components"
+      imgAlt="different game components used in the quizzical app"
+      className="mt-[20px]"
+    />
+  </WithMagnifyingGlass>
 </EvelinFileWrapper>

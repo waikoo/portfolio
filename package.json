@@ -16,6 +16,7 @@
     "@astrojs/vercel": "^7.8.1",
     "@builder.io/qwik": "^1.8.0",
     "@fontsource/jost": "^5.1.0",
+    "@fontsource/monoton": "^5.1.1",
     "@fontsource/roboto": "^5.1.0",
     "astro": "4.15.6",
     "motion": "^10.18.0",
