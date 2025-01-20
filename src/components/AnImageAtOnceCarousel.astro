@@ -1,0 +1,120 @@
+---
+interface Props {
+  items: {
+    name: "Home Screen" | "Settings Screen" | "Game Screen" | "End Screen";
+    imgName:
+      | "quizzical_home"
+      | "quizzical_settings"
+      | "quizzical_game"
+      | "quizzical_end";
+    color: string;
+  }[];
+  showByDefault: number;
+}
+
+const { items, showByDefault } = Astro.props;
+---
+
+<script>
+  const competitiveAnalysisElements =
+    document.querySelectorAll<HTMLLIElement>(".state");
+  const currentModalImage = document.querySelector<HTMLImageElement>(
+    "#enlarged-modal-picture img",
+  );
+  const picture = document.querySelector("#state-picture");
+  let activeElement: HTMLLIElement | null =
+    document.querySelector<HTMLLIElement>(".active-state");
+
+  // dynamically set modal image's source to be the clicked image
+  const caImg = document.querySelector<HTMLImageElement>(".quizzical-image");
+  if (caImg) {
+    caImg.addEventListener("click", (e: MouseEvent) => {
+      if (currentModalImage) {
+        const target = e.currentTarget as HTMLImageElement;
+        if (target && target.dataset.img) {
+          currentModalImage.src = target.dataset.img;
+        }
+      }
+    });
+  }
+
+  // toggle through points
+  competitiveAnalysisElements.forEach((el) => {
+    el.addEventListener("click", () => {
+      const imgBase = el.getAttribute("data-img");
+      const style = el.getAttribute("data-style");
+
+      if (imgBase && picture) {
+        const avifSource = picture.querySelector(
+          "source[type='image/avif']",
+        ) as HTMLImageElement;
+
+        const webpSource = picture.querySelector(
+          "source[type='image/webp']",
+        ) as HTMLImageElement;
+
+        const img = picture.querySelector("img");
+
+        if (avifSource) avifSource.srcset = `${imgBase}.avif`;
+        if (webpSource) webpSource.srcset = `${imgBase}.webp`;
+        if (img) img.src = `${imgBase}.png`;
+      }
+
+      if (activeElement) {
+        const dataStyle = activeElement.getAttribute("data-style");
+        if (dataStyle) {
+          activeElement.classList.remove(dataStyle);
+        }
+      }
+
+      if (style) {
+        el.classList.add(style);
+        activeElement = el;
+      }
+    });
+  });
+</script>
+
+<ul
+  class="flex flex-row gap-[8px] sm:justify-between pr-2 font-semibold text-[10px] overflow-scroll items-center border-[2px] sm:border-[3px] rounded-full p-1 border-[#E1CA02] h-max-content uppercase"
+>
+  {
+    items.map(({ name }, i) => (
+      <li
+        class="cursor-pointer state whitespace-nowrap h-[46px] sm:h-[52px] xl:h-auto grid place-items-center"
+        data-img={`/images/${items[i].imgName}`}
+        data-style={`state-${i}`}
+        style={`backgroundColor: ${items[i].color}`}
+      >
+        {name}
+      </li>
+    ))
+  }
+</ul>
+<picture id="state-picture">
+  <source
+    type="image/avif"
+    srcset=`/images/${items[showByDefault].imgName}.avif`
+  />
+  <source
+    type="image/webp"
+    srcset=`/images/${items[showByDefault].imgName}.webp`
+  />
+  <img
+    src=`/images/${items[showByDefault].imgName}.png`
+    alt="selected quizzical game state"
+    class="quizzical-image rounded-[7px] mt-2 xl:cursor-pointer sm:rounded-[30px]"
+  />
+</picture>
+
+<style>
+  /* hide scrollbar */
+  ul::-webkit-scrollbar {
+    display: none;
+  }
+
+  ul {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>

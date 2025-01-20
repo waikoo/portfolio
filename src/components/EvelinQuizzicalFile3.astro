@@ -1,4 +1,7 @@
 ---
+import AnImageAtOnceCarousel from "./AnImageAtOnceCarousel.astro";
+import ReactCarousel from "./ReactCarousel.tsx";
+import quizzicalStates from "../projects/evelinQuizzicalData.js";
 import BlueBg from "./BlueBg.astro";
 import EnlargedPicture from "./EnlargedPicture.astro";
 import EvelinFileWrapper from "./EvelinFileWrapper.astro";
@@ -220,7 +223,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
       >.
     </p>
 
-    <p>
+    <p class="mt-[20px]">
       The <strong>rest of the elements</strong> maintain visual <strong
         >consistency</strong
       > through a cohesive color scheme, effects, and form, establishing a <strong
@@ -237,4 +240,10 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   >
     FINAL DESIGN
   </h3>
+
+  <ReactCarousel items={quizzicalStates} showByDefault={0} client:visible />
+
+  <!-- <EnlargedPicture> -->
+  <!--   <AnImageAtOnceEnlarge id="enlarged-modal-picture" /> -->
+  <!-- </EnlargedPicture> -->
 </EvelinFileWrapper>

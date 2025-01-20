@@ -1,0 +1,20 @@
+---
+import IconX from "./IconX.astro";
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+---
+
+<dialog
+  class="overlay fixed hidden bg-white w-screen h-screen place-items-center"
+  id={id}
+>
+  <IconX id="close-state-modal" />
+  <picture id="state-modal-picture">
+    <source type="image/avif" srcset="/images/CA1.avif" />
+    <source type="image/webp" srcset="/images/CA1.webp" />
+    <img src="/images/CA1.png" alt="quizzical state" />
+  </picture>
+</dialog>
