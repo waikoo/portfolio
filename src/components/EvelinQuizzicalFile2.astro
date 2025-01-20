@@ -48,7 +48,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     starting a new game or customizing default settings for a personalized experience.
   </WithBorderParagraph>
 
-  <WithMagnifyingGlass className="mt-[20px]">
+  <WithMagnifyingGlass className="mt-[20px]" invert={true}>
     <QuizzicalSitemap imgSelector="quizzical-sitemap" />
   </WithMagnifyingGlass>
 
@@ -85,7 +85,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
         including replaying options</WithSmallTriangle
       >
 
-      <WithMagnifyingGlass>
+      <WithMagnifyingGlass invert={true}>
         <QuizzicalUserFlowDefault imgSelector="quizzical-default-user-flow" />
       </WithMagnifyingGlass>
 
@@ -104,7 +104,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
         replaying options
       </WithSmallTriangle>
 
-      <WithMagnifyingGlass>
+      <WithMagnifyingGlass invert={true}>
         <QuizzicalUserFlowCustom imgSelector="quizzical-custom-user-flow" />
       </WithMagnifyingGlass>
 
