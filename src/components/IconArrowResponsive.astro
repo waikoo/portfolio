@@ -1,0 +1,53 @@
+---
+const { color, bgColor } = Astro.props;
+---
+
+<div>
+  <svg
+    width="30"
+    height="30"
+    viewBox="0 0 30 30"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    class="sm:hidden"
+  >
+    <g filter="url(#filter0_b_2475_809)">
+      <rect width="30" height="30" rx="15" fill={bgColor}></rect>
+      <rect
+        x="1"
+        y="1"
+        width="28"
+        height="28"
+        rx="14"
+        stroke={color}
+        stroke-width="2"></rect>
+      <path
+        d="M18.8875 10.3605C19.3018 10.3605 19.6375 10.6963 19.6375 11.1105L19.6375 17.8605C19.6375 18.2747 19.3018 18.6105 18.8875 18.6105C18.4733 18.6105 18.1375 18.2747 18.1375 17.8605V11.8605H12.1375C11.7233 11.8605 11.3875 11.5247 11.3875 11.1105C11.3875 10.6963 11.7233 10.3605 12.1375 10.3605L18.8875 10.3605ZM10.579 18.3583L18.3572 10.5802L19.4179 11.6408L11.6397 19.419L10.579 18.3583Z"
+        fill={color}></path>
+    </g>
+    <defs>
+      <filter
+        id="filter0_b_2475_809"
+        x="-10"
+        y="-10"
+        width="50"
+        height="50"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+        <feGaussianBlur in="BackgroundImageFix" stdDeviation="5"
+        ></feGaussianBlur>
+        <feComposite
+          in2="SourceAlpha"
+          operator="in"
+          result="effect1_backgroundBlur_2475_809"></feComposite>
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="effect1_backgroundBlur_2475_809"
+          result="shape"></feBlend>
+      </filter>
+    </defs>
+  </svg>
+</div>

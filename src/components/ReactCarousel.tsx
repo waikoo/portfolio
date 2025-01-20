@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useMemo, useCallback } from "react"
 
 interface Props {
   items: { name: string, imgName: string, color: string }[]
@@ -11,13 +11,15 @@ export default function ReactCarousel({ items, showByDefault }: Props) {
     items[index].imgName
   )
 
-  const handleClick = (e: React.MouseEvent, i: number) => {
-    const target = e.target as HTMLLIElement
-    setIndex(i)
+  const memoizedClickHandler = useMemo(() => (e: React.MouseEvent, i: number) => {
+    const target = e.target as HTMLLIElement;
+    setIndex(i);
     if (target.dataset.img) {
-      setSelectedImg(target.dataset.img)
+      setSelectedImg(target.dataset.img);
     }
-  }
+  }, []);
+
+  const handleClick = useCallback(memoizedClickHandler, []);
   return (
     <>
       <ul

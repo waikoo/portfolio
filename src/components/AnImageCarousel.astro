@@ -1,0 +1,155 @@
+<script>
+  const liElements =
+    document.querySelectorAll<HTMLLIElement>(".quizzical-state");
+
+  const picture = document.querySelector("#ca-picture");
+
+  let activeElement: HTMLLIElement | null =
+    document.querySelector<HTMLLIElement>(".ca1");
+
+  const currentModalImage = document.querySelector<HTMLImageElement>(
+    "#ca-modal-picture img",
+  );
+
+  // dynamically set modal image's source to be the clicked image
+  const caImg = document.querySelector<HTMLImageElement>(
+    ".quizzical-state-image",
+  );
+  if (caImg) {
+    caImg.addEventListener("click", (e: MouseEvent) => {
+      if (currentModalImage) {
+        const target = e.currentTarget as HTMLImageElement;
+        if (target) {
+          currentModalImage.src = `/images/${target.dataset.img}.avif`;
+        }
+      }
+    });
+  }
+
+  // click screen, show image
+  liElements.forEach((el) => {
+    el.addEventListener("click", () => {
+      const imgBase = el.getAttribute("data-img");
+      const style = el.getAttribute("data-style");
+
+      if (imgBase && picture) {
+        const avifSource = picture.querySelector(
+          "source[type='image/avif']",
+        ) as HTMLImageElement;
+        const webpSource = picture.querySelector(
+          "source[type='image/webp']",
+        ) as HTMLImageElement;
+        const img = picture.querySelector("img");
+
+        if (avifSource) avifSource.srcset = `${imgBase}.avif`;
+        if (webpSource) webpSource.srcset = `${imgBase}.webp`;
+        // if (img) img.src = `${imgBase}.png`;
+      }
+
+      if (activeElement) {
+        const dataStyle = activeElement.getAttribute("data-style");
+        if (dataStyle) {
+          activeElement.classList.remove(dataStyle);
+        }
+      }
+
+      if (style) {
+        el.classList.add(style);
+        activeElement = el;
+      }
+    });
+  });
+
+  const modalPicture = document.querySelector("#ca-modal-picture");
+  if (modalPicture) {
+    const modalImg = modalPicture.querySelector("img");
+    if (modalImg) {
+      modalImg.src = "/images/CA1.avif";
+    }
+  }
+</script>
+<section>
+  <ul
+    class="flex flex-row gap-2 sm:justify-between pr-2 font-semibold text-center overflow-scroll text-[10px] sm:text-[12px] xl:text-[16px] items-center border-[2px] sm:border-[3px] rounded-full p-1 border-[#d2d62e] h-max-content mt-[50px]"
+  >
+    <li
+      class="cursor-pointer quizzical-state ca1 p-[0.5rem] whitespace-nowrap"
+      data-img="/images/quizzical_home"
+      data-style="home"
+    >
+      Home Screen
+    </li>
+    <li
+      class="cursor-pointer quizzical-state whitespace-nowrap h-[46px] sm:h-[52px] xl:h-auto grid place-items-center"
+      data-img="/images/quizzical_settings"
+      data-style="settings"
+    >
+      Settings Screen
+    </li>
+    <li
+      class="cursor-pointer quizzical-state whitespace-nowrap h-[46px] sm:h-[52px] xl:h-auto grid place-items-center"
+      data-img="/images/quizzical_game"
+      data-style="game"
+    >
+      Game Screen
+    </li>
+    <li
+      class="cursor-pointer quizzical-state whitespace-nowrap h-[46px] sm:h-[52px] xl:h-auto grid place-items-center"
+      data-img="/images/quizzical_end"
+      data-style="end"
+    >
+      End Screen
+    </li>
+  </ul>
+
+  <picture id="ca-picture">
+    <source type="image/avif" srcset="/images/quizzical_home.avif" />
+    <source type="image/webp" srcset="/images/quizzical_home.webp" />
+    <img
+      src="/images/quizzical_home.png"
+      alt="clickable states of the quizzical game"
+      class="ca-image rounded-[7px] mt-2 xl:cursor-pointer sm:rounded-[30px]"
+    />
+  </picture>
+</section>
+
+<style>
+  .home {
+    background-color: #4d3566;
+    color: white;
+    border-radius: 100px;
+    padding: 0.5rem;
+  }
+  .settings {
+    background-color: #373566;
+    color: white;
+    border-radius: 100px;
+    padding: 0.5rem;
+  }
+  .game {
+    background-color: #5d6635;
+    color: white;
+    border-radius: 100px;
+    padding: 0.5rem;
+  }
+  .end {
+    background-color: #66355a;
+    color: white;
+    border-radius: 100px;
+    padding: 0.5rem;
+  }
+
+  /* hide scrollbar */
+  ul::-webkit-scrollbar {
+    display: none;
+  }
+
+  ul {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  * {
+    font-family: "Jost", sans-serif;
+  }
+</style>

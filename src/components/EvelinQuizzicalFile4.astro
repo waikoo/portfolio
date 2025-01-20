@@ -1,0 +1,52 @@
+---
+import EvelinFileWrapper from "./EvelinFileWrapper.astro";
+import IconArrowResponsive from "./IconArrowResponsive.astro";
+import VideoAutoplay from "./VideoAutoplay.astro";
+
+const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
+---
+
+<EvelinFileWrapper
+  title={fileTitle}
+  bgColor={bgColor}
+  cardBgColor={cardBgColor}
+  id={id}
+  paddingX="px-[20px]"
+  paddingY="py-[80px] sm:py-[90px] xl:py-[130px]"
+>
+  <div class="flex flex-col gap-[20px]">
+    <VideoAutoplay name="quizzical_prototype" />
+
+    <a
+      class="flex items-center justify-center gap-[5px] font-medium text-[14px] text-[#001649]"
+      href="https://www.figma.com/proto/1EjGuABQXabxKHcGttNoV8/Quizzical?node-id=690-680&t=udop461IN5HCY7X8-1&scaling=scale-down&content-scaling=fixed&page-id=259%3A1003"
+    >
+      <span>View Figma Prototype</span>
+      <IconArrowResponsive color="#001649" bgColor="#FFEEC2" />
+    </a>
+  </div>
+
+  <div
+    class="pt-[30px] mx-[-20px]"
+    style={{ borderBottom: `2px dotted ${bgColor}` }}
+  >
+  </div>
+
+  <h5
+    class="text-[21px] font-extrabold leading-none mt-[40px] mb-[20px] text-[#001649]"
+  >
+    CONCLUSIONS
+  </h5>
+
+  <p class="mt-[30px] text-[#001649]">
+    This project was a rewarding challenge that pushed me out of my comfort zone
+    into the realm of game design—a field I had little prior experience in. When
+    my husband asked if I could design something for his front-end capstone
+    project, I excitedly took the opportunity. By following a structured design
+    process and focusing on one step at a time, I was able to deliver a cohesive
+    design more efficiently than I anticipated. Additionally, collaborating with
+    a developer enhanced my communication skills and strengthened my
+    adaptability as I navigated challenges that arose during the transition from
+    design to a fully playable game.
+  </p>
+</EvelinFileWrapper>

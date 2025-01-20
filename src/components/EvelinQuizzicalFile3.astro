@@ -12,6 +12,7 @@ import QuizzicalWireframes from "./QuizzicalWireframes.astro";
 import WithMagnifyingGlass from "./WithMagnifyingGlass.tsx";
 import WithSmallTriangle from "./WithSmallTriangle.astro";
 import "@fontsource/monoton";
+import AnImageCarousel from "./AnImageCarousel.astro";
 
 const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
 ---
@@ -241,7 +242,8 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     FINAL DESIGN
   </h3>
 
-  <ReactCarousel items={quizzicalStates} showByDefault={0} client:visible />
+  <!-- <ReactCarousel items={quizzicalStates} showByDefault={0} client:load /> -->
+  <AnImageCarousel />
 
   <!-- <EnlargedPicture> -->
   <!--   <AnImageAtOnceEnlarge id="enlarged-modal-picture" /> -->

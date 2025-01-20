@@ -1,0 +1,9 @@
+---
+const { name } = Astro.props;
+---
+
+<video autoplay loop muted>
+  <source type="video/mp4" src=`/videos/${name}.mp4` />
+  <source type="video/av1" src=`/videos/${name}.mp4` />
+  <source type="video/gif" src=`/videos/${name}.gif` />
+</video>
