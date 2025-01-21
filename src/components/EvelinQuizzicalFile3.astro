@@ -1,5 +1,4 @@
 ---
-import AnImageAtOnceCarousel from "./AnImageAtOnceCarousel.astro";
 import BlueBg from "./BlueBg.astro";
 import EnlargedPicture from "./EnlargedPicture.astro";
 import EvelinFileWrapper from "./EvelinFileWrapper.astro";
@@ -11,7 +10,6 @@ import WithMagnifyingGlass from "./WithMagnifyingGlass.tsx";
 import WithSmallTriangle from "./WithSmallTriangle.astro";
 import DynamicImgSrc from "./DynamicImgSrc.tsx";
 import "@fontsource/monoton";
-import AnImageCarousel from "./AnImageCarousel.astro";
 
 const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
 ---
@@ -21,16 +19,16 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   bgColor={bgColor}
   cardBgColor={cardBgColor}
   id={id}
-  paddingX="px-[20px]"
+  paddingX="px-[20px] sm:px-[30px]"
   paddingY="py-[80px] sm:py-[90px] xl:py-[130px]"
 >
   <h3
-    class="font-['Jost'] text-[21px] sm:text-[26px] xl:text-[40px] font-extrabold text-center"
+    class="text-[21px] sm:text-[26px] xl:text-[40px] font-extrabold text-center"
   >
     WIREFRAMES
   </h3>
 
-  <BlueBg>
+  <BlueBg className="mt-[20px] sm:mt-[70px] xl:mt-[80px]">
     Ensuring a <strong>consistent experience</strong> across all screen sizes was
     a key priority from the beginning. I adopted a <strong
       >desktop-first approach</strong
