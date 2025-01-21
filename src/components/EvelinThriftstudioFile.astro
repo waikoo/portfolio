@@ -12,13 +12,15 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   className="2xl:px-[170px]"
   id={id}
   paddingX="px-[20px]"
+  className="text-[#0d0d0d]"
 >
   <div class="xl:flex xl:gap-[70px] xl:items-center xl:justify-around mx-auto">
     <div class="mt-[80px] xl:mt-0 sm:mt-[40px]">
       <EvelinFileSegment
         title="THE PRODUCT"
         bgColor={bgColor}
-        pClass="xl:w-[557px]"
+        pClass="xl:w-[557px] sm:text-[16px]"
+        className="text-[#1e1e1e]"
       >
         Thriftstudio is an <strong
           >e-commerce website for a fictional local thrift store</strong
@@ -49,7 +51,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
       </EvelinFileSegment>
     </div>
 
-    <div class="my-[40px]">
+    <div class="my-[40px] text-[#0d0d0d]">
       <EvelinMap title="ROLE" bgColor={bgColor}>UI UX Designer</EvelinMap>
       <EvelinMap title="TOOLS" bgColor={bgColor}
         >Figma, Photoshop, Illustrator</EvelinMap

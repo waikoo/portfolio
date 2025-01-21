@@ -4,13 +4,13 @@ import IconTriangleDesktop from "./IconTriangleDesktop.astro";
 import IconTriangleMobile from "./IconTriangleMobile.astro";
 import IconTriangleTablet from "./IconTriangleTablet.astro";
 
-const { title, bgColor, className, pClass } = Astro.props;
+const { title, bgColor, className, pClass, titleStyles } = Astro.props;
 const marginTop = title === "THE PRODUCT" ? "" : "mt-[35px]";
 ---
 
 <div class={className}>
   <h3
-    class={`${marginTop} text-[18px] sm:text-[25px] xl:text-[40px] text-[#1e1e1e] relative whitespace-nowrap`}
+    class={`${marginTop} text-[18px] sm:text-[25px] xl:text-[40px]  relative whitespace-nowrap ${titleStyles}`}
   >
     <IconTriangleMobile
       bgColor={bgColor}
@@ -27,9 +27,7 @@ const marginTop = title === "THE PRODUCT" ? "" : "mt-[35px]";
     {title}
   </h3>
 
-  <p
-    class={`text-[14px] sm:text-[16px] text-[#1e1e1e] xl:text-[17px] ${pClass}`}
-  >
+  <p class={`text-[14px] xl:text-[17px] ${pClass}`}>
     <slot />
   </p>
 </div>
