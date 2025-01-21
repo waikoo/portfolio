@@ -2,13 +2,13 @@
 import PersonProjectCardImage from "./PersonProjectCardImage.astro";
 import PersonProjectCardVideo from "./PersonProjectCardVideo.astro";
 
-const { src, description, id, projectLink, live } = Astro.props;
+const { src, description, isFormatColors, projectLink, live } = Astro.props;
 ---
 
 <a href={projectLink || live}>
   {
     Array.isArray(src) ? (
-      <PersonProjectCardVideo src={src} id={id} />
+      <PersonProjectCardVideo src={src} isFormatColors={isFormatColors} />
     ) : (
       <PersonProjectCardImage src={src} description={description} />
     )

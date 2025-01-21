@@ -26,12 +26,12 @@ const isInverted = id === 0 || id % 2 === 0;
 const mediaWrapper = isInverted
   ? "lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-5"
   : "lg:col-start-1 lg:col-end-2";
-const projectWrapper =
-  id === 4
-    ? "lg:grid-cols-[2fr_5fr] max-w-[600px] mx-auto"
-    : isInverted
-      ? "lg:grid-cols-[2fr_5fr]"
-      : "lg:grid-cols-[5fr_2fr]";
+const isFormatColors = id === 0 && lowerCasedName === "barna";
+const projectWrapper = isFormatColors
+  ? "lg:grid-cols-[2fr_5fr] max-w-[600px] mx-auto"
+  : isInverted
+    ? "lg:grid-cols-[2fr_5fr]"
+    : "lg:grid-cols-[5fr_2fr]";
 const evelinStyles =
   lowerCasedName === "evelin" ? "grid-rows-[100px_200px_auto]" : "";
 ---
@@ -45,7 +45,7 @@ const evelinStyles =
     <PersonProjectCardMedia
       src={src}
       description={description}
-      id={id}
+      isFormatColors={isFormatColors}
       projectLink={projectLink}
       live={live}
     />
