@@ -1,4 +1,11 @@
 {
+  "include": [
+    ".astro/types.d.ts",
+    "**/*"
+  ],
+  "exclude": [
+    "dist"
+  ],
   "extends": "astro/tsconfigs/strict",
   "types": [
     "@astrojs/runtime",

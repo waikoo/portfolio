@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import HamburgerMenu from "../components/HamburgerMenu.astro";
 
 interface Props {
@@ -24,7 +24,7 @@ const { fullName, title, bgColor } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body style={{ backgroundColor: bgColor }}>
     <slot />
