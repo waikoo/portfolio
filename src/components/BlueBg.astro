@@ -1,5 +1,9 @@
+---
+const { className } = Astro.props;
+---
+
 <p
-  class="bg-[#D9D9D9] text-[#001649] text-[14px] xl:text-[18px] font-['Jost'] p-[20px] mx-[-20px] mt-[20px]"
+  class={`bg-[#D9D9D9] text-[14px] xl:text-[18px] p-[20px] xl:p-[30px] mx-[-20px] sm:mx-0 ${className}`}
 >
   <slot />
 </p>

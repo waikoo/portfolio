@@ -1,17 +1,21 @@
 ---
 import IconTriangleMobile from "./IconTriangleMobile.astro";
 
+export interface Props {
+  triangleColor: string;
+  className?: string;
+  triangleInside?: boolean;
+}
+
 const { triangleColor, className, triangleInside } = Astro.props;
-const triangleInsideStyles = triangleInside ? "flex items-center gap-2" : "";
-const triangleInsideStylesInner = triangleInside ? "" : "absolute";
+const pStyles = triangleInside ? "inline" : "";
+const svgStyles = triangleInside ? "inline" : "absolute";
 ---
 
-<p
-  class={`font-['Jost'] relative ${triangleInsideStyles} text-[14px] xl:text-[18px] ${className}`}
->
+<p class={`relative ${pStyles} text-[14px] xl:text-[18px] ${className}`}>
   <IconTriangleMobile
     bgColor={triangleColor}
-    className={`${triangleInsideStylesInner} top-[3px] left-[-13px] xl:top-[5px]`}
+    className={`${svgStyles} top-[3px] left-[-13px] xl:top-[5px]`}
   />
   <slot />
 </p>
