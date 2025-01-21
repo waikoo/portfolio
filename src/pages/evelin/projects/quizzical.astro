@@ -69,14 +69,14 @@ const { name, familyName } = extractName(fullName);
     <QuizzicalAside bgColor={bgColor} />
   </main>
 
-  <footer class="bg-[#141412] h-[150px]">
+  <footer class="bg-[#141412] h-[150px] relative">
     <ViewProjectCard
       name="THRIFTSTUDIO"
       source={thriftstudioPreview}
       imgClass="rounded-[10px]"
       arrowColor="#E296F5"
       arrowBg="#141412"
-      className="fixed bottom-[3.5rem] mt-[-40px] px-[40px]"
+      className="absolute bottom-[3.5rem] mt-[-40px] px-[40px]"
     />
   </footer>
 </Layout>
