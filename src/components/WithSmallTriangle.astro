@@ -8,8 +8,8 @@ export interface Props {
 }
 
 const { triangleColor, className, triangleInside } = Astro.props;
-const pStyles = triangleInside ? "inline" : "";
-const svgStyles = triangleInside ? "inline" : "absolute";
+const pStyles = triangleInside ? "grid grid-cols-[auto_auto] gap-[8px]" : "";
+const svgStyles = triangleInside ? "mt-1" : "absolute";
 ---
 
 <p class={`relative ${pStyles} text-[14px] xl:text-[18px] ${className}`}>
