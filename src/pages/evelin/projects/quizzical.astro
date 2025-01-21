@@ -9,6 +9,8 @@ import EvelinQuizzicalFile2 from "../../../components/EvelinQuizzicalFile2.astro
 import QuizzicalAside from "../../../components/QuizzicalAside.astro";
 import EvelinQuizzicalFile3 from "../../../components/EvelinQuizzicalFile3.astro";
 import EvelinQuizzicalFile4 from "../../../components/EvelinQuizzicalFile4.astro";
+import ViewProjectCard from "../../../components/ViewProjectCard.astro";
+import thriftstudioPreview from "../../../../src/assets/images/thriftstudio_preview.jpg";
 
 const fullName = "Szász Evelin";
 const bgColor = "#E1CA02";
@@ -31,7 +33,7 @@ const { name, familyName } = extractName(fullName);
 
   <QuizzicalHeroImg />
   <main
-    class="px-[40px] sm:px-[50px] pb-[80px] mx-auto max-w-[1536px] font-['Jost'] text-[#001649]"
+    class="px-[40px] sm:px-[50px] pb-[160px] mx-auto max-w-[1536px] font-['Jost'] text-[#001649]"
   >
     <div
       class="mt-[-31px] sm:mt-[-45px] xl:mt-[-12px] mx-auto flex flex-col gap-[30px] sm:gap-[50px] xl:gap-[80px]"
@@ -66,4 +68,15 @@ const { name, familyName } = extractName(fullName);
     </div>
     <QuizzicalAside bgColor={bgColor} />
   </main>
+
+  <footer class="bg-[#141412] h-[150px]">
+    <ViewProjectCard
+      name="THRIFTSTUDIO"
+      source={thriftstudioPreview}
+      imgClass="rounded-[10px]"
+      arrowColor="#E296F5"
+      arrowBg="#141412"
+      className="fixed bottom-[3.5rem] mt-[-40px] px-[40px]"
+    />
+  </footer>
 </Layout>

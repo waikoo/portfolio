@@ -1,9 +1,11 @@
 ---
 import EvelinFileWrapper from "./EvelinFileWrapper.astro";
-import IconArrowResponsive from "./IconArrowResponsive.astro";
 import VideoAutoplay from "./VideoAutoplay.astro";
+import TextWithArrow from "./TextWithArrow.astro";
 
 const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
+const quizzicalPrototypeHref =
+  "https://www.figma.com/proto/1EjGuABQXabxKHcGttNoV8/Quizzical?node-id=690-680&t=udop461IN5HCY7X8-1&scaling=scale-down&content-scaling=fixed&page-id=259%3A1003";
 ---
 
 <EvelinFileWrapper
@@ -19,10 +21,11 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
 
     <a
       class="flex items-center justify-center gap-[5px] font-medium text-[14px] text-[#001649]"
-      href="https://www.figma.com/proto/1EjGuABQXabxKHcGttNoV8/Quizzical?node-id=690-680&t=udop461IN5HCY7X8-1&scaling=scale-down&content-scaling=fixed&page-id=259%3A1003"
+      href={quizzicalPrototypeHref}
     >
-      <span>View Figma Prototype</span>
-      <IconArrowResponsive color="#001649" bgColor="#FFEEC2" />
+      <TextWithArrow arrowColor="#001649" arrowBgColor="#FFEEC2"
+        >View Figma Prototype</TextWithArrow
+      >
     </a>
   </div>
 
