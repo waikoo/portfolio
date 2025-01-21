@@ -1,7 +1,5 @@
 ---
 import AnImageAtOnceCarousel from "./AnImageAtOnceCarousel.astro";
-import ReactCarousel from "./ReactCarousel.tsx";
-import quizzicalStates from "../projects/evelinQuizzicalData.js";
 import BlueBg from "./BlueBg.astro";
 import EnlargedPicture from "./EnlargedPicture.astro";
 import EvelinFileWrapper from "./EvelinFileWrapper.astro";
@@ -11,6 +9,7 @@ import QuizzicalTitle from "./QuizzicalTitle.astro";
 import QuizzicalWireframes from "./QuizzicalWireframes.astro";
 import WithMagnifyingGlass from "./WithMagnifyingGlass.tsx";
 import WithSmallTriangle from "./WithSmallTriangle.astro";
+import DynamicImgSrc from "./DynamicImgSrc.tsx";
 import "@fontsource/monoton";
 import AnImageCarousel from "./AnImageCarousel.astro";
 
@@ -242,10 +241,6 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     FINAL DESIGN
   </h3>
 
-  <!-- <ReactCarousel items={quizzicalStates} showByDefault={0} client:load /> -->
-  <AnImageCarousel />
-
-  <!-- <EnlargedPicture> -->
-  <!--   <AnImageAtOnceEnlarge id="enlarged-modal-picture" /> -->
-  <!-- </EnlargedPicture> -->
+  <!-- React component -->
+  <DynamicImgSrc showByDefault={0} client:visible />
 </EvelinFileWrapper>
