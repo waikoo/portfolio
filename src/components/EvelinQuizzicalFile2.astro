@@ -6,7 +6,7 @@ import QuizzicalSitemap from "./QuizzicalSitemap.astro";
 import QuizzicalUserFlowCustom from "./QuizzicalUserFlowCustom.astro";
 import QuizzicalUserFlowDefault from "./QuizzicalUserFlowDefault.astro";
 import WithBorderParagraph from "./WithBorderParagraph.astro";
-import WithMagnifyingGlass from "./WithMagnifyingGlass.tsx";
+// import WithMagnifyingGlass from "./WithMagnifyingGlass.tsx";
 import WithSmallTriangle from "./WithSmallTriangle.astro";
 
 const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
@@ -50,9 +50,9 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     starting a new game or customizing default settings for a personalized experience.
   </WithBorderParagraph>
 
-  <WithMagnifyingGlass className="mt-[20px]" invert={true} client:visible>
-    <QuizzicalSitemap imgSelector="quizzical-sitemap" />
-  </WithMagnifyingGlass>
+  <!-- <WithMagnifyingGlass className="mt-[20px]" invert={true} client:visible> -->
+  <QuizzicalSitemap imgSelector="quizzical-sitemap" />
+  <!-- </WithMagnifyingGlass> -->
 
   <EnlargedPicture
     imgSelector="quizzical-sitemap"
@@ -87,9 +87,9 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
         including replaying options</WithSmallTriangle
       >
 
-      <WithMagnifyingGlass invert={true} client:visible>
-        <QuizzicalUserFlowDefault imgSelector="quizzical-default-user-flow" />
-      </WithMagnifyingGlass>
+      <!-- <WithMagnifyingGlass invert={true} client:visible> -->
+      <QuizzicalUserFlowDefault imgSelector="quizzical-default-user-flow" />
+      <!-- </WithMagnifyingGlass> -->
 
       <EnlargedPicture
         imgSelector="quizzical-default-user-flow"
@@ -106,9 +106,9 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
         replaying options
       </WithSmallTriangle>
 
-      <WithMagnifyingGlass invert={true} client:visible>
-        <QuizzicalUserFlowCustom imgSelector="quizzical-custom-user-flow" />
-      </WithMagnifyingGlass>
+      <!-- <WithMagnifyingGlass invert={true} client:visible> -->
+      <QuizzicalUserFlowCustom imgSelector="quizzical-custom-user-flow" />
+      <!-- </WithMagnifyingGlass> -->
 
       <EnlargedPicture
         imgSelector="quizzical-custom-user-flow"

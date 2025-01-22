@@ -1,9 +1,10 @@
 ---
 import "@fontsource/monoton";
+const { className } = Astro.props;
 ---
 
 <button
-  class={`tracking-[-3.1px] text-[2.3rem] md:text-[6.75rem] md:tracking-[-7.3px] mt-[-7px] xl:mt-[-25px] pt-[23px] md:w-fit mx-auto grid place-items-center font-['Monoton'] `}
+  class={`tracking-[-3.1px] text-[2.3rem] md:text-[6.75rem] md:tracking-[-7.3px] mt-[-7px] md:w-fit mx-auto grid place-items-center font-['Monoton'] ${className}`}
 >
   <div
     class={`xl:tracking-[-6.6px] text-center rounded-full mx-auto cursor-pointer max-w-fit`}

@@ -12,14 +12,16 @@ const { title, bgColor, className, cardBgColor, id, paddingX, paddingY } =
     style={{ backgroundColor: bgColor }}
   >
     <h2
-      class={`font-['Jost'] font-bold text-[26px] sm:text-[35px] xl:text-[55px] tracking-[-2px] xl:tracking-[-6px] px-[12px]]`}
+      class={`font-bold text-[26px] sm:text-[35px] xl:text-[55px] tracking-[-2px] xl:tracking-[-6px] px-[12px]]`}
       id={id}
     >
       {title}
     </h2>
   </div>
 
-  <section class={`${paddingX} ${paddingY} sm:text-[14px] mx-auto`}>
+  <section
+    class={`${paddingX} ${paddingY} sm:text-[14px] mx-auto max-w-[1112px]`}
+  >
     <slot />
   </section>
 </article>
