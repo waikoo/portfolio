@@ -22,8 +22,10 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   paddingX="px-[20px]"
   paddingY="py-[80px] sm:py-[90px] xl:py-[130px]"
 >
-  <div class="px-[10px] xl:py-[10px] xl:max-w-[1059px] mx-auto">
-    <div class="xl:grid xl:grid-cols-[7fr_4fr] xl:items-center xl:gap-[102px]">
+  <div class="px-[10px] xl:py-[10px] mx-auto">
+    <div
+      class="xl:grid xl:grid-cols-[7fr_4fr] xl:max-w-[1059px] xl:items-center xl:gap-[102px]"
+    >
       <EvelinFileSegment
         title="THE PRODUCT"
         bgColor={bgColor}

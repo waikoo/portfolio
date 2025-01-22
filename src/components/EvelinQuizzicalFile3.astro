@@ -19,7 +19,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   bgColor={bgColor}
   cardBgColor={cardBgColor}
   id={id}
-  paddingX="px-[20px] sm:px-[30px] xl:px-0"
+  paddingX="px-[20px] sm:px-[30px] xl:px-[30px]"
   paddingY="py-[80px] sm:py-[90px] xl:py-[130px]"
 >
   <h3
@@ -202,7 +202,9 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     </div>
   </section>
 
-  <section class="sm:grid grid-cols-[200px_250px] gap-[30px] items-center">
+  <section
+    class="sm:grid grid-cols-[200px_250px] xl:grid-cols-[459px_478px] gap-[30px] xl:gap-[94px] items-center"
+  >
     <MyImage
       imgName="quizzical_logo_example"
       imgAlt="the two versions of the logo used in the quizzical app"
@@ -220,13 +222,14 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     </p>
   </section>
 
+  <!-- TODO: use different image src above :xl-->
   <MyImage
     imgName="quizzical_font_mobile_tablet"
     imgAlt="different fonts used in the quizzical app"
     className="my-[20px] sm:rotate-90 block h-[540px] mx-auto"
   />
 
-  <p class="text-[14px]">
+  <p class="text-[14px] xl:text-[18px]">
     For the typography I have chosen <strong>three different fonts</strong>,
     each selected to enhance the <strong>playful and dynamic</strong> feel of the
     game while maintaining clarity and readability.
@@ -237,45 +240,50 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </h5>
 
   <!-- <WithMagnifyingGlass client:visible invert={true}> -->
-  <MyImage
-    imgSelector="quizzical-game-components"
-    imgName="quizzical_game_components"
-    imgAlt="different game components used in the quizzical app"
-    className="mt-[20px] rounded-[15px] border-[3px] border-[#E1CA02]"
-  />
-  <!-- </WithMagnifyingGlass> -->
-
-  <EnlargedPicture
-    imgSelector="quizzical-game-components"
-    modalSelector="quizzical-game_components-modal"
-    modalClose="quizzical-game_components-modal-close"
+  <section
+    class="xl:grid xl:grid-cols-[677px_287px] xl:gap-[88px] items-center"
   >
-    <MyImage
-      imgName="quizzical_game_components"
-      imgAlt="different game components used in the quizzical app"
-      className="mt-[20px]"
-    />
-  </EnlargedPicture>
+    <div>
+      <MyImage
+        imgSelector="quizzical-game-components"
+        imgName="quizzical_game_components"
+        imgAlt="different game components used in the quizzical app"
+        className="mt-[20px] rounded-[15px] border-[3px] border-[#E1CA02]"
+      />
+      <!-- </WithMagnifyingGlass> -->
 
-  <div class="text-[14px] mt-[20px]">
-    <p class="">
-      To align with the playful theme, I designed each <strong>button</strong> to
-      be <strong>vibrant and visually distinctive</strong>, ensuring that their <strong
-        >unique functions are clearly communicated</strong
-      >.
-    </p>
+      <EnlargedPicture
+        imgSelector="quizzical-game-components"
+        modalSelector="quizzical-game_components-modal"
+        modalClose="quizzical-game_components-modal-close"
+      >
+        <MyImage
+          imgName="quizzical_game_components"
+          imgAlt="different game components used in the quizzical app"
+          className="mt-[20px]"
+        />
+      </EnlargedPicture>
+    </div>
 
-    <p class="mt-[20px]">
-      The <strong>rest of the elements</strong> maintain visual <strong
-        >consistency</strong
-      > through a cohesive color scheme, effects, and form, establishing a <strong
-        >unified visual foundation</strong
-      >. I incorporated a score tracker and a gradient timer bar, offering <strong
-        >an intuitive, dynamic time representation</strong
-      > that reduces cognitive load, enhances accessibility, and seamlessly integrates
-      into the interface.
-    </p>
-  </div>
+    <div class="text-[14px] xl:text-[18px] mt-[20px]">
+      <p class="">
+        To align with the playful theme, I designed each <strong>button</strong>
+        to be <strong>vibrant and visually distinctive</strong>, ensuring that
+        their <strong>unique functions are clearly communicated</strong>.
+      </p>
+
+      <p class="mt-[20px]">
+        The <strong>rest of the elements</strong> maintain visual <strong
+          >consistency</strong
+        > through a cohesive color scheme, effects, and form, establishing a <strong
+          >unified visual foundation</strong
+        >. I incorporated a score tracker and a gradient timer bar, offering <strong
+          >an intuitive, dynamic time representation</strong
+        > that reduces cognitive load, enhances accessibility, and seamlessly integrates
+        into the interface.
+      </p>
+    </div>
+  </section>
 
   <h3
     class="text-[21px] sm:text-[26px] xl:text-[40px] font-extrabold pt-[80px] text-center"
