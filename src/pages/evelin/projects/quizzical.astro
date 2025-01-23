@@ -34,7 +34,7 @@ const { name, familyName } = extractName(fullName);
 
   <QuizzicalHeroImg />
   <main
-    class="px-[40px] sm:px-[50px] xl:px-[84px] pb-[160px] mx-auto max-w-[1536px] font-['Jost'] text-[#001649]"
+    class="px-[40px] sm:px-[50px] xl:px-[84px] pb-[160px] xl:pb-[314px] mx-auto max-w-[1536px] font-['Jost'] text-[#001649]"
   >
     <div
       class="mt-[-31px] sm:mt-[-45px] xl:mt-[-12px] mx-auto flex flex-col gap-[30px] sm:gap-[50px] xl:gap-[80px]"
@@ -70,17 +70,19 @@ const { name, familyName } = extractName(fullName);
     <QuizzicalAside bgColor={bgColor} />
   </main>
 
-  <footer class="relative bg-[#141412] items-center">
-    <div class="translate-y-[-80px] grid grid-cols-2">
+  <footer class="relative bg-[#141412] items-center xl:px-[82px]">
+    <div
+      class="translate-y-[-80px] xl:translate-y-[-170px] grid grid-cols-2 gap-[152px]"
+    >
       <ViewProjectCard
         name="THRIFTSTUDIO"
         source={thriftstudioPreview}
-        imgClass="rounded-[10px] block max-w-full"
+        imgClass="rounded-[10px] xl:rounded-[25px] block max-w-full"
         arrowColor="#E296F5"
         arrowBg="transparent"
-        imgHeight="138px"
-        imgWidth="250px"
-        className="left-0 right-0 bottom-[95px] max-w-[230px] mx-auto xl:cursor-pointer"
+        imgHeight="386px"
+        imgWidth="450px"
+        className="left-0 right-0 bottom-[95px] max-w-[230px] xl:max-w-full mx-auto xl:cursor-pointer"
         link="/evelin/projects/thriftstudio"
       />
       <ViewProjectCard
@@ -88,10 +90,10 @@ const { name, familyName } = extractName(fullName);
         source={rpsPreview}
         imgClass="rounded-[10px] block max-w-full"
         arrowColor="#E296F5"
-        imgHeight="138px"
-        imgWidth="250px"
+        imgHeight="386px"
+        imgWidth="450px"
         arrowBg="transparent"
-        className="left-0 right-0 bottom-[95px] max-w-[230px] mx-auto xl:cursor-pointer"
+        className="left-0 right-0 bottom-[95px] max-w-[230px] xl:max-w-full mx-auto xl:cursor-pointer"
         link="/evelin/projects/rps"
       />
       <div class="bg-[#141412] w-full"></div>
