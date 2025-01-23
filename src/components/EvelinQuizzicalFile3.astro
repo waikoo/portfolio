@@ -6,7 +6,7 @@ import MyImage from "./MyImage.astro";
 import QuizzicalArrowDown from "./QuizzicalArrowDown.astro";
 import QuizzicalTitle from "./QuizzicalTitle.astro";
 import QuizzicalWireframes from "./QuizzicalWireframes.astro";
-// import WithMagnifyingGlass from "./WithMagnifyingGlass.tsx";
+import WithMagnifyingGlass from "./WithMagnifyingGlass.tsx";
 import WithSmallTriangle from "./WithSmallTriangle.astro";
 import DynamicImgSrc from "./DynamicImgSrc.tsx";
 import "@fontsource/monoton";
@@ -53,9 +53,9 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     make up the entire structure of the game’s interface</WithSmallTriangle
   >
 
-  <!-- <WithMagnifyingGlass client:visible invert={true}> -->
-  <QuizzicalWireframes imgSelector="quizzical-wireframes" />
-  <!-- </WithMagnifyingGlass> -->
+  <WithMagnifyingGlass client:visible invert={true}>
+    <QuizzicalWireframes imgSelector="quizzical-wireframes" />
+  </WithMagnifyingGlass>
 
   <EnlargedPicture
     imgSelector="quizzical-wireframes"
@@ -239,18 +239,19 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     COMPONENTS
   </h5>
 
-  <!-- <WithMagnifyingGlass client:visible invert={true}> -->
-  <section
-    class="xl:grid xl:grid-cols-[677px_287px] xl:gap-[88px] items-center"
-  >
-    <div>
-      <MyImage
-        imgSelector="quizzical-game-components"
-        imgName="quizzical_game_components"
-        imgAlt="different game components used in the quizzical app"
-        className="mt-[20px] rounded-[15px] border-[3px] border-[#E1CA02]"
-      />
-      <!-- </WithMagnifyingGlass> -->
+  <!--React component-->
+  <WithMagnifyingGlass client:visible invert={true}>
+    <section
+      class="xl:grid xl:grid-cols-[677px_287px] xl:gap-[88px] items-center"
+    >
+      <div>
+        <MyImage
+          imgSelector="quizzical-game-components"
+          imgName="quizzical_game_components"
+          imgAlt="different game components used in the quizzical app"
+          className="mt-[20px] rounded-[15px] border-[3px] border-[#E1CA02]"
+        />
+      </div>
 
       <EnlargedPicture
         imgSelector="quizzical-game-components"
@@ -263,7 +264,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
           className="mt-[20px]"
         />
       </EnlargedPicture>
-    </div>
+    </section>
 
     <div class="text-[14px] xl:text-[18px] mt-[20px]">
       <p class="">
@@ -283,7 +284,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
         into the interface.
       </p>
     </div>
-  </section>
+  </WithMagnifyingGlass>
 
   <h3
     class="text-[21px] sm:text-[26px] xl:text-[40px] font-extrabold pt-[80px] text-center"
@@ -292,5 +293,5 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </h3>
 
   <!-- React component -->
-  <!-- <DynamicImgSrc showByDefault={0} client:visible /> -->
+  <DynamicImgSrc showByDefault={0} client:visible />
 </EvelinFileWrapper>

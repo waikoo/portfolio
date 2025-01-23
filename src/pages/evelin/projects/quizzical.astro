@@ -11,6 +11,7 @@ import EvelinQuizzicalFile3 from "../../../components/EvelinQuizzicalFile3.astro
 import EvelinQuizzicalFile4 from "../../../components/EvelinQuizzicalFile4.astro";
 import thriftstudioPreview from "../../../assets/images/thriftstudio_preview.jpg";
 import ViewProjectCard from "../../../components/ViewProjectCard.astro";
+import rpsPreview from "../../../assets/images/rps.png";
 
 const fullName = "Szász Evelin";
 const bgColor = "#E1CA02";
@@ -69,15 +70,31 @@ const { name, familyName } = extractName(fullName);
     <QuizzicalAside bgColor={bgColor} />
   </main>
 
-  <footer class="relative">
-    <ViewProjectCard
-      name="THRIFTSTUDIO"
-      source={thriftstudioPreview}
-      imgClass="rounded-[10px] block max-w-full"
-      arrowColor="#E296F5"
-      arrowBg="transparent"
-      className="absolute left-0 right-0 bottom-[95px] max-w-[230px] mx-auto translate-y-[50px]"
-    />
-    <div class="bg-[#141412] h-[150px] w-full"></div>
+  <footer class="relative bg-[#141412] items-center">
+    <div class="translate-y-[-80px] grid grid-cols-2">
+      <ViewProjectCard
+        name="THRIFTSTUDIO"
+        source={thriftstudioPreview}
+        imgClass="rounded-[10px] block max-w-full"
+        arrowColor="#E296F5"
+        arrowBg="transparent"
+        imgHeight="138px"
+        imgWidth="250px"
+        className="left-0 right-0 bottom-[95px] max-w-[230px] mx-auto xl:cursor-pointer"
+        link="/evelin/projects/thriftstudio"
+      />
+      <ViewProjectCard
+        name="ROCK, PAPER, SCISSORS"
+        source={rpsPreview}
+        imgClass="rounded-[10px] block max-w-full"
+        arrowColor="#E296F5"
+        imgHeight="138px"
+        imgWidth="250px"
+        arrowBg="transparent"
+        className="left-0 right-0 bottom-[95px] max-w-[230px] mx-auto xl:cursor-pointer"
+        link="/evelin/projects/rps"
+      />
+      <div class="bg-[#141412] w-full"></div>
+    </div>
   </footer>
 </Layout>

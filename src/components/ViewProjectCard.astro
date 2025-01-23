@@ -10,25 +10,42 @@ interface Props {
   arrowColor: string;
   arrowBg: string;
   className: string;
+  imgHeight: string;
+  imgWidth: string;
+  link: string;
 }
 
-const { imgClass, source, name, arrowColor, arrowBg, className } = Astro.props;
+const {
+  imgClass,
+  source,
+  name,
+  arrowColor,
+  arrowBg,
+  className,
+  imgHeight,
+  imgWidth,
+  link,
+} = Astro.props;
 ---
 
 <article class={className}>
-  <div>
+  <a href={link}>
     <Image
       src={source}
-      alt={`project preview image of my ${name.toLowerCase()} project`}
+      alt={`project preview image of my ${name.toLowerCase()} project object-cover`}
+      width={+imgWidth}
+      height={+imgHeight}
       class={imgClass}
     />
-    <p class="uppercase text-right text-[20px] font-bold text-[#F2F3E3]">
+    <p
+      class="uppercase text-right font-['Jost'] text-[19px] font-bold text-[#F2F3E3] whitespace-nowrap mt-[32px]"
+    >
       {name}
     </p>
     <TextWithArrow
       arrowColor={arrowColor}
       arrowBgColor={arrowBg}
-      className="justify-end">View Project</TextWithArrow
+      className="justify-end mt-[12px]">View Project</TextWithArrow
     >
-  </div>
+  </a>
 </article>
