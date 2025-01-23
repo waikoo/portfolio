@@ -9,6 +9,7 @@ import QuizzicalWireframes from "./QuizzicalWireframes.astro";
 import WithMagnifyingGlass from "./WithMagnifyingGlass.tsx";
 import WithSmallTriangle from "./WithSmallTriangle.astro";
 import DynamicImgSrc from "./DynamicImgSrc.tsx";
+import DifferentFontSrc from "./DifferentFontSrc.tsx";
 import "@fontsource/monoton";
 
 const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
@@ -53,7 +54,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     make up the entire structure of the game’s interface</WithSmallTriangle
   >
 
-  <WithMagnifyingGlass client:visible invert={true}>
+  <WithMagnifyingGlass client:only invert={true}>
     <QuizzicalWireframes imgSelector="quizzical-wireframes" />
   </WithMagnifyingGlass>
 
@@ -222,36 +223,35 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     </p>
   </section>
 
-  <!-- TODO: use different image src above :xl-->
-  <MyImage
-    imgName="quizzical_font_mobile_tablet"
-    imgAlt="different fonts used in the quizzical app"
-    className="my-[20px] sm:rotate-90 block h-[540px] mx-auto"
-  />
-
-  <p class="text-[14px] xl:text-[18px]">
-    For the typography I have chosen <strong>three different fonts</strong>,
-    each selected to enhance the <strong>playful and dynamic</strong> feel of the
-    game while maintaining clarity and readability.
-  </p>
+  <section class="grid grid-cols-[337px_1fr] items-center gap-[11px]">
+    <p class="text-[14px] xl:text-[18px] pt-[90px]">
+      For the typography I have chosen <strong>three different fonts</strong>,
+      each selected to enhance the <strong>playful and dynamic</strong> feel of the
+      game while maintaining clarity and readability.
+    </p>
+    <DifferentFontSrc
+      className="mr-[-40px] xl:mr-[-36px] 2xl:mr-[-158px]"
+      client:only
+    />
+  </section>
 
   <h5 class="text-[17px] font-bold leading-none mt-[40px] mb-[20px]">
     COMPONENTS
   </h5>
 
   <!--React component-->
-  <WithMagnifyingGlass client:visible invert={true}>
-    <section
-      class="xl:grid xl:grid-cols-[677px_287px] xl:gap-[88px] items-center"
-    >
-      <div>
+  <section
+    class="xl:grid xl:grid-cols-[677px_287px] xl:gap-[88px] items-center"
+  >
+    <div>
+      <WithMagnifyingGlass client:only invert={true}>
         <MyImage
           imgSelector="quizzical-game-components"
           imgName="quizzical_game_components"
           imgAlt="different game components used in the quizzical app"
           className="mt-[20px] rounded-[15px] border-[3px] border-[#E1CA02]"
         />
-      </div>
+      </WithMagnifyingGlass>
 
       <EnlargedPicture
         imgSelector="quizzical-game-components"
@@ -264,7 +264,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
           className="mt-[20px]"
         />
       </EnlargedPicture>
-    </section>
+    </div>
 
     <div class="text-[14px] xl:text-[18px] mt-[20px]">
       <p class="">
@@ -284,7 +284,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
         into the interface.
       </p>
     </div>
-  </WithMagnifyingGlass>
+  </section>
 
   <h3
     class="text-[21px] sm:text-[26px] xl:text-[40px] font-extrabold pt-[80px] text-center"
@@ -293,5 +293,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </h3>
 
   <!-- React component -->
-  <DynamicImgSrc showByDefault={0} client:visible />
+  <WithMagnifyingGlass client:only invert={true}>
+    <DynamicImgSrc showByDefault={0} client:visible />
+  </WithMagnifyingGlass>
 </EvelinFileWrapper>
