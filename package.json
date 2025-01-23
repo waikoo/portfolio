@@ -15,17 +15,17 @@
     "@astrojs/react": "^4.1.6",
     "@astrojs/tailwind": "^5.1.5",
     "@astrojs/vercel": "8.0.2",
-    "@builder.io/qwik": "^1.8.0",
-    "@fontsource/jost": "^5.1.0",
+    "@builder.io/qwik": "^1.12.0",
+    "@fontsource/jost": "^5.1.2",
     "@fontsource/monoton": "^5.1.1",
-    "@fontsource/roboto": "^5.1.0",
+    "@fontsource/roboto": "^5.1.1",
     "astro": "5.1.8",
     "motion": "^10.18.0",
-    "tailwindcss": "^3.4.10",
-    "typescript": "^5.6.2"
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.3"
   },
   "devDependencies": {
-    "prettier": "^3.3.3",
+    "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1"
   },
   "packageManager": "pnpm@9.15.0+sha512.76e2379760a4328ec4415815bcd6628dee727af3779aaa4c914e3944156c4299921a89f976381ee107d41f12cfa4b66681ca9c718f0668fa0831ed4c6d8ba56c"
