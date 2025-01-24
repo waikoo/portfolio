@@ -20,7 +20,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   bgColor={bgColor}
   cardBgColor={cardBgColor}
   id={id}
-  paddingX="px-[20px] sm:px-[30px] xl:px-[30px]"
+  paddingX="px-[20px] sm:px-[30px] xl:px-[30px] 2xl:px-0"
   paddingY="py-[80px] sm:py-[90px] xl:py-[130px]"
 >
   <h3
@@ -49,7 +49,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   <WithSmallTriangle
     triangleColor={bgColor}
     triangleInside={true}
-    className="mt-[40px] mb-[20px]"
+    className="mt-[40px] mb-[20px] xl:mt-[60px] xl:mb-[40px]"
     >During the wireframing process, I designed the four essential screens that
     make up the entire structure of the game’s interface</WithSmallTriangle
   >
@@ -67,11 +67,11 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </EnlargedPicture>
 
   <h3
-    class="text-[21px] sm:text-[26px] xl:text-[40px] font-extrabold mt-[80px] sm:mt-[90px] xl:mt-[180px] text-center"
+    class="text-[21px] sm:text-[26px] xl:text-[40px] font-extrabold mt-[80px] sm:mt-[90px] xl:mt-[180px] 2xl:mt-[100px] text-center"
   >
     STYLE DEFINITION
   </h3>
-  <BlueBg className="mt-[20px] sm:mt-[70px] xl:mt-[80px]">
+  <BlueBg className="mt-[20px] sm:mt-[70px] xl:mt-[80px] 2xl:mt-[60px]">
     With full creative control over the game's aesthetics, I aimed to create a
     design that felt both <strong>playful and intriguing</strong>, using colors
     and forms to evoke curiosity. I chose an <strong
@@ -82,12 +82,12 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     > throughout.
   </BlueBg>
   <h4
-    class="text-[17px] font-bold mt-[40px] sm:mt-[70px] xl:mt-[130px] py-1 sm:text-right"
+    class="text-[17px] 2xl:text-[32px] font-bold mt-[40px] sm:mt-[70px] xl:mt-[130px] 2xl:mt-[100px] py-1 sm:text-right"
   >
     BACKGROUND
   </h4>
   <div
-    class="border-y-[#E1CA02] border-y-[1px] sm:border-[1px] sm:border-[#E1CA02] p-[20px] mx-[-20px] sm:mx-auto sm:mt-[40px] xl:mt-[50px]"
+    class="border-y-[#E1CA02] border-y-[1px] sm:border-[1px] sm:border-[#E1CA02] p-[20px] mx-[-20px] sm:mx-auto sm:mt-[40px] xl:mt-[50px] 2xl:xl:mt-[25px]"
   >
     <div class="">
       <picture>
@@ -122,7 +122,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     <section
       class="xl:grid xl:grid-cols-[371px_574px] xl:items-center xl:content-center xl:justify-between xl:gap-[30px]"
     >
-      <p class="text-[14px] xl:text-[18px] sm:mt-[40px] w-[95%]">
+      <p class="text-[14px] xl:text-[18px] sm:mt-[40px] w-[95%] 2xl:w-full">
         The background image served as the foundation for establishing the color
         scheme and typography, <strong>setting the overall tone </strong>for the
         design. The theme blends <strong>modern</strong> and <strong
@@ -171,14 +171,14 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </div>
 
   <section
-    class="xl:grid xl:grid-cols-[3fr_5fr] gap-[100px] content-center items-center xl:mt-[116px]"
+    class="xl:grid xl:grid-cols-[3fr_5fr] 2xl:grid-cols-2 gap-[100px] content-center items-center xl:mt-[116px] 2xl:mt-[56px]"
   >
-    <div class="grid place-items-center h-full">
+    <div class="grid place-items-center h-full 2xl:h-auto 2xl:block">
       <QuizzicalTitle
         className="mt-[40px] sm:mt-[70px] xl:mt-0 whitespace-nowrap"
       />
       <p
-        class="font-['Monoton'] sm:text-[30px] xl:text-[52px] text-center mt-[-7px]"
+        class="font-['Monoton'] sm:text-[30px] xl:text-[52px] 2xl:text-[40px] text-center mt-[-7px] 2xl:whitespace-nowrap"
       >
         MONOTON REGULAR
       </p>
@@ -204,7 +204,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </section>
 
   <section
-    class="sm:grid grid-cols-[200px_250px] xl:grid-cols-[459px_478px] gap-[30px] xl:gap-[94px] items-center"
+    class="sm:grid grid-cols-[200px_250px] xl:grid-cols-[459px_478px] 2xl:grid-cols-[351px_auto] gap-[30px] xl:gap-[94px] items-center 2xl:mt-[70px]"
   >
     <MyImage
       imgName="quizzical_logo_example"
@@ -212,7 +212,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
       className="mb-[20px]"
     />
 
-    <p class="text-[14px]">
+    <p class="text-[14px] xl:text-[18px]">
       I envisioned the <strong
         >large logo being prominently displayed on the start screen</strong
       >, drawing inspiration from the bold, attention-grabbing designs of board
@@ -224,20 +224,24 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </section>
 
   <section
-    class="sm:grid sm:grid-cols-[1fr_337px] sm:items-center sm:gap-[11px] pt-[40px]"
+    class="sm:grid sm:grid-cols-[1fr_337px] 2xl:grid-cols-[337px_1fr] sm:items-center sm:gap-[11px] pt-[40px]"
   >
     <DifferentFontSrc
-      className="sm:mr-[-40px] xl:mr-[-36px] 2xl:mr-[-158px]"
+      className="sm:mr-[-40px] xl:mr-[-36px] 2xl:col-start-2 2xl:col-end-3 2xl:mr-[-154px] 2xl:row-start-1 2xl:row-end-2"
       client:only
     />
-    <p class="text-[14px] xl:text-[18px]">
+    <p
+      class="text-[14px] xl:text-[18px] 2xl:col-start-1 2xl:col-end-2 2xl:row-span-1 2xl:row-start-1 2xl:row-end-2 2xl:pt-[99px]"
+    >
       For the typography I have chosen <strong>three different fonts</strong>,
       each selected to enhance the <strong>playful and dynamic</strong> feel of the
       game while maintaining clarity and readability.
     </p>
   </section>
 
-  <h5 class="text-[17px] font-bold leading-none mt-[40px] mb-[20px]">
+  <h5
+    class="text-[17px] 2xl:text-[32px] font-bold leading-none mt-[40px] mb-[20px] 2xl:mt-[80px]"
+  >
     COMPONENTS
   </h5>
 
@@ -251,7 +255,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
           imgSelector="quizzical-game-components"
           imgName="quizzical_game_components"
           imgAlt="different game components used in the quizzical app"
-          className="mt-[20px] rounded-[15px] border-[3px] border-[#E1CA02]"
+          className="mt-[20px] rounded-[15px] 2xl:rounded-[40px] border-[3px] 2xl:border-[5px] border-[#E1CA02]"
         />
       </WithMagnifyingGlass>
 
@@ -275,7 +279,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
         their <strong>unique functions are clearly communicated</strong>.
       </p>
 
-      <p class="mt-[20px]">
+      <p class="mt-[20px] 2xl:mt-[40px]">
         The <strong>rest of the elements</strong> maintain visual <strong
           >consistency</strong
         > through a cohesive color scheme, effects, and form, establishing a <strong

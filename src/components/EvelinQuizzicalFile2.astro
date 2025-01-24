@@ -18,7 +18,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   bgColor={bgColor}
   cardBgColor={cardBgColor}
   id={id}
-  paddingX="px-[20px] sm:px-[30px]"
+  paddingX="px-[20px] sm:px-[30px] 2xl:px-0"
   paddingY="py-[80px] sm:py-[90px] xl:py-[130px]"
 >
   <h3
@@ -51,7 +51,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     starting a new game or customizing default settings for a personalized experience.
   </WithBorderParagraph>
 
-  <WithMagnifyingGlass className="mt-[20px]" invert={true} client:only>
+  <WithMagnifyingGlass className="mt-[40px]" invert={true} client:only>
     <QuizzicalSitemap imgSelector="quizzical-sitemap" />
   </WithMagnifyingGlass>
 
