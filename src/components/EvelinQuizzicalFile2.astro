@@ -6,6 +6,7 @@ import QuizzicalSitemap from "./QuizzicalSitemap.astro";
 import QuizzicalUserFlowCustom from "./QuizzicalUserFlowCustom.astro";
 import QuizzicalUserFlowDefault from "./QuizzicalUserFlowDefault.astro";
 import WithBorderParagraph from "./WithBorderParagraph.astro";
+import WithMagnifyingGlass from "./WithMagnifyingGlass";
 // import WithMagnifyingGlass from "./WithMagnifyingGlass.tsx";
 import WithSmallTriangle from "./WithSmallTriangle.astro";
 
@@ -37,22 +38,22 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </BlueBg>
 
   <h4
-    class="font-bold text-[17px] sm:text-[21px] xl:text-[32px] mt-[40px] sm:mt-[70px] xl:mt-[80px] text-right pb-[10px]"
+    class="font-bold text-[17px] sm:text-[21px] xl:text-[32px] mt-[40px] sm:mt-[70px] xl:mt-[80px] text-right pb-[10px] xl:pb-0"
   >
     SITEMAP
   </h4>
 
   <WithBorderParagraph
-    className="mt-[20px] sm:mt-[40px] xl:mt-[80px] mx-[-20px]"
+    className="mt-[20px] sm:mt-[40px] xl:mt-[30px] mx-[-20px] xl:mx-0"
   >
     The following Sitemap outlines the <strong>main sections</strong> of the game.
     It is designed to <strong>prioritize easy access to key functions</strong> like
     starting a new game or customizing default settings for a personalized experience.
   </WithBorderParagraph>
 
-  <!-- <WithMagnifyingGlass className="mt-[20px]" invert={true} client:visible> -->
-  <QuizzicalSitemap imgSelector="quizzical-sitemap" />
-  <!-- </WithMagnifyingGlass> -->
+  <WithMagnifyingGlass className="mt-[20px]" invert={true} client:only>
+    <QuizzicalSitemap imgSelector="quizzical-sitemap" />
+  </WithMagnifyingGlass>
 
   <EnlargedPicture
     imgSelector="quizzical-sitemap"
@@ -63,12 +64,12 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </EnlargedPicture>
 
   <h4
-    class="font-bold text-[17px] sm:text-[21px] xl:text-[32px] font-['Jost'] mt-[30px] xl:mt-[80px] text-left pb-[10px] xl:ml-[80px] ml-[-10px]"
+    class="font-bold text-[17px] sm:text-[21px] xl:text-[32px] font-['Jost'] mt-[30px] xl:mt-[80px] text-left pb-[10px] xl:pb-0 ml-[-10px] xl:ml-0"
   >
     USER FLOW
   </h4>
 
-  <WithBorderParagraph>
+  <WithBorderParagraph className="xl:mx-0 mt-[30px]">
     From the outset, it was evident that <strong
       >prioritizing speed and efficiency</strong
     > was essential for this lightweight, single-player, no-login browser game for
@@ -87,16 +88,16 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
         including replaying options</WithSmallTriangle
       >
 
-      <!-- <WithMagnifyingGlass invert={true} client:visible> -->
-      <QuizzicalUserFlowDefault imgSelector="quizzical-default-user-flow" />
-      <!-- </WithMagnifyingGlass> -->
+      <WithMagnifyingGlass className="mt-[10px]" invert={true} client:only>
+        <QuizzicalUserFlowDefault imgSelector="quizzical-default-user-flow" />
+      </WithMagnifyingGlass>
 
       <EnlargedPicture
         imgSelector="quizzical-default-user-flow"
         modalSelector="quizzical-default-user-flow-modal"
         modalClose="quizzical-default-user-flow-modal-close"
       >
-        <QuizzicalUserFlowDefault />
+        <QuizzicalUserFlowDefault imgSelector="quizzical-default-user-flow" />
       </EnlargedPicture>
     </div>
 
@@ -106,9 +107,9 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
         replaying options
       </WithSmallTriangle>
 
-      <!-- <WithMagnifyingGlass invert={true} client:visible> -->
-      <QuizzicalUserFlowCustom imgSelector="quizzical-custom-user-flow" />
-      <!-- </WithMagnifyingGlass> -->
+      <WithMagnifyingGlass className="mt-[10px]" invert={true} client:only>
+        <QuizzicalUserFlowCustom imgSelector="quizzical-custom-user-flow" />
+      </WithMagnifyingGlass>
 
       <EnlargedPicture
         imgSelector="quizzical-custom-user-flow"

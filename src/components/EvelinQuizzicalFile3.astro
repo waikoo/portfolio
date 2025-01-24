@@ -223,16 +223,18 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     </p>
   </section>
 
-  <section class="grid grid-cols-[337px_1fr] items-center gap-[11px]">
-    <p class="text-[14px] xl:text-[18px] pt-[90px]">
+  <section
+    class="sm:grid sm:grid-cols-[1fr_337px] sm:items-center sm:gap-[11px] pt-[40px]"
+  >
+    <DifferentFontSrc
+      className="sm:mr-[-40px] xl:mr-[-36px] 2xl:mr-[-158px]"
+      client:only
+    />
+    <p class="text-[14px] xl:text-[18px]">
       For the typography I have chosen <strong>three different fonts</strong>,
       each selected to enhance the <strong>playful and dynamic</strong> feel of the
       game while maintaining clarity and readability.
     </p>
-    <DifferentFontSrc
-      className="mr-[-40px] xl:mr-[-36px] 2xl:mr-[-158px]"
-      client:only
-    />
   </section>
 
   <h5 class="text-[17px] font-bold leading-none mt-[40px] mb-[20px]">

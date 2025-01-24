@@ -8,14 +8,17 @@ export interface Props {
 }
 
 const { triangleColor, className, triangleInside } = Astro.props;
-const pStyles = triangleInside ? "grid grid-cols-[auto_auto] gap-[8px]" : "";
-const svgStyles = triangleInside ? "mt-1" : "absolute";
+const pStyles = triangleInside
+  ? "grid grid-cols-[min-content_auto] gap-[8px]"
+  : "";
+const svgStyles = triangleInside
+  ? "mt-1"
+  : "absolute top-[3px] left-[-13px] xl:top-[5px]";
 ---
 
-<p class={`relative ${pStyles} text-[14px] xl:text-[18px] ${className}`}>
-  <IconTriangleMobile
-    bgColor={triangleColor}
-    className={`${svgStyles} top-[3px] left-[-13px] xl:top-[5px]`}
-  />
-  <slot />
-</p>
+<div class={`relative ${pStyles} text-[14px] xl:text-[18px] ${className}`}>
+  <IconTriangleMobile bgColor={triangleColor} className={`${svgStyles}`} />
+  <p>
+    <slot />
+  </p>
+</div>
