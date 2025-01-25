@@ -1,16 +1,10 @@
 ---
 import BlueBg from "./BlueBg.astro";
-import EnlargedPicture from "./EnlargedPicture.astro";
 import EvelinFileWrapper from "./EvelinFileWrapper.astro";
-import QuizzicalSitemap from "./QuizzicalSitemap.astro";
-import QuizzicalUserFlowCustom from "./QuizzicalUserFlowCustom.astro";
-import QuizzicalUserFlowDefault from "./QuizzicalUserFlowDefault.astro";
 import WithBorderParagraph from "./WithBorderParagraph.astro";
-import WithMagnifyingGlass from "./WithMagnifyingGlass";
 import WithSmallTriangle from "./WithSmallTriangle.astro";
-import ReactClientOnlyWrapper from "./ReactClientOnlyWrapper.tsx";
-import ReactQuizzicalSitemap from "./ReactQuizzicalSitemap.tsx";
-import { Image } from "astro:assets";
+import ReactQuizzicalImageWrapper from "./ReactQuizzicalImageWrapper.tsx";
+import ReactQuizzicalImage from "./ReactQuizzicalImage.tsx";
 
 const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
 ---
@@ -48,12 +42,16 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   <WithBorderParagraph
     className="mt-[20px] sm:mt-[40px] xl:mt-[30px] mx-[-20px] xl:mx-0"
   >
-    The following Sitemap outlines the <strong>main sections</strong> of the game.
-    It is designed to <strong>prioritize easy access to key functions</strong> like
-    starting a new game or customizing default settings for a personalized experience.
+    The following ImageWrapper outlines the <strong>main sections</strong> of the
+    game. It is designed to <strong
+      >prioritize easy access to key functions</strong
+    > like starting a new game or customizing default settings for a personalized
+    experience.
   </WithBorderParagraph>
 
-  <ReactQuizzicalSitemap imgName="quizzical_sitemap" client:only />
+  <ReactQuizzicalImageWrapper invertIcon={true} client:only
+    ><ReactQuizzicalImage src="quizzical_sitemap" />
+  </ReactQuizzicalImageWrapper>
 
   <h4
     class="font-bold text-[17px] sm:text-[21px] xl:text-[32px] font-['Jost'] mt-[30px] xl:mt-[80px] text-left pb-[10px] xl:pb-0 ml-[-10px] xl:ml-0"
@@ -80,17 +78,12 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
         including replaying options</WithSmallTriangle
       >
 
-      <WithMagnifyingGlass className="mt-[10px]" invert={true} client:only>
-        <QuizzicalUserFlowDefault imgSelector="quizzical-default-user-flow" />
-      </WithMagnifyingGlass>
-
-      <EnlargedPicture
-        imgSelector="quizzical-default-user-flow"
-        modalSelector="quizzical-default-user-flow-modal"
-        modalClose="quizzical-default-user-flow-modal-close"
-      >
-        <QuizzicalUserFlowDefault imgSelector="quizzical-default-user-flow" />
-      </EnlargedPicture>
+      <ReactQuizzicalImageWrapper
+        invertIcon={true}
+        className="mt-[10px]"
+        client:only
+        ><ReactQuizzicalImage src="quizzical_default_user_flow" />
+      </ReactQuizzicalImageWrapper>
     </div>
 
     <div class="flex flex-col gap-[20px] mt-[20px]">
@@ -99,17 +92,12 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
         replaying options
       </WithSmallTriangle>
 
-      <WithMagnifyingGlass className="mt-[10px]" invert={true} client:only>
-        <QuizzicalUserFlowCustom imgSelector="quizzical-custom-user-flow" />
-      </WithMagnifyingGlass>
-
-      <EnlargedPicture
-        imgSelector="quizzical-custom-user-flow"
-        modalSelector="quizzical-custom-user-flow-modal"
-        modalClose="quizzical-custom-user-flow-modal-close"
-      >
-        <QuizzicalUserFlowCustom />
-      </EnlargedPicture>
+      <ReactQuizzicalImageWrapper
+        invertIcon={true}
+        className="mt-[10px]"
+        client:only
+        ><ReactQuizzicalImage src="quizzical_personalized_user_flow" />
+      </ReactQuizzicalImageWrapper>
     </div>
   </div>
 </EvelinFileWrapper>

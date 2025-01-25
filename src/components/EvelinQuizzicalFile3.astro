@@ -1,16 +1,16 @@
 ---
 import BlueBg from "./BlueBg.astro";
-import EnlargedPicture from "./EnlargedPicture.astro";
 import EvelinFileWrapper from "./EvelinFileWrapper.astro";
 import MyImage from "./MyImage.astro";
 import QuizzicalArrowDown from "./QuizzicalArrowDown.astro";
 import QuizzicalTitle from "./QuizzicalTitle.astro";
-import QuizzicalWireframes from "./QuizzicalWireframes.astro";
 import WithMagnifyingGlass from "./WithMagnifyingGlass.tsx";
 import WithSmallTriangle from "./WithSmallTriangle.astro";
 import DynamicImgSrc from "./DynamicImgSrc.tsx";
 import DifferentFontSrc from "./DifferentFontSrc.tsx";
 import "@fontsource/monoton";
+import ReactQuizzicalImageWrapper from "./ReactQuizzicalImageWrapper";
+import ReactQuizzicalImage from "./ReactQuizzicalImage";
 
 const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
 ---
@@ -54,17 +54,9 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     make up the entire structure of the game’s interface</WithSmallTriangle
   >
 
-  <WithMagnifyingGlass client:only invert={true}>
-    <QuizzicalWireframes imgSelector="quizzical-wireframes" />
-  </WithMagnifyingGlass>
-
-  <EnlargedPicture
-    imgSelector="quizzical-wireframes"
-    modalSelector="quizzical-wireframes-modal"
-    modalClose="quizzical-wireframes-modal-close"
-  >
-    <QuizzicalWireframes />
-  </EnlargedPicture>
+  <ReactQuizzicalImageWrapper invertIcon={true} client:only
+    ><ReactQuizzicalImage src="quizzical_wireframes" />
+  </ReactQuizzicalImageWrapper>
 
   <h3
     class="text-[21px] sm:text-[26px] xl:text-[40px] font-extrabold mt-[80px] sm:mt-[90px] xl:mt-[180px] 2xl:mt-[100px] text-center"
@@ -245,32 +237,12 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     COMPONENTS
   </h5>
 
-  <!--React component-->
   <section
     class="xl:grid xl:grid-cols-[677px_287px] xl:gap-[88px] items-center"
   >
-    <div>
-      <WithMagnifyingGlass client:only invert={true}>
-        <MyImage
-          imgSelector="quizzical-game-components"
-          imgName="quizzical_game_components"
-          imgAlt="different game components used in the quizzical app"
-          className="mt-[20px] rounded-[15px] 2xl:rounded-[40px] border-[3px] 2xl:border-[5px] border-[#E1CA02]"
-        />
-      </WithMagnifyingGlass>
-
-      <EnlargedPicture
-        imgSelector="quizzical-game-components"
-        modalSelector="quizzical-game_components-modal"
-        modalClose="quizzical-game_components-modal-close"
-      >
-        <MyImage
-          imgName="quizzical_game_components"
-          imgAlt="different game components used in the quizzical app"
-          className="mt-[20px]"
-        />
-      </EnlargedPicture>
-    </div>
+    <ReactQuizzicalImageWrapper invertIcon={true} client:only
+      ><ReactQuizzicalImage src="quizzical_game_components" />
+    </ReactQuizzicalImageWrapper>
 
     <div class="text-[14px] xl:text-[18px] mt-[20px]">
       <p class="">
