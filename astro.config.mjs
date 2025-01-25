@@ -7,5 +7,11 @@ export default defineConfig({
   redirects: {
     '/barna': '/barna/projects',
     '/evelin': '/evelin/projects'
+  },
+  vite: {
+    server: {
+      hmr: true
+    }
   }
+
 });
