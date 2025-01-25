@@ -7,8 +7,10 @@ import QuizzicalUserFlowCustom from "./QuizzicalUserFlowCustom.astro";
 import QuizzicalUserFlowDefault from "./QuizzicalUserFlowDefault.astro";
 import WithBorderParagraph from "./WithBorderParagraph.astro";
 import WithMagnifyingGlass from "./WithMagnifyingGlass";
-// import WithMagnifyingGlass from "./WithMagnifyingGlass.tsx";
 import WithSmallTriangle from "./WithSmallTriangle.astro";
+import ReactClientOnlyWrapper from "./ReactClientOnlyWrapper.tsx";
+import ReactQuizzicalSitemap from "./ReactQuizzicalSitemap.tsx";
+import { Image } from "astro:assets";
 
 const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
 ---
@@ -51,17 +53,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     starting a new game or customizing default settings for a personalized experience.
   </WithBorderParagraph>
 
-  <WithMagnifyingGlass className="mt-[40px]" invert={true} client:only>
-    <QuizzicalSitemap imgSelector="quizzical-sitemap" />
-  </WithMagnifyingGlass>
-
-  <EnlargedPicture
-    imgSelector="quizzical-sitemap"
-    modalSelector="quizzical-sitemap-modal"
-    modalClose="quizzical-sitemap-modal-close"
-  >
-    <QuizzicalSitemap />
-  </EnlargedPicture>
+  <ReactQuizzicalSitemap imgName="quizzical_sitemap" client:only />
 
   <h4
     class="font-bold text-[17px] sm:text-[21px] xl:text-[32px] font-['Jost'] mt-[30px] xl:mt-[80px] text-left pb-[10px] xl:pb-0 ml-[-10px] xl:ml-0"

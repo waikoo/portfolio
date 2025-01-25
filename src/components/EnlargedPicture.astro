@@ -11,6 +11,7 @@ const { imgSelector, modalSelector, modalClose } = Astro.props;
 
     if (img && overlay instanceof HTMLDialogElement) {
       img.addEventListener("click", () => {
+        console.log("CLICKED");
         overlay.classList.remove("hidden");
         overlay.classList.add("grid");
         overlay.showModal();

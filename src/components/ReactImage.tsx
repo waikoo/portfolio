@@ -6,7 +6,6 @@ interface Props {
 }
 
 export const ReactImage = ({ imgName, imgAlt, className }: Props) => {
-  console.log(imgName)
 
   return (
     <picture>

@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import IconX from "./IconX";
+import IconX from "./ReactIconX";
 
 interface Props {
   children: React.ReactNode
