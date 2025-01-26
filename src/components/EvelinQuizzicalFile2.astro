@@ -3,8 +3,8 @@ import BlueBg from "./BlueBg.astro";
 import EvelinFileWrapper from "./EvelinFileWrapper.astro";
 import WithBorderParagraph from "./WithBorderParagraph.astro";
 import WithSmallTriangle from "./WithSmallTriangle.astro";
-import ReactQuizzicalImageWrapper from "./ReactQuizzicalImageWrapper.tsx";
-import ReactQuizzicalImage from "./ReactQuizzicalImage.tsx";
+import ReactImageWrapper from "./ReactImageWrapper.tsx";
+import ReactImage from "./ReactImage.tsx";
 
 const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
 ---
@@ -49,9 +49,9 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     experience.
   </WithBorderParagraph>
 
-  <ReactQuizzicalImageWrapper invertIcon={true} client:only
-    ><ReactQuizzicalImage src="quizzical_sitemap" />
-  </ReactQuizzicalImageWrapper>
+  <ReactImageWrapper invertIcon={true} client:only
+    ><ReactImage src="quizzical_sitemap" />
+  </ReactImageWrapper>
 
   <h4
     class="font-bold text-[17px] sm:text-[21px] xl:text-[32px] font-['Jost'] mt-[30px] xl:mt-[80px] text-left pb-[10px] xl:pb-0 ml-[-10px] xl:ml-0"
@@ -78,12 +78,12 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
         including replaying options</WithSmallTriangle
       >
 
-      <ReactQuizzicalImageWrapper
+      <ReactImageWrapper
         invertIcon={true}
         className="mt-[10px]"
         client:only
-        ><ReactQuizzicalImage src="quizzical_default_user_flow" />
-      </ReactQuizzicalImageWrapper>
+        ><ReactImage src="quizzical_default_user_flow" />
+      </ReactImageWrapper>
     </div>
 
     <div class="flex flex-col gap-[20px] mt-[20px]">
@@ -92,12 +92,12 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
         replaying options
       </WithSmallTriangle>
 
-      <ReactQuizzicalImageWrapper
+      <ReactImageWrapper
         invertIcon={true}
         className="mt-[10px]"
         client:only
-        ><ReactQuizzicalImage src="quizzical_personalized_user_flow" />
-      </ReactQuizzicalImageWrapper>
+        ><ReactImage src="quizzical_personalized_user_flow" />
+      </ReactImageWrapper>
     </div>
   </div>
 </EvelinFileWrapper>

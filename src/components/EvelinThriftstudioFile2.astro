@@ -4,12 +4,10 @@ import CompetitiveAnalysisModal from "./CompetitiveAnalysisModal.astro";
 import EvelinFilePainPoint from "./EvelinFilePainPoint.astro";
 import EvelinFileResearchGoal from "./EvelinFileResearchGoal.astro";
 import EvelinFileWrapper from "./EvelinFileWrapper.astro";
-import JourneyMap from "./JourneyMap.astro";
-import JourneyMapModal from "./JourneyMapModal.astro";
+import ReactImageWrapper from "./ReactImageWrapper.tsx";
+import ReactImage from "./ReactImage.tsx";
 import TapToEnlarge from "./TapToEnlarge.astro";
 import TapToEnlargeBig from "./TapToEnlargeBig.astro";
-import UserPersona from "./UserPersona.astro";
-import UserPersonaModal from "./UserPersonaModal.astro";
 
 const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
 ---
@@ -111,11 +109,15 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     </blockquote>
   </div>
 
-  <UserPersona className="mt-[25px] xl:mt-[35px] cursor-pointer" />
-  <UserPersonaModal />
-
-  <TapToEnlarge className="mt-[22px] sm:hidden" />
-  <TapToEnlargeBig className="mt-[22px] hidden sm:flex" />
+  <ReactImageWrapper
+    invertIcon={true}
+    client:only
+    className="mt-[25px] xl:mt-[35px] cursor-pointer"
+    ><ReactImage
+      src="user_persona"
+      alt="user persona for the thriftstudio app"
+    />
+  </ReactImageWrapper>
 
   <div class="text-center sm:text-left">
     <h5
@@ -138,12 +140,15 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     USER JOURNEY MAP
   </h4>
 
-  <JourneyMap className="mt-[30px] xl:mt-[30px]" />
-
-  <TapToEnlarge className="mt-[22px] sm:hidden" />
-  <TapToEnlargeBig className="mt-[22px] hidden sm:flex" />
-
-  <JourneyMapModal />
+  <ReactImageWrapper
+    invertIcon={true}
+    client:only
+    className="mt-[30px] xl:mt-[30px]"
+    ><ReactImage
+      src="journey_map"
+      alt="user persona for the thriftstudio app"
+    />
+  </ReactImageWrapper>
 
   <span
     class="mt-[100px] text-center block font-semibold text-[12px] sm:text-[15px] xl:text-[20px] text-[#1e1e1e]"

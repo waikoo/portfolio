@@ -1,8 +1,6 @@
 ---
 import EvelinFileWrapper from "./EvelinFileWrapper.astro";
 import SiteMap from "./SiteMap.astro";
-import TapToEnlarge from "./TapToEnlarge.astro";
-import TapToEnlargeBig from "./TapToEnlargeBig.astro";
 import EvelinFilePainPoint from "./EvelinFilePainPoint.astro";
 import UserFlow from "./UserFlow.astro";
 import UserFlowModal from "./UserFlowModal.astro";
@@ -12,6 +10,8 @@ import BigPictureStoryboardModal from "./BigPictureStoryboardModal.astro";
 import CloseUpStoryboard from "./CloseUpStoryboard.astro";
 import CloseUpStoryboardModal from "./CloseUpStoryboardModal.astro";
 import SiteMapModal from "./SiteMapModal.astro";
+import ReactImageWrapper from "./ReactImageWrapper";
+import ReactImage from "./ReactImage";
 
 const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
 ---
@@ -67,10 +67,9 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     >
   </p>
 
-  <SiteMap />
-  <SiteMapModal />
-  <TapToEnlarge className="mt-[22px] sm:hidden" />
-  <TapToEnlargeBig className="mt-[22px] hidden sm:flex" />
+  <ReactImageWrapper invertIcon={true} client:only className=""
+    ><ReactImage src="sitemap" alt="sitemap for the thriftstudio app" />
+  </ReactImageWrapper>
 
   <h4
     class="text-[#1e1e1e] text-[17px] sm:text-[21px] xl:text-[32px] font-bold mt-[80px]"
@@ -84,10 +83,9 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     store website</EvelinFilePainPoint
   >
 
-  <UserFlow />
-  <UserFlowModal />
-  <TapToEnlarge className="mt-[22px] sm:hidden" />
-  <TapToEnlargeBig className="mt-[22px] hidden sm:flex" />
+  <ReactImageWrapper invertIcon={true} client:only className=""
+    ><ReactImage src="user_flow" alt="user flow for the thriftstudio app" />
+  </ReactImageWrapper>
 
   <h4
     class="mt-32 text-[#1e1e1e] text-[17px] sm:text-[21px] xl:text-[32px] font-bold text-right"
@@ -120,20 +118,19 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
 
   <MustardBgTitle>BIG PICTURE STORYBOARD</MustardBgTitle>
 
-  <BigPictureStoryboard />
-  <BigPictureStoryboardModal />
-  <TapToEnlarge className="mt-[22px] sm:hidden" />
-  <TapToEnlargeBig className="mt-[22px] hidden sm:flex" />
+  <ReactImageWrapper invertIcon={true} client:only className=""
+    ><ReactImage
+      src="big_picture_storyboard"
+      alt="big picture storyboard for the thriftstudio app"
+    />
+  </ReactImageWrapper>
 
   <MustardBgTitle className="text-right">CLOSE-UP STORYBOARD</MustardBgTitle>
-  <CloseUpStoryboard />
-  <CloseUpStoryboardModal />
-  <TapToEnlarge className="mt-[22px] sm:hidden" />
-  <TapToEnlargeBig className="mt-[22px] hidden sm:flex" />
-</EvelinFileWrapper>
 
-<style>
-  * {
-    font-family: "Jost", sans-serif;
-  }
-</style>
+  <ReactImageWrapper invertIcon={true} client:only className=""
+    ><ReactImage
+      src="close-up_storyboard"
+      alt="big picture storyboard for the thriftstudio app"
+    />
+  </ReactImageWrapper>
+</EvelinFileWrapper>

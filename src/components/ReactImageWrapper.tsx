@@ -8,7 +8,7 @@ type Props = {
   className?: string
 }
 
-const ReactQuizzicalImageWrapper = ({ invertIcon, children, className }: Props) => {
+const ReactImageWrapper = ({ invertIcon, children, className }: Props) => {
   const [showModal, setShowModal] = useState(false)
   const modalStyle = showModal ? 'grid' : 'hidden'
 
@@ -32,4 +32,4 @@ const ReactQuizzicalImageWrapper = ({ invertIcon, children, className }: Props) 
   )
 }
 
-export default ReactQuizzicalImageWrapper
+export default ReactImageWrapper

@@ -1,20 +1,28 @@
-
-interface Props {
-  imgName: string
-  imgAlt: string
-  className?: string
+type Props = {
+  src: string
+  alt: string
 }
 
-export const ReactImage = ({ imgName, imgAlt, className }: Props) => {
+const ReactImage = ({ src, alt }: Props) => {
 
   return (
     <picture>
-      <source srcSet={`/images/${imgName}.avif`} type="image/avif" />
-      <source srcSet={`/images/${imgName}.webp`} type="image/webp" />
+      <source
+        type="image/avif"
+        srcSet={`/images/${src}.avif`}
+      />
+      <source
+        type="image/webp"
+        srcSet={`/images/${src}.webp`}
+      />
+      <source
+        type="image/jpeg"
+        srcSet={`/images/${src}.jpg`}
+      />
       <img
-        src={`/images/${imgName}.png`}
-        alt={imgAlt}
-        className={`${className}`}
+        src={`/images/${src}.png`}
+        alt={alt}
+        className={`xl:cursor-pointer sm:rounded-[30px] block max-h-[90vh] mx-auto`}
       />
     </picture>
   )
