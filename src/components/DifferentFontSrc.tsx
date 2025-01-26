@@ -20,8 +20,8 @@ const DifferentFontSrc = ({ className }: Props) => {
   }, [matches, matchesLargeDesktop])
   return (
     <div className={className}>
-      <ReactImage imgName={src || 'quizzical_font_desktop'}
-        imgAlt="different fonts used in the quizzical app"
+      <ReactImage src={src ? src : ''}
+        alt="different fonts used in the quizzical app"
         className="my-[20px] sm:rotate-90 xl:rotate-0 block h-[540px] xl:h-auto mx-auto"
       />
     </div>
