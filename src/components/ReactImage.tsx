@@ -1,9 +1,10 @@
 type Props = {
   src: string
   alt: string
+  className?: string
 }
 
-const ReactImage = ({ src, alt }: Props) => {
+const ReactImage = ({ src, alt, className }: Props) => {
 
   return (
     <picture>
@@ -22,7 +23,7 @@ const ReactImage = ({ src, alt }: Props) => {
       <img
         src={`/images/${src}.png`}
         alt={alt}
-        className={`xl:cursor-pointer sm:rounded-[30px] block max-h-[90vh] mx-auto`}
+        className={`xl:cursor-pointer sm:rounded-[30px] block max-h-[90vh] mx-auto ${className}`}
       />
     </picture>
   )

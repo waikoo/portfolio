@@ -50,7 +50,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </WithBorderParagraph>
 
   <ReactImageWrapper invertIcon={true} client:only
-    ><ReactImage src="quizzical_sitemap" />
+    ><ReactImage src="quizzical_sitemap" alt="sitemap for the quizzical game" />
   </ReactImageWrapper>
 
   <h4
@@ -78,11 +78,11 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
         including replaying options</WithSmallTriangle
       >
 
-      <ReactImageWrapper
-        invertIcon={true}
-        className="mt-[10px]"
-        client:only
-        ><ReactImage src="quizzical_default_user_flow" />
+      <ReactImageWrapper invertIcon={true} className="mt-[10px]" client:only
+        ><ReactImage
+          src="quizzical_default_user_flow"
+          alt="default user flow in the quizzical app"
+        />
       </ReactImageWrapper>
     </div>
 
@@ -92,11 +92,11 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
         replaying options
       </WithSmallTriangle>
 
-      <ReactImageWrapper
-        invertIcon={true}
-        className="mt-[10px]"
-        client:only
-        ><ReactImage src="quizzical_personalized_user_flow" />
+      <ReactImageWrapper invertIcon={true} className="mt-[10px]" client:only
+        ><ReactImage
+          src="quizzical_personalized_user_flow"
+          alt="personalized user flow in the quizzical app"
+        />
       </ReactImageWrapper>
     </div>
   </div>

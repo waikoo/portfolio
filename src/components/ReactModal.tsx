@@ -27,7 +27,7 @@ export default function ReactModal({ children, setShowModal, showModal, bgColor 
       className={`overlay fixed ${bgColor} w-screen h-screen place-items-center z-[99999]`}
       id="quizzical-state-modal"
     >
-      <IconX closeModal={() => setShowModal(false)} />
+      <IconX closeModal={() => setShowModal(false)} iconColor="white" />
       {children}
     </dialog>
   );

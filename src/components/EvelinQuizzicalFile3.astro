@@ -55,7 +55,10 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   >
 
   <ReactImageWrapper invertIcon={true} client:only
-    ><ReactImage src="quizzical_wireframes" />
+    ><ReactImage
+      src="quizzical_wireframes"
+      alt="wireframes for the quizzical app"
+    />
   </ReactImageWrapper>
 
   <h3
@@ -241,7 +244,10 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     class="xl:grid xl:grid-cols-[677px_287px] xl:gap-[88px] items-center"
   >
     <ReactImageWrapper invertIcon={true} client:only
-      ><ReactImage src="quizzical_game_components" />
+      ><ReactImage
+        src="quizzical_game_components"
+        alt="game components of the quizzical app"
+      />
     </ReactImageWrapper>
 
     <div class="text-[14px] xl:text-[18px] mt-[20px]">
