@@ -50,19 +50,57 @@ const { color, bgColor } = Astro.props;
       </filter>
     </defs>
   </svg>
-<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_b_2471_442)">
-<rect width="40" height="40" rx="20" transform="matrix(1.39071e-07 -1 -1 -1.39071e-07 40 40)" fill={bgColor}/>
-<rect x="-1" y="-1" width="38" height="38" rx="19" transform="matrix(1.39071e-07 -1 -1 -1.39071e-07 38 38)" stroke={color} stroke-width="2"/>
-<path d="M26.3646 12.6363C26.9169 12.6363 27.3646 13.0841 27.3646 13.6363L27.3646 22.6363C27.3646 23.1886 26.9169 23.6363 26.3646 23.6363C25.8124 23.6363 25.3646 23.1886 25.3646 22.6363L25.3646 14.6363L17.3646 14.6363C16.8124 14.6363 16.3646 14.1886 16.3646 13.6363C16.3646 13.0841 16.8124 12.6363 17.3646 12.6363L26.3646 12.6363ZM12.9296 25.6572L25.6575 12.9292L27.0717 14.3434L14.3438 27.0714L12.9296 25.6572Z" fill={color}/>
-</g>
-<defs>
-<filter id="filter0_b_2471_442" x="-10" y="-10" width="60" height="60" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feGaussianBlur in="BackgroundImageFix" stdDeviation="5"/>
-<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_2471_442"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_2471_442" result="shape"/>
-</filter>
-</defs>
-</svg>
+  <svg
+    width="40"
+    height="40"
+    viewBox="0 0 40 40"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    class="hidden sm:block"
+  >
+    <g filter="url(#filter0_b_2471_442)">
+      <rect
+        width="40"
+        height="40"
+        rx="20"
+        transform="matrix(1.39071e-07 -1 -1 -1.39071e-07 40 40)"
+        fill={bgColor}></rect>
+      <rect
+        x="-1"
+        y="-1"
+        width="38"
+        height="38"
+        rx="19"
+        transform="matrix(1.39071e-07 -1 -1 -1.39071e-07 38 38)"
+        stroke={color}
+        stroke-width="2"></rect>
+      <path
+        d="M26.3646 12.6363C26.9169 12.6363 27.3646 13.0841 27.3646 13.6363L27.3646 22.6363C27.3646 23.1886 26.9169 23.6363 26.3646 23.6363C25.8124 23.6363 25.3646 23.1886 25.3646 22.6363L25.3646 14.6363L17.3646 14.6363C16.8124 14.6363 16.3646 14.1886 16.3646 13.6363C16.3646 13.0841 16.8124 12.6363 17.3646 12.6363L26.3646 12.6363ZM12.9296 25.6572L25.6575 12.9292L27.0717 14.3434L14.3438 27.0714L12.9296 25.6572Z"
+        fill={color}></path>
+    </g>
+    <defs>
+      <filter
+        id="filter0_b_2471_442"
+        x="-10"
+        y="-10"
+        width="60"
+        height="60"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+        <feGaussianBlur in="BackgroundImageFix" stdDeviation="5"
+        ></feGaussianBlur>
+        <feComposite
+          in2="SourceAlpha"
+          operator="in"
+          result="effect1_backgroundBlur_2471_442"></feComposite>
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="effect1_backgroundBlur_2471_442"
+          result="shape"></feBlend>
+      </filter>
+    </defs>
+  </svg>
 </div>
