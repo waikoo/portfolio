@@ -17,7 +17,7 @@ const ReactQuizzicalImage = ({ src }: Props) => {
       <img
         src={`/images/${src}.png`}
         alt="selected quizzical game state"
-        className={`xl:cursor-pointer sm:rounded-[30px]`}
+        className={`xl:cursor-pointer sm:rounded-[30px] block max-h-[90vh] mx-auto`}
       />
     </picture>
   )
