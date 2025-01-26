@@ -272,6 +272,6 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
 
   <!-- React component -->
   <WithMagnifyingGlass client:only invert={true}>
-    <DynamicImgSrc showByDefault={0} client:visible />
+    <DynamicImgSrc showByDefault={0} client:visible bgColor={bgColor} />
   </WithMagnifyingGlass>
 </EvelinFileWrapper>

@@ -6,9 +6,10 @@ import ReactModal from "./ReactModal.tsx";
 
 interface Props {
   showByDefault: number
+  bgColor: string
 }
 
-export default function DynamicImgSrc({ showByDefault }: Props) {
+export default function DynamicImgSrc({ showByDefault, bgColor }: Props) {
   const [index, setIndex] = useState(showByDefault)
   const [selectedImg, setSelectedImg] = useState(
     quizzicalStates[index].imgName
@@ -32,7 +33,7 @@ export default function DynamicImgSrc({ showByDefault }: Props) {
       </ReactCarousel>
 
       {showModal && (
-        <ReactModal setShowModal={setShowModal} showModal={showModal}>
+        <ReactModal bgColor={bgColor} setShowModal={setShowModal} showModal={showModal}>
           <ReactCarouselImage selectedImg={selectedImg} setShowModal={setShowModal} className="h-screen content-center" />
         </ReactModal>
       )

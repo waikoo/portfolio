@@ -5,9 +5,10 @@ interface Props {
   children: React.ReactNode
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>
   showModal: boolean
+  bgColor: string
 }
 
-export default function ReactModal({ children, setShowModal, showModal }: Props) {
+export default function ReactModal({ children, setShowModal, showModal, bgColor }: Props) {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
@@ -23,12 +24,10 @@ export default function ReactModal({ children, setShowModal, showModal }: Props)
   return (
     <dialog
       ref={dialogRef}
-      className="overlay fixed bg-white w-screen h-screen place-items-center z-[99999]"
+      className={`overlay fixed ${bgColor} w-screen h-screen place-items-center z-[99999]`}
       id="quizzical-state-modal"
     >
-      <div onClick={() => setShowModal(false)}>
-        <IconX id="close-quizzical-state-modal" />
-      </div>
+      <IconX closeModal={() => setShowModal(false)} />
       {children}
     </dialog>
   );
