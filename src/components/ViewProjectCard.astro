@@ -13,6 +13,7 @@ interface Props {
   imgHeight: string;
   imgWidth: string;
   link: string;
+  borderRadius: string;
 }
 
 const {
@@ -25,17 +26,20 @@ const {
   imgHeight,
   imgWidth,
   link,
+  borderRadius,
 } = Astro.props;
 ---
 
-<article class={className}>
-  <a href={link}>
+<article
+  class={`${className} ${borderRadius} shadow-[0_4px_30px_0_rgba(0,0,0,0.25)]`}
+>
+  <a href={link} class="shadow-[0_4px_8px_0_rgba(0,0,0,0.50)]">
     <Image
       src={source}
       alt={`project preview image of my ${name.toLowerCase()} project object-cover`}
       width={+imgWidth}
       height={+imgHeight}
-      class={imgClass}
+      class={`${imgClass} ${borderRadius}`}
     />
     <p
       class="uppercase text-right font-['Jost'] text-[19px] xl:text-[38px] font-bold text-[#F2F3E3] whitespace-nowrap mt-[32px]"
