@@ -10,7 +10,7 @@ export default function ReactCarousel({ items, children, handleClick, index }: P
   return (
     <>
       <ul
-        className="flex flex-row gap-[8px] sm:justify-between pr-2 font-semibold text-[10px] sm:text-[12px] xl:text-[16px] overflow-scroll items-center border-[2px] sm:border-[3px] rounded-full p-1 border-[#E1CA02] h-max-content uppercase scrollbar-0"
+        className="flex flex-row gap-[8px] sm:justify-between pr-2 font-semibold text-[12px] xl:text-[16px] overflow-scroll items-center border-[2px] sm:border-[3px] rounded-full p-1 border-[#E1CA02] h-max-content uppercase scrollbar-0"
         style={{ scrollbarWidth: 'none' }}
       >
         {
