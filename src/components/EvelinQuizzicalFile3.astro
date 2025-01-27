@@ -143,19 +143,23 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     class="xl:grid xl:grid-cols-[781px_246px] xl:items-center xl:mt-[103px] gap-[35px]"
   >
     <section
-      class="grid grid-cols-[auto_1fr] gap-[17px] mt-[40px] xl:col-start-2 xl:col-end-3 xl:row-start-1 xl:row-end-2"
+      class="mt-[40px] xl:col-start-2 xl:col-end-3 xl:row-start-1 xl:row-end-2"
     >
-      <QuizzicalArrowDown />
       <div class="">
-        <h5 class="text-[15px] font-bold leading-none">BUTTONS</h5>
-        <p
-          class="text-[16px] sm:text-[18px] mt-[11px] xl:mt-0 leading-[20px] xl:content-center h-full"
-        >
-          The "Play" button, as the most important element, incorporates the
-          highest number of distinct colors. From there, <strong
-            >I progressively reduced the number of colors</strong
-          > used to maintain a clear visual hierarchy.
-        </p>
+        <div class="grid grid-cols-[auto_1fr] gap-[17px] items-center">
+          <QuizzicalArrowDown />
+          <div>
+            <h5 class="text-[15px] font-bold leading-none">BUTTONS</h5>
+            <p
+              class="text-[16px] sm:text-[18px] mt-[11px] xl:mt-0 leading-[20px] xl:content-center h-full"
+            >
+              The "Play" button, as the most important element, incorporates the
+              highest number of distinct colors. From there, <strong
+                >I progressively reduced the number of colors</strong
+              > used to maintain a clear visual hierarchy.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
