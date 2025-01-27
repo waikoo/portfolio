@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import WithMagnifyingGlass from './WithMagnifyingGlass.tsx'
-import ReactIconX from './ReactIconX.tsx'
+import ReactImageModal from './ReactImageModal.tsx'
 
 type Props = {
   invertIcon: boolean
@@ -10,11 +10,6 @@ type Props = {
 
 const ReactImageWrapper = ({ invertIcon, children, className }: Props) => {
   const [showModal, setShowModal] = useState(false)
-  const modalStyle = showModal ? 'grid' : 'hidden'
-
-  const closeModal = () => {
-    setShowModal(false)
-  }
 
   return (
     <div className={className}>
@@ -24,10 +19,9 @@ const ReactImageWrapper = ({ invertIcon, children, className }: Props) => {
         </div>
       </WithMagnifyingGlass>
 
-      <div className={`${modalStyle} fixed inset-0 mx-auto bg-black/75 backdrop-blur-sm w-auto h-screen place-items-center z-[9999999]`} onClick={closeModal}>
-        <ReactIconX closeModal={closeModal} iconColor="#fff" />
+      <ReactImageModal showModal={showModal} setShowModal={setShowModal}>
         {children}
-      </div>
+      </ReactImageModal>
     </div>
   )
 }

@@ -3,6 +3,8 @@ import ReactCarousel from "./ReactCarousel.tsx";
 import ReactCarouselImage from "./ReactCarouselImage.tsx";
 import quizzicalStates from "../projects/evelinQuizzicalData.js";
 import ReactModal from "./ReactModal.tsx";
+import ReactImageWrapper from "./ReactImageWrapper.tsx";
+import ReactImageModal from "./ReactImageModal.tsx";
 
 interface Props {
   showByDefault: number
@@ -33,9 +35,9 @@ export default function DynamicImgSrc({ showByDefault, bgColor }: Props) {
       </ReactCarousel>
 
       {showModal && (
-        <ReactModal bgColor={bgColor} setShowModal={setShowModal} showModal={showModal}>
+        <ReactImageModal setShowModal={setShowModal} showModal={showModal}>
           <ReactCarouselImage selectedImg={selectedImg} setShowModal={setShowModal} className="h-screen content-center" />
-        </ReactModal>
+        </ReactImageModal>
       )
       }
     </>
