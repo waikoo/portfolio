@@ -23,7 +23,7 @@ const ReactImage = ({ src, alt, className }: Props) => {
       <img
         src={`/images/${src}.png`}
         alt={alt}
-        className={`xl:cursor-pointer sm:rounded-[30px] block max-h-[90vh] mx-auto ${className}`}
+        className={`xl:cursor-pointer block max-h-[90vh] mx-auto ${className}`}
       />
     </picture>
   )
