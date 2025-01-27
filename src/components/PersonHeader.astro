@@ -14,9 +14,11 @@ const isThriftStudio = pathname.includes("thriftstudio");
 ---
 
 <script is:inline define:vars={{ isQuizzical, isThriftStudio }}>
+  // TODO: clean this up
   // sticky header styles
   window.addEventListener("scroll", () => {
     const header = document.querySelector("header");
+    const hamburgerIcon = header.querySelector(".hamburger-icon");
     const quizzicalHeaderTexts = header?.querySelectorAll(".quizzicalFont");
 
     if (header) {
@@ -25,13 +27,17 @@ const isThriftStudio = pathname.includes("thriftstudio");
         if (isQuizzical) {
           if (quizzicalHeaderTexts) {
             quizzicalHeaderTexts.forEach((quizzicalHeaderText) => {
+              const children = Array.from(hamburgerIcon.children);
+              children.forEach((hamburgerStroke) => {
+                hamburgerStroke.style.stroke = "#000";
+              });
               if (quizzicalHeaderText) {
                 quizzicalHeaderText.style.color = "#000";
+                hamburgerIcon.style.color = "#000";
               }
             });
           }
         }
-
         if (isThriftStudio) {
           return;
         } else {
@@ -39,6 +45,12 @@ const isThriftStudio = pathname.includes("thriftstudio");
         }
       } else {
         // on scroll back to top
+        if (hamburgerIcon) {
+          const children = Array.from(hamburgerIcon.children);
+          children.forEach((hamburgerStroke) => {
+            hamburgerStroke.style.stroke = "#e1ca02";
+          });
+        }
         header.style.backgroundColor = "";
         if (isThriftStudio) {
           return;
@@ -90,7 +102,7 @@ const isThriftStudio = pathname.includes("thriftstudio");
     />
     <IconHamburger
       name={lowercasedName}
-      className="lg:hidden h-full flex flex-col justify-center hamburger-icon z-[90]"
+      className="lg:hidden h-full flex flex-col justify-center hamburger-icon z-[150]"
       color={color}
     />
   </div>
