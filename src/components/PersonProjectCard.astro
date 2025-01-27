@@ -33,7 +33,9 @@ const projectWrapper = isFormatColors
     ? "lg:grid-cols-[2fr_5fr]"
     : "lg:grid-cols-[5fr_2fr]";
 const evelinStyles =
-  lowerCasedName === "evelin" ? "grid-rows-[100px_200px_auto]" : "";
+  lowerCasedName === "evelin"
+    ? "grid-rows-[auto_auto_auto] sm:grid-rows-[100px_200px_auto] gap-[16px]"
+    : "";
 ---
 
 <section
@@ -54,7 +56,7 @@ const evelinStyles =
   <PersonProjectCardTitle
     color={color}
     isInverted={isInverted}
-    className={`row-start-1 row-end-2 ${isInverted ? "lg:col-start-1 lg:col-end-2" : "lg:col-start-2 lg:col-end-3 "} lg:row-start-1 lg:row-end-2`}
+    className={`row-start-1 row-end-2 ${lowerCasedName === "evelin" ? "mb-5" : ""} ${isInverted ? "lg:col-start-1 lg:col-end-2" : "lg:col-start-2 lg:col-end-3 "} lg:row-start-1 lg:row-end-2`}
     >{name.toUpperCase()}</PersonProjectCardTitle
   >
   <PersonProjectCardDescription
@@ -80,7 +82,7 @@ const evelinStyles =
     fullName.split(" ")[1].toLowerCase() === "evelin" ? (
       <IconArrow
         isInverted={isInverted}
-        className={`row-start-5 row-end-6 justify-self-end ${isInverted ? "lg:justify-self-start lg:col-start-1 lg:col-end-2" : "lg:justify-self-end lg:col-start-2 lg:col-end-3"}  ${lowerCasedName === "evelin" ? "lg:row-start-4 lg:row-end-5" : "lg:row-start-3 lg:row-end-4"}`}
+        className={`row-start-5 row-end-6 justify-self-end mt-5 ${isInverted ? "lg:justify-self-start lg:col-start-1 lg:col-end-2" : "lg:justify-self-end lg:col-start-2 lg:col-end-3"}  ${lowerCasedName === "evelin" ? "lg:row-start-4 lg:row-end-5" : "lg:row-start-3 lg:row-end-4"}`}
         projectLink={projectLink}
       />
     ) : null
