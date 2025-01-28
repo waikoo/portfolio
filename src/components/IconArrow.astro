@@ -1,4 +1,6 @@
 ---
+import IconArrowResponsive from "./IconArrowResponsive.astro";
+
 const { className, isInverted, projectLink } = Astro.props;
 ---
 
@@ -7,20 +9,11 @@ const { className, isInverted, projectLink } = Astro.props;
   href={projectLink}
 >
   <div
-    class={`border-[#e296f5] border-[1px] rounded-full p-[12px] ${isInverted ? "lg:rotate-90" : ""}`}
+    class={`border-[#e296f5] rounded-full p-[12px] ${!isInverted ? "lg:rotate-270" : "scale-x-[-1]"}`}
   >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
-      fill="none"
-      viewBox="0 0 16 16"
-    >
-      <path
-        fill="#E296F5"
-        d="M1.636.636a1 1 0 00-1 1v9a1 1 0 102 0v-8h8a1 1 0 100-2h-9zm13.435 13.02L2.343.93.929 2.343l12.728 12.728 1.414-1.414z"
-      ></path>
-    </svg>
+    <IconArrowResponsive color={"#e296f5"} bgColor={"transparent"} />
   </div>
-  <span class="text-[#e296f5] text-[16px] font-regular">View Project</span>
+  <span class="text-[#e296f5] text-[16px] xl:text-[18px] font-regular"
+    >View Project</span
+  >
 </a>
