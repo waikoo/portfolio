@@ -1,11 +1,15 @@
-<div>
+---
+const { className } = Astro.props;
+---
+
+<div class={className}>
   <svg
     width="12"
     height="180"
     viewBox="0 0 12 180"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    class="sm:hidden"
+    class="xl:hidden"
   >
     <path
       d="M6 180L11.7735 170L0.226498 170L6 180ZM7 171L7.00001 4.37114e-08L5.00001 -4.37114e-08L5 171L7 171Z"
@@ -18,7 +22,7 @@
     viewBox="0 0 12 329"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    class="hidden sm:block"
+    class="hidden xl:block"
   >
     <path
       d="M6 329L11.7735 319L0.226498 319L6 329ZM7 320L7.00001 4.37114e-08L5.00001 -4.37114e-08L5 320L7 320Z"

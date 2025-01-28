@@ -18,11 +18,12 @@ const DifferentFontSrc = ({ className }: Props) => {
     matchesLargeDesktop ? setSrc('quizzical_font_desktop') : matches ?
       setSrc('quizzical_font_semi_desktop') : setSrc('quizzical_font_mobile_tablet');
   }, [matches, matchesLargeDesktop])
+
   return (
     <div className={className}>
       <ReactImage src={src || 'quizzical_font_desktop'}
         alt="different fonts used in the quizzical app"
-        className="my-[20px] sm:rotate-90 xl:rotate-0 block h-[540px] xl:h-auto mx-auto"
+        className={`my-[20px] sm:rotate-90 xl:rotate-0 block xl:h-auto mx-auto ${matches ? 'auto' : 'h-[540px]'}`}
       />
     </div>
 

@@ -1,4 +1,4 @@
-import '@fontsource/jost/600.css';
+import '@fontsource/jost/500.css';
 
 interface Props {
   items: { name: string, imgName: string, color: string }[]
@@ -8,10 +8,11 @@ interface Props {
 }
 
 export default function ReactCarousel({ items, children, handleClick, index }: Props) {
+
   return (
     <>
       <ul
-        className="font-['Jost'] flex flex-row gap-[8px] sm:justify-between pr-2 font-semibold text-[12px] xl:text-[16px] overflow-scroll items-center border-[2px] sm:border-[3px] rounded-full p-1 border-[#E1CA02] h-max-content uppercase scrollbar-0 tracking-wide"
+        className="font-['Jost'] flex flex-row gap-[8px] sm:justify-between text-[12px] sm:text-[14px] xl:text-[16px] font-medium overflow-scroll items-center border-[2px] sm:border-[3px] rounded-full p-[2px] border-[#E1CA02] h-max-content uppercase scrollbar-0 tracking-wide w-[92%] mx-auto"
         style={{ scrollbarWidth: 'none' }}
       >
         {

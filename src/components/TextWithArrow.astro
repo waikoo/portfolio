@@ -4,13 +4,17 @@ import IconArrowResponsive from "./IconArrowResponsive.astro";
 interface Props {
   arrowColor: string;
   arrowBgColor: string;
+  invertArrow: boolean;
   className?: string;
 }
 
-const { arrowColor, arrowBgColor, className } = Astro.props;
+const { arrowColor, arrowBgColor, className, invertArrow } = Astro.props;
 ---
 
 <div class={`flex items-center gap-[5px] ${className}`}>
   <span style={{ color: arrowColor }}><slot /></span>
-  <IconArrowResponsive color={arrowColor} bgColor={arrowBgColor} />
+
+  <div class={`${invertArrow ? "scale-x-[-1]" : ""}`}>
+    <IconArrowResponsive color={arrowColor} bgColor={arrowBgColor} />
+  </div>
 </div>
