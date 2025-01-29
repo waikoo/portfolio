@@ -32,27 +32,28 @@ const {
 } = Astro.props;
 ---
 
-<article
-  class={`${className} ${borderRadius} font-['Jost'] shadow-[0_4px_30px_0_rgba(0,0,0,0.25)]`}
->
+<article class={`${className} ${borderRadius} font-['Jost']`}>
   <a href={link}>
-    <Image
-      src={source}
-      alt={`project preview image of my ${name.toLowerCase()} project object-cover`}
-      width={parseInt(imgWidth)}
-      height={parseInt(imgHeight)}
-      class={`${imgClass} shadow-[0_4px_8px_0_rgba(0,0,0,0.50)] ${borderRadius}`}
-    />
+    <div class={`shadow-[0_4px_30px_0_rgba(0,0,0,0.25)] ${borderRadius}`}>
+      <Image
+        src={source}
+        alt={`project preview image of my ${name.toLowerCase()} project`}
+        width={parseInt(imgWidth)}
+        height={parseInt(imgHeight)}
+        class={`${imgClass} shadow-[0_4px_8px_0_rgba(0,0,0,0.50)] object-cover ${borderRadius}`}
+      />
+    </div>
     <p
-      class="uppercase text-right text-[20px] xl:text-[38px] font-bold text-[#F2F3E3] whitespace-nowrap mt-[32px]"
+      class="uppercase text-right text-[20px] xl:text-[38px] font-bold text-[#F2F3E3] whitespace-nowrap mt-[32px] tracking-[-2px]"
     >
       {name}
     </p>
     <TextWithArrow
+      text="View Project"
       arrowColor={arrowColor}
       invertArrow={invertArrow}
       arrowBgColor={arrowBg}
-      className="justify-end mt-[12px] transition-colors duration-200 hover:drop-shadow-[0px_0px_3px_#e296f5]"
+      className="justify-end mt-[12px] text-[15px] sm:text-[16px] xl:text-[18px] transition-colors duration-200 hover:drop-shadow-[0px_0px_3px_#e296f5]"
       >View Project</TextWithArrow
     >
   </a>
