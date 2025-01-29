@@ -1,4 +1,4 @@
-import { useState, cloneElement } from 'react'
+import { useState } from 'react'
 import WithMagnifyingGlass from './WithMagnifyingGlass.tsx'
 import ReactImageModal from './ReactImageModal.tsx'
 
@@ -14,8 +14,6 @@ type Props = {
 
 const ReactImageWrapper = ({ invertIcon, children, className }: Props) => {
   const [showModal, setShowModal] = useState(false)
-
-  // const childWithProps = cloneElement(children, { showModal })
 
   return (
     <div className={className}>
