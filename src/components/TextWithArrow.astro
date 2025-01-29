@@ -14,7 +14,7 @@ const { arrowColor, arrowBgColor, className, invertArrow } = Astro.props;
 <div class={`flex items-center gap-[5px] ${className}`}>
   <span style={{ color: arrowColor }}><slot /></span>
 
-  <div class={`${invertArrow ? "scale-x-[-1]" : ""}`}>
+  <div class={`${!invertArrow ? "scale-x-[-1]" : ""}`}>
     <IconArrowResponsive color={arrowColor} bgColor={arrowBgColor} />
   </div>
 </div>

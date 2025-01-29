@@ -39,8 +39,8 @@ const {
     <Image
       src={source}
       alt={`project preview image of my ${name.toLowerCase()} project object-cover`}
-      width={+imgWidth}
-      height={+imgHeight}
+      width={parseInt(imgWidth)}
+      height={parseInt(imgHeight)}
       class={`${imgClass} shadow-[0_4px_8px_0_rgba(0,0,0,0.50)] ${borderRadius}`}
     />
     <p

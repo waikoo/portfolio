@@ -3,7 +3,7 @@ import BlueBg from "./BlueBg.astro";
 import EvelinFileWrapper from "./EvelinFileWrapper.astro";
 import MyImage from "./MyImage.astro";
 import QuizzicalArrowDown from "./QuizzicalArrowDown.astro";
-import QuizzicalTitle from "./QuizzicalTitle.astro";
+import DynamoImgSrc from "./DynamoImgSrc.tsx";
 import WithMagnifyingGlass from "./WithMagnifyingGlass.tsx";
 import WithSmallTriangle from "./WithSmallTriangle.astro";
 import DynamicImgSrc from "./DynamicImgSrc.tsx";
@@ -20,7 +20,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   bgColor={bgColor}
   cardBgColor={cardBgColor}
   id={id}
-  paddingX="px-[20px] sm:px-[30px] xl:p-0"
+  paddingX="px-[20px] sm:px-[30px] xl:p-0 2xl:px-[172px]"
   paddingY="py-[80px] sm:py-[90px] xl:py-[130px]"
 >
   <h3
@@ -63,7 +63,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </ReactImageWrapper>
 
   <h3
-    class="text-[21px] sm:text-[26px] xl:text-[40px] font-extrabold mt-[80px] sm:mt-[90px] xl:mt-[80px] 2xl:mt-[100px] text-center"
+    class="text-[21px] sm:text-[26px] xl:text-[40px] font-extrabold mt-[80px] sm:mt-[90px] xl:mt-[120px] 2xl:mt-[100px] text-center"
   >
     STYLE DEFINITION
   </h3>
@@ -143,15 +143,20 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     <section
       class="mt-[40px] xl:col-start-2 xl:col-end-3 xl:row-start-1 xl:row-end-2"
     >
-      <div class="sm:mx-auto w-[256px]">
+      <div class="sm:mx-auto">
         <div
           class="grid grid-cols-[auto_1fr] sm:grid-cols-[auto_256px] xl:grid-cols-[auto_216px] gap-[17px] sm:gap-[40px] xl:gap-[19px] items-center"
         >
           <QuizzicalArrowDown className="justify-self-end" />
+
           <div>
-            <h5 class="text-[15px] font-bold leading-none">BUTTONS</h5>
+            <h5
+              class="text-[15px] xl:text-[17px] font-bold leading-none mb-[20px]"
+            >
+              BUTTONS
+            </h5>
             <p
-              class="text-[16px] sm:text-[18px] mt-[11px] xl:mt-0 leading-[20px] xl:content-center h-full"
+              class="text-[16px] sm:text-[18px] mt-[11px] xl:mt-0 leading-[20px] xl:leading-[26px] xl:content-center h-full"
             >
               The "Play" button, as the most important element, incorporates the
               highest number of distinct colors. From there, <strong
@@ -166,24 +171,21 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     <MyImage
       imgName="quizzical_play_tryagain_settings_colors"
       imgAlt="all the colors of buttons used in the quizzical app"
-      className="mt-[20px] xl:col-start-1 xl:col-end-2 xl:row-start-1 xl:row-end-2 sm:mx-auto"
+      className="mt-[20px]xl:col-start-1 xl:col-end-2 xl:row-start-1 xl:row-end-2 sm:mx-auto"
     />
   </div>
 
   <section
-    class="xl:grid xl:grid-cols-2 2xl:grid-cols-2 xl:gap-[115px] content-center items-center xl:mt-[116px] 2xl:mt-[56px]"
+    class="xl:grid xl:grid-cols-2 2xl:grid-cols-[1fr_478px] 2xl:grid-rows-[357px] xl:gap-[115px] content-center items-center xl:mt-[116px] 2xl:mt-[56px]"
   >
-    <div class="grid place-items-center h-full 2xl:h-auto 2xl:block">
-      <QuizzicalTitle
-        className="mt-[40px] sm:mt-[70px] xl:mt-0 whitespace-nowrap"
-      />
-      <p
-        class="font-['Monoton'] text-[18px] sm:text-[30px] xl:text-[40px] text-center mt-[-7px] whitespace-nowrap"
-      >
-        Monoton Regular
-      </p>
+    <div
+      class="grid grid-cols-1 place-items-center h-full 2xl:h-auto 2xl:block"
+    >
+      <DynamoImgSrc client:only className="mt-[40px]" />
 
-      <p class="text-[16px] xl:text-[18px] py-[20px]">
+      <p
+        class="text-[16px] xl:text-[18px] py-[20px] leading-[20px] xl:leading-[26px]"
+      >
         The logo features the <strong>Monoton Regular typeface</strong> with a custom
         modification. To enhance readability and visual balance, the letter "Q" was
         styled as an uppercase character but scaled down to match the size of the
@@ -198,13 +200,13 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
       <MyImage
         imgName="quizzical_logo_colors"
         imgAlt="entire color palette used in the quizzical app"
-        className="mb-[20px] mx-auto xl:w-[478px]"
+        className="mb-[20px] mx-auto xl:w-[478px] xl:mb-0"
       />
     </div>
   </section>
 
   <section
-    class="sm:grid grid-cols-[200px_250px] sm:grid-cols-[1fr_1fr] xl:grid-cols-[351px_1fr] 2xl:grid-cols-[351px_auto] gap-[30px] xl:gap-[94px] items-center 2xl:mt-[70px]"
+    class="sm:grid grid-cols-[200px_250px] sm:grid-cols-[1fr_1fr] xl:grid-cols-[351px_1fr] 2xl:grid-cols-[351px_auto] gap-[30px] xl:gap-[94px] items-center 2xl:mt-[70px] xl:mt-[40px]"
   >
     <MyImage
       imgName="quizzical_logo_example"
