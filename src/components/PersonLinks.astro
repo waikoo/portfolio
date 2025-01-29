@@ -9,15 +9,18 @@ const isOnContact = currentUrl.includes("contact");
 const isOnAbout = currentUrl.includes("about");
 ---
 
-<ul class={`flex text-[1rem] pt-6 ${className}`}>
-  <PersonHeaderLink href="/" isHamburger={isHamburger} lowercasedName={lowercasedName}>Home</PersonHeaderLink>
+<ul class={`flex text-[1rem] ${className}`}>
+  <PersonHeaderLink
+    href="/"
+    isHamburger={isHamburger}
+    lowercasedName={lowercasedName}>Home</PersonHeaderLink
+  >
   <PersonHeaderLink
     href={`/${lowercasedName}/projects`}
     isCurrentPage={isOnProjects}
     isHamburger={isHamburger}
     color={color}
-    lowercasedName={lowercasedName}
-    >Projects</PersonHeaderLink
+    lowercasedName={lowercasedName}>Projects</PersonHeaderLink
   >
   <PersonHeaderLink
     href={`/${lowercasedName}/cv`}
