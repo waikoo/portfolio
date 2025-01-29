@@ -20,7 +20,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   bgColor={bgColor}
   cardBgColor={cardBgColor}
   id={id}
-  paddingX="px-[20px] sm:px-[30px] xl:px-[30px] 2xl:px-0"
+  paddingX="px-[20px] sm:px-[30px] xl:p-0"
   paddingY="py-[80px] sm:py-[90px] xl:py-[130px]"
 >
   <h3
@@ -63,7 +63,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </ReactImageWrapper>
 
   <h3
-    class="text-[21px] sm:text-[26px] xl:text-[40px] font-extrabold mt-[80px] sm:mt-[90px] xl:mt-[180px] 2xl:mt-[100px] text-center"
+    class="text-[21px] sm:text-[26px] xl:text-[40px] font-extrabold mt-[80px] sm:mt-[90px] xl:mt-[80px] 2xl:mt-[100px] text-center"
   >
     STYLE DEFINITION
   </h3>
@@ -78,7 +78,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     > throughout.
   </BlueBg>
   <h4
-    class="text-[17px] sm:text-[21px] 2xl:text-[32px] font-bold mt-[40px] sm:mt-[70px] xl:mt-[130px] 2xl:mt-[100px] py-1 sm:text-right"
+    class="text-[17px] sm:text-[21px] xl:text-[32px] font-bold mt-[40px] sm:mt-[70px] xl:mt-[130px] 2xl:mt-[100px] py-1 sm:text-right"
   >
     BACKGROUND
   </h4>
@@ -139,15 +139,13 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     </section>
   </div>
 
-  <div
-    class="xl:grid xl:grid-cols-[781px_246px] xl:items-center xl:mt-[103px] gap-[35px]"
-  >
+  <div class="xl:grid xl:items-center xl:mt-[103px] gap-[35px]">
     <section
       class="mt-[40px] xl:col-start-2 xl:col-end-3 xl:row-start-1 xl:row-end-2"
     >
       <div class="sm:mx-auto w-[256px]">
         <div
-          class="grid grid-cols-[auto_1fr] sm:grid-cols-[auto_256px] gap-[17px] sm:gap-[40px] items-center"
+          class="grid grid-cols-[auto_1fr] sm:grid-cols-[auto_256px] xl:grid-cols-[auto_216px] gap-[17px] sm:gap-[40px] xl:gap-[19px] items-center"
         >
           <QuizzicalArrowDown className="justify-self-end" />
           <div>
@@ -173,7 +171,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </div>
 
   <section
-    class="xl:grid xl:grid-cols-[3fr_5fr] 2xl:grid-cols-2 gap-[100px] content-center items-center xl:mt-[116px] 2xl:mt-[56px]"
+    class="xl:grid xl:grid-cols-2 2xl:grid-cols-2 xl:gap-[115px] content-center items-center xl:mt-[116px] 2xl:mt-[56px]"
   >
     <div class="grid place-items-center h-full 2xl:h-auto 2xl:block">
       <QuizzicalTitle
@@ -200,13 +198,13 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
       <MyImage
         imgName="quizzical_logo_colors"
         imgAlt="entire color palette used in the quizzical app"
-        className="mb-[20px] mx-auto"
+        className="mb-[20px] mx-auto xl:w-[478px]"
       />
     </div>
   </section>
 
   <section
-    class="sm:grid grid-cols-[200px_250px] sm:grid-cols-[1fr_1fr] xl:grid-cols-[459px_478px] 2xl:grid-cols-[351px_auto] gap-[30px] xl:gap-[94px] items-center 2xl:mt-[70px]"
+    class="sm:grid grid-cols-[200px_250px] sm:grid-cols-[1fr_1fr] xl:grid-cols-[351px_1fr] 2xl:grid-cols-[351px_auto] gap-[30px] xl:gap-[94px] items-center 2xl:mt-[70px]"
   >
     <MyImage
       imgName="quizzical_logo_example"
@@ -226,14 +224,14 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </section>
 
   <section
-    class="2xl:grid-cols-[337px_1fr] sm:items-center sm:gap-[11px] pt-[40px]"
+    class="xl:grid sm:items-center xl:grid-cols-[337px_1fr] sm:gap-[11px] pt-[40px]"
   >
     <DifferentFontSrc
-      className="xl:mr-[-36px] sm:mt-[-176px] 2xl:col-start-2 2xl:col-end-3 2xl:mr-[-154px] 2xl:row-start-1 2xl:row-end-2"
+      className="xl:mr-[-26px] sm:mt-[-176px] xl:mt-0 2xl:col-start-2 2xl:col-end-3 2xl:row-start-1 2xl:row-end-2 xl:w-[722px] xl:ml-auto"
       client:only
     />
     <p
-      class="mt-[-220px] relative z-[0] text-[16px] pl-[20px] w-[60%] mx-auto xl:text-[18px] 2xl:col-start-1 2xl:col-end-2 2xl:row-span-1 2xl:row-start-1 2xl:row-end-2 2xl:pt-[99px]"
+      class="sm:mt-[-220px] xl:mt-0 relative z-[0] text-[16px] pl-[20px] xl:pl-0 w-[60%] xl:w-[337px] mx-auto xl:text-[18px] xl:col-start-1 xl:col-end-2 xl:row-start-1 xl:row-end-2 2xl:col-start-1 2xl:col-end-2 2xl:row-span-1 2xl:row-start-1 2xl:row-end-2 pt-[99px]"
     >
       For the typography I have chosen <strong>three different fonts</strong>,
       each selected to enhance the <strong>playful and dynamic</strong> feel of the
@@ -242,13 +240,13 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </section>
 
   <h5
-    class="text-[17px] sm:text-[21px] 2xl:text-[32px] font-bold leading-none mt-[40px] sm:mt-[70px] mb-[20px] 2xl:mt-[80px]"
+    class="text-[17px] sm:text-[21px] xl:text-[32px] 2xl:text-[32px] font-bold leading-none mt-[40px] sm:mt-[70px] mb-[20px] 2xl:mt-[80px]"
   >
     COMPONENTS
   </h5>
 
   <section
-    class="xl:grid xl:grid-cols-[677px_287px] xl:gap-[88px] items-center"
+    class="xl:grid xl:grid-cols-[677px_287px] xl:gap-[88px] xl:mt-[40px] items-center"
   >
     <ReactImageWrapper invertIcon={true} client:only
       ><ReactImage
@@ -258,14 +256,14 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
       />
     </ReactImageWrapper>
 
-    <div class="text-[16px] xl:text-[18px] mt-[20px] sm:mt-[40px]">
+    <div class="text-[16px] xl:text-[18px] mt-[20px] sm:mt-[40px] xl:mt-0">
       <p class="">
         To align with the playful theme, I designed each <strong>button</strong>
         to be <strong>vibrant and visually distinctive</strong>, ensuring that
         their <strong>unique functions are clearly communicated</strong>.
       </p>
 
-      <p class="mt-[20px] 2xl:mt-[40px]">
+      <p class="mt-[20px] xl:mt-[45px]">
         The <strong>rest of the elements</strong> maintain visual <strong
           >consistency</strong
         > through a cohesive color scheme, effects, and form, establishing a <strong

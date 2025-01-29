@@ -4,13 +4,13 @@ const { className } = Astro.props;
 ---
 
 <button
-  class={`tracking-[-3.1px] text-[2.1rem] sm:text-[3.4rem] md:tracking-[-7.3px] mt-[-7px] 2xl:text-[5.35rem] mx-auto grid place-items-center font-['Monoton'] ${className}`}
+  class={`tracking-[-3.1px] text-[2.1rem] sm:text-[3.4rem] xl:text-[4.8rem] md:tracking-[-7.3px] mt-[-7px] 2xl:text-[5.35rem] mx-auto grid place-items-center font-['Monoton'] ${className}`}
 >
   <div
-    class={`xl:tracking-[-6.6px] 2xl:tracking-[-5.6px] text-center rounded-full mx-auto cursor-pointer max-w-fit tracking-[-1.8px] sm:tracking-[-3.6px]`}
+    class={`2xl:tracking-[-5.6px] text-center rounded-full mx-auto cursor-pointer max-w-fit tracking-[-1.8px] sm:tracking-[-3.6px] xl:tracking-[-4.8px]`}
   >
     <span
-      class={`text-[#FFA13D] text-[1.9rem] sm:text-[3.138rem] xl:text-[6.25rem] 2xl:text-[4.65rem]`}
+      class={`text-[#FFA13D] text-[1.9rem] sm:text-[3.138rem] xl:text-[4.35rem] 2xl:text-[4.65rem]`}
       >Q</span
     >
     <span class="text-[#2775E9]">u</span>
@@ -27,5 +27,11 @@ const { className } = Astro.props;
 <style>
   div > span {
     text-shadow: 1px 1px 0.5px black;
+  }
+
+  @media (min-width: 1280px) {
+    div > span {
+      text-shadow: 2px 2x 1px black;
+    }
   }
 </style>
