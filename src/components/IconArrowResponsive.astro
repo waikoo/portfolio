@@ -1,8 +1,9 @@
 ---
-const { color, bgColor } = Astro.props;
+const { color, bgColor, strokeWidth } = Astro.props;
 ---
 
 <div>
+  <!-- Small Viewport -->
   <svg
     width="30"
     height="30"
@@ -20,37 +21,14 @@ const { color, bgColor } = Astro.props;
         height="28"
         rx="14"
         stroke={color}
-        stroke-width="2"></rect>
+        stroke-width={strokeWidth}></rect>
       <path
         d="M18.8875 10.3605C19.3018 10.3605 19.6375 10.6963 19.6375 11.1105L19.6375 17.8605C19.6375 18.2747 19.3018 18.6105 18.8875 18.6105C18.4733 18.6105 18.1375 18.2747 18.1375 17.8605V11.8605H12.1375C11.7233 11.8605 11.3875 11.5247 11.3875 11.1105C11.3875 10.6963 11.7233 10.3605 12.1375 10.3605L18.8875 10.3605ZM10.579 18.3583L18.3572 10.5802L19.4179 11.6408L11.6397 19.419L10.579 18.3583Z"
         fill={color}></path>
     </g>
-    <defs>
-      <filter
-        id="filter0_b_2475_809"
-        x="-10"
-        y="-10"
-        width="50"
-        height="50"
-        filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
-      >
-        <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-        <feGaussianBlur in="BackgroundImageFix" stdDeviation="5"
-        ></feGaussianBlur>
-        <feComposite
-          in2="SourceAlpha"
-          operator="in"
-          result="effect1_backgroundBlur_2475_809"></feComposite>
-        <feBlend
-          mode="normal"
-          in="SourceGraphic"
-          in2="effect1_backgroundBlur_2475_809"
-          result="shape"></feBlend>
-      </filter>
-    </defs>
   </svg>
 
+  <!-- Medium Viewport -->
   <svg
     width="34"
     height="34"
@@ -59,18 +37,18 @@ const { color, bgColor } = Astro.props;
     xmlns="http://www.w3.org/2000/svg"
     class="hidden sm:block xl:hidden"
   >
-    <g filter="url(#filter0_b_340_480)">
-      <rect width="34" height="34" rx="17" fill="#F9F9F9" fill-opacity="0.05"
+    <g filter="url(#filter0_b_2471_721)">
+      <rect width="34" height="34" rx="17" fill={bgColor} fill-opacity="0.05"
       ></rect>
-      <rect x="0.5" y="0.5" width="33" height="33" rx="16.5" stroke="#E296F5"
+      <rect x="0.5" y="0.5" width="33" height="33" rx="16.5" stroke={color}
       ></rect>
       <path
-        d="M12.5 11.75C12.0858 11.75 11.75 12.0858 11.75 12.5L11.75 19.25C11.75 19.6642 12.0858 20 12.5 20C12.9142 20 13.25 19.6642 13.25 19.25V13.25H19.25C19.6642 13.25 20 12.9142 20 12.5C20 12.0858 19.6642 11.75 19.25 11.75L12.5 11.75ZM22.0303 20.9697L13.0303 11.9697L11.9697 13.0303L20.9697 22.0303L22.0303 20.9697Z"
-        fill="#E296F5"></path>
+        d="M21.5 11.75C21.9142 11.75 22.25 12.0858 22.25 12.5L22.25 19.25C22.25 19.6642 21.9142 20 21.5 20C21.0858 20 20.75 19.6642 20.75 19.25V13.25H14.75C14.3358 13.25 14 12.9142 14 12.5C14 12.0858 14.3358 11.75 14.75 11.75L21.5 11.75ZM11.9697 20.9697L20.9697 11.9697L22.0303 13.0303L13.0303 22.0303L11.9697 20.9697Z"
+        fill={color}></path>
     </g>
     <defs>
       <filter
-        id="filter0_b_340_480"
+        id="filter0_b_2471_721"
         x="-10"
         y="-10"
         width="54"
@@ -84,16 +62,17 @@ const { color, bgColor } = Astro.props;
         <feComposite
           in2="SourceAlpha"
           operator="in"
-          result="effect1_backgroundBlur_340_480"></feComposite>
+          result="effect1_backgroundBlur_2471_721"></feComposite>
         <feBlend
           mode="normal"
           in="SourceGraphic"
-          in2="effect1_backgroundBlur_340_480"
+          in2="effect1_backgroundBlur_2471_721"
           result="shape"></feBlend>
       </filter>
     </defs>
   </svg>
 
+  <!-- Large Viewport -->
   <svg
     width="40"
     height="40"
@@ -117,34 +96,11 @@ const { color, bgColor } = Astro.props;
         rx="19"
         transform="matrix(1.39071e-07 -1 -1 -1.39071e-07 38 38)"
         stroke={color}
-        stroke-width="2"></rect>
+        stroke-width={strokeWidth}></rect>
       <path
         d="M26.3646 12.6363C26.9169 12.6363 27.3646 13.0841 27.3646 13.6363L27.3646 22.6363C27.3646 23.1886 26.9169 23.6363 26.3646 23.6363C25.8124 23.6363 25.3646 23.1886 25.3646 22.6363L25.3646 14.6363L17.3646 14.6363C16.8124 14.6363 16.3646 14.1886 16.3646 13.6363C16.3646 13.0841 16.8124 12.6363 17.3646 12.6363L26.3646 12.6363ZM12.9296 25.6572L25.6575 12.9292L27.0717 14.3434L14.3438 27.0714L12.9296 25.6572Z"
         fill={color}></path>
     </g>
-    <defs>
-      <filter
-        id="filter0_b_2471_442"
-        x="-10"
-        y="-10"
-        width="60"
-        height="60"
-        filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
-      >
-        <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-        <feGaussianBlur in="BackgroundImageFix" stdDeviation="5"
-        ></feGaussianBlur>
-        <feComposite
-          in2="SourceAlpha"
-          operator="in"
-          result="effect1_backgroundBlur_2471_442"></feComposite>
-        <feBlend
-          mode="normal"
-          in="SourceGraphic"
-          in2="effect1_backgroundBlur_2471_442"
-          result="shape"></feBlend>
-      </filter>
-    </defs>
   </svg>
 </div>
+

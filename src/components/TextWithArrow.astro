@@ -7,17 +7,23 @@ interface Props {
   arrowBgColor: string;
   invertArrow?: boolean;
   className?: string;
+  strokeWidth: string;
 }
 
-const { arrowColor, arrowBgColor, className, invertArrow, text } = Astro.props;
+const { arrowColor, arrowBgColor, className, invertArrow, text, strokeWidth } =
+  Astro.props;
 ---
 
 <div class={`flex items-center gap-[10px] ${className}`}>
-  <span style={{ color: arrowColor }} class="block">
+  <span style={{ color: arrowColor }}>
     {text}
   </span>
 
   <div class={`${!invertArrow ? "scale-x-[-1]" : ""}`}>
-    <IconArrowResponsive color={arrowColor} bgColor={arrowBgColor} />
+    <IconArrowResponsive
+      strokeWidth={strokeWidth}
+      color={arrowColor}
+      bgColor={arrowBgColor}
+    />
   </div>
 </div>
