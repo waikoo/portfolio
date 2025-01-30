@@ -70,9 +70,9 @@ const { name, familyName } = extractName(fullName);
     </div>
   </main>
 
-  <footer class="relative bg-[#141412] items-center sm:px-[100px] xl:px-[82px]">
+  <footer class="relative bg-[#141412] sm:px-[50px] xl:px-[82px]">
     <div
-      class="translate-y-[-150px] xl:translate-y-[-170px] grid grid-cols-2 gap-[152px] sm:gap-[40px] sm:grid-cols-2 justify-between w-full xl:max-w-[1052px] mx-auto h-[250px] xl:h-[313px] 2xl:max-w-full"
+      class="translate-y-[-150px] sm:translate-y-[-88px] xl:translate-y-[-170px] grid grid-cols-2 gap-[152px] sm:gap-[40px] sm:grid-cols-[250px_250px] justify-between w-full xl:grid-cols-[450px_450px] mx-auto h-[250px] sm:h-auto xl:h-[313px]"
     >
       <ViewProjectCard
         name="THRIFTSTUDIO"
@@ -84,7 +84,7 @@ const { name, familyName } = extractName(fullName);
         invertArrow={true}
         imgHeight="386px"
         imgWidth="450px"
-        className="absolute bottom-[-45px] left-0 right-0 sm:static sm:bottom-[45px] max-w-[230px] sm:max-w-[250px] xl:max-w-full mx-auto xl:cursor-pointer"
+        className="absolute bottom-[-45px] left-0 right-0 sm:static sm:bottom-[45px] w-[230px] sm:w-[250px] xl:w-[450px] mx-auto xl:cursor-pointer"
         link="/evelin/projects/thriftstudio"
       />
       <ViewProjectCard
@@ -97,7 +97,7 @@ const { name, familyName } = extractName(fullName);
         imgHeight="386px"
         imgWidth="450px"
         arrowBg="transparent"
-        className="left-0 right-0 bottom-[-45px] max-w-[230px] mx-auto xl:cursor-pointer hidden sm:max-w-[250px] sm:block"
+        className="left-0 right-0 bottom-[-45px] mx-auto xl:cursor-pointer 2xl:max-w-full hidden sm:w-[250px] xl:w-[450px] sm:block"
         link="/evelin/projects/rps"
       />
       <div></div>
