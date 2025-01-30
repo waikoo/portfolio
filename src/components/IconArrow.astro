@@ -5,14 +5,15 @@ const { className, isInverted, projectLink } = Astro.props;
 ---
 
 <a
-  class={`${className} flex ${isInverted ? "lg:flex-row-reverse" : "lg:flex-row"} items-center gap-[10px] cursor-pointer transition-all duration-200 hover:drop-shadow-[0px_0px_3px_#e296f5]`}
+  class={`${className} flex ${isInverted ? "lg:flex-row-reverse" : "lg:flex-row"} gap-[6px] sm:gap-[13px] items-center cursor-pointer transition-all duration-200 hover:drop-shadow-[0px_0px_3px_#e296f5]`}
   href={projectLink}
 >
   <div
-    class={`border-[#e296f5] rounded-full p-[12px] ${!isInverted ? "lg:rotate-270" : "scale-x-[-1]"}`}
+    class={`border-[#e296f5] rounded-full ${isInverted ? "lg:rotate-270" : "scale-x-[-1]"}`}
   >
-    <IconArrowResponsive color={"#e296f5"} bgColor={"transparent"} />
+    <IconArrowResponsive color={"#e296f5"} bgColor={"#F9F9F905"} />
   </div>
+
   <span class="text-[#e296f5] text-[16px] xl:text-[18px] font-regular"
     >View Project</span
   >
