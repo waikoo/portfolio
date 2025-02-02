@@ -1,12 +1,14 @@
+import { useContext } from 'react'
 import ReactIconX from './ReactIconX.tsx'
+import { ModalContext } from '../ModalContext.ts'
 
 interface Props {
   children: React.ReactNode
-  showModal: boolean
-  setShowModal: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const ReactImageModal = ({ children, showModal, setShowModal }: Props) => {
+const ReactImageModal = ({ children }: Props) => {
+  const { showModal, setShowModal } = useContext(ModalContext)
+  if (!showModal) return null
   const modalStyle = showModal ? 'grid' : 'hidden'
 
   const closeModal = () => {
@@ -16,9 +18,7 @@ const ReactImageModal = ({ children, showModal, setShowModal }: Props) => {
   return (
     <div className={`${modalStyle} fixed inset-0 mx-auto bg-black/75 backdrop-blur-sm w-auto h-screen place-items-center z-[9999999]`} onClick={closeModal}>
       <ReactIconX closeModal={closeModal} iconColor="#fff" />
-      <div className={showModal ? '**:max-h-[90vh]' : '**:max-w-full'}>
-        {children}
-      </div>
+      {children}
     </div>
   )
 }

@@ -4,7 +4,6 @@ import EvelinFileWrapper from "./EvelinFileWrapper.astro";
 import WithBorderParagraph from "./WithBorderParagraph.astro";
 import WithSmallTriangle from "./WithSmallTriangle.astro";
 import ReactImageWrapper from "./ReactImageWrapper.tsx";
-import ReactImage from "./ReactImage.tsx";
 
 const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
 ---
@@ -47,9 +46,13 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     experience.
   </WithBorderParagraph>
 
-  <ReactImageWrapper invertIcon={true} client:only className="mt-[25px] w-full"
-    ><ReactImage src="quizzical_sitemap" alt="sitemap for the quizzical game" />
-  </ReactImageWrapper>
+  <ReactImageWrapper
+    invertIcon={true}
+    client:only
+    className="mt-[25px] w-full"
+    src="quizzical_sitemap"
+    alt="sitemap for the quizzical game"
+  />
 
   <h4
     class="font-bold text-[17px] sm:text-[21px] xl:text-[32px] mt-[30px] xl:mt-[80px] 2xl:mt-[50px] text-left pb-[5px] xl:pb-0 xl:ml-0"
@@ -76,12 +79,13 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
         including replaying options</WithSmallTriangle
       >
 
-      <ReactImageWrapper invertIcon={true} className="mt-[10px]" client:only
-        ><ReactImage
-          src="quizzical_default_user_flow"
-          alt="default user flow in the quizzical app"
-        />
-      </ReactImageWrapper>
+      <ReactImageWrapper
+        invertIcon={true}
+        className="mt-[10px]"
+        client:only
+        src="quizzical_default_user_flow"
+        alt="default user flow in the quizzical app"
+      />
     </div>
 
     <div class="flex flex-col gap-[20px] mt-[20px]">
@@ -90,12 +94,13 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
         replaying options
       </WithSmallTriangle>
 
-      <ReactImageWrapper invertIcon={true} className="mt-[10px]" client:only
-        ><ReactImage
-          src="quizzical_personalized_user_flow"
-          alt="personalized user flow in the quizzical app"
-        />
-      </ReactImageWrapper>
+      <ReactImageWrapper
+        invertIcon={true}
+        className="mt-[10px]"
+        client:only
+        src="quizzical_personalized_user_flow"
+        alt="personalized user flow in the quizzical app"
+      />
     </div>
   </div>
 </EvelinFileWrapper>

@@ -1,3 +1,6 @@
+import { useContext } from "react"
+import { ModalContext } from "../ModalContext"
+
 type Props = {
   src: string
   alt: string
@@ -5,6 +8,8 @@ type Props = {
 }
 
 const ReactImage = ({ src, alt, className }: Props) => {
+  const { showModal } = useContext(ModalContext)
+  const stylesOnShow = showModal ? 'h-[90vh]' : 'max-w-full'
 
   return (
     <picture>
@@ -23,7 +28,7 @@ const ReactImage = ({ src, alt, className }: Props) => {
       <img
         src={`/images/${src}.png`}
         alt={alt}
-        className={`xl:cursor-pointer block mx-auto ${className}`}
+        className={`xl:cursor-pointer block mx-auto ${stylesOnShow} ${className}`}
       />
     </picture>
   )

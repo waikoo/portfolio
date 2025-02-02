@@ -10,7 +10,6 @@ import DynamicImgSrc from "./DynamicImgSrc.tsx";
 import DifferentFontSrc from "./DifferentFontSrc.tsx";
 import "@fontsource/monoton";
 import ReactImageWrapper from "./ReactImageWrapper";
-import ReactImage from "./ReactImage";
 
 const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
 ---
@@ -55,12 +54,13 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     > that make up the entire structure of the game’s interface</WithSmallTriangle
   >
 
-  <ReactImageWrapper invertIcon={true} client:only className="mt-[40px]"
-    ><ReactImage
-      src="quizzical_wireframes"
-      alt="wireframes for the quizzical app"
-    />
-  </ReactImageWrapper>
+  <ReactImageWrapper
+    invertIcon={true}
+    client:only
+    className="mt-[40px]"
+    src="quizzical_wireframes"
+    alt="wireframes for the quizzical app"
+  />
 
   <h3
     class="text-[21px] sm:text-[26px] xl:text-[40px] font-extrabold mt-[80px] sm:mt-[90px] xl:mt-[120px] 2xl:mt-[100px] text-center"
@@ -253,13 +253,13 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   <section
     class="xl:grid xl:grid-cols-[677px_287px] xl:gap-[88px] xl:mt-[40px] items-center"
   >
-    <ReactImageWrapper invertIcon={true} client:only
-      ><ReactImage
-        src="quizzical_game_components"
-        alt="game components of the quizzical app"
-        className="rounded-[15px] sm:rounded-[30px] border-[#E1CA02] border-[3px] sm:border-[5px]"
-      />
-    </ReactImageWrapper>
+    <ReactImageWrapper
+      invertIcon={true}
+      client:only
+      src="quizzical_game_components"
+      alt="game components of the quizzical app"
+      imgClassName="rounded-[15px] sm:rounded-[30px] border-[#E1CA02] border-[3px] sm:border-[5px]"
+    />
 
     <div class="text-[16px] xl:text-[18px] mt-[20px] sm:mt-[40px] xl:mt-0">
       <p class="">
