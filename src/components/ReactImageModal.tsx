@@ -4,6 +4,8 @@ import { ModalContext } from '../ModalContext.ts'
 
 interface Props {
   children: React.ReactNode
+  setShowModal?: React.Dispatch<React.SetStateAction<boolean>>
+  showModal?: boolean
 }
 
 const ReactImageModal = ({ children }: Props) => {

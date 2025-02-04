@@ -5,7 +5,6 @@ import EvelinFilePainPoint from "./EvelinFilePainPoint.astro";
 import EvelinFileResearchGoal from "./EvelinFileResearchGoal.astro";
 import EvelinFileWrapper from "./EvelinFileWrapper.astro";
 import ReactImageWrapper from "./ReactImageWrapper.tsx";
-import ReactImage from "./ReactImage.tsx";
 import TapToEnlarge from "./TapToEnlarge.astro";
 import TapToEnlargeBig from "./TapToEnlargeBig.astro";
 
@@ -113,11 +112,9 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     invertIcon={true}
     client:only
     className="mt-[25px] xl:mt-[35px] cursor-pointer"
-    ><ReactImage
-      src="user_persona"
-      alt="user persona for the thriftstudio app"
-    />
-  </ReactImageWrapper>
+    src="user_persona"
+    alt="user persona for the thriftstudio app"
+  />
 
   <div class="text-center sm:text-left">
     <h5
@@ -144,11 +141,9 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     invertIcon={true}
     client:only
     className="mt-[30px] xl:mt-[30px]"
-    ><ReactImage
-      src="journey_map"
-      alt="user persona for the thriftstudio app"
-    />
-  </ReactImageWrapper>
+    src="journey_map"
+    alt="user persona for the thriftstudio app"
+  />
 
   <span
     class="mt-[100px] text-center block font-semibold text-[12px] sm:text-[15px] xl:text-[20px] text-[#1e1e1e]"

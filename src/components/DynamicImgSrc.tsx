@@ -2,8 +2,6 @@ import React, { useCallback, useMemo, useState } from "react";
 import ReactCarousel from "./ReactCarousel.tsx";
 import ReactCarouselImage from "./ReactCarouselImage.tsx";
 import quizzicalStates from "../projects/evelinQuizzicalData.js";
-import ReactModal from "./ReactModal.tsx";
-import ReactImageWrapper from "./ReactImageWrapper.tsx";
 import ReactImageModal from "./ReactImageModal.tsx";
 
 interface Props {
