@@ -27,7 +27,6 @@ const ReactImageWrapper = ({ invertIcon, className, src, alt, imgClassName }: Pr
               src={src}
               alt={alt}
               className={imgClassName}
-              showModal={showModal}
             />
 
           </div>
@@ -41,7 +40,6 @@ const ReactImageWrapper = ({ invertIcon, className, src, alt, imgClassName }: Pr
               <ReactImage
                 src={src}
                 alt={alt}
-                showModal={showModal}
               />
 
             </ReactImageModal>
