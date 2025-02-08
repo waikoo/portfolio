@@ -14,62 +14,49 @@ const isThriftStudio = pathname.includes("thriftstudio");
 ---
 
 <script is:inline define:vars={{ isQuizzical, isThriftStudio }}>
-  // TODO: clean this up
-  // sticky header styles
-  window.addEventListener("scroll", () => {
+  function updateHeaderOnScroll() {
     const header = document.querySelector("header");
-    const hamburgerIcon = header.querySelector(".hamburger-icon");
-    const quizzicalHeaderTexts = header?.querySelectorAll(".quizzicalFont");
+    if (!header) return;
 
-    if (header) {
-      if (window.scrollY > 0) {
-        header.style.backgroundColor = header.dataset.bgColor || "";
-        if (isQuizzical) {
-          if (quizzicalHeaderTexts) {
-            quizzicalHeaderTexts.forEach((quizzicalHeaderText) => {
-              const children = Array.from(hamburgerIcon.children);
-              children.forEach((hamburgerStroke) => {
-                hamburgerStroke.style.stroke = "#000";
-              });
-              if (quizzicalHeaderText) {
-                quizzicalHeaderText.style.color = "#000";
-                hamburgerIcon.style.color = "#000";
-              }
-            });
-          }
-        }
-        if (isThriftStudio) {
-          return;
-        } else {
-          header.classList.add("z-50");
-        }
-      } else {
-        // on scroll back to top
-        if (hamburgerIcon) {
-          const children = Array.from(hamburgerIcon.children);
-          children.forEach((hamburgerStroke) => {
-            hamburgerStroke.style.stroke = "#e1ca02";
-          });
-        }
-        header.style.backgroundColor = "";
-        if (isThriftStudio) {
-          return;
-        } else {
-          header.classList.remove("z-50");
-        }
+    const isScrolled = window.scrollY > 0;
 
-        if (isQuizzical) {
-          if (quizzicalHeaderTexts) {
-            quizzicalHeaderTexts.forEach((quizzicalHeaderText) => {
-              if (quizzicalHeaderText) {
-                quizzicalHeaderText.style.color = "#EBD302";
-              }
-            });
-          }
-        }
-      }
+    header.style.backgroundColor = isScrolled
+      ? header.dataset.bgColor || ""
+      : "";
+    if (!isThriftStudio) {
+      header.classList.toggle("z-50", isScrolled);
     }
-  });
+
+    if (isQuizzical) {
+      updateQuizzicalStyles(isScrolled);
+    }
+  }
+
+  function updateQuizzicalStyles(isScrolled) {
+    const header = document.querySelector("header");
+    const hamburgerIcon = header?.querySelector(".hamburger-icon");
+    const quizzicalHeaderTexts = header?.querySelectorAll(".quizzicalFont");
+    if (!hamburgerIcon || !quizzicalHeaderTexts) return;
+
+    const strokeColor = isScrolled ? "#000" : "#e1ca02";
+    const textColor = isScrolled ? "#000" : "#EBD302";
+
+    Array.from(hamburgerIcon.children).forEach((stroke) => {
+      stroke.style.stroke = strokeColor;
+    });
+
+    quizzicalHeaderTexts.forEach((text) => {
+      if (text) {
+        text.style.color = textColor;
+      }
+    });
+
+    if (isScrolled) {
+      hamburgerIcon.style.color = "#000";
+    }
+  }
+
+  window.addEventListener("scroll", updateHeaderOnScroll);
 
   const attachHamburgerEventListener = () => {
     const hamburgerIcon = document.querySelector(".hamburger-icon");
@@ -77,9 +64,7 @@ const isThriftStudio = pathname.includes("thriftstudio");
 
     if (hamburgerIcon) {
       hamburgerIcon.addEventListener("click", () => {
-        if (hamburgerMenu) {
-          hamburgerMenu.classList.remove("hidden");
-        }
+        hamburgerMenu?.classList.remove("hidden");
       });
     }
   };
