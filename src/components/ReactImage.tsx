@@ -9,7 +9,7 @@ type Props = {
 
 const ReactImage = ({ src, alt, className }: Props) => {
   const { showModal } = useContext(ModalContext)
-  const stylesOnShow = showModal ? 'h-[90vh]' : 'max-w-full'
+  const stylesOnShow = showModal ? 'h-auto w-auto max-h-[90%] max-w-[90%]' : 'max-w-full'
 
   return (
     <picture>
