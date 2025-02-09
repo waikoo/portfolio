@@ -40,6 +40,6 @@ const getProjectSpecificTextColor = (href: string) => {
     return "text-black";
   }
   if (href.includes("quizzical")) {
-    return "text-[#090909]";
+    return "text-[#EBD302]";
   }
 }
