@@ -1,13 +1,5 @@
 <li
-  class="bg-[#e8e9c4] p-1 px-5 text-[13px] sm:text-[15px] xl:text-[16px] bullet"
+  class="bg-[#e8e9c4] p-1 px-5 text-[13px] sm:text-[15px] xl:text-[16px] bullet rounded-[5px] before:ml-[-9px] before:text-black before:content-['•']"
 >
   <slot />
 </li>
-
-<style>
-  .bullet::before {
-    content: "•";
-    color: black;
-    margin-left: -9px;
-  }
-</style>
