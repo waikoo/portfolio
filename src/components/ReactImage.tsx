@@ -9,7 +9,8 @@ type Props = {
 
 const ReactImage = ({ src, alt, className }: Props) => {
   const { showModal } = useContext(ModalContext)
-  const stylesOnShow = showModal ? 'h-auto w-auto max-h-[90%] max-w-[90%]' : 'max-w-full'
+  const onPage = className || 'max-w-full'
+  const stylesOnShow = showModal ? 'h-auto w-auto max-h-[90%] max-w-[90%]' : onPage
 
   return (
     <picture>
@@ -28,7 +29,7 @@ const ReactImage = ({ src, alt, className }: Props) => {
       <img
         src={`/images/${src}.png`}
         alt={alt}
-        className={`xl:cursor-pointer block mx-auto ${stylesOnShow} ${className}`}
+        className={`xl:cursor-pointer block mx-auto ${stylesOnShow}`}
       />
     </picture>
   )

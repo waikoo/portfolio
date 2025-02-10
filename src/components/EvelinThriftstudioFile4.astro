@@ -20,7 +20,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   paddingY="py-[80px] sm:py-[90px] xl:py-[130px]"
 >
   <h3
-    class="text-[21px] sm:text-[26px] xl:text-[40px] text-[#1e1e1e] font-extrabold text-center"
+    class="text-[21px] sm:text-[26px] sm:text-[26px] xl:text-[40px] text-[#1e1e1e] font-extrabold text-center"
   >
     WIREFRAMES
   </h3>
@@ -38,18 +38,20 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   <ReactImageWrapper
     invertIcon={true}
     client:only
-    imgClassName="rounded-[5px]"
+    imgClassName="rounded-[5px] max-w-[293px]"
     className="mt-[20px] sm:mt-[30px]"
     src="thriftstudio_paper_wireframe"
     alt="paper wireframe for the thriftstudio app"
   />
 
-  <EvelinFilePainPoint bgColor={bgColor} className="mt-[40px] w-[90%] mx-auto"
+  <EvelinFilePainPoint
+    bgColor={bgColor}
+    className="mt-[40px] sm:mt-[30px] w-[90%] mx-auto"
     ><strong>I started with laying out the key features:</strong
     ></EvelinFilePainPoint
   >
 
-  <div class="flex flex-col gap-[13px] mt-[23px]">
+  <div class="flex flex-col gap-[13px] mt-[23px] sm:mt-[20px]">
     {
       thriftstudioKeyFeatures.map((item, i) => {
         return (
@@ -62,7 +64,9 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     }
   </div>
 
-  <p class="bg-[#EDEAF6] p-[20px] mx-[-10px]">
+  <p
+    class="bg-[#EDEAF6] p-[20px] sm:p-[24px] sm:rounded-[15px] mx-[-10px] sm:mx-0 sm:mt-[50px]"
+  >
     After finalizing the initial sketches, I transitioned to <strong
       >digital wireframes</strong
     >, prioritizing the key features. I designed both the primary and
@@ -75,39 +79,41 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   <ReactImageWrapper
     invertIcon={true}
     client:only
-    className="mt-[25px]"
+    className="mt-[25px] sm:mt-[30px]"
     src="thriftstudio_prototype"
     alt="prototype for the thriftstudio app"
   />
 
-  <h4 class="text-[17px] font-bold">USABILITY TESTING</h4>
+  <h4 class="text-[17px] sm:text-[21px] font-bold">USABILITY TESTING</h4>
 
-  <h5 class="text-[16px] font-bold">Goals:</h5>
+  <h5 class="text-[16px] font-bold sm:mt-[40px] sm:text-[15px]">Goals:</h5>
   <div class="flex flex-col gap-[3px]">
-    <EvelinFileResearchGoal
+    <EvelinFileResearchGoal className="sm:leading-[14px] mt-[20px]"
       >assess whether users can successfully complete key tasks within the
       prototype</EvelinFileResearchGoal
     >
 
-    <EvelinFileResearchGoal>
+    <EvelinFileResearchGoal className="sm:leading-[14px]">
       evaluate the intuitiveness and usability of the prototype</EvelinFileResearchGoal
     >
   </div>
 
-  <h5 class="text-[16px] font-bold mt-[30px]">Research questions:</h5>
+  <h5 class="text-[16px] font-bold mt-[30px] sm:text-[15px]">
+    Research questions:
+  </h5>
 
-  <div class="flex flex-col gap-[3px]">
-    <EvelinFileResearchGoal
+  <div class="flex flex-col gap-[3px] mt-[20px]">
+    <EvelinFileResearchGoal className="sm:leading-[14px]"
       >what can we learn from the steps that users take to complete each task?</EvelinFileResearchGoal
     >
 
-    <EvelinFileResearchGoal
+    <EvelinFileResearchGoal className="sm:leading-[14px]"
       >are there parts of the user flow where users get stuck?</EvelinFileResearchGoal
     >
-    <EvelinFileResearchGoal
+    <EvelinFileResearchGoal className="sm:leading-[14px]"
       >do the users find the filter saving feature helpful and/or useful?</EvelinFileResearchGoal
     >
-    <EvelinFileResearchGoal
+    <EvelinFileResearchGoal className="sm:leading-[14px]"
       >are there design changes that would make each task easier and/or faster
       for the users?</EvelinFileResearchGoal
     >
@@ -115,7 +121,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
 
   <h5 class="text-[16px] font-bold mt-[30px]">Tasks</h5>
   <ol
-    class="flex flex-col gap-[3px] list-decimal list-outside w-[100%] mx-auto pl-[20px] font-medium"
+    class="flex flex-col gap-[3px] list-decimal list-outside w-[100%] mx-auto pl-[20px] sm:mt-[20px] font-medium"
   >
     <li>Access your account and add a new shipping address</li>
     <li>Create and save a filter for "Brown sweaters in size 38"</li>
@@ -125,9 +131,13 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     </li>
   </ol>
 
-  <h4 class="text-[15px] font-bold mt-[50px]">USABILITY TEST FINDINGS</h4>
+  <h4 class="text-[15px] sm:text-[17px] sm:text-center font-bold mt-[50px]">
+    USABILITY TEST FINDINGS
+  </h4>
 
-  <div class="flex flex-col gap-[13px]">
+  <div
+    class="flex flex-col gap-[13px] sm:gap-[20px] sm:mt-[20px] sm:border-[1px] sm:border-[#E8E9C4] sm:rounded-[15px] sm:py-[10px]"
+  >
     <EvelinFileResearchGoal noBg={true}
       >Participants found the Account menu overwhelming due to the numerous
       subsections and the need to navigate back and forth</EvelinFileResearchGoal
@@ -155,59 +165,67 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     >
   </div>
 
-  <h3 class="text-center text-[17px] font-bold mt-[40px]">CHANGES</h3>
+  <h3
+    class="text-center sm:text-left text-[17px] sm:text-[21px] font-bold mt-[40px] sm:mt-[95px]"
+  >
+    CHANGES
+  </h3>
 
   <ExpandDetails
     bgColor={bgColor}
     iconId="thriftstudio_usability_test_icon"
     slotId="thriftstudio_usability_test_slot"
-    className="mt-[20px]"
+    className="mt-[20px] sm:mt-[-10px]"
   >
     <h4 class="font-bold text-[16px]">
       To address user frustrations with the account menu:
     </h4>
 
-    <EvelinFilePainPoint bgColor={bgColor}
+    <EvelinFilePainPoint bgColor={bgColor} className="sm:mt-[30px]"
       >I redesigned the navigation layout, replacing the vertical scrolling menu
       with horizontal scrolling, allowing users to access any section of their
       account with fewer clicks</EvelinFilePainPoint
     >
-    <EvelinFilePainPoint bgColor={bgColor}
+    <EvelinFilePainPoint bgColor={bgColor} className="sm:mt-[20px]"
       >The saved address card was revamped by replacing the confusing radio
       button and hidden menu with clearly visible editing options, enabling
       users to edit, delete, or set a default address with a single click</EvelinFilePainPoint
     >
 
-    <EvelinFilePainPoint bgColor={bgColor}
+    <EvelinFilePainPoint bgColor={bgColor} className="sm:mt-[20px]"
       >The default address is now visually highlighted for added clarity</EvelinFilePainPoint
     >
 
-    <h4 class="font-bold text-[16px]">To improve the filters section:</h4>
+    <h4 class="font-bold text-[16px] sm:mt-[40px]">
+      To improve the filters section:
+    </h4>
 
-    <EvelinFilePainPoint bgColor={bgColor}
-      >I reorganized and divided filter categories to better align with their
-      content, making it easier for users to locate and customize filters
-      according to their preferences</EvelinFilePainPoint
-    >
-    <EvelinFilePainPoint bgColor={bgColor}
-      >Each filter category now uses a dropdown list instead of separate pages,
-      with added icons for quick open/close actions, along with "Collapse All"
-      and "Clear All" buttons for seamless navigation</EvelinFilePainPoint
-    >
-    <EvelinFilePainPoint bgColor={bgColor}
-      >I included color names to enhance clarity in the color filter</EvelinFilePainPoint
-    >
-    <EvelinFilePainPoint bgColor={bgColor}
-      >To improve access to saved filters, I separated them from the filtering
-      page, introduced a dedicated button on the product page, and integrated
-      them into the search function</EvelinFilePainPoint
-    >
+    <div class="flex flex-col gap-[20px] sm:mt-[30px]">
+      <EvelinFilePainPoint bgColor={bgColor}
+        >I reorganized and divided filter categories to better align with their
+        content, making it easier for users to locate and customize filters
+        according to their preferences</EvelinFilePainPoint
+      >
+      <EvelinFilePainPoint bgColor={bgColor}
+        >Each filter category now uses a dropdown list instead of separate
+        pages, with added icons for quick open/close actions, along with
+        "Collapse All" and "Clear All" buttons for seamless navigation</EvelinFilePainPoint
+      >
+      <EvelinFilePainPoint bgColor={bgColor}
+        >I included color names to enhance clarity in the color filter</EvelinFilePainPoint
+      >
+      <EvelinFilePainPoint bgColor={bgColor}
+        >To improve access to saved filters, I separated them from the filtering
+        page, introduced a dedicated button on the product page, and integrated
+        them into the search function</EvelinFilePainPoint
+      >
+    </div>
   </ExpandDetails>
 
   <ReactImageWrapper
     invertIcon={true}
     client:only
-    className="mt-[26px]"
+    className="mt-[26px] sm:mt-[80px]"
     src="thriftstudio_before_after"
     alt="user interface before and after usability testing for the thriftstudio app"
   />

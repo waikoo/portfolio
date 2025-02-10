@@ -15,13 +15,13 @@ const { bgColor, slotId, iconId, className } = Astro.props;
   });
 </script>
 
-<section class={`flex flex-col justify-center ${className}`}>
+<section class={`flex flex-col ${className}`}>
   <div
-    class="inline-flex justify-center gap-[4px] items-center w-min-content rounded-[5px] pr-4 relative z-2 mx-auto"
+    class="inline-flex sm:flex justify-center gap-[4px] items-center w-min-content rounded-[5px] pr-4 relative z-2 mx-auto sm:mx-0 sm:self-end"
     style={{ backgroundColor: bgColor }}
   >
     <div
-      class="absolute top-1/2 w-full h-[2px] z-1 w-screen"
+      class="absolute top-1/2 h-[2px] z-1 w-screen sm:w-[900%]"
       style={{ backgroundColor: bgColor }}
     >
     </div>
@@ -34,7 +34,7 @@ const { bgColor, slotId, iconId, className } = Astro.props;
     <IconPlusMinus id={iconId} className="z-2" />
   </div>
 
-  <div id={slotId} class="slot hidden px-[10px]">
+  <div id={slotId} class="slot hidden px-[10px] sm:mt-[65px]">
     <slot />
   </div>
 </section>
