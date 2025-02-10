@@ -1,0 +1,40 @@
+---
+import IconPlusMinus from "./IconPlusMinus.astro";
+
+const { bgColor, slotId, iconId, className } = Astro.props;
+---
+
+<script is:inline define:vars={{ slotId, iconId }}>
+  document.addEventListener("DOMContentLoaded", () => {
+    const slot = document.querySelector(`#${slotId}`);
+    const icon = document.querySelector(`#${iconId}`);
+
+    icon?.addEventListener("click", () => {
+      slot?.classList.toggle("hidden");
+    });
+  });
+</script>
+
+<section class={`flex flex-col justify-center ${className}`}>
+  <div
+    class="inline-flex justify-center gap-[4px] items-center w-min-content rounded-[5px] pr-4 relative z-[2] mx-auto"
+    style={{ backgroundColor: bgColor }}
+  >
+    <div
+      class="absolute top-1/2 w-full h-[2px] z-[1] w-screen"
+      style={{ backgroundColor: bgColor }}
+    >
+    </div>
+
+    <span
+      class="w-fit-content py-1 p-3 font-semibold text-[#1e1e1e] relative z-[2]"
+    >
+      Expand Details
+    </span>
+    <IconPlusMinus id={iconId} className="z-[2]" />
+  </div>
+
+  <div id={slotId} class="slot hidden">
+    <slot />
+  </div>
+</section>

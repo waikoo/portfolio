@@ -6,6 +6,7 @@ import ShadyNumber from "./ShadyNumber.astro";
 import data from "../thriftstudioKeyFeatures.ts";
 import EvelinFileResearchGoal from "./EvelinFileResearchGoal.astro";
 import "@fontsource/jost/500.css";
+import ExpandDetails from "./ExpandDetails.astro";
 
 const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
 ---
@@ -153,4 +154,23 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
       desire to see the cart total on every checkout page</EvelinFileResearchGoal
     >
   </div>
+
+  <h3 class="text-center text-[17px] font-bold mt-[40px]">CHANGES</h3>
+
+  <ExpandDetails
+    bgColor={bgColor}
+    iconId="thriftstudio_usability_test_icon"
+    slotId="thriftstudio_usability_test_slot"
+    className="mt-[20px]"
+  >
+    <p>detail</p>
+  </ExpandDetails>
+
+  <ReactImageWrapper
+    invertIcon={true}
+    client:only
+    className="mt-[26px]"
+    src="thriftstudio_before_after"
+    alt="ui before and after usability testing for the thriftstudio app"
+  />
 </EvelinFileWrapper>
