@@ -3,10 +3,10 @@ import EvelinFilePainPoint from "./EvelinFilePainPoint.astro";
 import EvelinFileWrapper from "./EvelinFileWrapper.astro";
 import ReactImageWrapper from "./ReactImageWrapper";
 import ShadyNumber from "./ShadyNumber.astro";
-import data from "../thriftstudioKeyFeatures.ts";
+import thriftstudioKeyFeatures from "../thriftstudioKeyFeatures.ts";
 import EvelinFileResearchGoal from "./EvelinFileResearchGoal.astro";
-import "@fontsource/jost/500.css";
 import ExpandDetails from "./ExpandDetails.astro";
+import "@fontsource/jost/500.css";
 
 const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
 ---
@@ -16,7 +16,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   bgColor={bgColor}
   cardBgColor={cardBgColor}
   id={id}
-  paddingX="px-[10px] sm:px-[50px]"
+  paddingX="px-[10px] sm:px-[30px]"
   paddingY="py-[80px] sm:py-[90px] xl:py-[130px]"
 >
   <h3
@@ -25,7 +25,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     WIREFRAMES
   </h3>
   <p
-    class="mt-[20px] mx-[-20px] p-[20px] border-[#C8C9AC] border-t-[1px] border-b-[1px] text-[#1E1E1E] leading-[23px] sm:rounded-[15px] xl:rounded-[20px]"
+    class="mt-[20px] mx-[-20px] p-[20px] border-[#C8C9AC] border-t-[1px] border-b-[1px] text-[#1E1E1E] leading-[23px] sm:border-0 sm:mx-0 sm:rounded-[15px] sm:bg-[#E8E9C4] xl:rounded-[20px]"
   >
     I adopted a <strong>mobile-first approach</strong> in the initial sketching phase
     to ensure an intuitive user experience starting with the smallest screens. By
@@ -39,7 +39,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     invertIcon={true}
     client:only
     imgClassName="rounded-[5px]"
-    className="mt-[20px]"
+    className="mt-[20px] sm:mt-[30px]"
     src="thriftstudio_paper_wireframe"
     alt="paper wireframe for the thriftstudio app"
   />
@@ -51,7 +51,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
 
   <div class="flex flex-col gap-[13px] mt-[23px]">
     {
-      data.map((item, i) => {
+      thriftstudioKeyFeatures.map((item, i) => {
         return (
           <div class="flex items-center gap-[10px] text-[16px]">
             <ShadyNumber>{i + 1}</ShadyNumber>
