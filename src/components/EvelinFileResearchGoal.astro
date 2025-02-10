@@ -1,5 +1,11 @@
+---
+const { noBg } = Astro.props;
+
+const bgStyles = noBg ? "" : "bg-[#e8e9c4]";
+---
+
 <li
-  class="bg-[#e8e9c4] p-1 px-5 text-[13px] sm:text-[15px] xl:text-[16px] bullet rounded-[5px] before:ml-[-9px] before:text-black before:content-['•']"
+  class={`${bgStyles} p-1 px-5 text-[13px] sm:text-[15px] xl:text-[16px] bullet rounded-[5px] before:ml-[-9px] before:text-black before:content-['•'] list-none`}
 >
   <slot />
 </li>
