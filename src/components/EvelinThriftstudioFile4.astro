@@ -163,7 +163,45 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     slotId="thriftstudio_usability_test_slot"
     className="mt-[20px]"
   >
-    <p>detail</p>
+    <h4 class="font-bold text-[16px]">
+      To address user frustrations with the account menu:
+    </h4>
+
+    <EvelinFilePainPoint bgColor={bgColor}
+      >I redesigned the navigation layout, replacing the vertical scrolling menu
+      with horizontal scrolling, allowing users to access any section of their
+      account with fewer clicks</EvelinFilePainPoint
+    >
+    <EvelinFilePainPoint bgColor={bgColor}
+      >The saved address card was revamped by replacing the confusing radio
+      button and hidden menu with clearly visible editing options, enabling
+      users to edit, delete, or set a default address with a single click</EvelinFilePainPoint
+    >
+
+    <EvelinFilePainPoint bgColor={bgColor}
+      >The default address is now visually highlighted for added clarity</EvelinFilePainPoint
+    >
+
+    <h4 class="font-bold text-[16px]">To improve the filters section:</h4>
+
+    <EvelinFilePainPoint bgColor={bgColor}
+      >I reorganized and divided filter categories to better align with their
+      content, making it easier for users to locate and customize filters
+      according to their preferences</EvelinFilePainPoint
+    >
+    <EvelinFilePainPoint bgColor={bgColor}
+      >Each filter category now uses a dropdown list instead of separate pages,
+      with added icons for quick open/close actions, along with "Collapse All"
+      and "Clear All" buttons for seamless navigation</EvelinFilePainPoint
+    >
+    <EvelinFilePainPoint bgColor={bgColor}
+      >I included color names to enhance clarity in the color filter</EvelinFilePainPoint
+    >
+    <EvelinFilePainPoint bgColor={bgColor}
+      >To improve access to saved filters, I separated them from the filtering
+      page, introduced a dedicated button on the product page, and integrated
+      them into the search function</EvelinFilePainPoint
+    >
   </ExpandDetails>
 
   <ReactImageWrapper
@@ -171,6 +209,6 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     client:only
     className="mt-[26px]"
     src="thriftstudio_before_after"
-    alt="ui before and after usability testing for the thriftstudio app"
+    alt="user interface before and after usability testing for the thriftstudio app"
   />
 </EvelinFileWrapper>
