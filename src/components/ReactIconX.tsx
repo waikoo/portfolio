@@ -12,7 +12,7 @@ export default function IconX({ closeModal, iconColor }: Props) {
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="absolute top-5 right-5 text-[2rem] z-[1000] cursor-pointer"
+      className="absolute top-5 right-5 text-[2rem] z-1000 cursor-pointer"
       onClick={closeModal}
     >
       <path

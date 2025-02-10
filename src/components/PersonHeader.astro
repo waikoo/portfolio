@@ -71,7 +71,7 @@ const isThriftStudio = pathname.includes("thriftstudio");
   document.addEventListener("astro:page-load", attachHamburgerEventListener);
 </script>
 
-<header class={`sticky top-0 z-[1]`} data-bg-color={bgColor}>
+<header class={`sticky top-0 z-1`} data-bg-color={bgColor}>
   <div
     class={`mx-auto w-[80%] sm:w-[90%] flex content-center flex-row justify-between items-center sm:py-6 `}
   >
@@ -87,7 +87,7 @@ const isThriftStudio = pathname.includes("thriftstudio");
     />
     <IconHamburger
       name={lowercasedName}
-      className="lg:hidden h-full flex flex-col justify-center hamburger-icon z-[150]"
+      className="lg:hidden h-full flex flex-col justify-center hamburger-icon z-150"
       color={color}
     />
   </div>

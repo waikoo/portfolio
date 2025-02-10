@@ -18,7 +18,7 @@ const ReactImageModal = ({ children }: Props) => {
   }
 
   return (
-    <div className={`${modalStyle} fixed inset-0 mx-auto bg-black/75 backdrop-blur-sm w-auto h-screen place-items-center z-[9999999]`} onClick={closeModal}>
+    <div className={`${modalStyle} fixed inset-0 mx-auto bg-black/75 backdrop-blur-xs w-auto h-screen place-items-center z-9999999`} onClick={closeModal}>
       <ReactIconX closeModal={closeModal} iconColor="#fff" />
       {children}
     </div>
