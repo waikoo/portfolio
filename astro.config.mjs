@@ -10,9 +10,7 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()],
-    server: {
-      hmr: true
-    }
-  }
+  },
+  clientRouter: import.meta.env.PROD ? true : false
 
 });
