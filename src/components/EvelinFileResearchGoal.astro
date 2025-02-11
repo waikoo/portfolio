@@ -1,11 +1,12 @@
 ---
-const { noBg, className } = Astro.props;
+const { noBg, bgColor, padding, className } = Astro.props;
 
-const bgStyles = noBg ? "" : "bg-[#e8e9c4]";
+const bgStyles = noBg ? "" : bgColor ? bgColor : "bg-[#e8e9c4]";
+const paddingStyles = padding ? padding : "p-1 px-5";
 ---
 
 <li
-  class={`${bgStyles} ${className} bullet p-1 px-5 text-[13px] sm:text-[15px] xl:text-[16px] rounded-[5px] list-none grid justify-start gap-2`}
+  class={`${bgStyles} ${className} ${paddingStyles} bullet text-[13px] sm:text-[15px] xl:text-[16px] rounded-[5px] list-none grid justify-start gap-2`}
 >
   <div class="col-start-2 col-end-3">
     <slot />

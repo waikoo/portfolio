@@ -36,17 +36,19 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     an efficient experience even in constrained environments.
   </p>
 
-  <div class="xl:flex-row-reverse xl:items-center xl:gap-[77px]">
+  <div
+    class="xl:flex xl:flex-row-reverse xl:justify-between xl:items-center xl:gap-[70px] xl:px-[78px] xl:mx-auto"
+  >
     <ReactImageWrapper
       invertIcon={true}
       client:only
       imgClassName="rounded-[5px] max-w-[293px]"
-      className="mt-[20px] sm:mt-[30px]"
+      className="mt-[20px] sm:mt-[30px] xl:mt-[70px]"
       src="thriftstudio_paper_wireframe"
       alt="paper wireframe for the thriftstudio app"
     />
 
-    <div>
+    <div class="">
       <EvelinFilePainPoint
         bgColor={bgColor}
         className="mt-[40px] sm:mt-[30px] w-[90%] mx-auto"
@@ -54,11 +56,11 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
         ></EvelinFilePainPoint
       >
 
-      <div class="flex flex-col gap-[13px] mt-[23px] sm:mt-[20px]">
+      <div class="flex flex-col gap-[13px] mt-[23px] sm:mt-[20px] xl:pl-[15px]">
         {
           thriftstudioKeyFeatures.map((item, i) => {
             return (
-              <div class="flex items-center gap-[10px] text-[16px]">
+              <div class="flex items-center gap-[10px] xl:gap-[15px] text-[16px] xl:text-[17px]">
                 <ShadyNumber>{i + 1}</ShadyNumber>
                 <p class="leading-[17px]">{item.text}</p>
               </div>
@@ -70,7 +72,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </div>
 
   <p
-    class="bg-[#EDEAF6] p-[20px] sm:p-[24px] sm:rounded-[15px] mx-[-10px] sm:mx-0 sm:mt-[50px]"
+    class="bg-[#EDEAF6] p-[20px] sm:p-[24px] sm:rounded-[15px] mx-[-10px] sm:mx-0 sm:mt-[50px] xl:mt-[40px]"
   >
     After finalizing the initial sketches, I transitioned to <strong
       >digital wireframes</strong
@@ -84,64 +86,102 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   <ReactImageWrapper
     invertIcon={true}
     client:only
-    className="mt-[25px] sm:mt-[30px]"
+    className="mt-[25px] sm:mt-[30px] xl:mt-[40px]"
     src="thriftstudio_prototype"
     alt="prototype for the thriftstudio app"
   />
 
-  <h4 class="text-[17px] sm:text-[21px] font-bold">USABILITY TESTING</h4>
+  <h4 class="text-[17px] sm:text-[21px] xl:text-[32px] xl:mt-[80px] font-bold">
+    USABILITY TESTING
+  </h4>
 
-  <h5 class="text-[16px] font-bold sm:mt-[40px] sm:text-[15px]">Goals:</h5>
-  <div class="flex flex-col gap-[3px]">
-    <EvelinFileResearchGoal className="sm:leading-[14px] mt-[20px]"
-      >assess whether users can successfully complete key tasks within the
-      prototype</EvelinFileResearchGoal
-    >
-
-    <EvelinFileResearchGoal className="sm:leading-[14px]">
-      evaluate the intuitiveness and usability of the prototype</EvelinFileResearchGoal
-    >
-  </div>
-
-  <h5 class="text-[16px] font-bold mt-[30px] sm:text-[15px]">
-    Research questions:
-  </h5>
-
-  <div class="flex flex-col gap-[3px] mt-[20px]">
-    <EvelinFileResearchGoal className="sm:leading-[14px]"
-      >what can we learn from the steps that users take to complete each task?</EvelinFileResearchGoal
-    >
-
-    <EvelinFileResearchGoal className="sm:leading-[14px]"
-      >are there parts of the user flow where users get stuck?</EvelinFileResearchGoal
-    >
-    <EvelinFileResearchGoal className="sm:leading-[14px]"
-      >do the users find the filter saving feature helpful and/or useful?</EvelinFileResearchGoal
-    >
-    <EvelinFileResearchGoal className="sm:leading-[14px]"
-      >are there design changes that would make each task easier and/or faster
-      for the users?</EvelinFileResearchGoal
-    >
-  </div>
-
-  <h5 class="text-[16px] font-bold mt-[30px]">Tasks</h5>
-  <ol
-    class="flex flex-col gap-[3px] list-decimal list-outside w-[100%] mx-auto pl-[20px] sm:mt-[20px] font-medium"
+  <section
+    class="xl:grid xl:grid-cols-[1fr_286px] xl:gap-[94px] xl:items-center"
   >
-    <li>Access your account and add a new shipping address</li>
-    <li>Create and save a filter for "Brown sweaters in size 38"</li>
-    <li>
-      Used the saved filter to find a product, add it to your cart, and complete
-      the purchase
-    </li>
-  </ol>
+    <div>
+      <h5
+        class="text-[16px] font-bold sm:mt-[40px] sm:text-[15px] xl:text-[18px]"
+      >
+        Goals:
+      </h5>
+      <ul class="flex flex-col gap-[3px] xl:gap-[12px]">
+        <EvelinFileResearchGoal
+          bgColor="bg-[#EDEAF6]"
+          padding="p-[12px]"
+          className="sm:leading-[14px] mt-[20px]"
+          >assess whether users can successfully complete key tasks within the
+          prototype</EvelinFileResearchGoal
+        >
 
-  <h4 class="text-[15px] sm:text-[17px] sm:text-center font-bold mt-[50px]">
-    USABILITY TEST FINDINGS
+        <EvelinFileResearchGoal
+          bgColor="bg-[#EDEAF6]"
+          padding="p-[12px]"
+          className="sm:leading-[14px]"
+        >
+          evaluate the intuitiveness and usability of the prototype</EvelinFileResearchGoal
+        >
+      </ul>
+
+      <h5
+        class="text-[16px] font-bold mt-[30px] mt-[40px] sm:text-[15px] xl:text-[18px]"
+      >
+        Research questions:
+      </h5>
+
+      <ul class="flex flex-col gap-[3px] xl:gap-[12px] mt-[20px]">
+        <EvelinFileResearchGoal
+          bgColor="bg-[#EDEAF6]"
+          padding="p-[12px]"
+          className="sm:leading-[14px]"
+          >what can we learn from the steps that users take to complete each
+          task?</EvelinFileResearchGoal
+        >
+
+        <EvelinFileResearchGoal
+          bgColor="bg-[#EDEAF6]"
+          padding="p-[12px]"
+          className="sm:leading-[14px]"
+          >are there parts of the user flow where users get stuck?</EvelinFileResearchGoal
+        >
+        <EvelinFileResearchGoal
+          bgColor="bg-[#EDEAF6]"
+          padding="p-[12px]"
+          className="sm:leading-[14px]"
+          >do the users find the filter saving feature helpful and/or useful?</EvelinFileResearchGoal
+        >
+        <EvelinFileResearchGoal
+          bgColor="bg-[#EDEAF6]"
+          padding="p-[12px]"
+          className="sm:leading-[14px]"
+          >are there design changes that would make each task easier and/or
+          faster for the users?</EvelinFileResearchGoal
+        >
+      </ul>
+    </div>
+
+    <div>
+      <h5 class="text-[16px] font-bold mt-[30px]">Tasks</h5>
+      <ol
+        class="flex flex-col gap-[3px] list-decimal list-outside w-[100%] mx-auto pl-[20px] sm:mt-[20px] font-medium"
+      >
+        <li>Access your account and add a new shipping address</li>
+        <li>Create and save a filter for "Brown sweaters in size 38"</li>
+        <li>
+          Used the saved filter to find a product, add it to your cart, and
+          complete the purchase
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <h4
+    class="text-[15px] sm:text-[17px] uppercase xl:normal-case sm:text-center font-bold mt-[50px] xl:text-left"
+  >
+    Usability test findings<span class="hidden xl:inline">:</span>
   </h4>
 
   <div
-    class="flex flex-col gap-[13px] sm:gap-[20px] sm:mt-[20px] sm:border-[1px] sm:border-[#E8E9C4] sm:rounded-[15px] sm:py-[10px]"
+    class="flex flex-col gap-[13px] sm:gap-[20px] xl:gap-[5px] sm:mt-[20px] sm:border-[1px] sm:border-[#E8E9C4] sm:rounded-[15px] sm:py-[10px]"
   >
     <EvelinFileResearchGoal noBg={true}
       >Participants found the Account menu overwhelming due to the numerous
@@ -171,7 +211,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </div>
 
   <h3
-    class="text-center sm:text-left text-[17px] sm:text-[21px] font-bold mt-[40px] sm:mt-[95px]"
+    class="text-center sm:text-left text-[17px] sm:text-[21px] xl:text-[24px] font-bold mt-[40px] sm:mt-[95px] xl:text-center"
   >
     CHANGES
   </h3>
@@ -180,51 +220,57 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     bgColor={bgColor}
     iconId="thriftstudio_usability_test_icon"
     slotId="thriftstudio_usability_test_slot"
-    className="mt-[20px] sm:mt-[-10px]"
+    className="mt-[20px] sm:mt-[-10px] xl:mt-[30px]"
   >
-    <h4 class="font-bold text-[16px]">
-      To address user frustrations with the account menu:
-    </h4>
+    <section class="xl:grid xl:grid-cols-2 xl:gap-[75px]">
+      <div>
+        <h4 class="font-bold text-[16px]">
+          To address user frustrations with the account menu:
+        </h4>
 
-    <EvelinFilePainPoint bgColor={bgColor} className="sm:mt-[30px]"
-      >I redesigned the navigation layout, replacing the vertical scrolling menu
-      with horizontal scrolling, allowing users to access any section of their
-      account with fewer clicks</EvelinFilePainPoint
-    >
-    <EvelinFilePainPoint bgColor={bgColor} className="sm:mt-[20px]"
-      >The saved address card was revamped by replacing the confusing radio
-      button and hidden menu with clearly visible editing options, enabling
-      users to edit, delete, or set a default address with a single click</EvelinFilePainPoint
-    >
+        <EvelinFilePainPoint bgColor={bgColor} className="sm:mt-[30px]"
+          >I redesigned the navigation layout, replacing the vertical scrolling
+          menu with horizontal scrolling, allowing users to access any section
+          of their account with fewer clicks</EvelinFilePainPoint
+        >
+        <EvelinFilePainPoint bgColor={bgColor} className="sm:mt-[20px]"
+          >The saved address card was revamped by replacing the confusing radio
+          button and hidden menu with clearly visible editing options, enabling
+          users to edit, delete, or set a default address with a single click</EvelinFilePainPoint
+        >
 
-    <EvelinFilePainPoint bgColor={bgColor} className="sm:mt-[20px]"
-      >The default address is now visually highlighted for added clarity</EvelinFilePainPoint
-    >
+        <EvelinFilePainPoint bgColor={bgColor} className="sm:mt-[20px]"
+          >The default address is now visually highlighted for added clarity</EvelinFilePainPoint
+        >
+      </div>
 
-    <h4 class="font-bold text-[16px] sm:mt-[40px]">
-      To improve the filters section:
-    </h4>
+      <div>
+        <h4 class="font-bold text-[16px] sm:mt-[40px] xl:mt-0">
+          To improve the filters section:
+        </h4>
 
-    <div class="flex flex-col gap-[20px] sm:mt-[30px]">
-      <EvelinFilePainPoint bgColor={bgColor}
-        >I reorganized and divided filter categories to better align with their
-        content, making it easier for users to locate and customize filters
-        according to their preferences</EvelinFilePainPoint
-      >
-      <EvelinFilePainPoint bgColor={bgColor}
-        >Each filter category now uses a dropdown list instead of separate
-        pages, with added icons for quick open/close actions, along with
-        "Collapse All" and "Clear All" buttons for seamless navigation</EvelinFilePainPoint
-      >
-      <EvelinFilePainPoint bgColor={bgColor}
-        >I included color names to enhance clarity in the color filter</EvelinFilePainPoint
-      >
-      <EvelinFilePainPoint bgColor={bgColor}
-        >To improve access to saved filters, I separated them from the filtering
-        page, introduced a dedicated button on the product page, and integrated
-        them into the search function</EvelinFilePainPoint
-      >
-    </div>
+        <div class="flex flex-col gap-[20px] sm:mt-[30px]">
+          <EvelinFilePainPoint bgColor={bgColor}
+            >I reorganized and divided filter categories to better align with
+            their content, making it easier for users to locate and customize
+            filters according to their preferences</EvelinFilePainPoint
+          >
+          <EvelinFilePainPoint bgColor={bgColor}
+            >Each filter category now uses a dropdown list instead of separate
+            pages, with added icons for quick open/close actions, along with
+            "Collapse All" and "Clear All" buttons for seamless navigation</EvelinFilePainPoint
+          >
+          <EvelinFilePainPoint bgColor={bgColor}
+            >I included color names to enhance clarity in the color filter</EvelinFilePainPoint
+          >
+          <EvelinFilePainPoint bgColor={bgColor}
+            >To improve access to saved filters, I separated them from the
+            filtering page, introduced a dedicated button on the product page,
+            and integrated them into the search function</EvelinFilePainPoint
+          >
+        </div>
+      </div>
+    </section>
   </ExpandDetails>
 
   <ReactImageWrapper
