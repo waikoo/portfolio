@@ -1,17 +1,17 @@
 import React, { useCallback, useMemo, useRef, useState } from "react";
 import ReactCarousel from "./ReactCarousel.tsx";
 import ReactCarouselImage from "./ReactCarouselImage.tsx";
-import quizzicalStates from "../projects/evelinQuizzicalData.js";
 import ReactIconX from "./ReactIconX.tsx";
 
 interface Props {
   showByDefault: number
+  items: { name: string, imgName: string, color: string }[]
 }
 
-export default function DynamicImgSrc({ showByDefault }: Props) {
+export default function DynamicImgSrc({ showByDefault, items }: Props) {
   const [index, setIndex] = useState(showByDefault)
   const [selectedImg, setSelectedImg] = useState(
-    quizzicalStates[index].imgName
+    items[index].imgName
   )
   const [showModal, setShowModal] = useState(false)
   const modalRef = useRef(null)
@@ -35,7 +35,7 @@ export default function DynamicImgSrc({ showByDefault }: Props) {
 
   return (
     <>
-      <ReactCarousel items={quizzicalStates} handleClick={handleClick} index={index} >
+      <ReactCarousel items={items} handleClick={handleClick} index={index} >
         <ReactCarouselImage selectedImg={selectedImg} setShowModal={setShowModal} />
       </ReactCarousel>
 

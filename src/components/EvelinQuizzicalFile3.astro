@@ -8,8 +8,9 @@ import WithMagnifyingGlass from "./WithMagnifyingGlass.tsx";
 import WithSmallTriangle from "./WithSmallTriangle.astro";
 import DynamicImgSrc from "./DynamicImgSrc.tsx";
 import DifferentFontSrc from "./DifferentFontSrc.tsx";
-import "@fontsource/monoton";
 import ReactImageWrapper from "./ReactImageWrapper";
+import quizzicalStates from "../projects/evelinQuizzicalData.js";
+import "@fontsource/monoton";
 
 const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
 ---
@@ -288,7 +289,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </h3>
 
   <!-- React component -->
-  <WithMagnifyingGlass client:only invert={true}>
-    <DynamicImgSrc showByDefault={0} client:only />
+  <WithMagnifyingGlass invert={true} client:only>
+    <DynamicImgSrc showByDefault={0} items={quizzicalStates} client:only />
   </WithMagnifyingGlass>
 </EvelinFileWrapper>
