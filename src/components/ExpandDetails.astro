@@ -1,23 +1,28 @@
 ---
 import IconPlusMinus from "./IconPlusMinus.astro";
 
-const { bgColor, slotId, iconId, className } = Astro.props;
+const { bgColor, slotId, iconId, buttonId, className } = Astro.props;
 ---
 
-<script is:inline define:vars={{ slotId, iconId }}>
+<script is:inline define:vars={{ slotId, iconId, buttonId }}>
   document.addEventListener("DOMContentLoaded", () => {
+    const button = document.querySelector(`#${buttonId}`);
     const slot = document.querySelector(`#${slotId}`);
-    const icon = document.querySelector(`#${iconId}`);
+    const icon = button.querySelector(`#${iconId}`);
+    const span = button.querySelector(`.span`);
 
-    icon?.addEventListener("click", () => {
+    button?.addEventListener("click", () => {
       slot?.classList.toggle("hidden");
+      icon?.classList.toggle("active");
+      span.textContent = span.textContent === "Expand" ? "Collapse" : "Expand";
     });
   });
 </script>
 
 <section class={`flex flex-col ${className}`}>
-  <div
-    class="inline-flex sm:flex justify-center gap-[4px] items-center w-min-content rounded-[5px] pr-4 z-2 mx-auto relative"
+  <button
+    class="inline-flex sm:flex justify-center gap-[4px] items-center w-min-content rounded-[5px] pr-4 z-2 mx-auto relative cursor-pointer"
+    id={buttonId}
     style={{ backgroundColor: bgColor }}
   >
     <div
@@ -26,13 +31,11 @@ const { bgColor, slotId, iconId, className } = Astro.props;
     >
     </div>
 
-    <span
-      class="w-fit-content py-1 p-3 font-semibold text-[#1e1e1e] relative z-2"
-    >
-      Expand Details
-    </span>
+    <p class="w-fit-content py-1 p-3 font-semibold text-[#1e1e1e] relative z-2">
+      <span class="span">Expand</span> Details
+    </p>
     <IconPlusMinus id={iconId} className="z-2" />
-  </div>
+  </button>
 
   <div id={slotId} class="slot hidden px-[10px] sm:mt-[65px]">
     <slot />
