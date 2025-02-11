@@ -17,11 +17,11 @@ const { bgColor, slotId, iconId, className } = Astro.props;
 
 <section class={`flex flex-col ${className}`}>
   <div
-    class="inline-flex sm:flex justify-center gap-[4px] items-center w-min-content rounded-[5px] pr-4 relative z-2 mx-auto sm:mx-0 sm:self-end"
+    class="inline-flex sm:flex justify-center gap-[4px] items-center w-min-content rounded-[5px] pr-4 z-2 mx-auto relative"
     style={{ backgroundColor: bgColor }}
   >
     <div
-      class="absolute top-1/2 h-[2px] z-1 w-screen sm:w-[900%]"
+      class="absolute top-1/2 h-[2px] z-1 w-screen"
       style={{ backgroundColor: bgColor }}
     >
     </div>
