@@ -2,15 +2,15 @@
 import IconArrowResponsive from "./IconArrowResponsive.astro";
 
 const { className, isInverted, projectLink } = Astro.props;
+const invertedStyles = isInverted ? "flex-row-reverse" : "flex-row";
+const invertArrow = isInverted ? "" : "scale-x-[-1]";
 ---
 
 <a
-  class={`${className} flex ${isInverted ? "lg:flex-row-reverse" : "lg:flex-row"} gap-[6px] sm:gap-[13px] items-center cursor-pointer transition-all duration-200 hover:drop-shadow-[0px_0px_3px_#e296f5]`}
+  class={`${className} flex ${invertedStyles} gap-[6px] sm:gap-[13px] items-center cursor-pointer transition-all duration-200 hover:drop-shadow-[0px_0px_3px_#e296f5]`}
   href={projectLink}
 >
-  <div
-    class={`border-[#e296f5] rounded-full ${isInverted ? "lg:rotate-270" : "scale-x-[-1]"}`}
-  >
+  <div class={`border-[#e296f5] rounded-full ${invertArrow}`}>
     <IconArrowResponsive color={"#e296f5"} bgColor={"hsla(0, 0%, 98%, 5%)"} />
   </div>
 
