@@ -16,17 +16,15 @@ export default function ReactCarousel({ items, children, handleClick, index, isQ
   return (
     <>
       <ul
-        className={`font-['Jost'] flex flex-row gap-[8px] sm:justify-between text-[12px] sm:text-[14px] xl:text-[16px] font-medium overflow-scroll items-center border-[2px] sm:border-[3px] rounded-full p-[2px] h-max-content uppercase scrollbar-0 tracking-wide ${quizzicalStyles}`}
+        className={`font-['Jost'] grid grid-flow-col auto-cols-max gap-[8px] sm:justify-between text-[12px] sm:text-[14px] xl:text-[16px] font-medium overflow-scroll items-center border-[2px] sm:border-[3px] rounded-full p-[2px] h-max-content uppercase scrollbar-0 tracking-wide ${quizzicalStyles}`}
         style={{ scrollbarWidth: 'none', borderColor: border }}
       >
         {
           items.map(({ name }, i) => {
-            const padding = index === i ? 'px-[16px]' : 'px-[10px]'
-
             return (
               <li
                 key={`quizzical-state-carousel-${i}`}
-                className={`cursor-pointer state whitespace-nowrap h-[46px] sm:h-[27px] xl:h-[41px] grid place-items-center rounded-full ${padding}`}
+                className={`cursor-pointer state whitespace-nowrap h-[46px] sm:h-[27px] xl:h-[41px] grid place-items-center rounded-full px-[16px]`}
                 data-img={`${items[i].imgName}`}
                 style={{
                   backgroundColor: index == i ? items[i].color : '',
