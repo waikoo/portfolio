@@ -42,8 +42,8 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     <ReactImageWrapper
       invertIcon={true}
       client:only
-      imgClassName="rounded-[5px] max-w-[293px]"
-      className="mt-[20px] sm:mt-[30px] xl:mt-[70px]"
+      imgClassName="rounded-[5px]"
+      className="mt-[30px] xl:mt-[70px]"
       src="thriftstudio_paper_wireframe"
       alt="paper wireframe for the thriftstudio app"
     />
@@ -51,6 +51,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     <div class="">
       <EvelinFilePainPoint
         bgColor={bgColor}
+        textSize="text-[16px]"
         className="mt-[40px] sm:mt-[30px] w-[90%] mx-auto"
         ><strong>I started with laying out the key features:</strong
         ></EvelinFilePainPoint
@@ -72,7 +73,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </div>
 
   <p
-    class="bg-[#EDEAF6] p-[20px] sm:p-[24px] sm:rounded-[15px] mx-[-10px] sm:mx-0 sm:mt-[50px] xl:mt-[40px]"
+    class="bg-[#EDEAF6] p-[20px] sm:p-[24px] sm:rounded-[15px] mx-[-20px] sm:mx-0 mt-[25px] sm:mt-[50px] xl:mt-[40px]"
   >
     After finalizing the initial sketches, I transitioned to <strong
       >digital wireframes</strong
@@ -91,7 +92,9 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     alt="prototype for the thriftstudio app"
   />
 
-  <h4 class="text-[17px] sm:text-[21px] xl:text-[32px] xl:mt-[80px] font-bold">
+  <h4
+    class="text-[17px] sm:text-[21px] xl:text-[32px] mt-[50px] xl:mt-[80px] font-bold"
+  >
     USABILITY TESTING
   </h4>
 
@@ -100,7 +103,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   >
     <div>
       <h5
-        class="text-[16px] font-bold sm:mt-[40px] sm:text-[15px] xl:text-[18px]"
+        class="text-[16px] font-bold mt-[30px] sm:mt-[40px] sm:text-[15px] xl:text-[18px]"
       >
         Goals:
       </h5>
@@ -108,7 +111,8 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
         <EvelinFileResearchGoal
           bgColor="bg-[#EDEAF6]"
           padding="p-[12px]"
-          className="sm:leading-[14px] mt-[20px]"
+          textSize="text-[15px] xl:text-[16px]"
+          className="sm:leading-[14px] xl:tracking-[0.5px] mt-[20px]"
           >assess whether users can successfully complete key tasks within the
           prototype</EvelinFileResearchGoal
         >
@@ -116,7 +120,8 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
         <EvelinFileResearchGoal
           bgColor="bg-[#EDEAF6]"
           padding="p-[12px]"
-          className="sm:leading-[14px]"
+          textSize="text-[15px] xl:text-[16px]"
+          className="xl:tracking-[0.5px] sm:leading-[14px]"
         >
           evaluate the intuitiveness and usability of the prototype</EvelinFileResearchGoal
         >
@@ -132,7 +137,8 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
         <EvelinFileResearchGoal
           bgColor="bg-[#EDEAF6]"
           padding="p-[12px]"
-          className="sm:leading-[14px]"
+          textSize="text-[15px] xl:text-[16px]"
+          className="xl:tracking-[0.5px] sm:leading-[14px]"
           >what can we learn from the steps that users take to complete each
           task?</EvelinFileResearchGoal
         >
@@ -140,19 +146,22 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
         <EvelinFileResearchGoal
           bgColor="bg-[#EDEAF6]"
           padding="p-[12px]"
-          className="sm:leading-[14px]"
+          textSize="text-[15px] xl:text-[16px]"
+          className="xl:tracking-[0.5px] sm:leading-[14px]"
           >are there parts of the user flow where users get stuck?</EvelinFileResearchGoal
         >
         <EvelinFileResearchGoal
           bgColor="bg-[#EDEAF6]"
           padding="p-[12px]"
-          className="sm:leading-[14px]"
+          textSize="text-[15px] xl:text-[16px]"
+          className="xl:tracking-[0.5px] sm:leading-[14px]"
           >do the users find the filter saving feature helpful and/or useful?</EvelinFileResearchGoal
         >
         <EvelinFileResearchGoal
           bgColor="bg-[#EDEAF6]"
           padding="p-[12px]"
-          className="sm:leading-[14px]"
+          textSize="text-[15px] xl:text-[16px]"
+          className="xl:tracking-[0.5px] sm:leading-[14px]"
           >are there design changes that would make each task easier and/or
           faster for the users?</EvelinFileResearchGoal
         >
@@ -160,7 +169,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     </div>
 
     <div>
-      <h5 class="text-[16px] font-bold mt-[30px]">Tasks</h5>
+      <h5 class="text-[16px] font-bold ml-[3px] mt-[30px]">Tasks</h5>
       <ol
         class="flex flex-col gap-[3px] list-decimal list-outside w-[100%] mx-auto pl-[20px] sm:mt-[20px] font-medium"
       >
@@ -181,37 +190,41 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </h4>
 
   <div
-    class="flex flex-col gap-[13px] sm:gap-[20px] xl:gap-[5px] sm:mt-[20px] sm:border-[1px] sm:border-[#E8E9C4] sm:rounded-[15px] sm:py-[10px]"
+    class="flex flex-col gap-[13px] sm:gap-[20px] xl:gap-[5px] mt-[15px] sm:mt-[20px] sm:border-[1px] sm:border-[#E8E9C4] sm:rounded-[15px] sm:py-[10px]"
   >
-    <EvelinFileResearchGoal noBg={true}
+    <EvelinFileResearchGoal
+      noBg={true}
+      className=""
+      padding="px-0"
+      textSize="text-[16px]"
       >Participants found the Account menu overwhelming due to the numerous
       subsections and the need to navigate back and forth</EvelinFileResearchGoal
     >
-    <EvelinFileResearchGoal noBg={true}
+    <EvelinFileResearchGoal noBg={true} padding="px-0" textSize="text-[16px]"
       >The radio button in the saved address section caused confusion, as its
       purpose (indicating the default address) was unclear</EvelinFileResearchGoal
     >
-    <EvelinFileResearchGoal noBg={true}
+    <EvelinFileResearchGoal noBg={true} padding="px-0" textSize="text-[16px]"
       >Participants disliked that each filter section opened on a new page
       slowing the process, and found the “Type” list confusing, as it mixed
       product categories with options like “New in” and “Sale”</EvelinFileResearchGoal
     >
-    <EvelinFileResearchGoal noBg={true}
+    <EvelinFileResearchGoal noBg={true} padding="px-0" textSize="text-[16px]"
       >Participants suggested adding color names to the color selection for
       better clarity</EvelinFileResearchGoal
     >
-    <EvelinFileResearchGoal noBg={true}
+    <EvelinFileResearchGoal noBg={true} padding="px-0" textSize="text-[16px]"
       >While the filter saving feature was appreciated, accessing it was
       considered too cumbersome</EvelinFileResearchGoal
     >
-    <EvelinFileResearchGoal noBg={true}
+    <EvelinFileResearchGoal noBg={true} padding="px-0" textSize="text-[16px]"
       >Participants completed the checkout process smoothly but expressed a
       desire to see the cart total on every checkout page</EvelinFileResearchGoal
     >
   </div>
 
   <h3
-    class="text-center sm:text-left text-[17px] sm:text-[21px] xl:text-[24px] font-bold mt-[40px] sm:mt-[95px] xl:text-center"
+    class="text-center text-[17px] sm:text-[21px] xl:text-[24px] font-bold mt-[40px] sm:mt-[95px]"
   >
     CHANGES
   </h3>
@@ -221,7 +234,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     iconId="thriftstudio_usability_test_icon"
     slotId="thriftstudio_usability_test_slot"
     buttonId="thriftstudio_usability_test_button"
-    className="mt-[20px] sm:mt-[-10px] xl:mt-[30px]"
+    className="mt-[20px] sm:mt-[30px]"
   >
     <section class="xl:grid xl:grid-cols-2 xl:gap-[75px]">
       <div>

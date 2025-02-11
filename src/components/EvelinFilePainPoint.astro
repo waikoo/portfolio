@@ -1,10 +1,14 @@
 ---
 import IconTriangleMobile from "./IconTriangleMobile.astro";
 
-const { bgColor, className } = Astro.props;
+const { bgColor, className, textSize } = Astro.props;
+
+const textStyles = textSize
+  ? textSize
+  : "text-[13px] sm:text-[16px] xl:text-[18px]";
 ---
 
-<p class={`relative text-[13px] sm:text-[16px] xl:text-[18px] ${className}`}>
+<p class={`relative ${className} ${textStyles}`}>
   <IconTriangleMobile
     bgColor={bgColor}
     className="absolute top-[3px] left-[-13px] xl:top-[5px]"

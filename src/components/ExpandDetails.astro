@@ -19,9 +19,9 @@ const { bgColor, slotId, iconId, buttonId, className } = Astro.props;
   });
 </script>
 
-<section class={`flex flex-col ${className}`}>
+<section class={`flex flex-col ${className} isolate`}>
   <button
-    class="inline-flex sm:flex justify-center gap-[4px] items-center w-min-content rounded-[5px] pr-4 z-2 mx-auto relative cursor-pointer"
+    class="inline-flex sm:flex justify-center gap-[4px] items-center w-min-content rounded-[5px] pr-3 z-2 mx-auto relative cursor-pointer"
     id={buttonId}
     style={{ backgroundColor: bgColor }}
   >
@@ -31,7 +31,9 @@ const { bgColor, slotId, iconId, buttonId, className } = Astro.props;
     >
     </div>
 
-    <p class="w-fit-content py-1 p-3 font-semibold text-[#1e1e1e] relative z-2">
+    <p
+      class="w-fit-content py-1 pl-3 pr-1 font-medium text-[#1e1e1e] relative z-2"
+    >
       <span class="span">Expand</span> Details
     </p>
     <IconPlusMinus id={iconId} className="z-2" />
