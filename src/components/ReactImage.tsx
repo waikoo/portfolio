@@ -1,5 +1,4 @@
-import { useContext } from "react"
-import { ModalContext } from "../ModalContext"
+import { useEffect, useRef } from "react"
 
 type Props = {
   src: string
@@ -8,9 +7,15 @@ type Props = {
 }
 
 const ReactImage = ({ src, alt, className }: Props) => {
-  const { showModal } = useContext(ModalContext)
-  const onPage = className || 'max-w-full'
-  const stylesOnShow = showModal ? 'h-auto w-auto max-h-[90%] max-w-[90%]' : onPage
+  const imgRef = useRef(null)
+
+  useEffect(() => {
+    if (!imgRef.current) return
+    const img = imgRef.current as HTMLImageElement
+    if (img.height > window.innerHeight) {
+      img.classList.add('h-[90vh]')
+    }
+  }, [])
 
   return (
     <picture>
@@ -29,7 +34,8 @@ const ReactImage = ({ src, alt, className }: Props) => {
       <img
         src={`/images/${src}.png`}
         alt={alt}
-        className={`xl:cursor-pointer block mx-auto ${stylesOnShow}`}
+        ref={imgRef}
+        className={`xl:cursor-pointer block mx-auto w-[90%] ${className}`}
       />
     </picture>
   )

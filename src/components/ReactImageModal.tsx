@@ -1,15 +1,12 @@
-import { useContext } from 'react'
 import ReactIconX from './ReactIconX.tsx'
-import { ModalContext } from '../ModalContext.ts'
 
 interface Props {
   children: React.ReactNode
-  setShowModal?: React.Dispatch<React.SetStateAction<boolean>>
-  showModal?: boolean
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>
+  showModal: boolean
 }
 
-const ReactImageModal = ({ children }: Props) => {
-  const { showModal, setShowModal } = useContext(ModalContext)
+const ReactImageModal = ({ children, showModal, setShowModal }: Props) => {
   if (!showModal) return null
   const modalStyle = showModal ? 'grid' : 'hidden'
 

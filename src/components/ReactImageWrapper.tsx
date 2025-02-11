@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import WithMagnifyingGlass from './WithMagnifyingGlass.tsx'
 import ReactImageModal from './ReactImageModal.tsx'
-import { ModalContext } from '../ModalContext.ts'
 import ReactImage from './ReactImage.tsx'
 
 type Props = {
@@ -19,34 +18,32 @@ const ReactImageWrapper = ({ invertIcon, className, src, alt, imgClassName }: Pr
   }
 
   return (
-    <ModalContext.Provider value={{ showModal, setShowModal }}>
-      <div className={className}>
-        <WithMagnifyingGlass invert={invertIcon}>
-          <div onClick={() => { setImageModal(!showModal) }} className="mx-auto" key={`${"modal-closed"}`}>
+    <div className={className}>
+      <WithMagnifyingGlass invert={invertIcon}>
+        <div onClick={() => { setImageModal(!showModal) }} className="mx-auto" key={`${"modal-closed"}`}>
+          <ReactImage
+            src={src}
+            alt={alt}
+            className={imgClassName}
+          />
+
+        </div>
+      </WithMagnifyingGlass>
+
+      {showModal && (
+
+        <div key={`modal-open`}>
+          <ReactImageModal setShowModal={() => setShowModal(false)} showModal={showModal}>
+
             <ReactImage
               src={src}
               alt={alt}
-              className={imgClassName}
             />
 
-          </div>
-        </WithMagnifyingGlass>
-
-        {showModal && (
-
-          <div key={`modal-open`}>
-            <ReactImageModal>
-
-              <ReactImage
-                src={src}
-                alt={alt}
-              />
-
-            </ReactImageModal>
-          </div>
-        )}
-      </div>
-    </ModalContext.Provider>
+          </ReactImageModal>
+        </div>
+      )}
+    </div>
   )
 }
 
