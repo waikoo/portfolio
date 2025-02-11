@@ -5,7 +5,17 @@ const bgStyles = noBg ? "" : "bg-[#e8e9c4]";
 ---
 
 <li
-  class={`${bgStyles} ${className} p-1 px-5 text-[13px] sm:text-[15px] xl:text-[16px] rounded-[5px] list-none`}
+  class={`${bgStyles} ${className} bullet p-1 px-5 text-[13px] sm:text-[15px] xl:text-[16px] rounded-[5px] list-none grid justify-start gap-2`}
 >
-  <slot />
+  <div class="col-start-2 col-end-3">
+    <slot />
+  </div>
 </li>
+
+<style>
+  .bullet::before {
+    content: "•";
+    color: black;
+    grid-column: 1/2;
+  }
+</style>
