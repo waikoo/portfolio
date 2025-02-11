@@ -1,20 +1,20 @@
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useCallback, useMemo, useRef, useState } from "react";
 import ReactCarousel from "./ReactCarousel.tsx";
 import ReactCarouselImage from "./ReactCarouselImage.tsx";
 import quizzicalStates from "../projects/evelinQuizzicalData.js";
-import ReactImageModal from "./ReactImageModal.tsx";
+import ReactIconX from "./ReactIconX.tsx";
 
 interface Props {
   showByDefault: number
-  bgColor: string
 }
 
-export default function DynamicImgSrc({ showByDefault, bgColor }: Props) {
+export default function DynamicImgSrc({ showByDefault }: Props) {
   const [index, setIndex] = useState(showByDefault)
   const [selectedImg, setSelectedImg] = useState(
     quizzicalStates[index].imgName
   )
   const [showModal, setShowModal] = useState(false)
+  const modalRef = useRef(null)
 
   const memoizedClickHandler = useMemo(() => (e: React.MouseEvent, i: number) => {
     const target = e.target as HTMLLIElement;
@@ -26,6 +26,13 @@ export default function DynamicImgSrc({ showByDefault, bgColor }: Props) {
   }, []);
 
   const handleClick = useCallback(memoizedClickHandler, []);
+
+  const closeModal = (e: React.MouseEvent) => {
+    if (e.target === modalRef.current) {
+      setShowModal(false)
+    }
+  }
+
   return (
     <>
       <ReactCarousel items={quizzicalStates} handleClick={handleClick} index={index} >
@@ -33,9 +40,10 @@ export default function DynamicImgSrc({ showByDefault, bgColor }: Props) {
       </ReactCarousel>
 
       {showModal && (
-        <ReactImageModal setShowModal={setShowModal} showModal={showModal}>
-          <ReactCarouselImage selectedImg={selectedImg} setShowModal={setShowModal} className="h-screen content-center" />
-        </ReactImageModal>
+        <div className="fixed inset-0 bg-black/75 backdrop-blur-xs h-screen grid place-items-center z-9999999 cursor-pointer" onClick={(e) => closeModal(e)} ref={modalRef}>
+          <ReactIconX closeModal={() => setShowModal(false)} iconColor="#fff" />
+          <ReactCarouselImage selectedImg={selectedImg} setShowModal={setShowModal} className="h-screen content-center w-[90%]" />
+        </div>
       )
       }
     </>
