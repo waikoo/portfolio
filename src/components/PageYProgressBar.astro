@@ -7,7 +7,10 @@ const { progressBarColor, progressBarBgColor } = Astro.props;
 
   window.addEventListener("scroll", () => {
     if (progress) {
-      progress.value = window.scrollY / 100;
+      const scrollableHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+
+      progress.value = (window.scrollY / scrollableHeight) * 100;
     }
   });
 </script>
