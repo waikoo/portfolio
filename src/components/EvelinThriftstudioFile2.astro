@@ -1,12 +1,11 @@
 ---
-import CompetitiveAnalysis from "./CompetitiveAnalysis.astro";
-import CompetitiveAnalysisModal from "./CompetitiveAnalysisModal.astro";
+import DynamicImgSrc from "./DynamicImgSrc";
 import EvelinFilePainPoint from "./EvelinFilePainPoint.astro";
 import EvelinFileResearchGoal from "./EvelinFileResearchGoal.astro";
 import EvelinFileWrapper from "./EvelinFileWrapper.astro";
 import ReactImageWrapper from "./ReactImageWrapper.tsx";
-import TapToEnlarge from "./TapToEnlarge.astro";
-import TapToEnlargeBig from "./TapToEnlargeBig.astro";
+import WithMagnifyingGlass from "./WithMagnifyingGlass";
+import { competitiveAnalysis } from "../projects/evelinThriftstudioData.js";
 
 const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
 ---
@@ -155,10 +154,17 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     COMPETITIVE ANALYSIS
   </h3>
 
-  <CompetitiveAnalysis />
-  <CompetitiveAnalysisModal />
-  <TapToEnlarge className="mt-[22px] sm:hidden" />
-  <TapToEnlargeBig className="mt-[22px] hidden sm:flex" />
+  <!-- React component -->
+  <WithMagnifyingGlass invert={true} className="mt-[22px]" client:only>
+    <DynamicImgSrc
+      showByDefault={0}
+      items={competitiveAnalysis}
+      border={bgColor}
+      cardBgColor={cardBgColor}
+      isCompetitiveAnalysis={true}
+      client:only
+    />
+  </WithMagnifyingGlass>
 
   <div class="xl:flex justify-between gap-10">
     <div>
@@ -212,9 +218,3 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     </div>
   </div>
 </EvelinFileWrapper>
-
-<style>
-  * {
-    font-family: "Jost", sans-serif;
-  }
-</style>

@@ -6,9 +6,13 @@ import ReactIconX from "./ReactIconX.tsx";
 interface Props {
   showByDefault: number
   items: { name: string, imgName: string, color: string }[]
+  isQuizzical?: boolean
+  border: string
+  cardBgColor: string
+  isCompetitiveAnalysis?: boolean
 }
 
-export default function DynamicImgSrc({ showByDefault, items }: Props) {
+export default function DynamicImgSrc({ showByDefault, items, isQuizzical, border, cardBgColor, isCompetitiveAnalysis }: Props) {
   const [index, setIndex] = useState(showByDefault)
   const [selectedImg, setSelectedImg] = useState(
     items[index].imgName
@@ -16,6 +20,7 @@ export default function DynamicImgSrc({ showByDefault, items }: Props) {
   const [showModal, setShowModal] = useState(false)
   const modalRef = useRef(null)
 
+  const competitiveAnalysisStyles = isCompetitiveAnalysis ? "mt-[15px]" : ""
   const memoizedClickHandler = useMemo(() => (e: React.MouseEvent, i: number) => {
     const target = e.target as HTMLLIElement;
     setIndex(i);
@@ -35,8 +40,8 @@ export default function DynamicImgSrc({ showByDefault, items }: Props) {
 
   return (
     <>
-      <ReactCarousel items={items} handleClick={handleClick} index={index} >
-        <ReactCarouselImage selectedImg={selectedImg} setShowModal={setShowModal} />
+      <ReactCarousel items={items} handleClick={handleClick} index={index} isQuizzical={isQuizzical} border={border} cardBgColor={cardBgColor}>
+        <ReactCarouselImage selectedImg={selectedImg} setShowModal={setShowModal} className={competitiveAnalysisStyles} />
       </ReactCarousel>
 
       {showModal && (

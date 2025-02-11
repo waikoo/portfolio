@@ -290,6 +290,13 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
 
   <!-- React component -->
   <WithMagnifyingGlass invert={true} client:only>
-    <DynamicImgSrc showByDefault={0} items={quizzicalStates} client:only />
+    <DynamicImgSrc
+      showByDefault={0}
+      items={quizzicalStates}
+      isQuizzical={true}
+      border={bgColor}
+      cardBgColor={cardBgColor}
+      client:only
+    />
   </WithMagnifyingGlass>
 </EvelinFileWrapper>
