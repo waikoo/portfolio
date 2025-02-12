@@ -5,11 +5,10 @@ type Props = {
   invertIcon: boolean
   className?: string
   src: string
-  alt: string
   imgClassName?: string
 }
 
-const ReactImageWrapper = ({ invertIcon, className, src, alt }: Props) => {
+const ReactImageWrapper = ({ invertIcon, className, src }: Props) => {
 
   return (
     <div className={className}>
@@ -20,10 +19,8 @@ const ReactImageWrapper = ({ invertIcon, className, src, alt }: Props) => {
           large={`/images/${src}.png`}
           hideDownload={true}
           hideZoom={true}
-          alt={alt}
         />
       </WithMagnifyingGlass>
-
     </div>
   )
 }
