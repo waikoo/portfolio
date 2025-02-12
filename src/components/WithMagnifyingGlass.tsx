@@ -27,7 +27,7 @@ export default function WithMagnifyingGlass({ children, invert, className }: Pro
         className={`text-[13px] text-[#8d8d8d] sm:text-[16px] flex ${invertFlex} gap-2  items-center justify-center`}
       >
         <MagnifyingGlass />
-        <span>{text} to enlarge</span>
+        <span className="text-[#8d8d8d]">{text} to enlarge</span>
       </figcaption>
     </figure>
 
