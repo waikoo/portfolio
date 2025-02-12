@@ -52,7 +52,7 @@ const ReactImageWrapper = ({ invertIcon, className, src, alt, imgClassName }: Pr
               <ReactImage
                 src={src}
                 alt={alt}
-                className="!h-[90vh]"
+                className="h-[90vh]!"
               />
             ) : (
               <ReactImage
