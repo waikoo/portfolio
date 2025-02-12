@@ -2,6 +2,7 @@ import React, { useCallback, useMemo, useRef, useState } from "react";
 import ReactCarousel from "./ReactCarousel.tsx";
 import ReactCarouselImage from "./ReactCarouselImage.tsx";
 import ReactIconX from "./ReactIconX.tsx";
+import { Lightbox } from "react-modal-image";
 
 interface Props {
   showByDefault: number
@@ -46,8 +47,12 @@ export default function DynamicImgSrc({ showByDefault, items, isQuizzical, borde
 
       {showModal && (
         <div className="fixed inset-0 bg-black/75 backdrop-blur-xs h-screen grid place-items-center z-9999999 cursor-pointer" onClick={(e) => closeModal(e)} ref={modalRef}>
-          <ReactIconX closeModal={() => setShowModal(false)} iconColor="#fff" />
-          <ReactCarouselImage selectedImg={selectedImg} setShowModal={setShowModal} className="h-screen content-center w-[90%]" />
+          <Lightbox medium={`/images/${selectedImg}.avif`}
+            large={`/images/${selectedImg}.png`}
+            onClose={() => setShowModal(false)}
+            hideDownload={true}
+            hideZoom={true}
+          />
         </div>
       )
       }

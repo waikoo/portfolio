@@ -1,7 +1,5 @@
-import { useEffect, useState } from 'react'
 import WithMagnifyingGlass from './WithMagnifyingGlass.tsx'
-import ReactImageModal from './ReactImageModal.tsx'
-import ReactImage from './ReactImage.tsx'
+import ModalImage from "react-modal-image"
 
 type Props = {
   invertIcon: boolean
@@ -11,61 +9,21 @@ type Props = {
   imgClassName?: string
 }
 
-const ReactImageWrapper = ({ invertIcon, className, src, alt, imgClassName }: Props) => {
-  const [showModal, setShowModal] = useState(false)
-  const [longerThanScreen, setLongerThanScreen] = useState(false)
-
-  const setImageModal = (boolean: boolean) => {
-    setShowModal(boolean)
-  }
-
-  useEffect(() => {
-    const temporaryImg = new Image()
-    temporaryImg.src = `/images/${src}.png`
-
-    temporaryImg.onload = () => {
-      if (temporaryImg.height > window.innerHeight) {
-        setLongerThanScreen(true)
-      }
-    }
-  }, [src])
+const ReactImageWrapper = ({ invertIcon, className, src, alt }: Props) => {
 
   return (
     <div className={className}>
       <WithMagnifyingGlass invert={invertIcon}>
-        <div onClick={() => { setImageModal(!showModal) }} className="mx-auto" key={`${"modal-closed"}`}>
-          <ReactImage
-            src={src}
-            alt={alt}
-            className={imgClassName}
-          />
-
-        </div>
+        <ModalImage
+          small={`/images/${src}.avif`}
+          medium={`/images/${src}.webp`}
+          large={`/images/${src}.png`}
+          hideDownload={true}
+          hideZoom={true}
+          alt={alt}
+        />
       </WithMagnifyingGlass>
 
-      {showModal && (
-
-        <div key={`modal-open`}>
-          <ReactImageModal setShowModal={() => setShowModal(false)} showModal={showModal}>
-
-            {longerThanScreen ? (
-              <ReactImage
-                src={src}
-                alt={alt}
-                className="h-[90vh]"
-                style="90vh"
-              />
-            ) : (
-              <ReactImage
-                src={src}
-                alt={alt}
-              />
-            )
-            }
-
-          </ReactImageModal>
-        </div>
-      )}
     </div>
   )
 }
