@@ -7,17 +7,19 @@ interface Props {
   handleClick: (e: React.MouseEvent<HTMLLIElement, MouseEvent>, i: number) => void
   index: number
   isQuizzical?: boolean
+  isCompetitiveAnalysis?: boolean
   border: string
   cardBgColor: string
 }
 
-export default function ReactCarousel({ items, children, handleClick, index, isQuizzical, border, cardBgColor }: Props) {
+export default function ReactCarousel({ items, children, handleClick, index, isQuizzical, border, cardBgColor, isCompetitiveAnalysis }: Props) {
   const quizzicalStyles = isQuizzical ? " w-[92%] mx-auto border-[#E1CA02]" : ""
+  const competitiveAnalysisStyles = isCompetitiveAnalysis ? "border-[#D2D62E]" : ""
 
   return (
     <>
       <ul
-        className={`font-['Jost'] flex flex-row gap-[8px] sm:justify-between text-[12px] sm:text-[14px] xl:text-[16px] font-medium overflow-scroll items-center border-[2px] sm:border-[3px] rounded-full p-[2px] h-max-content uppercase scrollbar-0 tracking-wide ${quizzicalStyles}`}
+        className={`font-['Jost'] flex flex-row gap-[8px] sm:justify-between text-[12px] sm:text-[14px] xl:text-[16px] font-medium overflow-scroll items-center border-[2px] sm:border-[3px] rounded-full p-[2px] h-max-content uppercase scrollbar-0 tracking-wide ${quizzicalStyles} ${competitiveAnalysisStyles}`}
         style={{ scrollbarWidth: 'none' }}
       >
         {

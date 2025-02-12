@@ -41,7 +41,7 @@ export default function DynamicImgSrc({ showByDefault, items, isQuizzical, borde
 
   return (
     <>
-      <ReactCarousel items={items} handleClick={handleClick} index={index} isQuizzical={isQuizzical} border={border} cardBgColor={cardBgColor}>
+      <ReactCarousel items={items} handleClick={handleClick} index={index} isQuizzical={isQuizzical} border={border} cardBgColor={cardBgColor} isCompetitiveAnalysis={isCompetitiveAnalysis}>
         <ReactCarouselImage selectedImg={selectedImg} setShowModal={setShowModal} className={competitiveAnalysisStyles} />
       </ReactCarousel>
 
