@@ -20,9 +20,11 @@ export default function WithMagnifyingGlass({ children, invert, className }: Pro
 
   return (
     <figure className={className}>
-      {children}
+      <div className="mb-[20px] sm:mb-0">
+        {children}
+      </div>
       <figcaption
-        className={`pt-[20px] text-[13px] text-[#8d8d8d] sm:text-[16px] flex ${invertFlex} gap-2  items-center justify-center`}
+        className={`text-[13px] text-[#8d8d8d] sm:text-[16px] flex ${invertFlex} gap-2  items-center justify-center`}
       >
         <MagnifyingGlass />
         <span>{text} to enlarge</span>
