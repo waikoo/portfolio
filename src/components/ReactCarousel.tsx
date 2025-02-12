@@ -13,12 +13,12 @@ interface Props {
 
 export default function ReactCarousel({ items, children, handleClick, index, isQuizzical, border, cardBgColor }: Props) {
   const quizzicalStyles = isQuizzical ? " w-[92%] mx-auto" : ""
-
+  const borderColor = `border-[${border}]`
   return (
     <>
       <ul
-        className={`font-['Jost'] flex flex-row gap-[8px] sm:justify-between text-[12px] sm:text-[14px] xl:text-[16px] font-medium overflow-scroll items-center border-[2px] sm:border-[3px] rounded-full p-[2px] h-max-content uppercase scrollbar-0 tracking-wide ${quizzicalStyles}`}
-        style={{ scrollbarWidth: 'none', borderColor: border }}
+        className={`font-['Jost'] flex flex-row gap-[8px] sm:justify-between text-[12px] sm:text-[14px] xl:text-[16px] font-medium overflow-scroll items-center border-[2px] sm:border-[3px] rounded-full p-[2px] h-max-content uppercase scrollbar-0 tracking-wide ${quizzicalStyles} ${borderColor}`}
+        style={{ scrollbarWidth: 'none' }}
       >
         {
           items.map(({ name }, i) => {
