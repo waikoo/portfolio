@@ -12,6 +12,7 @@ import EvelinQuizzicalFile4 from "../../../components/EvelinQuizzicalFile4.astro
 import thriftstudioPreview from "../../../assets/images/thriftstudio_preview.jpg";
 import ViewProjectCard from "../../../components/ViewProjectCard.astro";
 import rpsPreview from "../../../assets/images/rps.png";
+import ReactScrollToTop from "../../../components/ReactScrollToTop";
 
 const fullName = "Szász Evelin";
 const bgColor = "#E1CA02";
@@ -68,6 +69,8 @@ const { name, familyName } = extractName(fullName);
         id="quizzical-prototype"
       />
     </div>
+
+    <ReactScrollToTop client:only />
   </main>
 
   <footer class="relative bg-[#141412] sm:px-[50px] xl:px-[82px]">

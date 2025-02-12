@@ -1,5 +1,6 @@
 ---
 import PersonHeader from "../../../components/PersonHeader.astro";
+import ReactScrollToTop from "../../../components/ReactScrollToTop.tsx";
 import Layout from "../../../layouts/Layout.astro";
 import EvelinThriftstudioFile from "../../../components/EvelinThriftstudioFile.astro";
 import EvelinThriftstudioFile2 from "../../../components/EvelinThriftstudioFile2.astro";
@@ -58,5 +59,6 @@ const cardBgColor = "#F9F9F9";
     />
 
     <ThriftstudioAside />
+    <ReactScrollToTop client:only />
   </main>
 </Layout>
