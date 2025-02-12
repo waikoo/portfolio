@@ -1,5 +1,3 @@
-import { useEffect, useRef } from "react"
-
 type Props = {
   src: string
   alt: string
@@ -7,26 +5,6 @@ type Props = {
 }
 
 const ReactImage = ({ src, alt, className }: Props) => {
-  const imgRef = useRef(null)
-
-  useEffect(() => {
-    if (!imgRef.current) return
-    const img = imgRef.current as HTMLImageElement
-
-    const checkHeight = () => {
-      if (img.height > window.innerHeight) {
-        img.classList.add('h-[90vh]')
-      }
-    }
-
-    if (img.complete) {
-      checkHeight()
-    } else {
-      img.addEventListener('load', checkHeight)
-    }
-
-    return () => img.removeEventListener('load', checkHeight)
-  }, [])
 
   return (
     <picture>
@@ -45,7 +23,6 @@ const ReactImage = ({ src, alt, className }: Props) => {
       <img
         src={`/images/${src}.png`}
         alt={alt}
-        ref={imgRef}
         className={`xl:cursor-pointer block mx-auto w-[90%] ${className}`}
       />
     </picture>
