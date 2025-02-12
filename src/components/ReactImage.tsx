@@ -2,9 +2,10 @@ type Props = {
   src: string
   alt: string
   className?: string
+  style?: string
 }
 
-const ReactImage = ({ src, alt, className }: Props) => {
+const ReactImage = ({ src, alt, className, style }: Props) => {
 
   return (
     <picture>
@@ -23,6 +24,7 @@ const ReactImage = ({ src, alt, className }: Props) => {
       <img
         src={`/images/${src}.png`}
         alt={alt}
+        style={{ height: style }}
         className={`xl:cursor-pointer block mx-auto w-[90%] ${className}`}
       />
     </picture>
