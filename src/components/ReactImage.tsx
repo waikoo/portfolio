@@ -12,9 +12,20 @@ const ReactImage = ({ src, alt, className }: Props) => {
   useEffect(() => {
     if (!imgRef.current) return
     const img = imgRef.current as HTMLImageElement
-    if (img.height > window.innerHeight) {
-      img.classList.add('h-[90vh]')
+
+    const checkHeight = () => {
+      if (img.height > window.innerHeight) {
+        img.classList.add('h-[90vh]')
+      }
     }
+
+    if (img.complete) {
+      checkHeight()
+    } else {
+      img.addEventListener('load', checkHeight)
+    }
+
+    return () => img.removeEventListener('load', checkHeight)
   }, [])
 
   return (
