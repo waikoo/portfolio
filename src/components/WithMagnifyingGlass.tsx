@@ -20,7 +20,7 @@ export default function WithMagnifyingGlass({ children, invert, className }: Pro
 
   return (
     <figure className={className}>
-      <div className="mb-[20px] sm:mb-0">
+      <div className="mb-[20px]">
         {children}
       </div>
       <figcaption

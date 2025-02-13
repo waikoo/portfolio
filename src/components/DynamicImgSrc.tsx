@@ -3,6 +3,7 @@ import { Lightbox } from "react-modal-image";
 
 import ReactCarousel from "./ReactCarousel.tsx";
 import ReactCarouselImage from "./ReactCarouselImage.tsx";
+import WithMagnifyingGlass from "./WithMagnifyingGlass.tsx";
 
 interface Props {
   showByDefault: number
@@ -44,7 +45,9 @@ export default function DynamicImgSrc({ showByDefault, items, isQuizzical, cardB
   return (
     <>
       <ReactCarousel items={items} handleClick={handleClick} index={index} isQuizzical={isQuizzical} cardBgColor={cardBgColor} isCompetitiveAnalysis={isCompetitiveAnalysis} isAdminInterface={isAdminInterface}>
-        <ReactCarouselImage selectedImg={selectedImg} setShowModal={setShowModal} className={`${adminInterfaceStyles} ${competitiveAnalysisStyles}`} alt={altText} isCompetitiveAnalysis={isCompetitiveAnalysis} />
+        <WithMagnifyingGlass invert={true}>
+          <ReactCarouselImage selectedImg={selectedImg} setShowModal={setShowModal} className={`${adminInterfaceStyles} ${competitiveAnalysisStyles}`} alt={altText} isCompetitiveAnalysis={isCompetitiveAnalysis} />
+        </WithMagnifyingGlass>
       </ReactCarousel>
 
       {showModal && (

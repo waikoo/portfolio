@@ -8,16 +8,10 @@ const textStyles = textSize
   : "text-[15px] sm:text-[16px] xl:text-[18px]";
 ---
 
-<p class={`relative ${className} ${textStyles}`}>
+<p class={`font-['Jost'] relative ${className} ${textStyles}`}>
   <IconTriangleMobile
     bgColor={bgColor}
     className="absolute top-[3px] left-[-13px] xl:top-[5px]"
   />
   <slot />
 </p>
-
-<style>
-  p {
-    font-family: "Jost", sans-serif;
-  }
-</style>

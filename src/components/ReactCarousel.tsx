@@ -33,7 +33,7 @@ export default function ReactCarousel({ items, children, handleClick, index, isQ
                 style={{
                   backgroundColor: index == i ? items[i].color : '',
                   color: index === i ? cardBgColor : '#001649',
-                  fontWeight: index === i ? '600' : '500',
+                  fontWeight: '600',
                 }}
                 onClick={(e) => handleClick(e, i)}
               >
