@@ -1,8 +1,9 @@
 ---
-const { className } = Astro.props;
+const { className, marginTop } = Astro.props;
+const marginTopStyle = marginTop ? marginTop : "mt-20";
 ---
 
-<div class={`mt-20 text-center ${className}`}>
+<div class={`${marginTopStyle} text-center ${className}`}>
   <span
     class="font-bold text-[1rem] xl:text-[24px] bg-[#d2d62e] p-1 px-2 rounded-[5px]"
   >

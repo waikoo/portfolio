@@ -47,7 +47,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </h4>
 
   <p
-    class="text-[15px] sm:text-[16px] xl:text-[17px] bg-[#f9f9f9] border-[#e7e3f5] border-[1px] mt-[30px] mb-[50px] p-5 sm:rounded-[15px] xl:rounded-[20px]"
+    class="text-[15px] sm:text-[16px] xl:text-[17px] bg-[#f9f9f9] border-[#e7e3f5] border-[1px] mx-[-20px] sm:mx-0 mt-[30px] mb-[50px] p-5 sm:rounded-[15px] xl:rounded-[20px]"
   >
     The following Sitemap outlines the <strong>main sections and pages</strong> of
     the thrift store website. It is designed to <strong
@@ -79,12 +79,12 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   />
 
   <h4
-    class="mt-32 text-[#1e1e1e] text-[17px] sm:text-[21px] xl:text-[32px] font-bold text-right"
+    class="mt-[40px] text-[#1e1e1e] text-[17px] sm:text-[21px] xl:text-[32px] font-bold text-right"
   >
     STORYBOARDS
   </h4>
   <p
-    class="mt-10 bg-[#E8E9C3] p-5 border-[1px] text-[15px] sm:text-[16px] xl:text-[17px] sm:rounded-[15px] xl:rounded-[20px]"
+    class="mt-10 bg-[#E8E9C3] p-5 border-[1px] mx-[-20px] sm:mx-0 text-[15px] sm:text-[16px] xl:text-[17px] sm:rounded-[15px] xl:rounded-[20px]"
   >
     The <strong>user flow</strong> provided a <strong
       >blueprint for how users navigate</strong
@@ -98,7 +98,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </p>
 
   <div
-    class="text-[12px] sm:text-[15px] xl:text-[16px] xl:justify-center xl:flex mt-[70px]"
+    class="text-[14px] sm:text-[15px] xl:text-[16px] xl:justify-center xl:flex mt-[35px]"
   >
     <span class="font-black sm:text-[15px]">SCENARIO:</span>
     <p class="pl-0 xl:pl-2 font-semibold sm:text-[15px]">
@@ -107,7 +107,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     </p>
   </div>
 
-  <MustardBgTitle className="sm:text-left"
+  <MustardBgTitle className="sm:text-left" marginTop="mt-10"
     >BIG PICTURE STORYBOARD</MustardBgTitle
   >
 
@@ -118,7 +118,9 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     src="big_picture_storyboard"
   />
 
-  <MustardBgTitle className="sm:text-right">CLOSE-UP STORYBOARD</MustardBgTitle>
+  <MustardBgTitle className="sm:text-right" marginTop="mt-10"
+    >CLOSE-UP STORYBOARD</MustardBgTitle
+  >
 
   <ReactImageWrapper
     invertIcon={true}

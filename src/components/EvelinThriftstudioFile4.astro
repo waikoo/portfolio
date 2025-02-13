@@ -51,7 +51,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
       <EvelinFilePainPoint
         bgColor={bgColor}
         textSize="text-[16px]"
-        className="mt-[40px] sm:mt-[30px] w-[90%] mx-auto"
+        className="mt-[40px] sm:mt-[30px] w-[90%] mx-auto leading-[18px]"
         ><strong>I started with laying out the key features:</strong
         ></EvelinFilePainPoint
       >
@@ -100,17 +100,15 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     class="xl:grid xl:grid-cols-[1fr_286px] xl:gap-[94px] xl:items-center"
   >
     <div>
-      <h5
-        class="text-[16px] font-bold mt-[30px] sm:mt-[40px] sm:text-[15px] xl:text-[18px]"
-      >
+      <h5 class="text-[16px] font-bold mt-[20px] sm:mt-[40px] xl:text-[18px]">
         Goals:
       </h5>
       <ul class="flex flex-col gap-[3px] xl:gap-[12px]">
         <EvelinFileResearchGoal
           bgColor="bg-[#EDEAF6]"
           padding="p-[12px]"
-          textSize="text-[15px] xl:text-[16px]"
-          className="sm:leading-[14px] xl:tracking-[0.5px] mt-[20px]"
+          textSize="text-[16px] xl:text-[16px]"
+          className="sm:leading-[14px] xl:tracking-[0.5px] mt-[10px]"
           >assess whether users can successfully complete key tasks within the
           prototype</EvelinFileResearchGoal
         >
@@ -118,24 +116,22 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
         <EvelinFileResearchGoal
           bgColor="bg-[#EDEAF6]"
           padding="p-[12px]"
-          textSize="text-[15px] xl:text-[16px]"
+          textSize="text-[16px] xl:text-[16px]"
           className="xl:tracking-[0.5px] sm:leading-[14px]"
         >
           evaluate the intuitiveness and usability of the prototype</EvelinFileResearchGoal
         >
       </ul>
 
-      <h5
-        class="text-[16px] font-bold mt-[30px] mt-[40px] sm:text-[15px] xl:text-[18px]"
-      >
+      <h5 class="text-[16px] font-bold mt-[30px] mt-[40px] xl:text-[18px]">
         Research questions:
       </h5>
 
-      <ul class="flex flex-col gap-[3px] xl:gap-[12px] mt-[20px]">
+      <ul class="flex flex-col gap-[3px] xl:gap-[12px] mt-[10px]">
         <EvelinFileResearchGoal
           bgColor="bg-[#EDEAF6]"
           padding="p-[12px]"
-          textSize="text-[15px] xl:text-[16px]"
+          textSize="text-[16px] xl:text-[16px]"
           className="xl:tracking-[0.5px] sm:leading-[14px]"
           >what can we learn from the steps that users take to complete each
           task?</EvelinFileResearchGoal
@@ -144,21 +140,21 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
         <EvelinFileResearchGoal
           bgColor="bg-[#EDEAF6]"
           padding="p-[12px]"
-          textSize="text-[15px] xl:text-[16px]"
+          textSize="text-[16px] xl:text-[16px]"
           className="xl:tracking-[0.5px] sm:leading-[14px]"
           >are there parts of the user flow where users get stuck?</EvelinFileResearchGoal
         >
         <EvelinFileResearchGoal
           bgColor="bg-[#EDEAF6]"
           padding="p-[12px]"
-          textSize="text-[15px] xl:text-[16px]"
+          textSize="text-[16px] xl:text-[16px]"
           className="xl:tracking-[0.5px] sm:leading-[14px]"
           >do the users find the filter saving feature helpful and/or useful?</EvelinFileResearchGoal
         >
         <EvelinFileResearchGoal
           bgColor="bg-[#EDEAF6]"
           padding="p-[12px]"
-          textSize="text-[15px] xl:text-[16px]"
+          textSize="text-[16px] xl:text-[16px]"
           className="xl:tracking-[0.5px] sm:leading-[14px]"
           >are there design changes that would make each task easier and/or
           faster for the users?</EvelinFileResearchGoal
@@ -167,9 +163,13 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     </div>
 
     <div>
-      <h5 class="text-[16px] font-bold ml-[3px] mt-[30px]">Tasks</h5>
+      <h5
+        class="text-[16px] font-bold sm:ml-[3px] text-center sm:text-left mt-[30px]"
+      >
+        Tasks
+      </h5>
       <ol
-        class="flex flex-col gap-[3px] list-decimal list-outside w-[100%] mx-auto pl-[20px] sm:mt-[20px] font-medium"
+        class="flex flex-col gap-[12px] list-decimal list-outside w-[100%] mx-auto pl-[20px] mt-[20px] font-medium leading-[18px]"
       >
         <li>Access your account and add a new shipping address</li>
         <li>Create and save a filter for "Brown sweaters in size 38"</li>
@@ -186,6 +186,12 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   >
     Usability test findings<span class="hidden xl:inline">:</span>
   </h4>
+
+  <div
+    class="h-[1px] mx-[-20px] w-screen mt-[15px]"
+    style={{ backgroundColor: bgColor }}
+  >
+  </div>
 
   <div
     class="flex flex-col gap-[13px] sm:gap-[20px] xl:gap-[5px] mt-[15px] sm:mt-[20px] sm:border-[1px] sm:border-[#E8E9C4] sm:rounded-[15px] sm:py-[10px]"
