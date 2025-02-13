@@ -2,17 +2,6 @@
 const { id, className } = Astro.props;
 ---
 
-<script is:inline define:vars={{ id }}>
-  document.addEventListener("DOMContentLoaded", () => {
-    const button = document.querySelector(`#${id}`);
-    if (!button) return;
-
-    button.addEventListener("click", () => {
-      button.classList.toggle("active");
-    });
-  });
-</script>
-
 <div
   id={id}
   class={`group relative w-[12px] h-[12px] cursor-pointer ${className}`}
