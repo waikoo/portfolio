@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@source "../components/"
 
 @theme {
   --font-jost:
@@ -15,6 +16,7 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
+
   *,
   ::after,
   ::before,
