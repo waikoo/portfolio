@@ -107,7 +107,9 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     </p>
   </div>
 
-  <MustardBgTitle>BIG PICTURE STORYBOARD</MustardBgTitle>
+  <MustardBgTitle className="sm:text-left"
+    >BIG PICTURE STORYBOARD</MustardBgTitle
+  >
 
   <ReactImageWrapper
     invertIcon={true}
@@ -116,7 +118,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     src="big_picture_storyboard"
   />
 
-  <MustardBgTitle className="text-right">CLOSE-UP STORYBOARD</MustardBgTitle>
+  <MustardBgTitle className="sm:text-right">CLOSE-UP STORYBOARD</MustardBgTitle>
 
   <ReactImageWrapper
     invertIcon={true}
