@@ -24,7 +24,7 @@ export default function ReactCarouselImage({ selectedImg, setShowModal, classNam
         <img
           src={`/images/${selectedImg}.png`}
           alt="selected quizzical game state"
-          className={`quizzical-image rounded-[7px] xl:cursor-pointer sm:rounded-[30px]`}
+          className={`quizzical-image rounded-[16px] xl:cursor-pointer sm:rounded-[18px] xl:rounded-[30px]`}
           onClick={onClickHandler}
         />
       </picture>
