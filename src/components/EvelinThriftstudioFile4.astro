@@ -236,46 +236,55 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   >
     <section class="xl:grid xl:grid-cols-2 xl:gap-[75px]">
       <div>
-        <h4 class="font-bold text-[16px]">
+        <h4 class="font-bold text-[16px] mt-[30px]">
           To address user frustrations with the account menu:
         </h4>
 
-        <EvelinFilePainPoint bgColor={bgColor} className="sm:mt-[30px]"
+        <EvelinFilePainPoint
+          bgColor={bgColor}
+          className="mt-[20px] sm:mt-[30px]"
+          textSize="text-[16px]"
           >I redesigned the navigation layout, replacing the vertical scrolling
           menu with horizontal scrolling, allowing users to access any section
           of their account with fewer clicks</EvelinFilePainPoint
         >
-        <EvelinFilePainPoint bgColor={bgColor} className="sm:mt-[20px]"
+        <EvelinFilePainPoint
+          bgColor={bgColor}
+          className="mt-[15px] sm:mt-[20px]"
+          textSize="text-[16px]"
           >The saved address card was revamped by replacing the confusing radio
           button and hidden menu with clearly visible editing options, enabling
           users to edit, delete, or set a default address with a single click</EvelinFilePainPoint
         >
 
-        <EvelinFilePainPoint bgColor={bgColor} className="sm:mt-[20px]"
+        <EvelinFilePainPoint
+          bgColor={bgColor}
+          className="mt-[15px] sm:mt-[20px]"
+          textSize="text-[16px]"
           >The default address is now visually highlighted for added clarity</EvelinFilePainPoint
         >
       </div>
 
       <div>
-        <h4 class="font-bold text-[16px] sm:mt-[40px] xl:mt-0">
+        <h4 class="font-bold text-[16px] mt-[40px] xl:mt-0">
           To improve the filters section:
         </h4>
 
-        <div class="flex flex-col gap-[20px] sm:mt-[30px]">
-          <EvelinFilePainPoint bgColor={bgColor}
+        <div class="flex flex-col gap-[15px] mt-[20px] sm:mt-[30px]">
+          <EvelinFilePainPoint bgColor={bgColor} textSize="text-[16px]"
             >I reorganized and divided filter categories to better align with
             their content, making it easier for users to locate and customize
             filters according to their preferences</EvelinFilePainPoint
           >
-          <EvelinFilePainPoint bgColor={bgColor}
+          <EvelinFilePainPoint bgColor={bgColor} textSize="text-[16px]"
             >Each filter category now uses a dropdown list instead of separate
             pages, with added icons for quick open/close actions, along with
             "Collapse All" and "Clear All" buttons for seamless navigation</EvelinFilePainPoint
           >
-          <EvelinFilePainPoint bgColor={bgColor}
+          <EvelinFilePainPoint bgColor={bgColor} textSize="text-[16px]"
             >I included color names to enhance clarity in the color filter</EvelinFilePainPoint
           >
-          <EvelinFilePainPoint bgColor={bgColor}
+          <EvelinFilePainPoint bgColor={bgColor} textSize="text-[16px]"
             >To improve access to saved filters, I separated them from the
             filtering page, introduced a dedicated button on the product page,
             and integrated them into the search function</EvelinFilePainPoint
