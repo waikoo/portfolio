@@ -1,19 +1,19 @@
 import React, { useCallback, useMemo, useRef, useState } from "react";
+import { Lightbox } from "react-modal-image";
+
 import ReactCarousel from "./ReactCarousel.tsx";
 import ReactCarouselImage from "./ReactCarouselImage.tsx";
-import ReactIconX from "./ReactIconX.tsx";
-import { Lightbox } from "react-modal-image";
 
 interface Props {
   showByDefault: number
   items: { name: string, imgName: string, color: string }[]
   isQuizzical?: boolean
-  border: string
   cardBgColor: string
   isCompetitiveAnalysis?: boolean
+  isAdminInterface?: boolean
 }
 
-export default function DynamicImgSrc({ showByDefault, items, isQuizzical, border, cardBgColor, isCompetitiveAnalysis }: Props) {
+export default function DynamicImgSrc({ showByDefault, items, isQuizzical, cardBgColor, isCompetitiveAnalysis, isAdminInterface }: Props) {
   const [index, setIndex] = useState(showByDefault)
   const [selectedImg, setSelectedImg] = useState(
     items[index].imgName
@@ -22,6 +22,7 @@ export default function DynamicImgSrc({ showByDefault, items, isQuizzical, borde
   const modalRef = useRef(null)
 
   const competitiveAnalysisStyles = isCompetitiveAnalysis ? "mt-[15px]" : ""
+  const adminInterfaceStyles = isAdminInterface ? "mt-[10px] sm:mt-[15px]" : ""
   const memoizedClickHandler = useMemo(() => (e: React.MouseEvent, i: number) => {
     const target = e.target as HTMLLIElement;
     setIndex(i);
@@ -39,10 +40,11 @@ export default function DynamicImgSrc({ showByDefault, items, isQuizzical, borde
     }
   }
 
+  const altText = isQuizzical ? 'final design of the app quizzical' : 'competitive analysis of the thriftstudio app'
   return (
     <>
-      <ReactCarousel items={items} handleClick={handleClick} index={index} isQuizzical={isQuizzical} border={border} cardBgColor={cardBgColor} isCompetitiveAnalysis={isCompetitiveAnalysis}>
-        <ReactCarouselImage selectedImg={selectedImg} setShowModal={setShowModal} className={competitiveAnalysisStyles} />
+      <ReactCarousel items={items} handleClick={handleClick} index={index} isQuizzical={isQuizzical} cardBgColor={cardBgColor} isCompetitiveAnalysis={isCompetitiveAnalysis} isAdminInterface={isAdminInterface}>
+        <ReactCarouselImage selectedImg={selectedImg} setShowModal={setShowModal} className={`${adminInterfaceStyles} ${competitiveAnalysisStyles}`} alt={altText} isCompetitiveAnalysis={isCompetitiveAnalysis} />
       </ReactCarousel>
 
       {showModal && (

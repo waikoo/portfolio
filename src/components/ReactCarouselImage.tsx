@@ -2,9 +2,13 @@ interface Props {
   selectedImg: string;
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>
   className?: string
+  alt: string
+  imgClassName?: string
+  isCompetitiveAnalysis?: boolean
 }
 
-export default function ReactCarouselImage({ selectedImg, setShowModal, className }: Props) {
+export default function ReactCarouselImage({ selectedImg, setShowModal, className, alt, imgClassName, isCompetitiveAnalysis }: Props) {
+  const competitiveAnalysisStyles = isCompetitiveAnalysis ? "rounded-[16px] sm:rounded-[18px] xl:rounded-[30px]" : ""
 
   function onClickHandler() {
     setShowModal(true)
@@ -23,8 +27,8 @@ export default function ReactCarouselImage({ selectedImg, setShowModal, classNam
         />
         <img
           src={`/images/${selectedImg}.png`}
-          alt="selected quizzical game state"
-          className={`quizzical-image rounded-[16px] xl:cursor-pointer sm:rounded-[18px] xl:rounded-[30px]`}
+          alt={alt}
+          className={`${imgClassName} quizzical-image xl:cursor-pointer ${competitiveAnalysisStyles}`}
           onClick={onClickHandler}
         />
       </picture>

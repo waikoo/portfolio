@@ -6,7 +6,10 @@ import ShadyNumber from "./ShadyNumber.astro";
 import thriftstudioKeyFeatures from "../thriftstudioKeyFeatures.ts";
 import EvelinFileResearchGoal from "./EvelinFileResearchGoal.astro";
 import ExpandDetails from "./ExpandDetails.astro";
+import { adminInterface } from "../projects/evelinThriftstudioData";
 import "@fontsource/jost/500.css";
+import DynamicImgCarousel from "./DynamicImgCarousel.tsx";
+import DynamicImgSrc from "./DynamicImgSrc";
 
 const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
 ---
@@ -305,5 +308,35 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     client:only
     className="mt-[26px] sm:mt-[80px]"
     src="thriftstudio_before_after"
+  />
+
+  <h3
+    class="text-right text-[17px] sm:text-[21px] xl:text-[24px] font-bold mt-[70px]"
+  >
+    ADMIN INTERFACE
+  </h3>
+
+  <p
+    class="bg-[#E8E9C3] p-[20px] mx-[-20px] mt-[20px] sm:rounded-[15px] xl:rounded-[20px] xl:text-[17px]"
+  >
+    The admin interface was <strong
+      >designed specifically for desktop use</strong
+    > to provide ample space for <strong
+      >overseeing large amounts of information</strong
+    > and efficiently
+    <strong>managing bulk product updates</strong>. I developed a <strong
+      >mid-fidelity prototype</strong
+    > to incorporate more detailed interactions, ensuring <strong
+      >ease of use</strong
+    > while accommodating <strong>various inventory management scenarios</strong
+    >, such as editing, adding, and deleting products.
+  </p>
+
+  <DynamicImgSrc
+    showByDefault={0}
+    items={adminInterface}
+    cardBgColor={cardBgColor}
+    isAdminInterface={true}
+    client:only
   />
 </EvelinFileWrapper>

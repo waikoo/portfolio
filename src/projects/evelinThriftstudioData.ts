@@ -9,3 +9,8 @@ export const competitiveAnalysis = [
   { name: "VISUAL DESIGN", imgName: "CA4", color: "#66355A" },
   { name: "CONTENT", imgName: "CA5", color: "#355D66" },
 ]
+
+export const adminInterface = [
+  { name: "HOME PAGE", imgName: "admin-home", color: "#4D3566" },
+  { name: "PRODUCTS", imgName: "admin-products", color: "#4D3566" },
+]

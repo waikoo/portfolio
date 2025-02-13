@@ -8,18 +8,19 @@ interface Props {
   index: number
   isQuizzical?: boolean
   isCompetitiveAnalysis?: boolean
-  border: string
   cardBgColor: string
+  isAdminInterface?: boolean
 }
 
-export default function ReactCarousel({ items, children, handleClick, index, isQuizzical, border, cardBgColor, isCompetitiveAnalysis }: Props) {
-  const quizzicalStyles = isQuizzical ? " w-[92%] mx-auto border-[#E1CA02]" : ""
-  const competitiveAnalysisStyles = isCompetitiveAnalysis ? "border-[#D2D62E]" : ""
+export default function ReactCarousel({ items, children, handleClick, index, isQuizzical, cardBgColor, isCompetitiveAnalysis, isAdminInterface }: Props) {
+  const quizzicalStyles = isQuizzical ? "flex w-[92%] mx-auto border-[#E1CA02]" : ""
+  const thriftstudioStyles = isCompetitiveAnalysis || isAdminInterface ? "flex border-[#D2D62E]" : ""
+  const competitiveAnalysisStyles = isAdminInterface ? "flex w-fit mt-[30px] sm:mt-[40px]" : ""
 
   return (
     <>
       <ul
-        className={`font-['Jost'] flex flex-row gap-[8px] sm:justify-between text-[12px] sm:text-[14px] xl:text-[16px] font-medium overflow-scroll items-center border-[2px] sm:border-[3px] rounded-full p-[2px] h-max-content uppercase scrollbar-0 tracking-wide ${quizzicalStyles} ${competitiveAnalysisStyles}`}
+        className={`mx-auto font-['Jost'] flex-row gap-[8px] sm:justify-between text-[12px] sm:text-[14px] xl:text-[16px] font-medium overflow-scroll items-center border-[2px] sm:border-[3px] rounded-full p-[2px] h-max-content uppercase scrollbar-0 tracking-wide ${competitiveAnalysisStyles} ${quizzicalStyles} ${thriftstudioStyles}`}
         style={{ scrollbarWidth: 'none' }}
       >
         {
