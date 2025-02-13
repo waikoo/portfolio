@@ -153,7 +153,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </h3>
 
   <!-- React component -->
-  <WithMagnifyingGlass invert={true} className="mt-[22px]" client:only>
+  <div class="mt-[22px]">
     <DynamicImgSrc
       showByDefault={0}
       items={competitiveAnalysis}
@@ -161,57 +161,57 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
       isCompetitiveAnalysis={true}
       client:only
     />
-  </WithMagnifyingGlass>
 
-  <div class="xl:grid grid-cols-2 justify-between gap-10">
-    <div>
-      <p
-        class="text-[17px] sm:text-[18px] xl:text-[24px] mt-[40px] sm:mt-[50px] xl:mt-[80px]"
-      >
-        Some <strong>gaps</strong> I identified:
-      </p>
-      <div class="mt-[30px]">
+    <div class="xl:grid grid-cols-2 justify-between gap-10">
+      <div>
+        <p
+          class="text-[17px] sm:text-[18px] xl:text-[24px] mt-[40px] sm:mt-[50px] xl:mt-[80px]"
+        >
+          Some <strong>gaps</strong> I identified:
+        </p>
+        <div class="mt-[30px]">
+          <EvelinFilePainPoint bgColor={bgColor} className="mt-[30px]"
+            >Competitor products don’t offer an <strong
+              >online thrift shop linked to a physical store</strong
+            ></EvelinFilePainPoint
+          >
+          <EvelinFilePainPoint bgColor={bgColor} className="mt-[10px]"
+            >Competitor products provide <strong
+              >ordering only through an account</strong
+            ></EvelinFilePainPoint
+          >
+          <EvelinFilePainPoint bgColor={bgColor} className="mt-[10px]"
+            ><strong>Wishlist, Cart and Filter features</strong> are <strong
+              >not optimized</strong
+            > enough for a fast and seamless shopping experience</EvelinFilePainPoint
+          >
+        </div>
+      </div>
+
+      <div class="">
+        <p
+          class="text-[17px] sm:text-[18px] xl:text-[24px] mt-[40px] sm:mt-[50px] xl:mt-[80px]"
+        >
+          Some <strong>opportunities</strong> I identified:
+        </p>
         <EvelinFilePainPoint bgColor={bgColor} className="mt-[30px]"
-          >Competitor products don’t offer an <strong
-            >online thrift shop linked to a physical store</strong
+          >Building a <strong>responsive website for a thrift store</strong>,
+          where customers can see <strong>the</strong>
+          physical store’s actual products</EvelinFilePainPoint
+        >
+        <EvelinFilePainPoint bgColor={bgColor} className="mt-[10px]"
+          >Enabling quick, <strong>account-free purchases</strong
           ></EvelinFilePainPoint
         >
         <EvelinFilePainPoint bgColor={bgColor} className="mt-[10px]"
-          >Competitor products provide <strong
-            >ordering only through an account</strong
+          >Offering <strong>personalized notifications</strong> for discounts and
+          new arrivals based on <strong>filters saved by the user</strong
           ></EvelinFilePainPoint
         >
         <EvelinFilePainPoint bgColor={bgColor} className="mt-[10px]"
-          ><strong>Wishlist, Cart and Filter features</strong> are <strong
-            >not optimized</strong
-          > enough for a fast and seamless shopping experience</EvelinFilePainPoint
+          >Providing <strong>bulk-edit</strong> in Wishlist and Cart pages</EvelinFilePainPoint
         >
       </div>
-    </div>
-
-    <div class="">
-      <p
-        class="text-[17px] sm:text-[18px] xl:text-[24px] mt-[40px] sm:mt-[50px] xl:mt-[80px]"
-      >
-        Some <strong>opportunities</strong> I identified:
-      </p>
-      <EvelinFilePainPoint bgColor={bgColor} className="mt-[30px]"
-        >Building a <strong>responsive website for a thrift store</strong>,
-        where customers can see <strong>the</strong>
-        physical store’s actual products</EvelinFilePainPoint
-      >
-      <EvelinFilePainPoint bgColor={bgColor} className="mt-[10px]"
-        >Enabling quick, <strong>account-free purchases</strong
-        ></EvelinFilePainPoint
-      >
-      <EvelinFilePainPoint bgColor={bgColor} className="mt-[10px]"
-        >Offering <strong>personalized notifications</strong> for discounts and new
-        arrivals based on <strong>filters saved by the user</strong
-        ></EvelinFilePainPoint
-      >
-      <EvelinFilePainPoint bgColor={bgColor} className="mt-[10px]"
-        >Providing <strong>bulk-edit</strong> in Wishlist and Cart pages</EvelinFilePainPoint
-      >
     </div>
   </div>
 </EvelinFileWrapper>
