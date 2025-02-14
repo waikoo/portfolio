@@ -17,7 +17,6 @@ const { bgColor, slotId, iconId, buttonId, className } = Astro.props;
       span.textContent = span.textContent === "Expand" ? "Collapse" : "Expand";
     });
   }
-  setupExpandCollapse();
   document.addEventListener("DOMContentLoaded", setupExpandCollapse);
   document.addEventListener("astro:after-swap", setupExpandCollapse);
 </script>
