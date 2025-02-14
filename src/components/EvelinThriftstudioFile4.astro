@@ -1,4 +1,10 @@
 ---
+import { Image } from "astro:assets";
+import "@fontsource/jost/500.css";
+import primary_colors from "../assets/images/primary_colors_thrifty.png";
+import favicon from "../assets/images/favicon.png";
+import logo from "../assets/images/logo.png";
+
 import EvelinFilePainPoint from "./EvelinFilePainPoint.astro";
 import EvelinFileWrapper from "./EvelinFileWrapper.astro";
 import ReactImageWrapper from "./ReactImageWrapper";
@@ -8,7 +14,6 @@ import EvelinFileResearchGoal from "./EvelinFileResearchGoal.astro";
 import ExpandDetails from "./ExpandDetails.astro";
 import { adminInterface } from "../projects/evelinThriftstudioData";
 import DynamicImgSrc from "./DynamicImgSrc";
-import "@fontsource/jost/500.css";
 
 const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
 ---
@@ -310,11 +315,11 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     src="thriftstudio_before_after"
   />
 
-  <h3
+  <h4
     class="text-right text-[17px] sm:text-[21px] xl:text-[24px] font-bold mt-[70px]"
   >
     ADMIN INTERFACE
-  </h3>
+  </h4>
 
   <p
     class="bg-[#EDEAF6] p-[20px] mx-[-20px] mt-[20px] sm:rounded-[15px] xl:rounded-[20px] xl:text-[17px]"
@@ -337,6 +342,98 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     items={adminInterface}
     cardBgColor={cardBgColor}
     isAdminInterface={true}
+    client:only
+  />
+
+  <h3 class="font-extrabold text-[21px] text-center mt-[80px]">
+    STYLE DEFINITION
+  </h3>
+  <h4 class="text-[17px] font-bold text-left mt-[40px]">COLOR PALETTE</h4>
+
+  <p class="text-[16px] mt-[20px]">
+    To establish an <strong>energetic and fresh vibe</strong>, I chose a <strong
+      >bright, vivid</strong
+    > lime yellow as the primary color. Its vibrancy is balanced with two neutrals:
+    an off-white for a <strong>light, airy feel</strong> and an almost-black for
+    a subtle contrast, creating a <strong
+      >minimalistic and modern aesthetic</strong
+    >. To complement this foundation, I incorporated a range of grays, greens,
+    and yellows, forming a cohesive and dynamic color palette that reinforces a <strong
+      >strong and consistent visual identity</strong
+    >.
+  </p>
+
+  <Image
+    src={primary_colors}
+    alt="the primary colors (white, mustard and black) of the thriftstudio app"
+    class="mt-[20px]"
+  />
+
+  <ReactImageWrapper
+    invertIcon={true}
+    src="color_palette_thrifty"
+    className="mt-[20px]"
+    client:only
+  />
+
+  <h4 class="text-[17px] font-bold text-right mt-[50px]">TYPOGRAPHY</h4>
+  <p class="mt-[20px] text-[16px]">
+    To reflect the thrift store's diverse offerings, I aimed for a <strong
+      >bold, expressive UI</strong
+    >. I began with the logo, choosing the <strong
+      >sans-serif font Staatliches</strong
+    > for its <strong>dynamic and modern</strong> vibe. To make it stand out, I modified
+    the first and last letters (T and O) and the repeating T's by cutting through
+    them, creating an empty strike-through effect for a <strong
+      >distinctive and edgy look</strong
+    >.
+  </p>
+
+  <h4 class="font-bold text-[15px] text-center mt-[40px]">LOGO</h4>
+  <Image
+    src={logo}
+    alt="thriftstudio logo variations in the three primary colors"
+    class="mt-[10px]"
+  />
+  <h4 class="font-bold text-[15px] text-center mt-[20px]">FAVICON</h4>
+  <div class="mx-auto">
+    <Image
+      src={favicon}
+      alt="thriftstudio favicon, a black capital T with mustard background"
+      class="block mx-auto mt-[10px]"
+      width={50}
+      height={50}
+    />
+  </div>
+
+  <p class="text-[16px] mt-[40px]">
+    As the <strong>primary font</strong> I have chosen <strong
+      >Albert Sans</strong
+    >, due to its modern aesthetic, legibility and extensive range of weights
+    and styles, providing flexibility.
+  </p>
+
+  <p class="text-[16px] mt-[40px]">
+    To draw attention to specific sections of the landing page, I incorporated a <strong
+      >selection of sleek and distinctive typefaces</strong
+    >, including Alokary, Allenoire, ITC Avant Garde Gothic, and Futura. Each
+    font was chosen intentionally <strong
+      >to add character and enhance the visual hierarchy</strong
+    >, ensuring key elements stand out while maintaining a cohesive and modern
+    aesthetic.
+  </p>
+
+  <ReactImageWrapper
+    invertIcon={true}
+    src="as_fonts"
+    className="mt-[40px]"
+    client:only
+  />
+
+  <ReactImageWrapper
+    invertIcon={true}
+    src="display_fonts"
+    className="mt-[30px]"
     client:only
   />
 </EvelinFileWrapper>

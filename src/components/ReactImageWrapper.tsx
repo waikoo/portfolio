@@ -1,5 +1,6 @@
-import WithMagnifyingGlass from './WithMagnifyingGlass.tsx'
 import ModalImage from "react-modal-image"
+
+import WithMagnifyingGlass from './WithMagnifyingGlass.tsx'
 
 type Props = {
   invertIcon: boolean
