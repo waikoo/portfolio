@@ -1,0 +1,13 @@
+<div class="grid justify-start items-baseline bullet">
+  <p class="mt-[10px] col-start-2 col-end-3 p-1">
+    <slot />
+  </p>
+</div>
+
+<style>
+  .bullet:before {
+    content: "•";
+    color: black;
+    grid-column: 1/2;
+  }
+</style>

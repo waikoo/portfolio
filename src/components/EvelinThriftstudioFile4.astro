@@ -39,24 +39,20 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </p>
 
   <div
-    class="xl:flex xl:flex-row-reverse xl:justify-between xl:items-center xl:gap-[70px] xl:px-[78px] xl:mx-auto"
+    class="xl:flex xl:flex-row-reverse xl:justify-between xl:items-center xl:gap-[70px] xl:px-[78px] sm:mx-auto"
   >
     <ReactImageWrapper
       invertIcon={true}
       client:only
-      imgClassName="rounded-[5px] w-[297px]"
+      imgClassName="rounded-[5px] w-[297px] mx-auto"
       className="mt-[30px] xl:mt-[40px]"
       src="thriftstudio_paper_wireframe"
     />
 
     <div class="">
-      <EvelinFilePainPoint
-        bgColor={bgColor}
-        textSize="text-[16px]"
-        className="mt-[40px] sm:mt-[30px] w-[90%] mx-auto leading-[18px]"
-        ><strong>I started with laying out the key features:</strong
-        ></EvelinFilePainPoint
-      >
+      <p class="mt-[40px] sm:mt-[30px] mx-auto leading-[18px] text-[16px]">
+        <strong>I started with laying out the key features:</strong>
+      </p>
 
       <div
         class="flex flex-col gap-[13px] xl:gap-[7px] mt-[23px] sm:mt-[20px] xl:mt-[30px] xl:pl-[15px]"
@@ -112,8 +108,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
           bgColor="bg-[#EDEAF6]"
           padding="p-[12px]"
           textSize="text-[16px] xl:text-[16px]"
-          className="sm:leading-[14px] xl:tracking-[0.5px] mt-[10px]"
-          width="w-fit"
+          className="sm:leading-[14px] xl:tracking-[0.5px] mt-[10px] w-fit"
           >assess whether users can successfully complete key tasks within the
           prototype</EvelinFileResearchGoal
         >
@@ -122,8 +117,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
           bgColor="bg-[#EDEAF6]"
           padding="p-[12px]"
           textSize="text-[16px] xl:text-[16px]"
-          className="xl:tracking-[0.5px] sm:leading-[14px]"
-          width="w-fit"
+          className="xl:tracking-[0.5px] sm:leading-[14px] w-fit"
         >
           evaluate the intuitiveness and usability of the prototype</EvelinFileResearchGoal
         >
@@ -138,8 +132,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
           bgColor="bg-[#EDEAF6]"
           padding="p-[12px]"
           textSize="text-[16px] xl:text-[16px]"
-          className="xl:tracking-[0.5px] sm:leading-[14px]"
-          width="w-fit"
+          className="xl:tracking-[0.5px] sm:leading-[14px] w-fit"
           >what can we learn from the steps that users take to complete each
           task?</EvelinFileResearchGoal
         >
@@ -148,24 +141,21 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
           bgColor="bg-[#EDEAF6]"
           padding="p-[12px]"
           textSize="text-[16px] xl:text-[16px]"
-          className="xl:tracking-[0.5px] sm:leading-[14px]"
-          width="w-fit"
+          className="xl:tracking-[0.5px] sm:leading-[14px] w-fit"
           >are there parts of the user flow where users get stuck?</EvelinFileResearchGoal
         >
         <EvelinFileResearchGoal
           bgColor="bg-[#EDEAF6]"
           padding="p-[12px]"
           textSize="text-[16px] xl:text-[16px]"
-          className="xl:tracking-[0.5px] sm:leading-[14px]"
-          width="w-fit"
+          className="xl:tracking-[0.5px] sm:leading-[14px] w-fit"
           >do the users find the filter saving feature helpful and/or useful?</EvelinFileResearchGoal
         >
         <EvelinFileResearchGoal
           bgColor="bg-[#EDEAF6]"
           padding="p-[12px]"
           textSize="text-[16px] xl:text-[16px]"
-          className="xl:tracking-[0.5px] sm:leading-[14px]"
-          width="w-fit"
+          className="xl:tracking-[0.5px] sm:leading-[14px] w-fit"
           >are there design changes that would make each task easier and/or
           faster for the users?</EvelinFileResearchGoal
         >
@@ -198,7 +188,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </h4>
 
   <div
-    class="h-[1px] mx-[-20px] sm:mx-[-50px] w-screen mt-[15px] xl:hidden"
+    class="h-[1px] mx-[-20px] sm:mx-[-50px] w-screen mt-[15px] sm:hidden"
     style={{ backgroundColor: bgColor }}
   >
   </div>
