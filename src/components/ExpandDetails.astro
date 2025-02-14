@@ -5,7 +5,7 @@ const { bgColor, slotId, iconId, buttonId, className } = Astro.props;
 ---
 
 <script is:inline define:vars={{ slotId, iconId, buttonId }}>
-  document.addEventListener("DOMContentLoaded", () => {
+  function setupExpandCollapse() {
     const button = document.querySelector(`#${buttonId}`);
     const slot = document.querySelector(`#${slotId}`);
     const icon = button.querySelector(`#${iconId}`);
@@ -16,7 +16,10 @@ const { bgColor, slotId, iconId, buttonId, className } = Astro.props;
       icon?.classList.toggle("active");
       span.textContent = span.textContent === "Expand" ? "Collapse" : "Expand";
     });
-  });
+  }
+  setupExpandCollapse();
+  document.addEventListener("DOMContentLoaded", setupExpandCollapse);
+  document.addEventListener("astro:after-swap", setupExpandCollapse);
 </script>
 
 <section class={`flex flex-col ${className} isolate`}>
