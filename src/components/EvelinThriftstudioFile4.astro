@@ -1,10 +1,10 @@
 ---
-import { Image } from "astro:assets";
+import { Image, Picture } from "astro:assets";
 import "@fontsource/jost/500.css";
 import primary_colors from "../assets/images/primary_colors_thrifty.png";
-import favicon from "../assets/images/favicon.png";
-import logo from "../assets/images/logo.png";
-
+import logoFaviconMobile from "../assets/images/logo-favicon-mobile.png";
+import logoFaviconTablet from "../assets/images/logo-favicon-tablet.png";
+import logoFaviconDesktop from "../assets/images/logo-favicon-desktop.png";
 import EvelinFilePainPoint from "./EvelinFilePainPoint.astro";
 import EvelinFileWrapper from "./EvelinFileWrapper.astro";
 import ReactImageWrapper from "./ReactImageWrapper";
@@ -346,17 +346,17 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   />
 
   <h3
-    class="font-extrabold text-[21px] sm:text-[26px] text-center mt-[70px] sm:mt-[80px]"
+    class="font-extrabold text-[21px] sm:text-[26px] xl:text-[40px] text-center mt-[70px] sm:mt-[80px] xl:mt-[30px]"
   >
     STYLE DEFINITION
   </h3>
   <h4
-    class="text-[17px] sm:text-[26px] font-bold text-left mt-[30px] sm:mt-[70px]"
+    class="text-[17px] sm:text-[26px] xl:text-[32px] font-bold text-left mt-[30px] sm:mt-[70px]"
   >
     COLOR PALETTE
   </h4>
 
-  <div class="sm:mt-[40px] sm:flex sm:items-center sm:gap-[14px]">
+  <div class="sm:mt-[40px] sm:flex sm:items-center sm:gap-[14px] xl:mt-[70px]">
     <p class="text-[16px] mt-[20px] sm:mt-0">
       To establish an <strong>energetic and fresh vibe</strong>, I chose a <strong
         >bright, vivid</strong
@@ -372,7 +372,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     <Image
       src={primary_colors}
       alt="the primary colors (white, mustard and black) of the thriftstudio app"
-      class="mt-[20px] w-[200px] h-[105px]"
+      class="mt-[20px] w-[200px] h-[105px] xl:w-[275px] xl:h-[143px]"
     />
   </div>
 
@@ -384,13 +384,15 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   />
 
   <h4
-    class="text-[17px] sm:text-[21px] font-bold text-right mt-[50px] sm:mt-[70px]"
+    class="text-[17px] sm:text-[21px] xl:text-[32px] font-bold text-right mt-[40px] sm:mt-[70px]"
   >
     TYPOGRAPHY
   </h4>
 
-  <section class="sm:flex sm:flex-row-reverse sm:gap-[35px] sm:items-center">
-    <p class="mt-[20px] text-[16px] sm:w-[60%]">
+  <section
+    class="sm:flex sm:flex-row-reverse sm:gap-[35px] sm:items-center xl:mt-[30px]"
+  >
+    <p class="mt-[20px] text-[16px] sm:w-[60%] xl:mt-0">
       To reflect the thrift store's diverse offerings, I aimed for a <strong
         >bold, expressive UI</strong
       >. I began with the logo, choosing the <strong
@@ -402,37 +404,32 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
       >.
     </p>
 
-    <div class="sm:flex sm:flex-col sm:items-start sm:w-[40%]">
-      <div>
-        <h4 class="font-bold text-[15px] text-center sm:text-left mt-[40px]">
-          LOGO
-        </h4>
-        <Image
-          src={logo}
-          alt="thriftstudio logo variations in the three primary colors"
-          class="mt-[10px]"
-          width={712}
-          height={652}
-        />
-      </div>
-
-      <div>
-        <h4 class="font-bold text-[15px] text-center sm:text-left mt-[20px]">
-          FAVICON
-        </h4>
-        <Image
-          src={favicon}
-          alt="thriftstudio favicon, a black capital T with mustard background"
-          class="block mx-auto mt-[10px]"
-          width={50}
-          height={50}
-        />
-      </div>
+    <div class="sm:w-[40%]">
+      <Picture
+        src={logoFaviconMobile}
+        alt="the thriftstudio logo"
+        sizes="(min-width: 0px), 712px, 100vw"
+        class="mt-[30px] sm:hidden"
+      />
+      <Picture
+        src={logoFaviconTablet}
+        alt="the thriftstudio logo"
+        sizes="(min-width: 640px), 712px, 100vw"
+        class="mt-[30px] hidden sm:block xl:hidden"
+      />
+      <Picture
+        src={logoFaviconDesktop}
+        alt="the thriftstudio logo"
+        sizes="(min-width: 1280px), 1416px, 100vw"
+        class="mt-[30px] hidden xl:block"
+      />
     </div>
   </section>
 
-  <section class="sm:flex sm:items-center sm:gap-[35px]">
-    <div class="sm:flex sm:flex-col sm:gap-[50px] sm:w-[40%]">
+  <section class="sm:flex sm:items-center sm:gap-[35px] xl:mt-[80px]">
+    <div
+      class="sm:flex sm:flex-col sm:gap-[50px] sm:w-[40%] xl:self-start xl:sticky xl:top-[70px]"
+    >
       <p class="text-[16px] mt-[40px]">
         As the <strong>primary font</strong> I have chosen <strong
           >Albert Sans</strong
