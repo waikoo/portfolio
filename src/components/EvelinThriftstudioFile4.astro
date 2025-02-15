@@ -33,7 +33,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </h3>
 
   <p
-    class="mt-[20px] mx-[-20px] p-[20px] border-[#C8C9AC] border-t-[1px] border-b-[1px] text-[#1E1E1E] leading-[23px] sm:border-0 sm:mx-0 sm:rounded-[15px] sm:bg-[#E8E9C4] xl:rounded-[20px]"
+    class="mt-[20px] mx-[-20px] p-[20px] border-[#C8C9AC] border-t-[1px] border-b-[1px] xl:text-[17px] text-[#1E1E1E] leading-[23px] sm:border-0 sm:mx-0 sm:rounded-[15px] sm:bg-[#E8E9C4] xl:rounded-[20px]"
   >
     I adopted a <strong>mobile-first approach</strong> in the initial sketching phase
     to ensure an intuitive user experience starting with the smallest screens. By
@@ -77,7 +77,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </div>
 
   <p
-    class="bg-[#EDEAF6] p-[20px] sm:p-[24px] sm:rounded-[15px] mx-[-20px] sm:mx-0 mt-[25px] sm:mt-[50px] xl:mt-[40px]"
+    class="bg-[#EDEAF6] p-[20px] sm:p-[24px] sm:rounded-[15px] mx-[-20px] xl:text-[17px] sm:mx-0 mt-[25px] sm:mt-[50px] xl:mt-[40px]"
   >
     After finalizing the initial sketches, I transitioned to <strong
       >digital wireframes</strong
@@ -205,31 +205,43 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
       noBg={true}
       className=""
       padding="px-4 pt-4"
-      textSize="text-[16px]"
+      textSize="text-[16px] xl:text-[17px]"
       >Participants found the Account menu overwhelming due to the numerous
       subsections and the need to navigate back and forth</EvelinFileResearchGoal
     >
-    <EvelinFileResearchGoal noBg={true} padding="px-4" textSize="text-[16px]"
+    <EvelinFileResearchGoal
+      noBg={true}
+      padding="px-4"
+      textSize="text-[16px] xl:text-[17px]"
       >The radio button in the saved address section caused confusion, as its
       purpose (indicating the default address) was unclear</EvelinFileResearchGoal
     >
-    <EvelinFileResearchGoal noBg={true} padding="px-4" textSize="text-[16px]"
+    <EvelinFileResearchGoal
+      noBg={true}
+      padding="px-4"
+      textSize="text-[16px] xl:text-[17px]"
       >Participants disliked that each filter section opened on a new page
       slowing the process, and found the “Type” list confusing, as it mixed
       product categories with options like “New in” and “Sale”</EvelinFileResearchGoal
     >
-    <EvelinFileResearchGoal noBg={true} padding="px-4" textSize="text-[16px]"
+    <EvelinFileResearchGoal
+      noBg={true}
+      padding="px-4"
+      textSize="text-[16px] xl:text-[17px]"
       >Participants suggested adding color names to the color selection for
       better clarity</EvelinFileResearchGoal
     >
-    <EvelinFileResearchGoal noBg={true} padding="px-4" textSize="text-[16px]"
+    <EvelinFileResearchGoal
+      noBg={true}
+      padding="px-4"
+      textSize="text-[16px] xl:text-[17px]"
       >While the filter saving feature was appreciated, accessing it was
       considered too cumbersome</EvelinFileResearchGoal
     >
     <EvelinFileResearchGoal
       noBg={true}
       padding="px-4 pb-4"
-      textSize="text-[16px]"
+      textSize="text-[16px] xl:text-[17px]"
       >Participants completed the checkout process smoothly but expressed a
       desire to see the cart total on every checkout page</EvelinFileResearchGoal
     >
@@ -346,7 +358,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   />
 
   <h3
-    class="font-extrabold text-[21px] sm:text-[26px] xl:text-[40px] text-center mt-[70px] sm:mt-[80px] xl:mt-[30px]"
+    class="font-extrabold text-[21px] sm:text-[26px] xl:text-[40px] text-center mt-[70px] sm:mt-[80px] xl:mt-[120px]"
   >
     STYLE DEFINITION
   </h3>
@@ -356,8 +368,10 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     COLOR PALETTE
   </h4>
 
-  <div class="sm:mt-[40px] sm:flex sm:items-center sm:gap-[14px] xl:mt-[70px]">
-    <p class="text-[16px] mt-[20px] sm:mt-0">
+  <div
+    class="sm:mt-[40px] sm:flex sm:items-center sm:gap-[14px] xl:mt-[30px] xl:justify-between"
+  >
+    <p class="text-[16px] xl:text-[17px] mt-[20px] xl:w-[68%] sm:mt-0">
       To establish an <strong>energetic and fresh vibe</strong>, I chose a <strong
         >bright, vivid</strong
       > lime yellow as the primary color. Its vibrancy is balanced with two neutrals:
@@ -372,7 +386,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     <Image
       src={primary_colors}
       alt="the primary colors (white, mustard and black) of the thriftstudio app"
-      class="mt-[20px] w-[200px] h-[105px] xl:w-[275px] xl:h-[143px]"
+      class="mt-[20px] xl:mt-0 sm:w-[200px] sm:h-[105px] xl:w-[275px] xl:h-[143px]"
     />
   </div>
 
@@ -392,7 +406,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   <section
     class="sm:flex sm:flex-row-reverse sm:gap-[35px] sm:items-center xl:mt-[30px]"
   >
-    <p class="mt-[20px] text-[16px] sm:w-[60%] xl:mt-0">
+    <p class="mt-[20px] text-[16px] xl:text-[17px] sm:w-[60%] xl:mt-0">
       To reflect the thrift store's diverse offerings, I aimed for a <strong
         >bold, expressive UI</strong
       >. I began with the logo, choosing the <strong
@@ -409,19 +423,19 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
         src={logoFaviconMobile}
         alt="the thriftstudio logo"
         sizes="(min-width: 0px), 712px, 100vw"
-        class="mt-[30px] sm:hidden"
+        class="mt-[30px] mx-auto w-[220px] max-w-full sm:max-w-full xl:mt-0 sm:hidden"
       />
       <Picture
         src={logoFaviconTablet}
         alt="the thriftstudio logo"
         sizes="(min-width: 640px), 712px, 100vw"
-        class="mt-[30px] hidden sm:block xl:hidden"
+        class="mt-[30px] sm:max-w-full xl:mt-0 hidden sm:block xl:hidden"
       />
       <Picture
         src={logoFaviconDesktop}
         alt="the thriftstudio logo"
         sizes="(min-width: 1280px), 1416px, 100vw"
-        class="mt-[30px] hidden xl:block"
+        class="mt-[30px] sm:max-w-full xl:mt-0 hidden xl:block"
       />
     </div>
   </section>
@@ -430,16 +444,16 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     class="sm:flex sm:items-center sm:justify-between sm:gap-[35px] xl:mt-[80px]"
   >
     <div
-      class="sm:flex sm:flex-col sm:gap-[50px] xl:gap-[30px] sm:w-[35%] xl:self-start xl:sticky xl:top-[40%]"
+      class="sm:flex sm:flex-col sm:gap-[50px] xl:gap-[30px] sm:w-[37%] xl:self-start xl:sticky xl:top-[40%]"
     >
-      <p class="text-[16px] mt-[40px]">
+      <p class="text-[16px] xl:text-[17px] mt-[40px] xl:mt-0">
         As the <strong>primary font</strong> I have chosen <strong
           >Albert Sans</strong
         >, due to its modern aesthetic, legibility and extensive range of
         weights and styles, providing flexibility.
       </p>
 
-      <p class="text-[16px] mt-[40px] sm:mt-0">
+      <p class="text-[16px] xl:text-[17px] mt-[30px] sm:mt-0">
         To draw attention to specific sections of the landing page, I
         incorporated a <strong
           >selection of sleek and distinctive typefaces</strong
@@ -454,7 +468,8 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     <ReactImageWrapper
       invertIcon={true}
       src="as_fonts"
-      className="mt-[40px] sm:max-w-[605px] rounded-[5px]"
+      className="mt-[40px] xl:mt-0 sm:max-w-[605px] rounded-[5px] sm:w-[63%]"
+      imgClassName="rounded-[5px]"
       client:only
     />
   </section>
@@ -462,7 +477,8 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   <ReactImageWrapper
     invertIcon={true}
     src="display_fonts"
-    className="mt-[30px] rounded-[5px]"
+    className="mt-[30px] xl:mt-[80px] rounded-[5px]"
+    imgClassName="rounded-[5px]"
     client:only
   />
 </EvelinFileWrapper>
