@@ -426,9 +426,11 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     </div>
   </section>
 
-  <section class="sm:flex sm:items-center sm:gap-[35px] xl:mt-[80px]">
+  <section
+    class="sm:flex sm:items-center sm:justify-between sm:gap-[35px] xl:mt-[80px]"
+  >
     <div
-      class="sm:flex sm:flex-col sm:gap-[50px] sm:w-[40%] xl:self-start xl:sticky xl:top-[70px]"
+      class="sm:flex sm:flex-col sm:gap-[50px] xl:gap-[30px] sm:w-[35%] xl:self-start xl:sticky xl:top-[40%]"
     >
       <p class="text-[16px] mt-[40px]">
         As the <strong>primary font</strong> I have chosen <strong
@@ -452,7 +454,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     <ReactImageWrapper
       invertIcon={true}
       src="as_fonts"
-      className="mt-[40px] sm:w-[60%] rounded-[5px]"
+      className="mt-[40px] sm:max-w-[605px] rounded-[5px]"
       client:only
     />
   </section>
