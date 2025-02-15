@@ -345,10 +345,14 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     client:only
   />
 
-  <h3 class="font-extrabold text-[21px] text-center mt-[80px] mt-[90px]">
+  <h3
+    class="font-extrabold text-[21px] sm:text-[26px] text-center mt-[70px] sm:mt-[80px]"
+  >
     STYLE DEFINITION
   </h3>
-  <h4 class="text-[17px] font-bold text-left mt-[40px] sm:mt-[70px]">
+  <h4
+    class="text-[17px] sm:text-[26px] font-bold text-left mt-[30px] sm:mt-[70px]"
+  >
     COLOR PALETTE
   </h4>
 
@@ -379,7 +383,9 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     client:only
   />
 
-  <h4 class="text-[17px] font-bold text-right mt-[50px] sm:mt-[70px]">
+  <h4
+    class="text-[17px] sm:text-[21px] font-bold text-right mt-[50px] sm:mt-[70px]"
+  >
     TYPOGRAPHY
   </h4>
 
@@ -425,7 +431,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     </div>
   </section>
 
-  <section class="sm:flex sm:gap-[35px]">
+  <section class="sm:flex sm:items-center sm:gap-[35px]">
     <div class="sm:flex sm:flex-col sm:gap-[50px] sm:w-[40%]">
       <p class="text-[16px] mt-[40px]">
         As the <strong>primary font</strong> I have chosen <strong
@@ -434,7 +440,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
         weights and styles, providing flexibility.
       </p>
 
-      <p class="text-[16px] mt-[40px]">
+      <p class="text-[16px] mt-[40px] sm:mt-0">
         To draw attention to specific sections of the landing page, I
         incorporated a <strong
           >selection of sleek and distinctive typefaces</strong
@@ -449,7 +455,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     <ReactImageWrapper
       invertIcon={true}
       src="as_fonts"
-      className="mt-[40px] sm:w-[60%]"
+      className="mt-[40px] sm:w-[60%] rounded-[5px]"
       client:only
     />
   </section>
@@ -457,7 +463,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   <ReactImageWrapper
     invertIcon={true}
     src="display_fonts"
-    className="mt-[30px]"
+    className="mt-[30px] rounded-[5px]"
     client:only
   />
 </EvelinFileWrapper>
