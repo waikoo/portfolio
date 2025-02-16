@@ -16,7 +16,7 @@ import { adminInterface } from "../projects/evelinThriftstudioData";
 import DynamicImgSrc from "./DynamicImgSrc";
 import ThriftstudioDesignQuickLinks from "./ThriftstudioDesignQuickLinks.astro";
 
-const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
+const { fileTitle, bgColor, cardBgColor, id, quickLinkMargin } = Astro.props;
 ---
 
 <EvelinFileWrapper
@@ -26,10 +26,11 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   id={id}
   paddingX="px-[20px] sm:px-[30px] xl:px-[0px] 2xl:px-[172px]"
   paddingY="py-[80px] sm:py-[90px] xl:py-[130px]"
+  quickLinkMargin={quickLinkMargin}
 >
   <ThriftstudioDesignQuickLinks />
   <h3
-    class="text-[21px] sm:text-[26px] sm:text-[26px] xl:text-[40px] text-[#1e1e1e] font-extrabold text-center mt-[60px]"
+    class="text-[21px] sm:text-[26px] sm:text-[26px] xl:text-[40px] text-[#1e1e1e] font-extrabold text-center"
     id="wireframes"
   >
     WIREFRAMES
