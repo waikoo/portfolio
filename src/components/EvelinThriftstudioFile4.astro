@@ -14,6 +14,7 @@ import EvelinFileResearchGoal from "./EvelinFileResearchGoal.astro";
 import ExpandDetails from "./ExpandDetails.astro";
 import { adminInterface } from "../projects/evelinThriftstudioData";
 import DynamicImgSrc from "./DynamicImgSrc";
+import ThriftstudioDesignQuickLinks from "./ThriftstudioDesignQuickLinks.astro";
 
 const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
 ---
@@ -26,8 +27,10 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   paddingX="px-[20px] sm:px-[30px] xl:px-[0px] 2xl:px-[172px]"
   paddingY="py-[80px] sm:py-[90px] xl:py-[130px]"
 >
+  <ThriftstudioDesignQuickLinks />
   <h3
-    class="text-[21px] sm:text-[26px] sm:text-[26px] xl:text-[40px] text-[#1e1e1e] font-extrabold text-center"
+    class="text-[21px] sm:text-[26px] sm:text-[26px] xl:text-[40px] text-[#1e1e1e] font-extrabold text-center mt-[60px]"
+    id="wireframes"
   >
     WIREFRAMES
   </h3>
@@ -97,6 +100,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
 
   <h4
     class="text-[17px] sm:text-[21px] xl:text-[32px] mt-[50px] xl:mt-[80px] font-bold"
+    id="usability-testing"
   >
     USABILITY TESTING
   </h4>
@@ -359,6 +363,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
 
   <h3
     class="font-extrabold text-[21px] sm:text-[26px] xl:text-[40px] text-center mt-[70px] sm:mt-[80px] xl:mt-[120px]"
+    id="style-definition"
   >
     STYLE DEFINITION
   </h3>
