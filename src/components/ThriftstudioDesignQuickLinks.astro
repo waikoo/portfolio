@@ -1,6 +1,8 @@
-<section
-  class="mx-[-16px] sm:absolute sm:top-[-32px] xl:top-[-38px] left-0 right-0 z-[0]"
->
+---
+const { className } = Astro.props;
+---
+
+<section class={`mx-[-16px] sm:sticky left-0 right-0 z-[0] ${className}`}>
   <p class="text-center font-semibold text-[16px] sm:hidden">Quick Links</p>
   <ul
     class="flex flex-row flex-wrap justify-center xl:justify-start gap-[5px] font-semibold text-[12px]"

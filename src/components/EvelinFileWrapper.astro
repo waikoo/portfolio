@@ -1,4 +1,6 @@
 ---
+import ThriftstudioDesignQuickLinks from "./ThriftstudioDesignQuickLinks.astro";
+
 const {
   title,
   bgColor,
@@ -16,6 +18,9 @@ const showOverlayOnTablet = title === "DESIGN" ? "sm:block" : "";
   style={{ backgroundColor: cardBgColor }}
   class={`relative rounded-[20px_0px_20px_20px] sm:rounded-[20px] w-full ${className} sm:max-w-[839px] xl:min-w-[1112px] xl:max-w-[1396px] mx-auto first-of-type:mt-[40px] ${quickLinkMargin}`}
 >
+  <ThriftstudioDesignQuickLinks
+    className={`${title === "DESIGN" && quickLinkMargin ? "hidden sm:block transform sm:translate-y-[-32px] xl:translate-y-[-38px] xl:top-[124px] sm:top-[130px] z-[10] sm:bg-[#D2D62E] xl:pl-[40px]" : ""}`}
+  />
   <div
     class={`absolute top-[-1px] right-[-1px] xl:px-[16px] sm:rounded-tr-[20px]`}
     style={{ backgroundColor: bgColor }}
@@ -37,8 +42,9 @@ const showOverlayOnTablet = title === "DESIGN" ? "sm:block" : "";
       DESIGN
     </h2>
   </div>
+
   <section
-    class={`${paddingX} ${paddingY} sm:text-[16px] mx-auto sm:max-w-[680px] xl:max-w-[1059px] 2xl:max-w-[1396px] relative z-[2] `}
+    class={`${paddingX} ${paddingY} sm:text-[16px] mx-auto sm:max-w-[680px] xl:max-w-[1059px] 2xl:max-w-[1396px] relative z-[2]`}
   >
     <slot />
   </section>
