@@ -15,6 +15,8 @@ import ExpandDetails from "./ExpandDetails.astro";
 import { adminInterface } from "../projects/evelinThriftstudioData";
 import DynamicImgSrc from "./DynamicImgSrc";
 import ThriftstudioDesignQuickLinks from "./ThriftstudioDesignQuickLinks.astro";
+import WithMagnifyingGlass from "./WithMagnifyingGlass";
+import ModalImage from "react-modal-image";
 
 const { fileTitle, bgColor, cardBgColor, id, quickLinkMargin } = Astro.props;
 ---
@@ -487,4 +489,114 @@ const { fileTitle, bgColor, cardBgColor, id, quickLinkMargin } = Astro.props;
     imgClassName="rounded-[5px]"
     client:only
   />
+
+  <h4
+    class="text-[17px] sm:text-[21px] xl:text-[32px] font-bold mt-[40px] sm:mt-[70px]"
+  >
+    COMPONENTS
+  </h4>
+
+  <WithMagnifyingGlass
+    invert={true}
+    client:only
+    className="mt-[20px] sm:mt-[30px] xl:hidden"
+  >
+    <div
+      class="bg-[#E8E9C3] p-[14px] mx-[-20px] sm:mx-0 sm:rounded-[15px] xl:grid xl:grid-cols-[303px_1fr] xl:items-center"
+    >
+      <p class="text-[16px] xl:col-start-1 xl:col-end-2 xl:px-[37px]">
+        After establishing the color palette and typography, I designed the
+        <strong>iconography, illustrations,</strong> and <strong
+          >components</strong
+        > for all three viewports - mobile, tablet, and desktop.
+      </p>
+      <ModalImage
+        small={`/images/comp-5.avif`}
+        medium={`/images/comp-5.webp`}
+        large={`/images/comp-5.png`}
+        hideDownload={true}
+        hideZoom={true}
+        className="mt-[20px] xl:mt-0 xl:col-start-2 xl:col-end-3"
+        client:only
+      />
+    </div>
+  </WithMagnifyingGlass>
+
+  <section class="hidden xl:grid grid-cols-[290px_762px] items-start">
+    <p
+      class="text-[16px] xl:text-[17px] bg-[#E9E9D6] px-[30.5px] py-[57.5px] leading-[25px] h-[266.22px] rounded-tl-[20px] rounded-bl-[20px]"
+    >
+      After establishing the color palette and typography, I designed the
+      <strong>iconography, illustrations,</strong> and <strong
+        >components</strong
+      > for all three viewports - mobile, tablet, and desktop.
+    </p>
+    <WithMagnifyingGlass invert={true} client:only>
+      <ModalImage
+        small={`/images/comp-5.avif`}
+        medium={`/images/comp-5.webp`}
+        large={`/images/comp-5.png`}
+        hideDownload={true}
+        hideZoom={true}
+        className="mt-[20px] xl:mt-0 bg-[#E9E9D6] p-[13px] rounded-tr-[20px] rounded-br-[20px]"
+        client:only
+      />
+    </WithMagnifyingGlass>
+  </section>
+
+  <WithMagnifyingGlass invert={true} className="mt-[30px]" client:only>
+    <div
+      class="bg-[#E8E9C3] p-[14px] mx-[-20px] sm:mx-0 sm:rounded-[15px] xl:rounded-[20px]"
+    >
+      <p>
+        During the refinement process, I expanded beyond the initial wireframes,
+        completing the missing pages - including Brands, Orders, Returns,
+        Settings, About Us, Delivery & Return Info, Contact, and Product Page -
+        and enhancing the desktop layout with additional elements for a richer
+        experience.
+      </p>
+      <div
+        class="xl:grid xl:grid-cols-[545px_469px] xl:gap-[13px] xl:mt-[20px]"
+      >
+        <ModalImage
+          small={`/images/comp-1.avif`}
+          medium={`/images/comp-1.webp`}
+          large={`/images/comp-1.png`}
+          hideDownload={true}
+          hideZoom={true}
+          className="mt-[20px] sm:mt-0 xl:mt-0"
+          client:only
+        />
+        <div class="xl:flex xl:flex-col gap-[13px] sm:gap-[13px]">
+          <ModalImage
+            small={`/images/comp-2.avif`}
+            medium={`/images/comp-2.webp`}
+            large={`/images/comp-2.png`}
+            hideDownload={true}
+            hideZoom={true}
+            className="mt-[20px] sm:mt-[13px] xl:mt-0"
+            client:only
+          />
+          <ModalImage
+            small={`/images/comp-3.avif`}
+            medium={`/images/comp-3.webp`}
+            large={`/images/comp-3.png`}
+            hideDownload={true}
+            hideZoom={true}
+            className="mt-[20px] sm:mt-[13px] xl:mt-0"
+            client:only
+          />
+          <ModalImage
+            small={`/images/comp-4.avif`}
+            medium={`/images/comp-4.webp`}
+            large={`/images/comp-4.png`}
+            hideDownload={true}
+            hideZoom={true}
+            className="mt-[20px] sm:mt-[13px] xl:mt-0"
+            client:only
+          />
+        </div>
+      </div>
+    </div>
+  </WithMagnifyingGlass>
 </EvelinFileWrapper>
