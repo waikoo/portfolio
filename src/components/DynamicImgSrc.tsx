@@ -13,9 +13,10 @@ interface Props {
   cardBgColor: string
   isCompetitiveAnalysis?: boolean
   isAdminInterface?: boolean
+  isHome?: boolean
 }
 
-export default function DynamicImgSrc({ showByDefault, items, isQuizzical, cardBgColor, isCompetitiveAnalysis, isAdminInterface }: Props) {
+export default function DynamicImgSrc({ showByDefault, items, isQuizzical, cardBgColor, isCompetitiveAnalysis, isAdminInterface, isHome }: Props) {
   const [index, setIndex] = useState(showByDefault)
   const [selectedImg, setSelectedImg] = useState(
     items[index].imgName
@@ -24,6 +25,7 @@ export default function DynamicImgSrc({ showByDefault, items, isQuizzical, cardB
 
   const competitiveAnalysisStyles = isCompetitiveAnalysis ? "mt-[15px]" : ""
   const adminInterfaceStyles = isAdminInterface ? "mt-[10px] sm:mt-[15px]" : ""
+  const homeStyles = isHome ? "mt-[15px]" : ""
 
   const memoizedClickHandler = useMemo(() => (e: React.MouseEvent, i: number) => {
     const target = e.target as HTMLLIElement;
@@ -39,9 +41,9 @@ export default function DynamicImgSrc({ showByDefault, items, isQuizzical, cardB
   const altText = isQuizzical ? 'final design of the app quizzical' : 'competitive analysis of the thriftstudio app'
   return (
     <>
-      <ReactCarousel items={items} handleClick={handleClick} index={index} isQuizzical={isQuizzical} cardBgColor={cardBgColor} isCompetitiveAnalysis={isCompetitiveAnalysis} isAdminInterface={isAdminInterface}>
+      <ReactCarousel items={items} handleClick={handleClick} index={index} isQuizzical={isQuizzical} cardBgColor={cardBgColor} isCompetitiveAnalysis={isCompetitiveAnalysis} isAdminInterface={isAdminInterface} isHome={isHome}>
         <WithMagnifyingGlass invert={true}>
-          <ReactCarouselImage selectedImg={selectedImg} setShowModal={setOpen} className={`${adminInterfaceStyles} ${competitiveAnalysisStyles}`} alt={altText} isCompetitiveAnalysis={isCompetitiveAnalysis} />
+          <ReactCarouselImage selectedImg={selectedImg} setShowModal={setOpen} className={`${adminInterfaceStyles} ${competitiveAnalysisStyles} ${homeStyles}`} alt={altText} isCompetitiveAnalysis={isCompetitiveAnalysis} />
         </WithMagnifyingGlass>
       </ReactCarousel>
 

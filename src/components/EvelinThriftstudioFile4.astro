@@ -12,11 +12,11 @@ import ShadyNumber from "./ShadyNumber.astro";
 import thriftstudioKeyFeatures from "../thriftstudioKeyFeatures.ts";
 import EvelinFileResearchGoal from "./EvelinFileResearchGoal.astro";
 import ExpandDetails from "./ExpandDetails.astro";
-import { adminInterface } from "../projects/evelinThriftstudioData";
+import { adminInterface, homePage } from "../projects/evelinThriftstudioData";
 import DynamicImgSrc from "./DynamicImgSrc";
 import ThriftstudioDesignQuickLinks from "./ThriftstudioDesignQuickLinks.astro";
 import WithMagnifyingGlass from "./WithMagnifyingGlass";
-import ModalImage from "react-modal-image";
+import ReactImage from "./ReactImage";
 
 const { fileTitle, bgColor, cardBgColor, id, quickLinkMargin } = Astro.props;
 ---
@@ -593,4 +593,122 @@ const { fileTitle, bgColor, cardBgColor, id, quickLinkMargin } = Astro.props;
       </div>
     </div>
   </WithMagnifyingGlass>
+
+  <h3
+    class="font-extrabold text-[21px] sm:text-[26px] xl:text-[40px] text-center mt-[80px] sm:mt-[80px] xl:mt-[120px]"
+    id="final-design"
+  >
+    FINAL DESIGN
+  </h3>
+
+  <h4
+    class="text-[17px] text-center sm:text-right sm:text-[21px] xl:text-[32px] font-bold mt-[40px] sm:mt-[70px]"
+  >
+    HOME PAGE
+  </h4>
+
+  <div class="flex justify-center">
+    <p
+      class="uppercase bg-[#d2d62e] py-[10px] sm:py-[8px] px-[6.5px] sm:px-[5px] text-[12px] xl:ml-auto leading-[16px] text-center xl:inline font-medium sm:rounded-[5px] mt-[30px] sm:mt-[40px] xl:mt-0"
+    >
+      A key pain point was users missing out on new arrivals and sales
+    </p>
+  </div>
+
+  <section class="xl:flex xl:align-start xl:mt-[30px]">
+    <EvelinFilePainPoint
+      bgColor={bgColor}
+      className="mt-[30px] xl:mt-0 text-[16px] leading-[20px] font-bold w-max-content w-[40%]"
+      >To solve this, I implemented three features:</EvelinFilePainPoint
+    >
+    <div class="xl:flex xl:flex-col xl:gap-[20px]">
+      <EvelinFileResearchGoal
+        noBg={true}
+        className=""
+        padding="pt-[15px] xl:pt-0"
+        textSize="text-[16px] xl:text-[17px]"
+        >a looping banner highlighting shipping, discounts, new arrivals, and
+        store hours</EvelinFileResearchGoal
+      >
+      <EvelinFileResearchGoal
+        noBg={true}
+        className=""
+        padding="pt-[15px]"
+        textSize="text-[16px] xl:pt-0 xl:text-[17px]"
+        >dedicated sections for men, women, and kids to enhance personalization</EvelinFileResearchGoal
+      >
+      <EvelinFileResearchGoal
+        noBg={true}
+        className=""
+        padding="pt-[15px]"
+        textSize="text-[16px] xl:pt-0 xl:text-[17px] mb-[40px]"
+        >a hero section featuring a looping ‘New In’ and ‘Sale’ image, also
+        accessible via toggle, drag and swipe</EvelinFileResearchGoal
+      >
+    </div>
+  </section>
+
+  <section class="xl:grid xl:grid-cols-[600px_422px] xl:gap-[30px]">
+    <div class="">
+      <DynamicImgSrc
+        showByDefault={1}
+        cardBgColor={cardBgColor}
+        items={homePage}
+        isHome={true}
+        client:only
+      />
+    </div>
+
+    <div
+      class="flex flex-col gap-[10px] xl:gap-[18px] mt-[40px] xl:mt-0 max-w-[322px] xl:max-w-full xl:w-[422px] mx-auto"
+    >
+      <ReactImage
+        src="home-zoom-1"
+        alt="home"
+        className="rounded-[10px] border-[2px] sm:border-[3px] border-[#d2d62e] "
+      />
+
+      <ReactImage
+        src="home-zoom-2"
+        alt="home"
+        className="rounded-[10px] border-[2px] sm:border-[3px] border-[#d2d62e]"
+      />
+      <ReactImage
+        src="home-zoom-3"
+        alt="home"
+        className="rounded-[10px] border-[2px] sm:border-[3px] border-[#d2d62e]"
+      />
+      <ReactImage
+        src="home-zoom-4"
+        alt="home"
+        className="rounded-[10px] border-[2px] sm:border-[3px] border-[#d2d62e]"
+      />
+    </div>
+  </section>
+
+  <section class="xl:grid xl:grid-cols-[580px_447px] xl:gap-[25px]">
+    <video autoplay loop muted class="mt-[40px]">
+      <source src="/videos/gender-hover-video.mp4" type="video/mp4" />
+    </video>
+
+    <section
+      class="sm:grid sm:grid-cols-[1fr_177px] xl:grid-cols-[220px_177px] items-center xl:gap-[50px]"
+    >
+      <div>
+        <p class="leading-[20px] mt-[40px]">
+          On desktop, clicking ‘Men,’ ‘Women,’ or ‘Kids’ updates the landing
+          page content, while hovering provides instant access to all products
+          for seamless navigation
+        </p>
+
+        <p class="leading-20px mt-[30px]">
+          This feature is available via the hamburger menu on smaller devices
+        </p>
+      </div>
+
+      <video autoplay loop muted class="mt-[40px] mx-auto">
+        <source src="/videos/mobile-menu.mp4" type="video/mp4" />
+      </video>
+    </section>
+  </section>
 </EvelinFileWrapper>

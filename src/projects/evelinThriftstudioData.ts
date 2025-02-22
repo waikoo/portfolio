@@ -14,3 +14,9 @@ export const adminInterface = [
   { name: "HOME PAGE", imgName: "admin-home", color: "#4D3566" },
   { name: "PRODUCTS", imgName: "admin-products", color: "#4D3566" },
 ]
+
+export const homePage = [
+  { name: "MEN", imgName: "final-resp-home-men", color: "#614732" },
+  { name: "WOMEN", imgName: "final-resp-home", color: "#05765E" },
+  { name: "KIDS", imgName: "final-resp-home-kids", color: "#2A6493" },
+]
