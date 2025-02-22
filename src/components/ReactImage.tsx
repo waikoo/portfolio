@@ -25,7 +25,7 @@ const ReactImage = ({ src, alt, className, style }: Props) => {
         src={`/images/${src}.png`}
         alt={alt}
         style={{ maxHeight: style }}
-        className={`xl:cursor-pointer block mx-auto w-[90%] ${className}`}
+        className={`xl:cursor-pointer block mx-auto ${className}`}
       />
     </picture>
   )

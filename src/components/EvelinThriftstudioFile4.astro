@@ -510,14 +510,13 @@ const { fileTitle, bgColor, cardBgColor, id, quickLinkMargin } = Astro.props;
           >components</strong
         > for all three viewports - mobile, tablet, and desktop.
       </p>
-      <ModalImage
-        small={`/images/comp-5.avif`}
-        medium={`/images/comp-5.webp`}
-        large={`/images/comp-5.png`}
-        hideDownload={true}
-        hideZoom={true}
-        className="mt-[20px] xl:mt-0 xl:col-start-2 xl:col-end-3"
+      <ReactImageWrapper
+        invertIcon={true}
+        src="comp-5"
         client:only
+        className="mt-[20px] xl:mt-0 xl:col-start-2 xl:col-end-3"
+        alt="Icon components"
+        noMagnifyingGlass={true}
       />
     </div>
   </WithMagnifyingGlass>
@@ -532,14 +531,13 @@ const { fileTitle, bgColor, cardBgColor, id, quickLinkMargin } = Astro.props;
       > for all three viewports - mobile, tablet, and desktop.
     </p>
     <WithMagnifyingGlass invert={true} client:only>
-      <ModalImage
-        small={`/images/comp-5.avif`}
-        medium={`/images/comp-5.webp`}
-        large={`/images/comp-5.png`}
-        hideDownload={true}
-        hideZoom={true}
-        className="mt-[20px] xl:mt-0 bg-[#E9E9D6] p-[13px] rounded-tr-[20px] rounded-br-[20px]"
+      <ReactImageWrapper
+        invertIcon={true}
+        src="comp-5"
         client:only
+        className="mt-[20px] xl:mt-0 bg-[#E9E9D6] p-[13px] rounded-tr-[20px] rounded-br-[20px]"
+        alt="Icon components"
+        noMagnifyingGlass={true}
       />
     </WithMagnifyingGlass>
   </section>
@@ -558,42 +556,38 @@ const { fileTitle, bgColor, cardBgColor, id, quickLinkMargin } = Astro.props;
       <div
         class="xl:grid xl:grid-cols-[545px_469px] xl:gap-[13px] xl:mt-[20px]"
       >
-        <ModalImage
-          small={`/images/comp-1.avif`}
-          medium={`/images/comp-1.webp`}
-          large={`/images/comp-1.png`}
-          hideDownload={true}
-          hideZoom={true}
-          className="mt-[20px] sm:mt-0 xl:mt-0"
+        <ReactImageWrapper
+          invertIcon={true}
+          src="comp-1"
           client:only
+          className="mt-[20px] sm:mt-0 xl:mt-0"
+          alt="Icon components"
+          noMagnifyingGlass={true}
         />
         <div class="xl:flex xl:flex-col gap-[13px] sm:gap-[13px]">
-          <ModalImage
-            small={`/images/comp-2.avif`}
-            medium={`/images/comp-2.webp`}
-            large={`/images/comp-2.png`}
-            hideDownload={true}
-            hideZoom={true}
-            className="mt-[20px] sm:mt-[13px] xl:mt-0"
+          <ReactImageWrapper
+            invertIcon={true}
+            src="comp-2"
             client:only
+            className="mt-[20px] sm:mt-[13px] xl:mt-0"
+            alt="Icon components"
+            noMagnifyingGlass={true}
           />
-          <ModalImage
-            small={`/images/comp-3.avif`}
-            medium={`/images/comp-3.webp`}
-            large={`/images/comp-3.png`}
-            hideDownload={true}
-            hideZoom={true}
-            className="mt-[20px] sm:mt-[13px] xl:mt-0"
+          <ReactImageWrapper
+            invertIcon={true}
+            src="comp-3"
             client:only
+            className="mt-[20px] sm:mt-[13px] xl:mt-0"
+            alt="Icon components"
+            noMagnifyingGlass={true}
           />
-          <ModalImage
-            small={`/images/comp-4.avif`}
-            medium={`/images/comp-4.webp`}
-            large={`/images/comp-4.png`}
-            hideDownload={true}
-            hideZoom={true}
-            className="mt-[20px] sm:mt-[13px] xl:mt-0"
+          <ReactImageWrapper
+            invertIcon={true}
+            src="comp-4"
             client:only
+            className="mt-[20px] sm:mt-[13px] xl:mt-0"
+            alt="Icon components"
+            noMagnifyingGlass={true}
           />
         </div>
       </div>

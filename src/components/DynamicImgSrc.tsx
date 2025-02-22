@@ -1,5 +1,6 @@
-import React, { useCallback, useMemo, useRef, useState } from "react";
-import { Lightbox } from "react-modal-image";
+import React, { useCallback, useMemo, useState } from "react";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
 import ReactCarousel from "./ReactCarousel.tsx";
 import ReactCarouselImage from "./ReactCarouselImage.tsx";
@@ -19,11 +20,11 @@ export default function DynamicImgSrc({ showByDefault, items, isQuizzical, cardB
   const [selectedImg, setSelectedImg] = useState(
     items[index].imgName
   )
-  const [showModal, setShowModal] = useState(false)
-  const modalRef = useRef(null)
+  const [open, setOpen] = useState(false);
 
   const competitiveAnalysisStyles = isCompetitiveAnalysis ? "mt-[15px]" : ""
   const adminInterfaceStyles = isAdminInterface ? "mt-[10px] sm:mt-[15px]" : ""
+
   const memoizedClickHandler = useMemo(() => (e: React.MouseEvent, i: number) => {
     const target = e.target as HTMLLIElement;
     setIndex(i);
@@ -35,32 +36,29 @@ export default function DynamicImgSrc({ showByDefault, items, isQuizzical, cardB
 
   const handleClick = useCallback(memoizedClickHandler, []);
 
-  const closeModal = (e: React.MouseEvent) => {
-    if (e.target === modalRef.current) {
-      setShowModal(false)
-    }
-  }
-
   const altText = isQuizzical ? 'final design of the app quizzical' : 'competitive analysis of the thriftstudio app'
   return (
     <>
       <ReactCarousel items={items} handleClick={handleClick} index={index} isQuizzical={isQuizzical} cardBgColor={cardBgColor} isCompetitiveAnalysis={isCompetitiveAnalysis} isAdminInterface={isAdminInterface}>
         <WithMagnifyingGlass invert={true}>
-          <ReactCarouselImage selectedImg={selectedImg} setShowModal={setShowModal} className={`${adminInterfaceStyles} ${competitiveAnalysisStyles}`} alt={altText} isCompetitiveAnalysis={isCompetitiveAnalysis} />
+          <ReactCarouselImage selectedImg={selectedImg} setShowModal={setOpen} className={`${adminInterfaceStyles} ${competitiveAnalysisStyles}`} alt={altText} isCompetitiveAnalysis={isCompetitiveAnalysis} />
         </WithMagnifyingGlass>
       </ReactCarousel>
 
-      {showModal && (
-        <div className="fixed inset-0 bg-black/75 backdrop-blur-xs h-screen grid place-items-center z-9999999 cursor-pointer" onClick={(e) => closeModal(e)} ref={modalRef}>
-          <Lightbox medium={`/images/${selectedImg}.avif`}
-            large={`/images/${selectedImg}.png`}
-            onClose={() => setShowModal(false)}
-            hideDownload={true}
-            hideZoom={true}
-          />
-        </div>
-      )
-      }
+      {open && (
+        <Lightbox
+          open={open}
+          close={() => setOpen(false)}
+          slides={[
+            { src: `/images/${selectedImg}.avif` },
+          ]}
+          render={{
+            buttonPrev: () => null,
+            buttonNext: () => null,
+          }}
+          className="z-[99999999999999]"
+        />
+      )}
     </>
   )
 }
