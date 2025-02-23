@@ -618,19 +618,22 @@ const { fileTitle, bgColor, cardBgColor, id, quickLinkMargin } = Astro.props;
 
   <div class="flex">
     <p
-      class="uppercase bg-[#d2d62e] py-[10px] sm:py-[8px] px-[6.5px] sm:px-[5px] text-[12px] sm:text-[13px] xl:text-[15px] sm:ml-auto leading-[16px] text-center xl:inline font-medium rounded-[5px] mt-[20px] sm:mt-[30px]"
+      class="uppercase bg-[#d2d62e] py-[10px] sm:py-[8px] px-[6.5px] sm:px-[5px] xl:px-[10px] text-[12px] sm:text-[13px] xl:text-[15px] sm:ml-auto leading-[16px] text-center xl:inline font-medium rounded-[5px] mt-[20px] sm:mt-[30px]"
     >
       A key pain point was users missing out on new arrivals and sales
     </p>
   </div>
 
-  <section class="xl:flex xl:align-start xl:mt-[30px]">
+  <section
+    class="xl:flex xl:align-start xl:justify-end xl:mt-[30px] xl:gap-[5px]"
+  >
     <EvelinFilePainPoint
       bgColor={bgColor}
-      className="mt-[30px] xl:mt-0 text-[16px] xl:text-[17px] leading-[20px] font-bold w-max-content xl:w-[40%]"
+      isInline={true}
+      className="mt-[30px] xl:mt-0 text-[16px] xl:text-[17px] leading-[20px] font-bold w-max-content xl:text-right"
       >To solve this, I implemented three features:</EvelinFilePainPoint
     >
-    <div class="xl:flex xl:flex-col xl:gap-[20px]">
+    <div class="xl:flex xl:flex-col xl:gap-[10px]">
       <EvelinFileResearchGoal
         noBg={true}
         className="leading-[20px] xl:w-[645px]"

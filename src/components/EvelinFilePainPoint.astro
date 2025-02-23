@@ -1,17 +1,19 @@
 ---
 import IconTriangleMobile from "./IconTriangleMobile.astro";
 
-const { bgColor, className, textSize } = Astro.props;
+const { bgColor, className, textSize, isInline } = Astro.props;
 
 const textStyles = textSize
   ? textSize
   : "text-[15px] sm:text-[16px] xl:text-[18px]";
 ---
 
-<p class={`font-['Jost'] relative ${className} ${textStyles}`}>
+<p
+  class={`font-['Jost'] relative ${className} ${textStyles} ${isInline ? "flex start gap-2" : ""}`}
+>
   <IconTriangleMobile
     bgColor={bgColor}
-    className="absolute top-[3px] left-[-13px] xl:top-[5px]"
+    className={`${isInline ? "mt-[4px]" : "absolute"} top-[3px] left-[-13px] xl:top-[5px]`}
   />
   <slot />
 </p>
