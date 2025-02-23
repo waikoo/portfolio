@@ -3,9 +3,11 @@ type Props = {
   alt: string
   className?: string
   style?: string
+  noPointer?: boolean
 }
 
-const ReactImage = ({ src, alt, className, style }: Props) => {
+const ReactImage = ({ src, alt, className, style, noPointer }: Props) => {
+  const pointerStyle = noPointer ? '' : 'xl:cursor-pointer'
 
   return (
     <picture>
@@ -25,7 +27,7 @@ const ReactImage = ({ src, alt, className, style }: Props) => {
         src={`/images/${src}.png`}
         alt={alt}
         style={{ maxHeight: style }}
-        className={`xl:cursor-pointer block mx-auto ${className}`}
+        className={`${pointerStyle} block mx-auto ${className}`}
       />
     </picture>
   )
