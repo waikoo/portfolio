@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import Lightbox from "yet-another-react-lightbox";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/styles.css";
 
 import WithMagnifyingGlass from './WithMagnifyingGlass.tsx'
@@ -32,6 +33,7 @@ const ReactImageWrapper = ({ invertIcon, className, src, alt, imgClassName, noMa
 
       <Lightbox
         open={open}
+        plugins={[Zoom]}
         close={() => setOpen(false)}
         slides={[
           { src: `/images/${src}.avif` },

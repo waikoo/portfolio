@@ -1,5 +1,6 @@
 import React, { useCallback, useMemo, useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/styles.css";
 
 import ReactCarousel from "./ReactCarousel.tsx";
@@ -50,6 +51,7 @@ export default function DynamicImgSrc({ showByDefault, items, isQuizzical, cardB
       {open && (
         <Lightbox
           open={open}
+          plugins={[Zoom]}
           close={() => setOpen(false)}
           slides={[
             { src: `/images/${selectedImg}.avif`, alt: items[index].alt },
