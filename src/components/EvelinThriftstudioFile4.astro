@@ -12,7 +12,11 @@ import ShadyNumber from "./ShadyNumber.astro";
 import thriftstudioKeyFeatures from "../thriftstudioKeyFeatures.ts";
 import EvelinFileResearchGoal from "./EvelinFileResearchGoal.astro";
 import ExpandDetails from "./ExpandDetails.astro";
-import { adminInterface, homePage } from "../projects/evelinThriftstudioData";
+import {
+  adminInterface,
+  homePage,
+  finalAccount,
+} from "../projects/evelinThriftstudioData";
 import DynamicImgSrc from "./DynamicImgSrc";
 import ThriftstudioDesignQuickLinks from "./ThriftstudioDesignQuickLinks.astro";
 import WithMagnifyingGlass from "./WithMagnifyingGlass";
@@ -611,7 +615,7 @@ const { fileTitle, bgColor, cardBgColor, id, quickLinkMargin } = Astro.props;
   </h3>
 
   <h4
-    class="text-[17px] text-center sm:text-right sm:text-[21px] xl:text-[32px] font-bold mt-[30px] sm:mt-[60px] xl:mt-[70px]"
+    class="text-[17px] text-center sm:text-right sm:text-[21px] xl:text-[24px] font-bold mt-[30px] sm:mt-[60px] xl:mt-[70px]"
   >
     HOME PAGE
   </h4>
@@ -732,4 +736,20 @@ const { fileTitle, bgColor, cardBgColor, id, quickLinkMargin } = Astro.props;
       </video>
     </section>
   </section>
+
+  <h4
+    class="text-[17px] text-center sm:text-right sm:text-[21px] xl:text-[24px] font-bold mt-[30px] sm:mt-[60px] xl:mt-[70px]"
+  >
+    ACCOUNT
+  </h4>
+
+  <div class="mt-[35px]">
+    <DynamicImgSrc
+      showByDefault={0}
+      items={finalAccount}
+      cardBgColor={cardBgColor}
+      client:only
+      isFinalAccount={true}
+    />
+  </div>
 </EvelinFileWrapper>

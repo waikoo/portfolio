@@ -7,10 +7,11 @@ interface Props {
   invert: boolean
   className?: string
   hideOnXl?: boolean
+  isFinalAccount?: boolean
 }
 const TAILWIND_XL = 1280
 
-export default function WithMagnifyingGlass({ children, invert, className, hideOnXl }: Props) {
+export default function WithMagnifyingGlass({ children, invert, className, hideOnXl, isFinalAccount }: Props) {
   const [text, setText] = useState<'Click' | 'Tap' | null>(null)
   const invertFlex = invert ? 'flex-row-reverse' : ''
   const matches = useMatchMedia(TAILWIND_XL)
@@ -21,7 +22,7 @@ export default function WithMagnifyingGlass({ children, invert, className, hideO
 
   return (
     <figure className={className}>
-      <div className="mb-[20px]">
+      <div className={isFinalAccount ? '' : 'mb-[20px]'}>
         {children}
       </div>
       <figcaption

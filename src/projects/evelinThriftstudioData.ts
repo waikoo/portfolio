@@ -21,3 +21,9 @@ export const homePage = [
   { name: "WOMEN", imgName: "final-resp-home", color: "#05765E", alt: "women's section of the landing page" },
   { name: "KIDS", imgName: "final-resp-home-kids", color: "#2A6493", alt: "kids' section of the landing page" },
 ]
+
+export const finalAccount = [
+  { name: "PROFILE", imgName: "final-profile", color: "#4D3566", alt: "profile page" },
+  { name: "ADDRESSES", imgName: "final-addresses", color: "#4D3566", alt: "addresses page" },
+  { name: "SETTINGS", imgName: "final-settings", color: "#4D3566", alt: "settings page" },
+]
