@@ -39,11 +39,9 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </h4>
 
   <WithBorderParagraph className="sm:mt-[30px] xl:mt-[30px] mx-[-20px] xl:mx-0">
-    The following ImageWrapper outlines the <strong>main sections</strong> of the
-    game. It is designed to <strong
-      >prioritize easy access to key functions</strong
-    > like starting a new game or customizing default settings for a personalized
-    experience.
+    The following sitemap outlines the <strong>main sections</strong> of the game.
+    It is designed to <strong>prioritize easy access to key functions</strong> like
+    starting a new game or customizing default settings for a personalized experience.
   </WithBorderParagraph>
 
   <ReactImageWrapper
@@ -51,6 +49,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     client:only
     className="mt-[25px] w-full"
     src="quizzical_sitemap"
+    alt="sitemap of the quizzical game"
   />
 
   <h4
@@ -83,6 +82,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
         className="mt-[10px]"
         client:only
         src="quizzical_default_user_flow"
+        alt="user flow of the primary path to start a new game"
       />
     </div>
 
@@ -97,6 +97,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
         className="mt-[10px]"
         client:only
         src="quizzical_personalized_user_flow"
+        alt="user flow of the primary path to play a customized game"
       />
     </div>
   </div>
