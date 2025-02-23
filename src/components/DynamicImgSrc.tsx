@@ -8,7 +8,7 @@ import WithMagnifyingGlass from "./WithMagnifyingGlass.tsx";
 
 interface Props {
   showByDefault: number
-  items: { name: string, imgName: string, color: string }[]
+  items: { name: string, imgName: string, color: string, alt: string }[]
   isQuizzical?: boolean
   cardBgColor: string
   isCompetitiveAnalysis?: boolean
@@ -38,7 +38,7 @@ export default function DynamicImgSrc({ showByDefault, items, isQuizzical, cardB
 
   const handleClick = useCallback(memoizedClickHandler, []);
 
-  const altText = isQuizzical ? 'final design of the app quizzical' : 'competitive analysis of the thriftstudio app'
+  const altText = isQuizzical ? 'final design of the app quizzical' : isCompetitiveAnalysis ? 'competitive analysis of the thriftstudio app' : 'home page components for men, women and kids sections'
   return (
     <>
       <ReactCarousel items={items} handleClick={handleClick} index={index} isQuizzical={isQuizzical} cardBgColor={cardBgColor} isCompetitiveAnalysis={isCompetitiveAnalysis} isAdminInterface={isAdminInterface} isHome={isHome}>
@@ -52,7 +52,7 @@ export default function DynamicImgSrc({ showByDefault, items, isQuizzical, cardB
           open={open}
           close={() => setOpen(false)}
           slides={[
-            { src: `/images/${selectedImg}.avif` },
+            { src: `/images/${selectedImg}.avif`, alt: items[index].alt },
           ]}
           render={{
             buttonPrev: () => null,

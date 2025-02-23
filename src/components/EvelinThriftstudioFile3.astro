@@ -57,7 +57,13 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     >
   </p>
 
-  <ReactImageWrapper invertIcon={true} client:only className="" src="sitemap" />
+  <ReactImageWrapper
+    invertIcon={true}
+    client:only
+    className=""
+    src="sitemap"
+    alt="sitemap of the thriftstudio app"
+  />
 
   <h4
     class="text-[#1e1e1e] text-[17px] sm:text-[21px] xl:text-[32px] font-bold mt-[80px]"
@@ -76,6 +82,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     client:only
     className=""
     src="user_flow"
+    alt="user flow of the primary path to browsing and purchasing in the thriftstudio app"
   />
 
   <h4
@@ -116,6 +123,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     client:only
     className="mt-[25px] sm:mt-[30px] xl:mt-[40px]"
     src="big_picture_storyboard"
+    alt="big picture storyboard of the thriftstudio app"
   />
 
   <MustardBgTitle className="sm:text-right" marginTop="mt-10"
@@ -127,5 +135,6 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
     client:only
     className="mt-[25px] sm:mt-[30px] xl:mt-[40px]"
     src="close-up_storyboard"
+    alt="close-up storyboard of the thriftstudio app"
   />
 </EvelinFileWrapper>
