@@ -722,7 +722,12 @@ const { fileTitle, bgColor, cardBgColor, id, quickLinkMargin } = Astro.props;
         </p>
       </div>
 
-      <video autoplay loop muted class="mt-[40px] mx-auto max-w-[147px]">
+      <video
+        autoplay
+        loop
+        muted
+        class="mt-[40px] mx-auto max-w-[147px] xl:max-w-full"
+      >
         <source src="/videos/mobile-menu.mp4" type="video/mp4" />
       </video>
     </section>
