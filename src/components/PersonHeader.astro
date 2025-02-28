@@ -1,7 +1,8 @@
 ---
 import PersonLinks from "./PersonLinks.astro";
-import PersonNameTag from "./PersonNameTag.astro";
 import IconHamburger from "./IconHamburger.astro";
+import LogoEvelin from "./LogoEvelin.astro";
+import LogoBarna from "./LogoBarna.astro";
 
 const { fullName, color, bgColor } = Astro.props;
 
@@ -75,16 +76,16 @@ const isThriftStudio = pathname.includes("thriftstudio");
   <div
     class={`mx-auto w-[80%] sm:w-[90%] flex content-center flex-row justify-between items-center sm:py-6 `}
   >
-    <PersonNameTag
-      familyName={familyName.toUpperCase()}
-      name={name.toUpperCase()}
-      color={color}
-    />
+    <a href=`/${lowercasedName}/projects`>
+      {lowercasedName === "evelin" ? <LogoEvelin /> : <LogoBarna />}
+    </a>
+
     <PersonLinks
       lowercasedName={lowercasedName}
       className="hidden lg:flex xl:flex-row gap-[20px]"
       color={color}
     />
+
     <IconHamburger
       name={lowercasedName}
       className="lg:hidden h-full flex flex-col justify-center hamburger-icon z-150"
