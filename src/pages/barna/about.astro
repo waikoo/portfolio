@@ -8,19 +8,19 @@ const fullName = "Szász Barna";
 <Layout title={`About ${fullName}`} fullName={fullName}>
   <PersonLayout fullName={fullName}>
     <main
-      class="relative font-['Jost'] min-h-[calc(100vh-97.5px)] grid place-items-center"
+      class="relative font-['Jost'] min-h-[calc(100vh-97.5px)] grid place-items-center px-[20px]"
     >
       <div
-        class="grid grid-cols-[max-content_3fr] gap-[30px] items-center max-w-[1156px]"
+        class="grid sm:grid-rows-[max-content_max-content] xl:grid-rows-1 xl:grid-cols-[max-content_3fr] gap-[50px] xl:gap-[30px] items-center sm:max-w-[550px] xl:max-w-[1156px]"
       >
         <p
-          class="uppercase text-[#D9D62D] text-[96px] font-bold justify-self-end"
+          class="uppercase text-[#D9D62D] text-[52px] sm:text-[78px] xl:text-[96px] font-bold sm:self-end xl:self-center xl:justify-self-end mt-[80px] sm:mt-0"
         >
-          Hi, <span class="block">I'm Barni.</span>
+          Hi, <span class="xl:block whitespace-nowrap">I'm Barni.</span>
         </p>
 
         <p
-          class="text-[#ecebd5] mx-auto text-[24px] font-light shadow-[2px_2px_2px_0_#1F0308] rounded-[30px] p-[40px] backdrop-blur-md hover:bg-black/30 transition-colors duration-300"
+          class="text-[#ecebd5] mx-auto text-[18px] sm:text-[21px] xl:text-[24px] font-light shadow-[2px_2px_2px_0_#1F0308] rounded-[30px] p-[30px] xl:p-[40px] backdrop-blur-md hover:bg-black/30 transition-colors duration-300 max-w-[367px] sm:max-w-[616px]"
         >
           A <strong class="text-[#C6C56E] font-semibold">33 year old</strong> career
           changer front-end developer living
