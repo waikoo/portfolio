@@ -1,9 +1,9 @@
 ---
+import "../styles/global.css";
 import { ClientRouter } from "astro:transitions";
 import HamburgerMenu from "../components/HamburgerMenu.astro";
 import Analytics from "@vercel/analytics/astro";
 import SpeedInsights from "@vercel/speed-insights/astro";
-import "../styles/global.css";
 
 interface Props {
   title: string;
@@ -29,7 +29,7 @@ const { fullName, title, bgColor } = Astro.props;
     <SpeedInsights />
     <Analytics />
     <title>{title}</title>
-    <ClientRouter />
+    <!-- <ClientRouter /> -->
   </head>
   <body style={{ backgroundColor: bgColor }}>
     <slot />
