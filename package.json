@@ -27,14 +27,14 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "sharp": "^0.33.5",
-    "tailwindcss": "^4.0.6",
     "typescript": "^5.7.3",
     "yet-another-react-lightbox": "^3.21.7"
   },
   "devDependencies": {
     "@types/react-modal-image": "^2.6.4",
     "prettier": "^3.4.2",
-    "prettier-plugin-astro": "^0.14.1"
+    "prettier-plugin-astro": "^0.14.1",
+    "tailwindcss": "^4.0.6"
   },
   "packageManager": "pnpm@9.15.0+sha512.76e2379760a4328ec4415815bcd6628dee727af3779aaa4c914e3944156c4299921a89f976381ee107d41f12cfa4b66681ca9c718f0668fa0831ed4c6d8ba56c"
 }
