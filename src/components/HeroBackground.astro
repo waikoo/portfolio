@@ -15,15 +15,14 @@ const { endpoint, home = false } = Astro.props;
       width={1920}
       height={1080}
       class="fixed w-screen h-screen object-cover"
-      transition:persist
     />
   </picture>
 
   {!home && (
   endpoint === 'EVELIN' ? (
-  <div class="fixed mix-blend-saturation h-screen w-screen bg-[#fec8ff]" transition:persist></div>
-  <div class="fixed mix-blend-multiply h-screen w-screen bg-[#39076d]" transition:persist></div>
+  <div class="fixed mix-blend-saturation h-screen w-screen bg-[#fec8ff]" ></div>
+  <div class="fixed mix-blend-multiply h-screen w-screen bg-[#39076d]" ></div>
   ): endpoint === 'BARNA' ? (
-  <div class="fixed mix-blend-hard-light h-screen w-screen bg-[#0d7724]" transition:persist></div>
+  <div class="fixed mix-blend-hard-light h-screen w-screen bg-[#0d7724]" ></div>
   ) : null)}
 </div>
