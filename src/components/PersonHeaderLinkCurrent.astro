@@ -12,12 +12,13 @@ const circlePosition = isHamburger
 
 const isOneOfTheProjectsPage =
   url.includes("thriftstudio") || url.includes("quizzical");
+// transition:name="circle"
 ---
 
 {
   isOneOfTheProjectsPage ? null : isCurrentPage ? (
     <div
-      transition:name="circle"
+      transition:animate="fade"
       class={`absolute h-[8px] w-[8px] block rounded-full ${circlePosition} ${circleColor}`}
     />
   ) : null
