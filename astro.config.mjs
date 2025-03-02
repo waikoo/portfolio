@@ -10,9 +10,6 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()],
-    build: {
-      assetsInlineLimit: 0
-    }
   },
   clientRouter: import.meta.env.PROD ? true : false
 
