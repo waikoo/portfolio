@@ -3,6 +3,7 @@ import PersonLinks from "./PersonLinks.astro";
 import IconHamburger from "./IconHamburger.astro";
 import LogoEvelin from "./LogoEvelin.astro";
 import LogoBarna from "./LogoBarna.astro";
+import LogoEvelinDark from "./LogoEvelinDark.astro";
 
 const { fullName, color, bgColor } = Astro.props;
 
@@ -77,7 +78,15 @@ const isThriftStudio = pathname.includes("thriftstudio");
     class={`mx-auto w-[80%] sm:w-[90%] flex content-center flex-row justify-between items-center sm:py-6 `}
   >
     <a href=`/${lowercasedName}/projects`>
-      {lowercasedName === "evelin" ? <LogoEvelin /> : <LogoBarna />}
+      {
+        isThriftStudio || isQuizzical ? (
+          <LogoEvelinDark />
+        ) : lowercasedName === "evelin" ? (
+          <LogoEvelin />
+        ) : (
+          <LogoBarna />
+        )
+      }
     </a>
 
     <PersonLinks
