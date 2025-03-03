@@ -27,7 +27,7 @@ const bgColor =
       });
     }
   };
-  document.addEventListener("astro:page-load", closeHamburgerMenu);
+  document.addEventListener("DOMContentLoaded", closeHamburgerMenu);
 </script>
 
 <div
@@ -41,6 +41,6 @@ const bgColor =
       className="flex-col justify-center h-[100dvh] items-end gap-[5px] sm:gap-[10px] p-10"
       isHamburger={true}
     />
-    <IconClose className="absolute top-5 right-5 icon-close" />
+    <IconClose className="absolute top-5 right-5 icon-close cursor-pointer" />
   </section>
 </div>
