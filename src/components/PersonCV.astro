@@ -1,17 +1,22 @@
 ---
+import { extractName } from "../utils/extractName";
 import IconCVDownload from "./IconCVDownload.astro";
 
 const { fullName, imgSrc, pdfSrc } = Astro.props;
+const { name, familyName } = extractName(fullName);
+const lowercaseName = name.toLowerCase();
 ---
 
-<script>
-  const cvDownloadButton = document.querySelector(
-    ".cv_download",
-  ) as HTMLButtonElement;
+<script is:inline define:vars={{ lowercaseName }}>
+  const cvDownloadButton = document.querySelector(".cv_download");
 
   if (cvDownloadButton) {
     cvDownloadButton.addEventListener("mouseenter", () => {
-      cvDownloadButton.style.filter = `drop-shadow(0px 0px 7px #FFFB20)`;
+      if (lowercaseName === "barna") {
+        cvDownloadButton.style.filter = `drop-shadow(0px 0px 7px #FFFB20)`;
+      } else {
+        cvDownloadButton.style.filter = `drop-shadow(0px 0px 7px #e296f5)`;
+      }
     });
     cvDownloadButton.addEventListener("mouseleave", () => {
       cvDownloadButton.style.filter = `none`;
@@ -29,9 +34,9 @@ const { fullName, imgSrc, pdfSrc } = Astro.props;
       <a
         href={pdfSrc}
         target="_blank"
-        class="z-50 flex gap-2 items-center text-[16px] sm:text-[18px] lg:text-[16px] text-[#FFFB20] border-[#FFFB20] border-[1px] rounded-full py-[10px] px-[17px] drop-shadow-[5px_5px_8px_rgba(0,0,0,0.60)] transition-all duration-200 hover:shadow-[0_0_7px_#FFFB20] backdrop-blur-md cv_download"
+        class={`z-50 flex gap-2 items-center text-[16px] sm:text-[18px] lg:text-[16px] ${lowercaseName === "barna" ? "text-[#FFFB20] border-[#FFFB20] duration-200 hover:shadow-[0_0_7px_#FFFB20]" : "text-[#e296f5] border-[#e296f5] duration-200 hover:shadow-[0_0_7px_#e296f5]"} border-[1px] rounded-full py-[10px] px-[17px] drop-shadow-[5px_5px_8px_rgba(0,0,0,0.60)] transition-all backdrop-blur-md cv_download`}
       >
-        <IconCVDownload />
+        <IconCVDownload lowercaseName={lowercaseName} />
         Download
       </a>
     </button>
