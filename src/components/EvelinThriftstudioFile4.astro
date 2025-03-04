@@ -752,4 +752,75 @@ const { fileTitle, bgColor, cardBgColor, id, quickLinkMargin } = Astro.props;
       isFinalAccount={true}
     />
   </div>
+
+  <section class="xl:grid xl:grid-cols-[3fr_2fr] xl:items-center xl:gap-[27px]">
+    <video autoplay loop muted class="mt-[30px] sm:mt-[40px]">
+      <source src="/videos/account-thriftstudio.mp4" type="video/mp4" />
+    </video>
+
+    <div class="flex flex-col gap-[15px] mt-[30px] xl:w-[80%] mx-auto">
+      <p>
+        Hovering over the ‘Account’ icon when signed in reveals its subpages,
+        along with a ‘Hi, user email!’ message to confirm the signed-in status
+        and associated email.
+      </p>
+      <p>
+        Users can add multiple addresses and set a default, which auto-fills at
+        checkout while still allowing access to other saved addresses.
+      </p>
+      <p>
+        Users can customize their experience by adjusting preferences in the
+        Settings menu.
+      </p>
+    </div>
+  </section>
+
+  <section
+    class="sm:grid sm:grid-cols-[1fr_144px] xl:grid-cols-[660px_398px] sm:gap-[48px] xl:gap-0 items-center justify-center"
+  >
+    <video
+      autoplay
+      loop
+      muted
+      class="col-start-2 col-end-3 row-start-1 row-end-2 h-[400px] xl:justify-self-center"
+    >
+      <source src="/videos/account-mobile-thriftstudio.mp4" type="video/mp4" />
+    </video>
+
+    <p
+      class="mt-[30px] sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-2 xl:mx-auto xl:w-[65%]"
+    >
+      Subpages maintain a consistent structure across all devices, ensuring
+      users can seamlessly continue where they left off when switching devices.
+    </p>
+  </section>
+
+  <section
+    class="xl:grid xl:grid-cols-[657px_355px] xl:gap-[40px] xl:items-start"
+  >
+    <div>
+      <video autoplay loop muted class="mt-[50px]">
+        <source src="/videos/help-thriftstudio.mp4" type="video/mp4" />
+      </video>
+
+      <div class="w-[55%] mx-auto mt-[109px]">
+        <h3 class="text-[17px] font-bold mt-[30px]">HELP PAGES</h3>
+
+        <p class="mt-[20px]">
+          On desktop, subpages are positioned to the left of their respective
+          content for easy access. On smaller devices, they are stacked
+          vertically and open one at a time, preventing excessive scrolling.
+          They can also be found in the footer.
+        </p>
+      </div>
+    </div>
+
+    <ReactImageWrapper
+      src="mobile-help2"
+      alt="help pages for thriftstudio"
+      invertIcon={true}
+      className="mt-[30px] mx-auto"
+      client:only
+    />
+  </section>
 </EvelinFileWrapper>
