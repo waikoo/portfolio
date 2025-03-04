@@ -37,7 +37,7 @@ const evelinStyles =
 ---
 
 <section
-  class={`relative grid project gap-[30px] items-center justify-items-center backdrop-blur-lg rounded-[30px] bg-black/5 sm:p-[30px] p-[12px] grid-cols-1 hover:bg-black/30 transition-all duration-300 animate-[slide-in_1000ms_ease-in-out_forwards] ${projectWrapper} ${evelinStyles}`}
+  class={`relative grid project gap-[30px] items-center justify-items-center backdrop-blur-lg rounded-[30px] bg-black/5 sm:p-[30px] p-[12px] grid-cols-1 hover:bg-black/30 transition-all duration-300 animate-fade-right animate-once animate-duration-[1500ms] animate-ease-in-out ${projectWrapper} ${evelinStyles}`}
 >
   <div
     class={`grid ${mediaWrapper} place-items-center row-start-4 row-end-5 ${isInverted ? "" : "lg:cols-start-1 lg:cols-end-2 lg:row-start-1 lg:row-end-5"}`}
@@ -98,16 +98,3 @@ const evelinStyles =
     ) : null
   }
 </section>
-
-<style>
-  @keyframes slide-in {
-    from {
-      transform: translateX(-300px);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 100%;
-    }
-  }
-</style>

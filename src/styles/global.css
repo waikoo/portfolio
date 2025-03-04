@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import 'tailwindcss-animated';
 @source '../components/';
 
 @theme {
@@ -23,5 +24,10 @@
   ::backdrop,
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
+  }
+
+  @font-face {
+    font-family: 'Jost';
+    font-display: block !important;
   }
 }
