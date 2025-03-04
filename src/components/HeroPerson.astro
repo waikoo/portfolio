@@ -25,7 +25,9 @@ const color = colors[lowerCaseName as keyof typeof colors];
 ---
 
 <HeroPersonBg name={name} className={className}>
-  <section class="translate-y-[70px] lg:translate-y-[110px] z-10">
+  <section
+    class="translate-y-[70px] lg:translate-y-[110px] z-10 animate-fade-up animate-once animate-duration-[2000ms] animate-ease-in-out"
+  >
     <HeroPersonName familyName={familyName} name={name} color={color.name} />
 
     <HeroPersonOccupation
