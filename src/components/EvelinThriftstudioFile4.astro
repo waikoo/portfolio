@@ -712,7 +712,7 @@ const { fileTitle, bgColor, cardBgColor, id, quickLinkMargin } = Astro.props;
     </video>
 
     <section
-      class="sm:grid sm:grid-cols-[1fr_177px] xl:grid-cols-[220px_177px] items-center xl:gap-[50px]"
+      class="sm:grid sm:grid-cols-[1fr_177px] xl:grid-cols-[220px_177px] items-center xl:gap-[80px]"
     >
       <div class="xl:text-[17px]">
         <p class="leading-[20px] sm:leading-[25px] mt-[40px]">
@@ -738,7 +738,7 @@ const { fileTitle, bgColor, cardBgColor, id, quickLinkMargin } = Astro.props;
   </section>
 
   <h4
-    class="text-[17px] text-center sm:text-right sm:text-[21px] xl:text-[24px] font-bold mt-[30px] sm:mt-[60px] xl:mt-[70px]"
+    class="text-[17px] text-center sm:text-[21px] xl:text-[24px] font-bold mt-[30px] sm:mt-[60px] xl:mt-[130px]"
   >
     ACCOUNT
   </h4>
@@ -758,7 +758,9 @@ const { fileTitle, bgColor, cardBgColor, id, quickLinkMargin } = Astro.props;
       <source src="/videos/account-thriftstudio.mp4" type="video/mp4" />
     </video>
 
-    <div class="flex flex-col gap-[15px] mt-[30px] xl:w-[80%] mx-auto">
+    <div
+      class="flex flex-col gap-[15px] mt-[30px] xl:w-[80%] xl:text-[17px] mx-auto"
+    >
       <p>
         Hovering over the ‘Account’ icon when signed in reveals its subpages,
         along with a ‘Hi, user email!’ message to confirm the signed-in status
@@ -782,13 +784,13 @@ const { fileTitle, bgColor, cardBgColor, id, quickLinkMargin } = Astro.props;
       autoplay
       loop
       muted
-      class="col-start-2 col-end-3 row-start-1 row-end-2 h-[400px] xl:justify-self-center"
+      class="col-start-2 col-end-3 row-start-1 row-end-2 h-[400px] xl:justify-self-center mt-[30px] mx-auto"
     >
       <source src="/videos/account-mobile-thriftstudio.mp4" type="video/mp4" />
     </video>
 
     <p
-      class="mt-[30px] sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-2 xl:mx-auto xl:w-[65%]"
+      class="mt-[30px] sm:col-start-1 sm:col-end-2 sm:row-start-1 sm:row-end-2 xl:mx-auto xl:w-[65%] xl:text-[17px]"
     >
       Subpages maintain a consistent structure across all devices, ensuring
       users can seamlessly continue where they left off when switching devices.
@@ -803,10 +805,10 @@ const { fileTitle, bgColor, cardBgColor, id, quickLinkMargin } = Astro.props;
         <source src="/videos/help-thriftstudio.mp4" type="video/mp4" />
       </video>
 
-      <div class="w-[55%] mx-auto mt-[109px]">
+      <div class="xl:w-[55%] sm:w-full xl:mx-auto xl:mt-[109px]">
         <h3 class="text-[17px] font-bold mt-[30px]">HELP PAGES</h3>
 
-        <p class="mt-[20px]">
+        <p class="mt-[20px] xl:text-[17px]">
           On desktop, subpages are positioned to the left of their respective
           content for easy access. On smaller devices, they are stacked
           vertically and open one at a time, preventing excessive scrolling.
