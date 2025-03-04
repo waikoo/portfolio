@@ -19,7 +19,7 @@ export default function ReactCarousel({ items, children, handleClick, index, isQ
   const thriftstudioStyles = isCompetitiveAnalysis || isAdminInterface || isHome || isFinalAccount ? "flex border-[#D2D62E]" : ""
   const competitiveAnalysisStyles = isAdminInterface ? "flex w-fit mt-[30px] sm:mt-[40px]" : ""
   const isHomeStyles = isHome ? "text-[10px] sm:text-[14px] sm:h-[50px] xl:text-[16px] sm:w-[440px] xl:w-[91%] justify-between" : "text-[12px] gap-[8px] sm:justify-between "
-  const isFinalAccountStyles = isFinalAccount ? "!text-[10px] sm:!text-[14px] xl:!text-[16px] !gap-0 xl:w-[425px]" : ""
+  const isFinalAccountStyles = isFinalAccount ? "!text-[10px] sm:!text-[14px] xl:!text-[16px] !gap-0 xl:w-[425px] justify-between" : ""
 
   return (
     <>
