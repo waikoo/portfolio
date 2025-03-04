@@ -8,7 +8,7 @@ export const getHeaderNavLinkTextColor = (
   }
 
   if (currentUrl.includes("thriftstudio") || currentUrl.includes('quizzical')) {
-    return getProjectSpecificTextColor(currentUrl);
+    return getProjectSpecificTextColor(currentUrl, isHamburger);
   }
   if (isHamburger) {
     return isCurrentPage ? "text-white" : "text-black";
@@ -35,11 +35,13 @@ const getEvelinOrBarnaTextColor = (href: string, isCurrentPage: boolean) => {
   }
 }
 
-const getProjectSpecificTextColor = (href: string) => {
+const getProjectSpecificTextColor = (href: string, isHamburger: boolean) => {
   if (href.includes("thriftstudio")) {
     return "text-black";
   }
-  if (href.includes("quizzical")) {
+  if (href.includes("quizzical") && isHamburger) {
+    return "text-black";
+  } else if (href.includes("quizzical")) {
     return "text-[#EBD302]";
   }
 }
