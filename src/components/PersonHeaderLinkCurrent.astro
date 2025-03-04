@@ -18,7 +18,7 @@ const isOneOfTheProjectsPage =
   isOneOfTheProjectsPage ? null : isCurrentPage ? (
     <div
       transition:name={`${isHamburger ? "hambi-circle" : "circle"}`}
-      class={`absolute h-[8px] w-[8px] block rounded-full ${circlePosition} ${circleColor}`}
+      class={`absolute h-[8px] w-[8px] block rounded-full animate-bounce animate-infinite animate-duration-[1000ms] animate-ease-out ${circlePosition} ${circleColor}`}
     />
   ) : null
 }
