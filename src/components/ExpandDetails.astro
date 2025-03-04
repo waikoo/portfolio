@@ -17,7 +17,7 @@ const { bgColor, slotId, iconId, buttonId, className } = Astro.props;
       span.textContent = span.textContent === "Expand" ? "Collapse" : "Expand";
     });
   }
-  document.addEventListener("astro:page-load", setupExpandCollapse);
+  document.addEventListener("DOMContentLoaded", setupExpandCollapse);
 </script>
 
 <section class={`flex flex-col ${className} isolate`}>
