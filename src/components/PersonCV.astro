@@ -34,7 +34,7 @@ const lowercaseName = name.toLowerCase();
       <a
         href={pdfSrc}
         target="_blank"
-        class={`z-50 flex gap-2 items-center text-[16px] sm:text-[18px] lg:text-[16px] ${lowercaseName === "barna" ? "text-[#FFFB20] border-[#FFFB20] duration-200 hover:shadow-[0_0_7px_#FFFB20]" : "text-[#e296f5] border-[#e296f5] duration-200 hover:shadow-[0_0_7px_#e296f5]"} border-[1px] rounded-full py-[10px] px-[17px] drop-shadow-[5px_5px_8px_rgba(0,0,0,0.60)] transition-all backdrop-blur-md cv_download`}
+        class={`z-50 flex gap-2 items-center text-[16px] sm:text-[18px] lg:text-[16px] ${lowercaseName === "barna" ? "text-[#FFFB20] border-[#FFFB20] duration-200 hover:shadow-[0_0_7px_#FFFB20]" : "text-[#e296f5] border-[#e296f5] duration-200 hover:shadow-[0_0_7px_#e296f5]"} border-[1px] rounded-full py-[10px] px-[17px] drop-shadow-[5px_5px_8px_rgba(0,0,0,0.60)] transition-all backdrop-blur-md cv_download animate-fade-down animate-once animate-duration-[1500ms] animate-ease-out`}
       >
         <IconCVDownload lowercaseName={lowercaseName} />
         Download
@@ -43,7 +43,11 @@ const lowercaseName = name.toLowerCase();
     <picture>
       <source srcset={imgSrc.replace("jpg", "avif")} type="image/avif" />
       <source srcset={imgSrc.replace("jpg", "webp")} type="image/webp" />
-      <img src={imgSrc} alt={`${fullName}'s CV`} class="block w-full" />
+      <img
+        src={imgSrc}
+        alt={`${fullName}'s CV`}
+        class="block w-full animate-flip-down animate-once animate-duration-[1500ms] animate-ease-out"
+      />
     </picture>
   </div>
 </div>
