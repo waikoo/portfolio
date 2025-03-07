@@ -6,5 +6,47 @@ const fullName = "Szász Evelin";
 ---
 
 <Layout title={`About ${fullName}`} fullName={fullName}>
-  <PersonLayout fullName={fullName} />
+  <PersonLayout fullName={fullName}>
+    <main
+      class="relative font-['Jost'] min-h-[calc(100vh-97.5px)] grid place-items-center px-[20px]"
+    >
+      <div
+        class="grid sm:grid-rows-[max-content_max-content] xl:grid-rows-1 xl:grid-cols-[max-content_3fr] gap-[50px] xl:gap-[30px] items-center sm:max-w-[550px] xl:max-w-[1156px] animate-fade-right animate-once animate-duration-1000 animate-ease-in-out"
+      >
+        <p
+          class="uppercase text-[#CFB9EF] text-[52px] sm:text-[78px] xl:text-[96px] font-bold sm:self-end xl:self-center xl:justify-self-end mt-[80px] sm:mt-0"
+        >
+          Hi, <span class="xl:block whitespace-nowrap"
+            >I'm Evelin<span class="">.</span></span
+          >
+        </p>
+
+        <p
+          class="text-[#B496F5] mx-auto text-[18px] sm:text-[20px] font-light shadow-[2px_2px_2px_0_#1F0308] rounded-[30px] p-[30px] xl:p-[40px] backdrop-blur-md hover:bg-black/30 transition-colors duration-300 max-w-[367px] sm:max-w-[616px]"
+        >
+          I am a <strong class="text-[#CFB9EF] font-semibold"
+            >33 year old</strong
+          > career changer UI/UX designer living <strong
+            class="text-[#CFB9EF] font-semibold">in Berlin</strong
+          >, with a <strong class="text-[#CFB9EF] font-semibold"
+            >dedication for blending aesthetic sophistication with user-centered
+            design</strong
+          >. My focus is on web design, graphic design, and motion design, with
+          a strong interest in CSS and how designs come to life on the web. My
+          goal is to craft visually stunning experiences through <strong
+            class="text-[#CFB9EF] font-semibold">effortlessly usable</strong
+          > and <strong class="text-[#CFB9EF] font-semibold"
+            >engaging interfaces</strong
+          >. I enjoy solving problems and continuously <strong
+            class="text-[#CFB9EF] font-semibold">seek opportunities</strong
+          > to challenge myself. <strong class="text-[#CFB9EF] font-semibold"
+            >Currently</strong
+          >, I’m further expanding my expertise by <strong
+            class="text-[#CFB9EF] font-semibold"
+            >pursuing the Adobe Graphic Designer Professional Certificate</strong
+          > through Coursera.
+        </p>
+      </div>
+    </main>
+  </PersonLayout>
 </Layout>
