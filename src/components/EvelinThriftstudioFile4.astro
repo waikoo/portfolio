@@ -845,32 +845,36 @@ const { fileTitle, bgColor, cardBgColor, id, quickLinkMargin } = Astro.props;
     />
   </div>
 
-  <section class="xl:grid xl:grid-cols-[3fr_2fr] xl:items-center">
-    <video autoplay loop muted class="mt-[30px] sm:mt-[40px]">
+  <section
+    class="xl:grid xl:grid-cols-[657px_2fr] xl:items-center xl:mt-[55px]"
+  >
+    <video autoplay loop muted class="mt-[30px] sm:mt-[40px] xl:mt-0">
       <source src="/videos/product-list-thriftstudio.mp4" type="video/mp4" />
     </video>
 
-    <div class="xl:p-6">
-      <p class="mt-[20px] sm:mt-[40px] xl:mt-0">
+    <div class="xl:p-6 pr-0">
+      <p class="mt-[20px] sm:mt-[40px] xl:mt-0 xl:text-[17px]">
         To improve flexibility, users can collapse the filter menu, allowing for
         better visibility of products while scrolling.
       </p>
 
-      <p class="mt-[10px] sm:mt-[25px]">
+      <p class="mt-[10px] sm:mt-[25px] xl:text-[17px]">
         Additionally, the product list navigation bar remains sticky across all
         devices, ensuring seamless and effortless product browsing.
       </p>
     </div>
   </section>
 
-  <section class="xl:flex xl:flex-row-reverse xl:items-center xl:gap-[70px]">
+  <section
+    class="xl:flex xl:flex-row-reverse xl:items-center xl:gap-[70px] mt-[80px]"
+  >
     <Image
       src={painPoints}
       alt="three pain points of real life thrift-shopping"
-      class="mt-[20px] sm:-[35px] xl:w-[50%]"
+      class="mt-[20px] sm:-[35px] xl:w-[625px] xl:mt-0"
     />
 
-    <p class="mt-[20px] sm:mt-[25px] xl:w-[50%]">
+    <p class="mt-[20px] sm:mt-[25px] xl:text-[17px] xl:mt-0">
       Users need a quick and efficient thrifting experience - made possible
       through saving filters.
     </p>
@@ -880,7 +884,7 @@ const { fileTitle, bgColor, cardBgColor, id, quickLinkMargin } = Astro.props;
     src="filter-story"
     alt="filter story for thriftstudio"
     invertIcon={true}
-    className="mt-[20px] sm:mt-[40px] xl:mt-[70px] mx-auto"
+    className="mt-[20px] sm:mt-[40px] xl:mt-[80px] mx-auto"
     client:only
   />
 
@@ -898,7 +902,7 @@ const { fileTitle, bgColor, cardBgColor, id, quickLinkMargin } = Astro.props;
     src="cart-fav-story"
     alt="cart & favorites story for thriftstudio"
     invertIcon={true}
-    className="mt-[20px] sm:mt-[30px] xl:mt-[50px] mx-auto"
+    className="mt-[20px] sm:mt-[30px] xl:mt-[60px] mx-auto"
     client:only
   />
 
@@ -918,18 +922,20 @@ const { fileTitle, bgColor, cardBgColor, id, quickLinkMargin } = Astro.props;
     />
   </div>
 
-  <section class="xl:grid xl:grid-cols-[3fr_2fr] xl:gap-[24px] xl:items-center">
-    <video autoplay loop muted class="mt-[20px] sm:mt-[40px]">
+  <section
+    class="xl:grid xl:grid-cols-[3fr_2fr] xl:gap-[24px] xl:items-center xl:mt-[55px]"
+  >
+    <video autoplay loop muted class="mt-[20px] sm:mt-[40px] xl:mt-0">
       <source src="/videos/checkout-process.mp4" type="video/mp4" />
     </video>
 
     <div>
-      <p class="mt-[20px] sm:mt-[40px]">
+      <p class="mt-[20px] sm:mt-[40px] xl:mt-0 xl:text-[17px]">
         The checkout process is optimized into two steps: one for entering
         contact, shipping, and payment details, and a confirmation step for
         users to review their information before placing the order.
       </p>
-      <p class="mt-[10px] mt-[25px]">
+      <p class="mt-[10px] mt-[25px] xl:text-[17px]">
         Users can choose to check out as guests or sign in and seamlessly resume
         their purchase from where they left off.
       </p>
@@ -937,7 +943,7 @@ const { fileTitle, bgColor, cardBgColor, id, quickLinkMargin } = Astro.props;
   </section>
 
   <section
-    class="xl:grid xl:grid-cols-2 xl:items-center xl:gap-[92px] grid-rows-1"
+    class="xl:grid xl:grid-cols-[1fr_553px] xl:items-center xl:gap-[92px] grid-rows-1"
   >
     <ReactImageWrapper
       src="checkout-mobile"
@@ -947,8 +953,10 @@ const { fileTitle, bgColor, cardBgColor, id, quickLinkMargin } = Astro.props;
       client:only
     />
 
-    <div class="xl:col-start-1 xl:col-end-2 xl:row-start-1 xl:row-end-2">
-      <p class="mt-[20px]">
+    <div
+      class="xl:col-start-1 xl:col-end-2 xl:row-start-1 xl:row-end-2 xl:text-[17px] xl:mt-[80px]"
+    >
+      <p class="mt-[20px] xl:mt-0">
         For users with multiple saved addresses, the ‘Contact’ and ‘Shipping’
         fields auto-fill with the default address, but they can select another
         via ‘Choose different contact’ for a smoother checkout.
