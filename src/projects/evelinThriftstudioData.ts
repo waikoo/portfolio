@@ -27,3 +27,14 @@ export const finalAccount = [
   { name: "ADDRESSES", imgName: "final-addresses", color: "#4D3566", alt: "addresses page" },
   { name: "SETTINGS", imgName: "final-settings", color: "#4D3566", alt: "settings page" },
 ]
+
+export const productsFilters = [
+  { name: "PRODUCT LIST", imgName: "pf_product_list", color: "#4D3566", alt: "list of thriftstore products" },
+  { name: "FILTERS", imgName: "pf_product_filters", color: "#4D3566", alt: "product filters" },
+  { name: "PRODUCT PAGE", imgName: "pf_product_single_page", color: "#4D3566", alt: "single products page" },
+]
+
+export const checkout = [
+  { name: "STEP 1", imgName: "checkout-step-1", color: "#4D3566", alt: "checkout step 1" },
+  { name: "STEP 2", imgName: "checkout-step-2", color: "#4D3566", alt: "checkout step 2" }
+]

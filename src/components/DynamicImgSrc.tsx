@@ -16,9 +16,11 @@ interface Props {
   isAdminInterface?: boolean
   isHome?: boolean
   isFinalAccount?: boolean
+  isProductsFilters?: boolean
+  isCheckout?: boolean
 }
 
-export default function DynamicImgSrc({ showByDefault, items, isQuizzical, cardBgColor, isCompetitiveAnalysis, isAdminInterface, isHome, isFinalAccount }: Props) {
+export default function DynamicImgSrc({ showByDefault, items, isQuizzical, cardBgColor, isCompetitiveAnalysis, isAdminInterface, isHome, isFinalAccount, isProductsFilters, isCheckout }: Props) {
   const [index, setIndex] = useState(showByDefault)
   const [selectedImg, setSelectedImg] = useState(
     items[index].imgName
@@ -29,6 +31,8 @@ export default function DynamicImgSrc({ showByDefault, items, isQuizzical, cardB
   const adminInterfaceStyles = isAdminInterface ? "mt-[10px] sm:mt-[15px]" : ""
   const homeStyles = isHome ? "mt-[15px]" : ""
   const isFinalAccountStyles = isFinalAccount ? "mt-[15px]" : ""
+  const isProductsFiltersStyles = isProductsFilters ? "mt-[15px]" : ""
+  const isCheckoutStyles = isCheckout ? "mt-[15px]" : ""
 
   const memoizedClickHandler = useMemo(() => (e: React.MouseEvent, i: number) => {
     const target = e.target as HTMLLIElement;
@@ -41,12 +45,12 @@ export default function DynamicImgSrc({ showByDefault, items, isQuizzical, cardB
 
   const handleClick = useCallback(memoizedClickHandler, []);
 
-  const altText = isQuizzical ? 'final design of the app quizzical' : isCompetitiveAnalysis ? 'competitive analysis of the thriftstudio app' : isHome ? 'home page components for men, women and kids sections' : "account subpage"
+  const altText = isQuizzical ? 'final design of the app quizzical' : isCompetitiveAnalysis ? 'competitive analysis of the thriftstudio app' : isHome ? 'home page components for men, women and kids sections' : isProductsFilters ? "products and filters pages" : isFinalAccount ? "account subpage" : isCheckout ? "checkout page" : ""
   return (
     <>
-      <ReactCarousel items={items} handleClick={handleClick} index={index} isQuizzical={isQuizzical} cardBgColor={cardBgColor} isCompetitiveAnalysis={isCompetitiveAnalysis} isAdminInterface={isAdminInterface} isHome={isHome} isFinalAccount={isFinalAccount}>
+      <ReactCarousel items={items} handleClick={handleClick} index={index} isQuizzical={isQuizzical} cardBgColor={cardBgColor} isCompetitiveAnalysis={isCompetitiveAnalysis} isAdminInterface={isAdminInterface} isHome={isHome} isFinalAccount={isFinalAccount} isProductsFilters={isProductsFilters} isCheckout={isCheckout}>
         <WithMagnifyingGlass invert={true} isFinalAccount={isFinalAccount}>
-          <ReactCarouselImage selectedImg={selectedImg} setShowModal={setOpen} className={`${adminInterfaceStyles} ${competitiveAnalysisStyles} ${homeStyles} ${isFinalAccountStyles}`} alt={altText} isCompetitiveAnalysis={isCompetitiveAnalysis} />
+          <ReactCarouselImage selectedImg={selectedImg} setShowModal={setOpen} className={`${adminInterfaceStyles} ${competitiveAnalysisStyles} ${homeStyles} ${isFinalAccountStyles} ${isProductsFiltersStyles} ${isCheckoutStyles}`} alt={altText} isCompetitiveAnalysis={isCompetitiveAnalysis} />
         </WithMagnifyingGlass>
       </ReactCarousel>
 

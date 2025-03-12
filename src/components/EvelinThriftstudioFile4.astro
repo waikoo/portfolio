@@ -5,6 +5,7 @@ import primary_colors from "../assets/images/primary_colors_thrifty.png";
 import logoFaviconMobile from "../assets/images/logo-favicon-mobile.png";
 import logoFaviconTablet from "../assets/images/logo-favicon-tablet.png";
 import logoFaviconDesktop from "../assets/images/logo-favicon-desktop.png";
+import painPoints from "../assets/images/pain-points.png";
 import EvelinFilePainPoint from "./EvelinFilePainPoint.astro";
 import EvelinFileWrapper from "./EvelinFileWrapper.astro";
 import ReactImageWrapper from "./ReactImageWrapper";
@@ -16,6 +17,8 @@ import {
   adminInterface,
   homePage,
   finalAccount,
+  productsFilters,
+  checkout,
 } from "../projects/evelinThriftstudioData";
 import DynamicImgSrc from "./DynamicImgSrc";
 import ThriftstudioDesignQuickLinks from "./ThriftstudioDesignQuickLinks.astro";
@@ -824,5 +827,141 @@ const { fileTitle, bgColor, cardBgColor, id, quickLinkMargin } = Astro.props;
       className="mt-[30px] mx-auto"
       client:only
     />
+  </section>
+
+  <h4
+    class="text-[21px] text-center sm:text-[21px] xl:text-[24px] font-bold mt-[70px] sm:mt-[80px] xl:mt-[130px]"
+  >
+    PRODUCTS & FILTERS
+  </h4>
+
+  <div class="mt-[20px] sm:mt-[30px]">
+    <DynamicImgSrc
+      showByDefault={0}
+      items={productsFilters}
+      cardBgColor={cardBgColor}
+      isProductsFilters={true}
+      client:only
+    />
+  </div>
+
+  <section class="xl:grid xl:grid-cols-[3fr_2fr] xl:items-center">
+    <video autoplay loop muted class="mt-[30px] sm:mt-[40px]">
+      <source src="/videos/product-list-thriftstudio.mp4" type="video/mp4" />
+    </video>
+
+    <div class="xl:p-6">
+      <p class="mt-[20px] sm:mt-[40px] xl:mt-0">
+        To improve flexibility, users can collapse the filter menu, allowing for
+        better visibility of products while scrolling.
+      </p>
+
+      <p class="mt-[10px] sm:mt-[25px]">
+        Additionally, the product list navigation bar remains sticky across all
+        devices, ensuring seamless and effortless product browsing.
+      </p>
+    </div>
+  </section>
+
+  <section class="xl:flex xl:flex-row-reverse xl:items-center xl:gap-[70px]">
+    <Image
+      src={painPoints}
+      alt="three pain points of real life thrift-shopping"
+      class="mt-[20px] sm:-[35px] xl:w-[50%]"
+    />
+
+    <p class="mt-[20px] sm:mt-[25px] xl:w-[50%]">
+      Users need a quick and efficient thrifting experience - made possible
+      through saving filters.
+    </p>
+  </section>
+
+  <ReactImageWrapper
+    src="filter-story"
+    alt="filter story for thriftstudio"
+    invertIcon={true}
+    className="mt-[20px] sm:mt-[40px] xl:mt-[70px] mx-auto"
+    client:only
+  />
+
+  <h4
+    class="text-[21px] text-center sm:text-[21px] xl:text-[24px] font-bold mt-[70px] sm:mt-[80px] xl:mt-[125px]"
+  >
+    CART & FAVORITES
+  </h4>
+
+  <video autoplay loop muted class="mt-[20px] xl:mt-[30px]">
+    <source src="/videos/cart-favorites.mp4" type="video/mp4" />
+  </video>
+
+  <ReactImageWrapper
+    src="cart-fav-story"
+    alt="cart & favorites story for thriftstudio"
+    invertIcon={true}
+    className="mt-[20px] sm:mt-[30px] xl:mt-[50px] mx-auto"
+    client:only
+  />
+
+  <h4
+    class="text-[21px] text-center sm:text-[21px] xl:text-[24px] font-bold mt-[70px] sm:mt-[80px] xl:mt-[125px]"
+  >
+    CHECKOUT
+  </h4>
+
+  <div class="mt-[25px] sm:mt-[40px] xl:mt-[30px]">
+    <DynamicImgSrc
+      showByDefault={0}
+      items={checkout}
+      cardBgColor={cardBgColor}
+      isCheckout={true}
+      client:only
+    />
+  </div>
+
+  <section class="xl:grid xl:grid-cols-[3fr_2fr] xl:gap-[24px] xl:items-center">
+    <video autoplay loop muted class="mt-[20px] sm:mt-[40px]">
+      <source src="/videos/checkout-process.mp4" type="video/mp4" />
+    </video>
+
+    <div>
+      <p class="mt-[20px] sm:mt-[40px]">
+        The checkout process is optimized into two steps: one for entering
+        contact, shipping, and payment details, and a confirmation step for
+        users to review their information before placing the order.
+      </p>
+      <p class="mt-[10px] mt-[25px]">
+        Users can choose to check out as guests or sign in and seamlessly resume
+        their purchase from where they left off.
+      </p>
+    </div>
+  </section>
+
+  <section
+    class="xl:grid xl:grid-cols-2 xl:items-center xl:gap-[92px] grid-rows-1"
+  >
+    <ReactImageWrapper
+      src="checkout-mobile"
+      alt="checkout process on mobile devices"
+      invertIcon={true}
+      className="mt-[10px] mt-[35px] mx-auto xl:col-start-2 xl:col-end-3 xl:row-start-1 xl:row-end-2"
+      client:only
+    />
+
+    <div class="xl:col-start-1 xl:col-end-2 xl:row-start-1 xl:row-end-2">
+      <p class="mt-[20px]">
+        For users with multiple saved addresses, the ‘Contact’ and ‘Shipping’
+        fields auto-fill with the default address, but they can select another
+        via ‘Choose different contact’ for a smoother checkout.
+      </p>
+      <p class="mt-[10px] sm:mt-[25px]">
+        Users can expand or collapse any field, including their cart, for
+        improved visibility, particularly on smaller screens.
+      </p>
+      <p class="mt-[10px] sm:mt-[25px]">
+        The input fields offer real-time feedback with active states, error
+        messages, and icons for incorrect or missing information, along with
+        success indicators for completed fields.
+      </p>
+    </div>
   </section>
 </EvelinFileWrapper>
