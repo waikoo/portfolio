@@ -35,7 +35,7 @@ export default function ReactCarousel({ items, children, handleClick, index, isQ
           items.map(({ name }, i) => {
             return (
               <li
-                className={`cursor-pointer state whitespace-nowrap ${isHome ? 'w-[71px] h-[35px] sm:w-[125px] sm:h-[40px]' : 'sm:h-[27px] h-[35px] '} ${isFinalAccount ? 'w-[90px] sm:w-[125px] sm:h-[40px]' : ""} ${isProductsFilters ? 'h-[35px] sm:h-[40px] sm:w-[135px]' : ''} ${isCheckout ? "h-[35px] w-[100px] sm:w-[135px] sm:h-[40px]" : ""} xl:h-[41px] grid place-items-center rounded-full px-[16px]`}
+                className={`cursor-pointer state whitespace-nowrap ${isHome ? 'h-[35px] sm:w-[125px] sm:h-[40px]' : 'sm:h-[27px] h-[35px] '} ${isFinalAccount ? 'sm:w-[125px] sm:h-[40px]' : ""} ${isProductsFilters ? 'h-[35px] sm:h-[40px] sm:w-[135px]' : ''} ${isCheckout ? "h-[35px] w-[100px] sm:w-[135px] sm:h-[40px]" : ""} xl:h-[41px] grid place-items-center rounded-full px-[16px]`}
                 key={`quizzical-state-carousel-${i}`}
                 data-img={`${items[i].imgName}`}
                 style={{
