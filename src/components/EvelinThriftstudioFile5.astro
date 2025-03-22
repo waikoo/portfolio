@@ -1,0 +1,56 @@
+---
+import DynamicVideoSrc from "./DynamicVideoSrc";
+import EvelinFileWrapper from "./EvelinFileWrapper.astro";
+import { prototype } from "../projects/evelinThriftstudioData.js";
+
+const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
+---
+
+<EvelinFileWrapper
+  title={fileTitle}
+  bgColor={bgColor}
+  cardBgColor={cardBgColor}
+  id={id}
+  paddingX="px-[20px] sm:px-[30px] xl:px-[0px] 2xl:px-[172px]"
+  paddingY="py-[80px] sm:py-[90px] xl:py-[130px]"
+>
+  <DynamicVideoSrc
+    showByDefault={0}
+    items={prototype}
+    cardBgColor={cardBgColor}
+    client:only
+  />
+
+  <div
+    class="mt-[30px] mx-[-20px] sm:mx-[-100px] xl:mx-[-45px] 2xl:mx-[-170px] xl:mt-[130px] 2xl:mt-[80px]"
+    style={{ borderBottom: `2px dotted ${bgColor}` }}
+  >
+  </div>
+
+  <h5
+    class="text-[21px] sm:text-[26px] sm:mt-[60px] xl:mt-[100px] xl:text-[40px] font-extrabold leading-none mt-[50px]"
+  >
+    CONCLUSIONS
+  </h5>
+
+  <p class="mt-[30px]">
+    This project deepened my understanding of how UI and UX work together to
+    create a seamless experience, how strong branding reinforces usability and
+    how thoughtful functionality enhances aesthetics. In addition, it
+    significantly enhanced my ability to design responsive layouts, prioritize
+    accessibility, and structure complex user flows tailored to diverse user
+    needs. Collaborating with a developer on such a large-scale project was both
+    insightful and rewarding, as it challenged me to explore new problem-solving
+    approaches, adapt designs efficiently, and navigate the full process of
+    transforming a concept into a fully functional website.
+  </p>
+
+  <p class="mt-[25px] xl:mt-[40px]">
+    Moving forward, an additional round of usability testing would be beneficial
+    to evaluate the final design’s intuitiveness across different devices.
+    Further enhancements could focus on personalization features, such as
+    light/dark mode, a flexible landing page with editable sections, an
+    AI-powered chat assistant for product discovery, and expanded inventory
+    management options for the admin panel.
+  </p>
+</EvelinFileWrapper>

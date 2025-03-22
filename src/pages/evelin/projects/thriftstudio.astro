@@ -10,6 +10,10 @@ import ThriftstudioAside from "../../../components/ThriftstudioAside.astro";
 import ThriftstudioHero from "../../../components/ThriftstudioHero.astro";
 import ThriftstudioLogo from "../../../components/ThriftstudioLogo.astro";
 import PageYProgressBar from "../../../components/PageYProgressBar.astro";
+import EvelinThriftstudioFile5 from "../../../components/EvelinThriftstudioFile5.astro";
+import ViewProjectCard from "../../../components/ViewProjectCard.astro";
+import quizzicalPreview from "../../../../public/images/quizzical.avif";
+import rpsPreview from "../../../assets/images/rps.png";
 
 const fullName = "Szász Evelin";
 const bgColor = "#d2d62e";
@@ -27,7 +31,7 @@ const cardBgColor = "#F9F9F9";
   />
 
   <main
-    class="px-[40px] sm:px-[50px] xl:px-[70px] flex flex-col gap-[30px] sm:gap-[50px] xl:gap-[70px] items-center 2xl:max-w-[1536px] mx-auto font-['Jost'] text-[#1e1e1e] overflow-hidden sm:overflow-visible"
+    class="px-[40px] sm:px-[50px] xl:px-[70px] flex flex-col gap-[30px] sm:gap-[50px] xl:gap-[70px] items-center 2xl:max-w-[1536px] mx-auto font-['Jost'] text-[#1e1e1e] overflow-hidden sm:overflow-visible pb-[8rem] sm:pb-[12rem]"
   >
     <div class="flex flex-col justify-center gap-[10px] xl:gap-0">
       <ThriftstudioLogo />
@@ -59,8 +63,48 @@ const cardBgColor = "#F9F9F9";
       id={"thriftstudio-design"}
       quickLinkMargin="sm:mt-[42px]"
     />
-
+    <EvelinThriftstudioFile5
+      fileTitle="OVERVIEW"
+      bgColor={bgColor}
+      cardBgColor={cardBgColor}
+      id={"thriftstudio-overview"}
+    />
     <ThriftstudioAside />
     <ReactScrollToTop client:only />
   </main>
+
+  <footer
+    class="relative bg-[#141412] sm:px-[50px] xl:px-[82px] sm:mr-[-20px] h-[250px]"
+  >
+    <div
+      class="translate-y-[-150px] sm:translate-y-[-88px] xl:translate-y-[-170px] grid grid-cols-2 gap-[152px] sm:gap-[40px] sm:grid-cols-[250px_250px] justify-between w-full xl:grid-cols-[450px_450px] mx-auto h-[250px] sm:h-auto xl:h-[313px]"
+    >
+      <ViewProjectCard
+        name="QUIZZICAL"
+        source={quizzicalPreview}
+        borderRadius="rounded-[10px] xl:rounded-[25px]"
+        imgClass="block max-w-full"
+        arrowColor="#E296F5"
+        arrowBg="hsla(0, 0%, 98%, 5%)"
+        invertArrow={true}
+        imgHeight="386px"
+        imgWidth="450px"
+        className="absolute bottom-[-45px] left-0 right-0 sm:static sm:bottom-[45px] w-[230px] sm:w-[250px] xl:w-[450px] mx-auto xl:cursor-pointer"
+        link="/evelin/projects/quizzical"
+      />
+      <ViewProjectCard
+        name="ROCK, PAPER, SCISSORS"
+        source={rpsPreview}
+        borderRadius="rounded-[10px] xl:rounded-[25px]"
+        imgClass="rounded-[10px] xl:rounded-[25px] block max-w-full"
+        arrowColor="#E296F5"
+        invertArrow={true}
+        imgHeight="386px"
+        imgWidth="450px"
+        arrowBg="hsla(0, 0%, 98%, 5%)"
+        className="left-0 right-0 bottom-[-45px] mx-auto xl:cursor-pointer 2xl:max-w-full hidden sm:w-[250px] xl:w-[450px] sm:block"
+        link="/evelin/projects/rps"
+      />
+    </div>
+  </footer>
 </Layout>

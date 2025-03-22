@@ -14,21 +14,23 @@ interface Props {
   isFinalAccount?: boolean
   isProductsFilters?: boolean
   isCheckout?: boolean
+  isPrototypes?: boolean
 }
 
-export default function ReactCarousel({ items, children, handleClick, index, isQuizzical, cardBgColor, isCompetitiveAnalysis, isAdminInterface, isHome, isFinalAccount, isProductsFilters, isCheckout }: Props) {
+export default function ReactCarousel({ items, children, handleClick, index, isQuizzical, cardBgColor, isCompetitiveAnalysis, isAdminInterface, isHome, isFinalAccount, isProductsFilters, isCheckout, isPrototypes }: Props) {
   const quizzicalStyles = isQuizzical ? "flex w-[92%] mx-auto border-[#E1CA02]" : ""
-  const thriftstudioStyles = isCompetitiveAnalysis || isAdminInterface || isHome || isFinalAccount || isProductsFilters || isCheckout ? "flex border-[#D2D62E]" : ""
+  const thriftstudioStyles = isCompetitiveAnalysis || isAdminInterface || isHome || isFinalAccount || isProductsFilters || isCheckout || isPrototypes ? "flex border-[#D2D62E]" : ""
   const competitiveAnalysisStyles = isAdminInterface ? "flex w-fit mt-[30px] sm:mt-[40px]" : ""
   const isHomeStyles = isHome ? "text-[12px] sm:text-[14px] sm:h-[50px] xl:text-[16px] sm:w-[440px] xl:w-[91%] justify-between" : "text-[12px] gap-[8px] sm:justify-between "
   const isFinalAccountStyles = isFinalAccount ? "!text-[12px] sm:!text-[14px] xl:!text-[16px] !gap-0 xl:w-[425px] justify-between" : ""
   const productsFiltersStyles = isProductsFilters ? "!text-[12px] sm:!text-[14px] justify-between w-[340px] w-full" : ""
   const checkoutStyles = isCheckout ? "!text-[12px] sm:!text-[14px] sm:w-[304px] justify-between w-[190px] sm:w-[320px]" : ""
+  const prototypeStyles = isPrototypes ? "" : ""
 
   return (
     <>
       <ul
-        className={`mx-auto font-['Jost'] flex-row ${isHomeStyles} ${isFinalAccountStyles} sm:text-[14px] xl:text-[16px] font-medium overflow-scroll items-center border-[2px] sm:border-[3px] rounded-full p-[2px] h-max-content uppercase scrollbar-0 tracking-wide ${competitiveAnalysisStyles} ${quizzicalStyles} ${thriftstudioStyles} ${productsFiltersStyles} ${checkoutStyles}`}
+        className={`mx-auto font-['Jost'] flex-row ${isHomeStyles} ${isFinalAccountStyles} sm:text-[14px] xl:text-[16px] font-medium overflow-scroll items-center border-[2px] sm:border-[3px] rounded-full p-[2px] h-max-content uppercase scrollbar-0 tracking-wide ${competitiveAnalysisStyles} ${quizzicalStyles} ${thriftstudioStyles} ${productsFiltersStyles} ${checkoutStyles} ${prototypeStyles}`}
         style={{ scrollbarWidth: 'none' }}
       >
         {

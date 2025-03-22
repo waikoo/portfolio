@@ -38,3 +38,9 @@ export const checkout = [
   { name: "STEP 1", imgName: "checkout-step-1", color: "#4D3566", alt: "checkout step 1" },
   { name: "STEP 2", imgName: "checkout-step-2", color: "#4D3566", alt: "checkout step 2" }
 ]
+
+export const prototype = [
+  { name: "MOBILE", imgName: "mobile-prototype", color: "#4D3566", alt: "mobile prototype video" },
+  { name: "TABLET", imgName: "tablet-prototype", color: "#4D3566", alt: "tablet prototype video" },
+  { name: "DESKTOP", imgName: "desktop-prototype", color: "#4D3566", alt: "desktop prototype video" }
+]
