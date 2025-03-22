@@ -972,4 +972,51 @@ const { fileTitle, bgColor, cardBgColor, id, quickLinkMargin } = Astro.props;
       </p>
     </div>
   </section>
+
+  <h4
+    class="text-[21px] text-center sm:text-[21px] xl:text-[24px] font-bold mt-[70px] sm:mt-[80px] xl:mt-[125px]"
+  >
+    ADMIN INTERFACE
+  </h4>
+
+  <ReactImageWrapper
+    invertIcon={true}
+    src="final-admin"
+    alt="four screenshots of the admin interface"
+    className="mt-[20px]"
+    client:only
+  />
+
+  <section class="grid grid-cols-[658px_350px] items-center xl:mt-[60px]">
+    <video autoplay loop muted class="mt-[30px] sm:mt-[50px] xl:mt-0">
+      <source src="/videos/admin-addnew.mp4" type="video/mp4" />
+    </video>
+
+    <p class="mt-[30px] sm:mt-[50px] xl:mt-0 sm:text-[16px] xl:text-[17px]">
+      The ‘Save’ and ‘Publish Changes’ buttons are disabled by default. The
+      ‘Save’ button activates and changes color once required fields on the ‘Add
+      New’ page are completed. The ‘Publish Changes’ button updates when
+      products are added or edited and saved, providing constant feedback and
+      ensuring a clear and efficient process.
+    </p>
+  </section>
+
+  <section class="grid grid-cols-[350px_658px] items-center xl:mt-[80px]">
+    <video
+      autoplay
+      loop
+      muted
+      class="mt-[30px] sm:mt-[50px] xl:mt-0 col-start-2 col-end-3 row-start-1 row-end-2"
+    >
+      <source src="/videos/admin-products.mp4" type="video/mp4" />
+    </video>
+
+    <p
+      class="mt-[30px] sm:mt-[50px] xl:mt-0 col-start-1 col-end-2 row-start-1 row-end-2 sm:text-[16px] xl:text-[17px]"
+    >
+      Existing products can be located via ID search in the ‘Products’ section.
+      Clicking an item opens a pre-filled ‘Add New’ page, allowing for quick
+      revisions.
+    </p>
+  </section>
 </EvelinFileWrapper>
