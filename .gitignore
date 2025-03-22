@@ -28,3 +28,6 @@ pnpm-debug.log*
 
 # Vim session
 Session.vim
+
+# ai
+.augmentignore
