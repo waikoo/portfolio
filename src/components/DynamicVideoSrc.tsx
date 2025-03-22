@@ -32,7 +32,7 @@ export default function DynamicVideoSrc({ showByDefault, items, cardBgColor }: P
   const handleClick = useCallback(memoizedClickHandler, []);
 
   return (
-    <div className="flex flex-col">
+    <div className="">
       <ReactCarousel items={items} handleClick={handleClick} index={index} cardBgColor={cardBgColor} isPrototypes={true}>
         <video key={selectedVideo} autoPlay loop muted className="mx-auto mt-[15px]" onError={(e) => { console.log(e) }}>
           <source src={`/videos/${selectedVideo}.mp4`} type="video/mp4" />
