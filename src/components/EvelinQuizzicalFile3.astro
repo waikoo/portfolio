@@ -4,7 +4,6 @@ import EvelinFileWrapper from "./EvelinFileWrapper.astro";
 import MyImage from "./MyImage.astro";
 import QuizzicalArrowDown from "./QuizzicalArrowDown.astro";
 import DynamoImgSrc from "./DynamoImgSrc.tsx";
-import WithMagnifyingGlass from "./WithMagnifyingGlass.tsx";
 import WithSmallTriangle from "./WithSmallTriangle.astro";
 import DynamicImgSrc from "./DynamicImgSrc.tsx";
 import DifferentFontSrc from "./DifferentFontSrc.tsx";
@@ -289,13 +288,11 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   </h3>
 
   <!-- React component -->
-  <WithMagnifyingGlass invert={true} client:only>
-    <DynamicImgSrc
-      showByDefault={0}
-      items={quizzicalStates}
-      isQuizzical={true}
-      cardBgColor={cardBgColor}
-      client:only
-    />
-  </WithMagnifyingGlass>
+  <DynamicImgSrc
+    showByDefault={0}
+    items={quizzicalStates}
+    isQuizzical={true}
+    cardBgColor={cardBgColor}
+    client:only
+  />
 </EvelinFileWrapper>
