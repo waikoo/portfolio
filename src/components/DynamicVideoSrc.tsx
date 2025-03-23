@@ -39,7 +39,7 @@ export default function DynamicVideoSrc({ showByDefault, items, cardBgColor }: P
         </video>
       </ReactCarousel>
 
-      <a href={prototypeLink[viewport]} className="flex justify-center items-center xl:gap-[8px] text-[#4d3566] xl:text-[18px] font-medium mt-[25px]">
+      <a href={prototypeLink[viewport]} className="flex justify-center items-center gap-[8px] text-[#4d3566] xl:text-[18px] font-medium mt-[25px]">
         View Figma Prototype
         <ReactArrow /> </a>
     </div>
