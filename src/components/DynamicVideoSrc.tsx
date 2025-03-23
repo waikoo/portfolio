@@ -34,11 +34,14 @@ export default function DynamicVideoSrc({ showByDefault, items, cardBgColor }: P
   return (
     <div className="">
       <ReactCarousel items={items} handleClick={handleClick} index={index} cardBgColor={cardBgColor} isPrototypes={true}>
-        <video key={selectedVideo} autoPlay loop muted className="mx-auto mt-[15px]" onError={(e) => { console.log(e) }}>
+        <video key={selectedVideo} autoPlay loop muted className="mx-auto mt-[15px] xl:h-[600px]" onError={(e) => { console.log(e) }}>
           <source src={`/videos/${selectedVideo}.mp4`} type="video/mp4" />
         </video>
       </ReactCarousel>
-      <a href={prototypeLink[viewport]} className="flex items-center gap-[2px] text-[#4d3566] font-medium mt-[25px] mx-auto">View Figma Prototype <ReactArrow /> </a>
+
+      <a href={prototypeLink[viewport]} className="flex justify-center items-center xl:gap-[8px] text-[#4d3566] xl:text-[18px] font-medium mt-[25px]">
+        View Figma Prototype
+        <ReactArrow /> </a>
     </div>
   )
 }

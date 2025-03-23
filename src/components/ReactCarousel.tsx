@@ -25,7 +25,7 @@ export default function ReactCarousel({ items, children, handleClick, index, isQ
   const isFinalAccountStyles = isFinalAccount ? "!text-[12px] sm:!text-[14px] xl:!text-[16px] !gap-0 xl:w-[425px] justify-between" : ""
   const productsFiltersStyles = isProductsFilters ? "!text-[12px] sm:!text-[14px] justify-between w-[340px] w-full xl:w-[515px]" : ""
   const checkoutStyles = isCheckout ? "!text-[12px] sm:!text-[14px] sm:w-[304px] justify-between w-[190px] sm:w-[320px]" : ""
-  const prototypeStyles = isPrototypes ? "" : ""
+  const prototypeStyles = isPrototypes ? "xl:w-[425px]" : ""
 
   return (
     <>
