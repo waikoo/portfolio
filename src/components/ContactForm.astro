@@ -56,13 +56,20 @@ const personColor = lowercaseName === "barna" ? "#FFFB20" : "#efd6f5";
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     emailInput.addEventListener("blur", () => {
-      if (emailInput.value.match(emailRegex)) {
+      if (emailInput.value.trim() !== "") {
+        if (emailInput.value.match(emailRegex)) {
+          emailInput.classList.remove("border-[#A9BBCB]");
+          emailError?.classList.add("hidden");
+          emailInvalid?.classList.add("hidden");
+        } else {
+          emailInput.classList.add("border-[#A9BBCB]");
+          emailInvalid?.classList.remove("hidden");
+          emailError?.classList.add("hidden");
+        }
+      } else {
         emailInput.classList.remove("border-[#A9BBCB]");
         emailError?.classList.add("hidden");
         emailInvalid?.classList.add("hidden");
-      } else {
-        emailInput.classList.add("border-[#A9BBCB]");
-        emailInvalid?.classList.remove("hidden");
       }
     });
 
