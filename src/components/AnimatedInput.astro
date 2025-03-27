@@ -1,0 +1,60 @@
+---
+import IconError from "./IconError.astro";
+
+const {
+  type,
+  name,
+  label,
+  borderColor,
+  selectionColors,
+  focusStyles,
+  personColor,
+} = Astro.props;
+---
+
+<div class="relative group">
+  <input
+    type={type}
+    name={name}
+    id={name}
+    pattern={type === "email"
+      ? "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+      : ""}
+    spellcheck={false}
+    placeholder=" "
+    class={`peer ${borderColor} ${selectionColors} ${focusStyles} outline-none border-[2px] rounded-full backdrop-blur-lg p-2 focus:placeholder-transparent focus:bg-[#0E050E] transition-all shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] pl-4 w-full text-opacity-100 focus:text-opacity-100 placeholder-shown:text-opacity-0 duration-300`}
+  />
+  <label
+    for={name}
+    class="text-[17px] absolute left-[11px] top-[10px] peer-placeholder-shown:text-[15px] peer-placeholder-shown:top-2.5 transition-all peer-focus:-top-6.5 text-[17px] pl-1 peer-[:not(:placeholder-shown)]:top-[-24px]"
+    >{label}</label
+  >
+  {
+    name === "email" && (
+      <p
+        class="text-[15px] text-[#dae7f3] flex items-center justify-end gap-2 hidden"
+        id="email-error"
+      >
+        <IconError />
+        Please enter your email
+      </p>
+      <p
+        class="text-[15px] text-[#dae7f3] flex items-center justify-end gap-2 hidden"
+        id="email-invalid"
+      >
+        <IconError />
+        Please enter a valid email
+      </p>
+    )
+  }
+</div>
+
+<style define:vars={{ personColor }}>
+  input:-webkit-autofill {
+    background-color: #0e050e !important;
+    color: inherit !important;
+    -webkit-text-fill-color: var(--personColor) !important;
+    -webkit-box-shadow: 0 0 0px 1000px #0e050e inset !important;
+    font-family: "Jost";
+  }
+</style>

@@ -1,0 +1,232 @@
+---
+import AnimatedInput from "./AnimatedInput.astro";
+import GooeyLoader from "./GooeyLoader.astro";
+import IconError from "./IconError.astro";
+
+const { lowercaseName } = Astro.props;
+
+const hoverStyles =
+  lowercaseName === "barna"
+    ? "hover:drop-shadow-[0_0px_7px_#FFFB20]"
+    : "hover:drop-shadow-[0_0px_7px_#efd6f5]";
+
+const focusStyles =
+  lowercaseName === "barna"
+    ? "focus:drop-shadow-[0_0px_7px_#FFFB20]"
+    : "focus:drop-shadow-[0_0px_7px_#efd6f5]";
+
+const textColor =
+  lowercaseName === "barna" ? "text-[#d9d62d]" : "text-[#efd6f5]";
+
+const borderColor =
+  lowercaseName === "barna" ? "border-[#5a6736]" : "border-[#371239]";
+const buttonBorderColor =
+  lowercaseName === "barna" ? "border-[#FFFB20]" : "border-[#efd6f5]";
+
+const accessKeyValue =
+  lowercaseName === "barna"
+    ? "d032e227-e2b3-4964-b784-933cb84ca68b"
+    : "b25d7ea5-8cc0-45a8-a1fa-e6c0ae790097";
+
+const selectionColors =
+  lowercaseName === "barna"
+    ? "selection:bg-[#FFFB20] selection:text-[#0d1205]"
+    : "selection:bg-[#efd6f5] selection:text-[#0d1205]";
+
+const outlineColor =
+  lowercaseName === "barna" ? "outline-[#FFFB20]" : "outline-[#efd6f5]";
+
+const personColor = lowercaseName === "barna" ? "#FFFB20" : "#efd6f5";
+---
+
+<script>
+  import axios from "axios";
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("contact-form") as HTMLFormElement;
+    const result = document.getElementById("result");
+    const loader = document.getElementById("loader");
+    const sendText = document.getElementById("send-text");
+    const button = document.getElementById("button") as HTMLButtonElement;
+    const messageError = document.getElementById("message-error");
+    const emailError = document.getElementById("email-error");
+    const emailInvalid = document.getElementById("email-invalid");
+    const emailInput = document.getElementById("email") as HTMLInputElement;
+    const messageInput = document.getElementById("message") as HTMLInputElement;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    emailInput.addEventListener("blur", () => {
+      if (emailInput.value.match(emailRegex)) {
+        emailInput.classList.remove("border-[#A9BBCB]");
+        emailError?.classList.add("hidden");
+        emailInvalid?.classList.add("hidden");
+      } else {
+        emailInput.classList.add("border-[#A9BBCB]");
+        emailInvalid?.classList.remove("hidden");
+      }
+    });
+
+    emailInput.addEventListener("input", (e) => {
+      if (emailInput.value.match(emailRegex)) {
+        emailInput.classList.remove("border-[#A9BBCB]");
+        emailError?.classList.add("hidden");
+        emailInvalid?.classList.add("hidden");
+      }
+    });
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      if (
+        (messageInput.value === "" && emailInput.value === "") ||
+        !emailInput.value.match(emailRegex)
+      ) {
+        messageInput.classList.add("border-[#A9BBCB]");
+        emailInput.classList.add("border-[#A9BBCB]");
+        messageError?.classList.remove("hidden");
+        emailError?.classList.remove("hidden");
+        return;
+      }
+
+      if (emailInput.value === "") {
+        emailInput.classList.add("border-[#A9BBCB]");
+        emailError?.classList.remove("hidden");
+        return;
+      } else {
+        if (emailInput.value.match(emailRegex)) {
+          emailInput.classList.remove("border-[#A9BBCB]");
+          emailError?.classList.add("hidden");
+        } else {
+          emailInput.classList.add("border-[#A9BBCB]");
+          emailError?.classList.remove("hidden");
+          return;
+        }
+      }
+
+      if (messageInput.value === "") {
+        messageInput.classList.add("border-[#A9BBCB]");
+        messageError?.classList.remove("hidden");
+        return;
+      } else {
+        messageInput.classList.remove("border-[#A9BBCB]");
+        messageError?.classList.add("hidden");
+      }
+
+      if (loader) {
+        loader.classList.remove("hidden");
+        button.classList.add("bg-[#fffb20]");
+        button.classList.add("text-black");
+      }
+      if (sendText) {
+        sendText.classList.add("hidden");
+      }
+      const formData = new FormData(form);
+      const formObject = Object.fromEntries(formData);
+
+      axios
+        .post("https://api.web3forms.com/submit", formObject)
+        .then(async (res) => {
+          if (res.status === 200) {
+          } else {
+            alert(res);
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          // something went wrong
+        })
+        .then(() => {
+          if (loader) {
+            loader.classList.add("hidden");
+          }
+          if (sendText) {
+            sendText.classList.remove("hidden");
+          }
+          if (button) {
+            button.classList.remove("bg-[#fffb20]");
+            button.classList.remove("text-black");
+          }
+
+          form.reset();
+          setTimeout(() => {
+            // result.classList.add("hidden");
+          }, 3000);
+        });
+    });
+  });
+</script>
+
+<section
+  class={`font-['Jost'] ${textColor} mb-20 w-full xl:flex xl:max-w-[1011px] xl:mx-auto xl:gap-[100px]`}
+>
+  <h2
+    class="relative grid place-items-center mx-auto text-[50px] sm:text-[100px] font-bold leading-[-30px]"
+  >
+    <div class="grid grid-cols-1">
+      <span class="block col-start-1 col-end-2 row-start-1 row-end-2"
+        >Let's</span
+      >
+      <span class="mt-[-60px] block col-start-1 col-end-2 row-start-2 row-end-3"
+        >Connect</span
+      >
+    </div>
+  </h2>
+  <form
+    method="POST"
+    id="contact-form"
+    class="relative flex flex-col mx-auto flex
+    flex-col gap-[35px] w-[75%] mt-5 sm:w-[528px]"
+  >
+    <input type="hidden" name="access_key" value={accessKeyValue} />
+
+    <AnimatedInput
+      type="text"
+      name="name"
+      label="Name"
+      borderColor={borderColor}
+      selectionColors={selectionColors}
+      focusStyles={focusStyles}
+      personColor={personColor}
+    />
+    <AnimatedInput
+      type="email"
+      name="email"
+      label="*Email"
+      borderColor={borderColor}
+      selectionColors={selectionColors}
+      focusStyles={focusStyles}
+      personColor={personColor}
+    />
+    <div class="relative group">
+      <textarea
+        name="message"
+        id="message"
+        placeholder=" "
+        spellcheck={false}
+        class={`peer rounded-[20px] ${borderColor} ${selectionColors} ${focusStyles} border-[2px] backdrop-blur-lg p-2 duration-300 h-[200px] focus:bg-[#0E050E] transition-all shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] w-full block pl-4 placeholder-transparent focus:placeholder-transparent text-opacity-100 focus:text-opacity-100 placeholder-shown:text-opacity-0 ${outlineColor} outline-none`}
+      ></textarea>
+      <label
+        for="message"
+        class="absolute left-[11px] top-[-24px] peer-placeholder-shown:top-2.5 peer-focus:top-[-24px] transition-all peer-focus:-top-6.5 text-[17px] pl-1 peer-placeholder-shown:text-base"
+        >*Message</label
+      >
+      <p
+        class="text-[15px] text-[#dae7f3] flex items-center justify-end gap-2 hidden"
+        id="message-error"
+      >
+        <IconError />Please enter your message
+      </p>
+    </div>
+
+    <button
+      class={`uppercase border-[1px] ${buttonBorderColor} rounded-full p-2 w-full sm:w-[200px] sm:mx-auto block send cursor-pointer transition:all ${hoverStyles} ${outlineColor}`}
+      type="submit"
+      id="button"
+    >
+      <span id="send-text">Send</span>
+      <div class="flex justify-center hidden" id="loader">
+        <GooeyLoader />
+      </div>
+    </button>
+  </form>
+</section>

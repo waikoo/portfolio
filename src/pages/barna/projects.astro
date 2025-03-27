@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import PersonProjectCard from "../../components/PersonProjectCard.astro";
 import { projects } from "../../projects/data";
 import PersonLayout from "../../components/PersonLayout.astro";
+import ContactForm from "../../components/ContactForm.astro";
 
 const fullName = "Szász Barna";
 const bgColor = "#0d1205";
@@ -19,5 +20,7 @@ const bgColor = "#0d1205";
         ))
       }
     </div>
+
+    <ContactForm lowercaseName="barna" />
   </PersonLayout>
 </Layout>
