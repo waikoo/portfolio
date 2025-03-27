@@ -24,11 +24,11 @@ const {
       : ""}
     spellcheck={false}
     placeholder=" "
-    class={`peer ${borderColor} ${selectionColors} ${focusStyles} outline-none border-[2px] rounded-full backdrop-blur-lg p-2 focus:placeholder-transparent focus:bg-[#0E050E] transition-all shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] pl-4 w-full text-opacity-100 focus:text-opacity-100 placeholder-shown:text-opacity-0 duration-300`}
+    class={`peer ${borderColor} ${selectionColors} ${focusStyles} outline-none border-[2px] rounded-full backdrop-blur-lg p-[10px] focus:placeholder-transparent focus:bg-[#1b1b1b] transition-all shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] pl-4 w-full text-opacity-100 focus:text-opacity-100 placeholder-shown:text-opacity-0 duration-300`}
   />
   <label
     for={name}
-    class={`text-[17px] ${labelColor} absolute left-[11px] top-[10px] peer-placeholder-shown:text-[15px] peer-placeholder-shown:top-2.5 ${labelFloatingColor} transition-all peer-focus:-top-6.5 text-[17px] pl-1 peer-[:not(:placeholder-shown)]:top-[-24px]`}
+    class={`text-[17px] tracking-[0.5px] ${labelColor} absolute left-[11px] top-[10px] peer-placeholder-shown:text-[15px] peer-focus:text-[15px] peer-focus:tracking-[0.4px] peer-placeholder-shown:top-[13px] ${labelFloatingColor} transition-all peer-focus:-top-6.5 text-[17px] pl-1 peer-[:not(:placeholder-shown)]:top-[-24px]`}
     >{label}</label
   >
   {
@@ -53,10 +53,10 @@ const {
 
 <style define:vars={{ personColor }}>
   input:-webkit-autofill {
-    background-color: #0e050e !important;
+    background-color: #1b1b1b !important;
     color: inherit !important;
     -webkit-text-fill-color: var(--personColor) !important;
-    -webkit-box-shadow: 0 0 0px 1000px #0e050e inset !important;
+    -webkit-box-shadow: 0 0 0px 1000px #1b1b1b inset !important;
     font-family: "Jost";
   }
 </style>

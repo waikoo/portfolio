@@ -12,8 +12,8 @@ const hoverStyles =
 
 const focusStyles =
   lowercaseName === "barna"
-    ? "focus:drop-shadow-[0_0px_7px_#FFFB20]"
-    : "focus:drop-shadow-[0_0px_7px_#efd6f5]";
+    ? "focus:drop-shadow-[0_0px_3px_#FFFB20]"
+    : "focus:drop-shadow-[0_0px_3px_#efd6f5]";
 
 const textColor =
   lowercaseName === "barna" ? "text-[#d9d62d]" : "text-[#efd6f5]";
@@ -28,6 +28,7 @@ const labelFloatingColor =
 
 const borderColor =
   lowercaseName === "barna" ? "border-[#5a6736]" : "border-[#371239]";
+
 const buttonBorderColor =
   lowercaseName === "barna" ? "border-[#FFFB20]" : "border-[#efd6f5]";
 
@@ -237,7 +238,7 @@ const personColor = lowercaseName === "barna" ? "#FFFB20" : "#efd6f5";
     </div>
 
     <button
-      class={`uppercase border-[1px] ${buttonBorderColor} rounded-full p-2 w-full sm:w-[200px] sm:mx-auto block send cursor-pointer transition:all ${hoverStyles} ${outlineColor}`}
+      class={`uppercase border-[1px] ${buttonBorderColor} font-medium rounded-full p-2 w-full sm:w-[200px] sm:mx-auto block send cursor-pointer transition:all backdrop-blur-lg ${hoverStyles} ${outlineColor}`}
       type="submit"
       id="button"
     >
