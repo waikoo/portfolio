@@ -18,6 +18,14 @@ const focusStyles =
 const textColor =
   lowercaseName === "barna" ? "text-[#d9d62d]" : "text-[#efd6f5]";
 
+const labelColor =
+  lowercaseName === "barna" ? "text-[#b2ae2b]" : "text-[#d2b0da]";
+
+const labelFloatingColor =
+  lowercaseName === "barna"
+    ? "peer-focus:text-[#d9d62d]"
+    : "peer-focus:text-[#efd6f5]";
+
 const borderColor =
   lowercaseName === "barna" ? "border-[#5a6736]" : "border-[#371239]";
 const buttonBorderColor =
@@ -44,7 +52,6 @@ const personColor = lowercaseName === "barna" ? "#FFFB20" : "#efd6f5";
 
   window.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("contact-form") as HTMLFormElement;
-    const result = document.getElementById("result");
     const loader = document.getElementById("loader");
     const sendText = document.getElementById("send-text");
     const button = document.getElementById("button") as HTMLButtonElement;
@@ -135,7 +142,7 @@ const personColor = lowercaseName === "barna" ? "#FFFB20" : "#efd6f5";
         .then(async (res) => {
           if (res.status === 200) {
           } else {
-            alert(res);
+            console.log(res);
           }
         })
         .catch((error) => {
@@ -194,6 +201,8 @@ const personColor = lowercaseName === "barna" ? "#FFFB20" : "#efd6f5";
       selectionColors={selectionColors}
       focusStyles={focusStyles}
       personColor={personColor}
+      labelColor={labelColor}
+      labelFloatingColor={labelFloatingColor}
     />
     <AnimatedInput
       type="email"
@@ -203,6 +212,8 @@ const personColor = lowercaseName === "barna" ? "#FFFB20" : "#efd6f5";
       selectionColors={selectionColors}
       focusStyles={focusStyles}
       personColor={personColor}
+      labelColor={labelColor}
+      labelFloatingColor={labelFloatingColor}
     />
     <div class="relative group">
       <textarea
@@ -214,7 +225,7 @@ const personColor = lowercaseName === "barna" ? "#FFFB20" : "#efd6f5";
       ></textarea>
       <label
         for="message"
-        class="absolute left-[11px] top-[-24px] peer-placeholder-shown:top-2.5 peer-focus:top-[-24px] transition-all peer-focus:-top-6.5 text-[17px] pl-1 peer-placeholder-shown:text-base"
+        class={`absolute ${labelColor} ${labelFloatingColor} left-[11px] top-[-24px] peer-placeholder-shown:top-2.5 peer-focus:top-[-24px] transition-all peer-focus:-top-6.5 text-[17px] pl-1 peer-placeholder-shown:text-base`}
         >*Message</label
       >
       <p

@@ -9,6 +9,8 @@ const {
   selectionColors,
   focusStyles,
   personColor,
+  labelColor,
+  labelFloatingColor
 } = Astro.props;
 ---
 
@@ -26,7 +28,7 @@ const {
   />
   <label
     for={name}
-    class="text-[17px] absolute left-[11px] top-[10px] peer-placeholder-shown:text-[15px] peer-placeholder-shown:top-2.5 transition-all peer-focus:-top-6.5 text-[17px] pl-1 peer-[:not(:placeholder-shown)]:top-[-24px]"
+    class={`text-[17px] ${labelColor} absolute left-[11px] top-[10px] peer-placeholder-shown:text-[15px] peer-placeholder-shown:top-2.5 ${labelFloatingColor} transition-all peer-focus:-top-6.5 text-[17px] pl-1 peer-[:not(:placeholder-shown)]:top-[-24px]`}
     >{label}</label
   >
   {
