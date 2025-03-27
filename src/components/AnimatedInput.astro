@@ -21,7 +21,7 @@ const {
     id={name}
     pattern={type === "email"
       ? "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
-      : ""}
+      : undefined}
     spellcheck={false}
     placeholder=" "
     class={`peer ${borderColor} ${selectionColors} ${focusStyles} outline-none border-[2px] rounded-full backdrop-blur-lg p-[10px] focus:placeholder-transparent focus:bg-[#1b1b1b] transition-all shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] pl-4 w-full text-opacity-100 focus:text-opacity-100 placeholder-shown:text-opacity-0 duration-300`}
