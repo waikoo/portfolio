@@ -10,7 +10,9 @@ const {
   focusStyles,
   personColor,
   labelColor,
-  labelFloatingColor
+  labelFloatingColor,
+  personFocusColor,
+  errorTextColor
 } = Astro.props;
 ---
 
@@ -24,7 +26,7 @@ const {
       : undefined}
     spellcheck={false}
     placeholder=" "
-    class={`peer ${borderColor} ${selectionColors} ${focusStyles} outline-none border-[2px] rounded-full backdrop-blur-lg p-[10px] focus:placeholder-transparent focus:bg-[#1b1b1b] transition-all shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] pl-4 w-full text-opacity-100 focus:text-opacity-100 placeholder-shown:text-opacity-0 duration-300`}
+    class={`peer ${borderColor} ${selectionColors} ${focusStyles} outline-none border-[2px] rounded-full backdrop-blur-lg p-[10px] focus:placeholder-transparent transition-all shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] pl-4 w-full text-opacity-100 focus:text-opacity-100 placeholder-shown:text-opacity-0 duration-300`}
   />
   <label
     for={name}
@@ -34,14 +36,14 @@ const {
   {
     name === "email" && (
       <p
-        class="text-[15px] text-[#dae7f3] flex items-center justify-end gap-2 hidden"
+      class={`text-[15px] ${errorTextColor} flex items-center justify-end gap-2 hidden`}
         id="email-error"
       >
-        <IconError />
+      <IconError errorTextColor={errorTextColor}/>
         Please enter your email
       </p>
       <p
-        class="text-[15px] text-[#dae7f3] flex items-center justify-end gap-2 hidden"
+      class={`text-[15px] ${errorTextColor} flex items-center justify-end gap-2 hidden`}
         id="email-invalid"
       >
         <IconError />
@@ -51,9 +53,9 @@ const {
   }
 </div>
 
-<style define:vars={{ personColor }}>
+<style define:vars={{ personColor, personFocusColor }}>
   input:-webkit-autofill {
-    background-color: #1b1b1b !important;
+    background-color: var(--personFocusColor) !important;
     color: inherit !important;
     -webkit-text-fill-color: var(--personColor) !important;
     -webkit-box-shadow: 0 0 0px 1000px #1b1b1b inset !important;

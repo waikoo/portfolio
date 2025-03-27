@@ -12,11 +12,14 @@ const hoverStyles =
 
 const focusStyles =
   lowercaseName === "barna"
-    ? "focus:drop-shadow-[0_0px_3px_#FFFB20]"
-    : "focus:drop-shadow-[0_0px_3px_#efd6f5]";
+    ? "focus:drop-shadow-[0_0px_3px_#FFFB20] focus:bg-[#1b1b1b]"
+    : "focus:drop-shadow-[0_0px_3px_#efd6f5] focus:bg-[#16000c]";
 
 const textColor =
   lowercaseName === "barna" ? "text-[#d9d62d]" : "text-[#efd6f5]";
+
+const buttonTextColor =
+  lowercaseName === "barna" ? "text-[#d9d62d]" : "text-[#e296f5]";
 
 const labelColor =
   lowercaseName === "barna" ? "text-[#b2ae2b]" : "text-[#d2b0da]";
@@ -30,7 +33,7 @@ const borderColor =
   lowercaseName === "barna" ? "border-[#5a6736]" : "border-[#371239]";
 
 const buttonBorderColor =
-  lowercaseName === "barna" ? "border-[#FFFB20]" : "border-[#efd6f5]";
+  lowercaseName === "barna" ? "border-[#FFFB20]" : "border-[#e296f5]";
 
 const accessKeyValue =
   lowercaseName === "barna"
@@ -46,16 +49,28 @@ const outlineColor =
   lowercaseName === "barna" ? "outline-[#FFFB20]" : "outline-[#efd6f5]";
 
 const personColor = lowercaseName === "barna" ? "#FFFB20" : "#efd6f5";
+const personFocusColor = lowercaseName === "barna" ? "#1b1b1b" : "#16000c";
+const errorBorderColor =
+  lowercaseName === "barna" ? "border-[#a9bbcb]" : "border-[#d2b0da]";
+const errorTextColor =
+  lowercaseName === "barna" ? "text-[#a9bbcb]" : "text-[#d2b0da]";
+const buttonWhileLoadingColor =
+  lowercaseName === "barna"
+    ? "bg-[#FFFB20] text-black"
+    : "bg-[#efd6f5] text-black";
 ---
 
 <script>
   import axios from "axios";
 
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+  const errorBorderColor = form?.dataset.errorBorderColor;
+  const buttonWhileLoadingColor = form?.dataset.buttonWhileLoadingColor;
+
   window.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("contact-form") as HTMLFormElement;
     const loader = document.getElementById("loader");
     const sendText = document.getElementById("send-text");
-    const button = document.getElementById("button") as HTMLButtonElement;
+    const button = document.getElementById("button");
     const messageError = document.getElementById("message-error");
     const emailError = document.getElementById("email-error");
     const emailInvalid = document.getElementById("email-invalid");
@@ -63,27 +78,32 @@ const personColor = lowercaseName === "barna" ? "#FFFB20" : "#efd6f5";
     const messageInput = document.getElementById("message") as HTMLInputElement;
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
+    if (!form || !emailInput || !messageInput || !emailError || !messageError) {
+      console.error("Required form elements not found");
+      return;
+    }
+
     emailInput.addEventListener("blur", () => {
       if (emailInput.value.trim() !== "") {
         if (emailInput.value.match(emailRegex)) {
-          emailInput.classList.remove("border-[#A9BBCB]");
+          emailInput.classList.remove(errorBorderColor as string);
           emailError?.classList.add("hidden");
           emailInvalid?.classList.add("hidden");
         } else {
-          emailInput.classList.add("border-[#A9BBCB]");
+          emailInput.classList.add(errorBorderColor as string);
           emailInvalid?.classList.remove("hidden");
           emailError?.classList.add("hidden");
         }
       } else {
-        emailInput.classList.remove("border-[#A9BBCB]");
+        emailInput.classList.remove(errorBorderColor as string);
         emailError?.classList.add("hidden");
         emailInvalid?.classList.add("hidden");
       }
     });
 
-    emailInput.addEventListener("input", (e) => {
+    emailInput.addEventListener("input", () => {
       if (emailInput.value.match(emailRegex)) {
-        emailInput.classList.remove("border-[#A9BBCB]");
+        emailInput.classList.remove(errorBorderColor as string);
         emailError?.classList.add("hidden");
         emailInvalid?.classList.add("hidden");
       }
@@ -91,52 +111,57 @@ const personColor = lowercaseName === "barna" ? "#FFFB20" : "#efd6f5";
 
     messageInput.addEventListener("input", () => {
       if (messageInput.value.length > 0) {
-        messageInput.classList.remove("border-[#A9BBCB]");
+        messageInput.classList.remove(errorBorderColor as string);
         messageError?.classList.add("hidden");
       }
     });
+
+    messageInput.addEventListener("blur", () => {
+      messageInput.classList.remove(errorBorderColor as string);
+      messageError?.classList.add("hidden");
+    });
+
     form.addEventListener("submit", (e) => {
       e.preventDefault();
 
       if (
-        (messageInput.value === "" && emailInput.value === "") ||
+        (messageInput.value.trim() === "" && emailInput.value.trim() === "") ||
         !emailInput.value.match(emailRegex)
       ) {
-        messageInput.classList.add("border-[#A9BBCB]");
-        emailInput.classList.add("border-[#A9BBCB]");
+        messageInput.classList.add(errorBorderColor as string);
+        emailInput.classList.add(errorBorderColor as string);
         messageError?.classList.remove("hidden");
         emailError?.classList.remove("hidden");
         return;
       }
 
       if (emailInput.value === "") {
-        emailInput.classList.add("border-[#A9BBCB]");
+        emailInput.classList.add(errorBorderColor as string);
         emailError?.classList.remove("hidden");
         return;
       } else {
         if (emailInput.value.match(emailRegex)) {
-          emailInput.classList.remove("border-[#A9BBCB]");
+          emailInput.classList.remove(errorBorderColor as string);
           emailError?.classList.add("hidden");
         } else {
-          emailInput.classList.add("border-[#A9BBCB]");
+          emailInput.classList.add(errorBorderColor as string);
           emailError?.classList.remove("hidden");
           return;
         }
       }
 
       if (messageInput.value === "") {
-        messageInput.classList.add("border-[#A9BBCB]");
+        messageInput.classList.add(errorBorderColor as string);
         messageError?.classList.remove("hidden");
         return;
       } else {
-        messageInput.classList.remove("border-[#A9BBCB]");
+        messageInput.classList.remove(errorBorderColor as string);
         messageError?.classList.add("hidden");
       }
 
       if (loader) {
         loader.classList.remove("hidden");
-        button.classList.add("bg-[#fffb20]");
-        button.classList.add("text-black");
+        button?.classList.add(buttonWhileLoadingColor as string);
       }
       if (sendText) {
         sendText.classList.add("hidden");
@@ -164,8 +189,7 @@ const personColor = lowercaseName === "barna" ? "#FFFB20" : "#efd6f5";
             sendText.classList.remove("hidden");
           }
           if (button) {
-            button.classList.remove("bg-[#fffb20]");
-            button.classList.remove("text-black");
+            button.classList.remove("bg-[#fffb20] text-black");
           }
 
           form.reset();
@@ -195,6 +219,8 @@ const personColor = lowercaseName === "barna" ? "#FFFB20" : "#efd6f5";
     id="contact-form"
     class="relative flex flex-col mx-auto flex
     flex-col gap-[35px] w-[75%] mt-5 sm:w-[528px]"
+    data-error-border-color={errorBorderColor}
+    button-while-loading-color={buttonWhileLoadingColor}
   >
     <input type="hidden" name="access_key" value={accessKeyValue} />
 
@@ -208,6 +234,8 @@ const personColor = lowercaseName === "barna" ? "#FFFB20" : "#efd6f5";
       personColor={personColor}
       labelColor={labelColor}
       labelFloatingColor={labelFloatingColor}
+      personFocusColor={personFocusColor}
+      errorTextColor={errorTextColor}
     />
     <AnimatedInput
       type="email"
@@ -219,6 +247,8 @@ const personColor = lowercaseName === "barna" ? "#FFFB20" : "#efd6f5";
       personColor={personColor}
       labelColor={labelColor}
       labelFloatingColor={labelFloatingColor}
+      personFocusColor={personFocusColor}
+      errorTextColor={errorTextColor}
     />
     <div class="relative group">
       <textarea
@@ -226,7 +256,7 @@ const personColor = lowercaseName === "barna" ? "#FFFB20" : "#efd6f5";
         id="message"
         placeholder=" "
         spellcheck={false}
-        class={`peer rounded-[20px] ${borderColor} ${selectionColors} ${focusStyles} border-[2px] backdrop-blur-lg p-2 duration-300 h-[200px] focus:bg-[#1b1b1b] transition-all shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] w-full block pl-4 placeholder-transparent focus:placeholder-transparent text-opacity-100 focus:text-opacity-100 placeholder-shown:text-opacity-0 ${outlineColor} outline-none`}
+        class={`peer rounded-[20px] ${borderColor} ${selectionColors} ${focusStyles} border-[2px] backdrop-blur-lg p-2 duration-300 h-[200px] transition-all shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] w-full block pl-4 placeholder-transparent focus:placeholder-transparent text-opacity-100 focus:text-opacity-100 placeholder-shown:text-opacity-0 ${outlineColor} outline-none`}
       ></textarea>
       <label
         for="message"
@@ -234,21 +264,22 @@ const personColor = lowercaseName === "barna" ? "#FFFB20" : "#efd6f5";
         >*Message</label
       >
       <p
-        class="text-[15px] text-[#dae7f3] flex items-center justify-end gap-2 hidden"
+        class={`text-[15px] ${errorTextColor} flex items-center justify-end gap-2 hidden`}
         id="message-error"
       >
-        <IconError />Please enter your message
+        <IconError errorTextColor={errorTextColor} />Please enter your message
       </p>
     </div>
 
     <button
-      class={`uppercase border-[1px] ${buttonBorderColor} font-medium rounded-full p-2 w-full sm:w-[200px] sm:mx-auto block send cursor-pointer transition:all backdrop-blur-lg ${hoverStyles} ${outlineColor}`}
+      class={`uppercase border-[1px] ${buttonBorderColor} ${buttonTextColor} font-medium rounded-full p-2 w-full sm:w-[200px] sm:mx-auto block send cursor-pointer transition:all backdrop-blur-lg ${hoverStyles} ${outlineColor}`}
       type="submit"
       id="button"
     >
       <span id="send-text">Send</span>
       <div class="flex justify-center hidden" id="loader">
-        <GooeyLoader />
+        {lowercaseName === "barna" && <GooeyLoader />}
+        {lowercaseName === "evelin" && "SEND"}
       </div>
     </button>
   </form>
