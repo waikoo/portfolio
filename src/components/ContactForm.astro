@@ -89,6 +89,12 @@ const personColor = lowercaseName === "barna" ? "#FFFB20" : "#efd6f5";
       }
     });
 
+    messageInput.addEventListener("input", () => {
+      if (messageInput.value.length > 0) {
+        messageInput.classList.remove("border-[#A9BBCB]");
+        messageError?.classList.add("hidden");
+      }
+    });
     form.addEventListener("submit", (e) => {
       e.preventDefault();
 
@@ -163,9 +169,7 @@ const personColor = lowercaseName === "barna" ? "#FFFB20" : "#efd6f5";
           }
 
           form.reset();
-          setTimeout(() => {
-            // result.classList.add("hidden");
-          }, 3000);
+          setTimeout(() => {}, 3000);
         });
     });
   });
