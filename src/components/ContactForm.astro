@@ -12,8 +12,8 @@ const hoverStyles =
 
 const focusStyles =
   lowercaseName === "barna"
-    ? "focus:drop-shadow-[0_0px_3px_#FFFB20] focus:bg-[#211f0d]"
-    : "focus:drop-shadow-[0_0px_3px_#efd6f5] focus:bg-[#16000c]";
+    ? "focus:drop-shadow-[0_0px_3px_#FFFB20] focus:bg-[#211f0d] focus:autofill:bg-[#211f0d]"
+    : "focus:drop-shadow-[0_0px_3px_#efd6f5] focus:bg-[#16000c] focus:autofill:bg-[#16000c]";
 
 const textColor =
   lowercaseName === "barna" ? "text-[#d9d62d]" : "text-[#efd6f5]";
@@ -49,7 +49,7 @@ const outlineColor =
   lowercaseName === "barna" ? "outline-[#FFFB20]" : "outline-[#efd6f5]";
 
 const personColor = lowercaseName === "barna" ? "#FFFB20" : "#efd6f5";
-const personFocusColor = lowercaseName === "barna" ? "#1b1b1b" : "#16000c";
+const personFocusColor = lowercaseName === "barna" ? "#211f0d" : "#16000c";
 const errorBorderColor =
   lowercaseName === "barna" ? "border-[#a9bbcb]" : "border-[#d2b0da]";
 const errorTextColor =
@@ -58,6 +58,18 @@ const buttonWhileLoadingColor =
   lowercaseName === "barna"
     ? "bg-[#FFFB20] text-black"
     : "bg-[#efd6f5] text-black";
+const successTextColor =
+  lowercaseName === "barna" ? "text-[#A0B982]" : "text-[#d2b0da]";
+const successShadowColor =
+  lowercaseName === "barna"
+    ? "shadow-[0_0_10px_0_#447E1D]"
+    : "shadow-[0_0_11px_0_#5f2382]";
+const successOuterGradient =
+  lowercaseName === "barna"
+    ? "bg-linear-to-r from-[#11180a] via-[#1e3108] via-54% to-[#101309]"
+    : "bg-linear-to-r from-[#2b023a] from-11% via-[#580c84] via-50% to-[#260135] to-90%";
+const successBorderColor =
+  lowercaseName === "barna" ? "border-[#3b7319]" : "border-[#7912b3]";
 ---
 
 <script>
@@ -76,7 +88,8 @@ const buttonWhileLoadingColor =
     const emailInvalid = document.getElementById("email-invalid");
     const emailInput = document.getElementById("email") as HTMLInputElement;
     const messageInput = document.getElementById("message") as HTMLInputElement;
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const nameInput = document.getElementById("name") as HTMLInputElement;
+    const emailRegex = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
 
     if (!form || !emailInput || !messageInput || !emailError || !messageError) {
       console.error("Required form elements not found");
@@ -173,6 +186,20 @@ const buttonWhileLoadingColor =
         .post("https://api.web3forms.com/submit", formObject)
         .then(async (res) => {
           if (res.status === 200) {
+            const successMessage = document.getElementById("success-message");
+            if (successMessage) {
+              successMessage.classList.add("animate-up");
+              successMessage.classList.remove("hidden");
+            }
+            setTimeout(() => {
+              if (successMessage) {
+                successMessage.classList.remove("animate-up");
+                successMessage.classList.add("animate-down");
+                setTimeout(() => {
+                  successMessage.classList.add("hidden");
+                }, 500);
+              }
+            }, 3000);
           } else {
             console.log(res);
           }
@@ -189,11 +216,15 @@ const buttonWhileLoadingColor =
             sendText.classList.remove("hidden");
           }
           if (button) {
-            button.classList.remove("bg-[#fffb20] text-black");
+            button.classList.remove("bg-[#fffb20]");
+            button.classList.remove("text-black");
           }
 
-          form.reset();
-          setTimeout(() => {}, 3000);
+          messageInput.value = "";
+          emailInput.value = "";
+          nameInput.value = "";
+          // form.reset();
+          setTimeout(() => {}, 500);
         });
     });
   });
@@ -279,9 +310,64 @@ const buttonWhileLoadingColor =
     >
       <span id="send-text">Send</span>
       <div class="flex justify-center hidden" id="loader">
-        {lowercaseName === "barna" && <GooeyLoader />}
-        {lowercaseName === "evelin" && "SEND"}
+        {
+          lowercaseName === "barna" && (
+            <GooeyLoader
+              color1="before:bg-yellow-400"
+              color2="after:bg-[#176128]"
+            />
+          )
+        }
+        {
+          lowercaseName === "evelin" && (
+            <GooeyLoader
+              color1="before:bg-[#e296f5]"
+              color2="after:bg-[#7912b3]"
+            />
+          )
+        }
       </div>
     </button>
   </form>
+
+  <section
+    class={`fixed left-0 right-0 bottom-10 mx-auto animate-up grid place-items-center  rounded-full w-[80%] max-w-[300px] lg:max-w-full h-[72px] sm:w-[50%] lg:w-[550px] lg:h-[70px] ${successShadowColor} ${successOuterGradient} ${successBorderColor} border-[4px] hidden`}
+    id="success-message"
+  >
+    <div
+      class={`absolute font-['Jost'] text-center lg:flex gap-2 lg:text-[20px] ${successTextColor}`}
+    >
+      <p class="whitespace-nowrap">Message sent successfully!</p>
+      <p class="whitespace-nowrap">Thank you for reaching out.</p>
+    </div>
+  </section>
 </section>
+
+<style>
+  .animate-up {
+    animation: up 0.5s ease-in-out;
+  }
+  .animate-down {
+    animation: down 0.5s ease-in-out;
+  }
+  @keyframes down {
+    from {
+      transform: translateY(0px);
+      opacity: 100%;
+    }
+    to {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+  }
+  @keyframes up {
+    from {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0px);
+      opacity: 100%;
+    }
+  }
+</style>

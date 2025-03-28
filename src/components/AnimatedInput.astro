@@ -22,9 +22,10 @@ const {
     name={name}
     id={name}
     pattern={type === "email"
-      ? "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+      ? "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" 
       : undefined}
     spellcheck={false}
+    autocomplete="true"
     placeholder=" "
     class={`peer ${borderColor} ${selectionColors} ${focusStyles} outline-none border-[2px] rounded-full backdrop-blur-lg p-[10px] focus:placeholder-transparent transition-all shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] pl-4 w-full text-opacity-100 focus:text-opacity-100 placeholder-shown:text-opacity-0 duration-300`}
   />
@@ -54,11 +55,11 @@ const {
 </div>
 
 <style define:vars={{ personColor, personFocusColor }}>
-  input:-webkit-autofill {
+  input:-webkit-autofill, input:-webkit-autofill:focus {
     background-color: var(--personFocusColor) !important;
     color: inherit !important;
     -webkit-text-fill-color: var(--personColor) !important;
-    -webkit-box-shadow: 0 0 0px 1000px #1b1b1b inset !important;
+    -webkit-box-shadow: 0 0 0px 1000px var(--personFocusColor) inset !important;
     font-family: "Jost";
   }
 </style>
