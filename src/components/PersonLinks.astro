@@ -6,7 +6,6 @@ const { url: currentUrl } = Astro.request;
 const isOnProjects = currentUrl.includes("projects");
 const isOnCV = currentUrl.includes("cv");
 const isOnContact = currentUrl.includes("contact");
-const isOnAbout = currentUrl.includes("about");
 ---
 
 <ul class={`flex text-[1rem] ${className}`}>
@@ -36,12 +35,5 @@ const isOnAbout = currentUrl.includes("about");
     isHamburger={isHamburger}
     lowercasedName={lowercasedName}
     color={color}>Contact</PersonHeaderLink
-  >
-  <PersonHeaderLink
-    href={`/${lowercasedName}/about`}
-    isCurrentPage={isOnAbout}
-    isHamburger={isHamburger}
-    lowercasedName={lowercasedName}
-    color={color}>About</PersonHeaderLink
   >
 </ul>
