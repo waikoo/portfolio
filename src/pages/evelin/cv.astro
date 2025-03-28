@@ -2,6 +2,7 @@
 import PersonLayout from "../../components/PersonLayout.astro";
 import Layout from "../../layouts/Layout.astro";
 import PersonCV from "../../components/PersonCV.astro";
+import ContactForm from "../../components/ContactForm.astro";
 
 const fullName = "Szász Evelin";
 const bgColor = "#1c000c";
@@ -14,5 +15,7 @@ const bgColor = "#1c000c";
       imgSrc="/images/evelin_cv.jpg"
       pdfSrc="/Szasz_Evelin_CV.pdf"
     />
+
+    <ContactForm lowercaseName="evelin" />
   </PersonLayout>
 </Layout>

@@ -1,4 +1,5 @@
 ---
+import ContactForm from "../../components/ContactForm.astro";
 import PersonContactItem from "../../components/PersonContactItem.astro";
 import PersonLayout from "../../components/PersonLayout.astro";
 import Layout from "../../layouts/Layout.astro";
@@ -28,6 +29,7 @@ const { name } = extractName(fullName);
         />
       </div>
     </main>
+    <ContactForm lowercaseName="evelin" />
   </PersonLayout>
 </Layout>
 

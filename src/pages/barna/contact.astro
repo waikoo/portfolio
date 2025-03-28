@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import PersonLayout from "../../components/PersonLayout.astro";
 import PersonContactItem from "../../components/PersonContactItem.astro";
 import { extractName } from "../../utils/extractName";
+import ContactForm from "../../components/ContactForm.astro";
 
 const fullName = "Szász Barna";
 const { name } = extractName(fullName);
@@ -24,5 +25,6 @@ const { name } = extractName(fullName);
         />
       </div>
     </main>
+    <ContactForm lowercaseName="barna" />
   </PersonLayout>
 </Layout>
