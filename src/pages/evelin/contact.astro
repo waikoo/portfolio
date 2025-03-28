@@ -12,10 +12,10 @@ const { name } = extractName(fullName);
 <Layout title={`Contact ${fullName}`} fullName={fullName}>
   <PersonLayout fullName={fullName}>
     <main
-      class="relative min-h-screen flex justify-center items-center content-center"
+      class="relative flex justify-center items-center content-center my-[120px]"
     >
       <div
-        class="flex flex-col gap-[65px] justify-center items-center text-center"
+        class="flex flex-col gap-[10px] justify-center items-center text-center"
       >
         <PersonContactItem
           name={name}
@@ -27,15 +27,13 @@ const { name } = extractName(fullName);
           title="Dribbble"
           value="https://dribbble.com/Lyonixa"
         />
+        <PersonContactItem
+          name={name}
+          title="LinkedIn"
+          value="https://www.linkedin.com/in/evelin-szász-3ba323358/"
+        />
       </div>
     </main>
     <ContactForm lowercaseName="evelin" />
   </PersonLayout>
 </Layout>
-
-<style>
-  /*height of header*/
-  main {
-    min-height: calc(100vh - 97.5px);
-  }
-</style>
