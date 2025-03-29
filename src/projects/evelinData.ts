@@ -1,4 +1,4 @@
-const color = "#d2d62e"
+const color = "#dcade8"
 export const projects = [
   {
     id: 0,
