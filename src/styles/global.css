@@ -30,4 +30,25 @@
     font-family: 'Jost';
     font-display: block !important;
   }
+
+  @font-face {
+    font-family: 'Gothic';
+    font-display: block !important;
+    src: url('/fonts/ITC-Avant-Garde-Gothic-Std-Bold.otf') format('opentype');
+    font-weight: bold;
+  }
+
+  @font-face {
+    font-family: 'Gothic';
+    font-display: block !important;
+    src: url('/fonts/ITC-Avant-Garde-Gothic-Std-Demi.otf') format('opentype');
+    font-weight: semibold;
+  }
+
+  @font-face {
+    font-family: 'Gothic';
+    font-display: block !important;
+    src: url('/fonts/ITC-Avant-Garde-Gothic-Std-Medium.otf') format('opentype');
+    font-weight: medium;
+  }
 }

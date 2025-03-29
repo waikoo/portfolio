@@ -4,6 +4,7 @@ import PersonLayout from "../../../components/PersonLayout.astro";
 import Layout from "../../../layouts/Layout.astro";
 import { projects } from "../../../projects/evelinData";
 import ContactForm from "../../../components/ContactForm.astro";
+import IntroEvelin from "../../../components/IntroEvelin.astro";
 
 const fullName = "Szász Evelin";
 const bgColor = "#1c000c";
@@ -11,6 +12,8 @@ const bgColor = "#1c000c";
 
 <Layout title={`${fullName}'s Projects`} fullName={fullName} bgColor={bgColor}>
   <PersonLayout fullName={fullName} bgColor={bgColor}>
+    <IntroEvelin />
+
     <div
       class="w-[90%] lg:max-w-[960px] 2xl:max-w-[1400px] mx-auto pb-20 flex flex-col-reverse gap-[24px] lg:gap-20 mt-12"
     >

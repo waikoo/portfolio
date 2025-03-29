@@ -1,0 +1,35 @@
+---
+const { arrowColor, circleColor } = Astro.props;
+---
+
+<div
+  class="size-[146px] mt-[20px]"
+  style={`background-color: ${circleColor}; border-radius: 999px; display: grid; place-items: center; margin: 0 auto;`}
+>
+  <svg
+    width="16"
+    height="20"
+    viewBox="0 0 16 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    class="animate-[updown_1s_infinite] mt-[10px]"
+  >
+    <path
+      d="M7.29289 18.9444C7.68342 19.3349 8.31658 19.3349 8.70711 18.9444L15.0711 12.5804C15.4616 12.1899 15.4616 11.5568 15.0711 11.1662C14.6805 10.7757 14.0474 10.7757 13.6569 11.1662L8 16.8231L2.34315 11.1662C1.95262 10.7757 1.31946 10.7757 0.928934 11.1662C0.538409 11.5568 0.538409 12.1899 0.928934 12.5804L7.29289 18.9444ZM7 0.237305L7 18.2373L9 18.2373L9 0.237305L7 0.237305Z"
+      fill={arrowColor}></path>
+  </svg>
+</div>
+
+<style>
+  @keyframes updown {
+    0%,
+    100% {
+      transform: translateY(-50%);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+      transform: none;
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+  }
+</style>
