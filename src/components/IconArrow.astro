@@ -1,4 +1,6 @@
 ---
+import "@fontsource/jost/500.css";
+
 import IconArrowResponsive from "./IconArrowResponsive.astro";
 
 const { className, isInverted, projectLink } = Astro.props;
@@ -15,7 +17,7 @@ const invertArrow = isInverted ? "" : "scale-x-[-1]";
   </div>
 
   <span
-    class="text-[#e296f5] text-[16px] xl:text-[18px] font-regular font-['Jost']"
+    class="text-[#e296f5] text-[16px] xl:text-[18px] font-medium font-['Jost']"
     >{!projectLink ? "IN PROGRESS" : "View Project"}</span
   >
 </a>
