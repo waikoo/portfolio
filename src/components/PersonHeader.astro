@@ -63,10 +63,15 @@ const isThriftStudio = pathname.includes("thriftstudio");
   const attachHamburgerEventListener = () => {
     const hamburgerIcon = document.querySelector(".hamburger-icon");
     const hamburgerMenu = document.querySelector(".hamburger-menu");
+    const hamburgerMenuInner = document.querySelector(".hamburger-inner");
 
     if (hamburgerIcon) {
       hamburgerIcon.addEventListener("click", () => {
         hamburgerMenu?.classList.remove("hidden");
+        hamburgerMenuInner.classList.add("animate-fade-left");
+        setTimeout(() => {
+          hamburgerMenuInner?.classList.remove("animate-fade-left");
+        }, 1000);
       });
     }
   };

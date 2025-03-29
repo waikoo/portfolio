@@ -13,16 +13,31 @@ const bgColor =
   const closeHamburgerMenu = () => {
     const hamburgerMenu = document.querySelector(".hamburger-menu");
     const closeIcon = document.querySelector(".icon-close");
+    const hamburgerMenuInner = document.querySelector(".hamburger-inner");
 
     if (closeIcon && hamburgerMenu) {
       closeIcon.addEventListener("click", () => {
-        hamburgerMenu.classList.add("hidden");
+        hamburgerMenuInner?.classList.add("animate-[faderight_1s_ease-in-out]");
+        setTimeout(() => {
+          hamburgerMenu.classList.add("hidden");
+          hamburgerMenuInner?.classList.remove(
+            "animate-[faderight_1s_ease-in-out]",
+          );
+        }, 1000);
       });
     }
     if (hamburgerMenu) {
       hamburgerMenu.addEventListener("click", (e) => {
         if (e.target === hamburgerMenu) {
-          hamburgerMenu.classList.add("hidden");
+          hamburgerMenuInner?.classList.add(
+            "animate-[faderight_1s_ease-in-out]",
+          );
+          setTimeout(() => {
+            hamburgerMenu.classList.add("hidden");
+            hamburgerMenuInner?.classList.remove(
+              "animate-[faderight_1s_ease-in-out]",
+            );
+          }, 1000);
         }
       });
     }
@@ -34,7 +49,7 @@ const bgColor =
   class="z-101 fixed inset-0 bg-black/50 bg-opacity-70 hamburger-menu hidden lg:hidden"
 >
   <section
-    class={`min-h-[100dvh] w-[70%] sm:w-[30%] ml-auto ${bgColor} relative`}
+    class={`min-h-[100dvh] w-[70%] sm:w-[30%] ml-auto ${bgColor} relative hamburger-inner`}
   >
     <PersonLinks
       lowercasedName={name.toLowerCase()}
@@ -44,3 +59,16 @@ const bgColor =
     <IconClose className="absolute top-5 right-5 icon-close cursor-pointer" />
   </section>
 </div>
+
+<style>
+  @keyframes faderight {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+  }
+</style>
