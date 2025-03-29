@@ -12,7 +12,7 @@ export const projects = [
   {
     id: 1,
     name: "Thriftstudio",
-    description: "A responsive e-commerce website for a local thrift store, with an admin interface.",
+    description: "A fictional e-commerce project where I was the sole UI/UX designer, showcasing my ability to create intuitive, user-centered experiences and seamless shopping journeys using end-to-end UX methodologies.",
     src: "/images/thriftstudio_preview.jpg",
     projectLink: "/evelin/projects/thriftstudio",
     tags: ['UI DESIGN', 'UX DESIGN', 'FIGMA', 'ADOBE ILLUSTRATOR', 'ADOBE EXPRESS'],
@@ -21,7 +21,7 @@ export const projects = [
   {
     id: 2,
     name: "Quizzical",
-    description: "Quizzical is a trivia game designed to entertain and challenge users with a wide variety of engaging questions across diverse topics.",
+    description: "Designed the complete visual experience for a responsive trivia game, including UI, visual identity, and user flow, in collaboration with a developer.",
     src: "/images/quizzical.avif",
     projectLink: "/evelin/projects/quizzical",
     tags: ['UI DESIGN', 'UX DESIGN', 'FIGMA',],
