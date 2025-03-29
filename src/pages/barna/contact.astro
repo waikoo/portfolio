@@ -7,10 +7,11 @@ import ContactForm from "../../components/ContactForm.astro";
 
 const fullName = "Szász Barna";
 const { name } = extractName(fullName);
+const bgColor = "#0d1205";
 ---
 
 <Layout title={`Contact ${fullName}`} fullName={fullName}>
-  <PersonLayout fullName={fullName}>
+  <PersonLayout fullName={fullName} bgColor={bgColor}>
     <main class="relative grid justify-center my-[40px]">
       <div class="flex flex-col gap-[20px] items-center text-center">
         <PersonContactItem

@@ -7,10 +7,11 @@ import { extractName } from "../../utils/extractName";
 
 const fullName = "Szász Evelin";
 const { name } = extractName(fullName);
+const bgColor = "#1c000c";
 ---
 
 <Layout title={`Contact ${fullName}`} fullName={fullName}>
-  <PersonLayout fullName={fullName}>
+  <PersonLayout fullName={fullName} bgColor={bgColor}>
     <main
       class="relative flex justify-center items-center content-center my-[40px]"
     >
