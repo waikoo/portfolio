@@ -7,14 +7,16 @@ const titleTextColor = name === "Evelin" ? "text-[#efd6f5]" : "text-[#d9d62d]";
 const contentTextColor = name === "Evelin" ? "text-[#e296f5]" : "text-white";
 ---
 
-<div class={`flex flex-col items-center ${className}`}>
+<div
+  class={`flex flex-col items-center gap-[10px] font-['Jost'] px-[20px] ${className}`}
+>
   <span
-    class={`${titleTextColor} text-[70px] font-['Jost'] font-bold tracking-[-5px] text-center animate-rotate-y animate-once animate-duration-[600ms]`}
+    class={`${titleTextColor} text-[40px] sm:text-[70px] font-bold tracking-[-3px] sm:tracking-[-5px] text-center animate-rotate-y animate-once animate-duration-[600ms]`}
     >{title}</span
   >
 
   <div
-    class={`${contentTextColor} text-[20px] font-['Roboto'] font-regular animate-fade animate-once animate-duration-[1000ms] animate-ease-in mt-[-10px] `}
+    class={`${contentTextColor} text-[16px] sm:text-[20px] font-regular animate-fade animate-once animate-duration-[1000ms] animate-ease-in mt-[-10px] `}
   >
     <a class="" href={value.includes("@") ? `mailto:${value}` : value}>
       {value}
