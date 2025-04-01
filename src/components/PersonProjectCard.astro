@@ -7,6 +7,8 @@ import PersonProjectCardTitle from "./PersonProjectCardTitle.astro";
 import PersonProjectCardMedia from "./PersonProjectCardMedia.astro";
 import IconArrow from "./IconArrow.astro";
 import { extractName } from "../utils/extractName";
+import { projects as barnaProjects } from "../projects/data";
+import { projects as evelinProjects } from "../projects/evelinData";
 
 const {
   id,
@@ -34,10 +36,16 @@ const projectWrapper = isFormatColors
     : "lg:grid-cols-[5fr_2fr]";
 const evelinStyles =
   lowerCasedName === "evelin" ? "grid-rows-[auto_auto_auto] gap-[16px]" : "";
+
+const getId = () => {
+  const projects = lowerCasedName === "barna" ? barnaProjects : evelinProjects;
+  return projects.length - 1 === id ? "last-project" : undefined;
+};
 ---
 
 <section
   class={`relative grid project gap-[30px] items-center justify-items-center backdrop-blur-lg rounded-[30px] bg-black/5 sm:p-[30px] p-[12px] grid-cols-1 hover:bg-black/30 transition-all duration-300 animate-fade-right animate-once animate-duration-[1500ms] animate-ease-in-out ${projectWrapper} ${evelinStyles}`}
+  id={getId()}
 >
   <div
     class={`grid ${mediaWrapper} place-items-center row-start-4 row-end-5 ${isInverted ? "" : "lg:cols-start-1 lg:cols-end-2 lg:row-start-1 lg:row-end-5"}`}
