@@ -12,7 +12,8 @@ const {
   labelColor,
   labelFloatingColor,
   personFocusColor,
-  errorTextColor
+  errorTextColor,
+  errorBorderColor
 } = Astro.props;
 ---
 
@@ -40,14 +41,14 @@ const {
       class={`text-[15px] ${errorTextColor} flex items-center justify-end gap-2 hidden`}
         id="email-error"
       >
-      <IconError errorTextColor={errorTextColor}/>
+      <IconError errorBorderColor={errorBorderColor}/>
         Please enter your email
       </p>
       <p
       class={`text-[15px] ${errorTextColor} flex items-center justify-end gap-2 hidden`}
         id="email-invalid"
       >
-        <IconError />
+        <IconError errorBorderColor={errorBorderColor}/>
         Please enter a valid email
       </p>
     )

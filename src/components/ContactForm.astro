@@ -51,10 +51,8 @@ const outlineColor =
 
 const personColor = lowercaseName === "barna" ? "#FFFB20" : "#efd6f5";
 const personFocusColor = lowercaseName === "barna" ? "#211f0d" : "#16000c";
-const errorBorderColor =
-  lowercaseName === "barna" ? "border-[#a9bbcb]" : "border-[#d2b0da]";
-const errorTextColor =
-  lowercaseName === "barna" ? "text-[#a9bbcb]" : "text-[#d2b0da]";
+const errorBorderColor = "border-[#BB2E2E]";
+const errorTextColor = "text-[#FAA9A9]";
 const buttonWhileLoadingColor =
   lowercaseName === "barna"
     ? "bg-[#FFFB20] text-black"
@@ -269,11 +267,12 @@ const successBorderColor =
       labelFloatingColor={labelFloatingColor}
       personFocusColor={personFocusColor}
       errorTextColor={errorTextColor}
+      errorBorderColor={errorBorderColor}
     />
     <AnimatedInput
       type="email"
       name="email"
-      label="*Email"
+      label="Email (required)"
       borderColor={borderColor}
       selectionColors={selectionColors}
       focusStyles={focusStyles}
@@ -282,6 +281,7 @@ const successBorderColor =
       labelFloatingColor={labelFloatingColor}
       personFocusColor={personFocusColor}
       errorTextColor={errorTextColor}
+      errorBorderColor={errorBorderColor}
     />
     <div class="relative group">
       <textarea
@@ -294,13 +294,14 @@ const successBorderColor =
       <label
         for="message"
         class={`absolute ${labelColor} ${labelFloatingColor} left-[11px] top-[-24px] peer-placeholder-shown:top-2.5 peer-focus:top-[-24px] transition-all peer-focus:-top-6.5 text-[17px] pl-1 peer-placeholder-shown:text-base`}
-        >*Message</label
+        >Message (required)</label
       >
       <p
         class={`text-[15px] ${errorTextColor} flex items-center justify-end gap-2 hidden`}
         id="message-error"
       >
-        <IconError errorTextColor={errorTextColor} />Please enter your message
+        <IconError errorBorderColor={errorBorderColor} />Please enter your
+        message
       </p>
     </div>
 

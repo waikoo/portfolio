@@ -1,9 +1,9 @@
 ---
-const { errorTextColor } = Astro.props;
-console.log(errorTextColor);
+const { errorBorderColor } = Astro.props;
+
 let iconColor;
-if (errorTextColor) {
-  iconColor = errorTextColor.replace("text-", "");
+if (errorBorderColor) {
+  iconColor = errorBorderColor.replace("border-", "");
   iconColor = iconColor.replace("[", "");
   iconColor = iconColor.replace("]", "");
 }
