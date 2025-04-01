@@ -10,11 +10,6 @@ const isOnContact = currentUrl.includes("contact");
 
 <ul class={`flex text-[1rem] ${className}`}>
   <PersonHeaderLink
-    href="/"
-    isHamburger={isHamburger}
-    lowercasedName={lowercasedName}>Home</PersonHeaderLink
-  >
-  <PersonHeaderLink
     href={`/${lowercasedName}/projects`}
     isCurrentPage={isOnProjects}
     isHamburger={isHamburger}
