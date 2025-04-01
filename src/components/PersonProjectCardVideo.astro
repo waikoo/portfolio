@@ -5,9 +5,34 @@ const videoWidth = isFormatColors
   : "w-[640px] 2xl:w-[987px]";
 ---
 
+<script>
+  const videos = document.querySelectorAll(
+    "video",
+  ) as NodeListOf<HTMLVideoElement>;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          (entry.target as HTMLVideoElement).play();
+        } else {
+          const video = entry.target as HTMLVideoElement;
+          video.currentTime = 0;
+          video.pause();
+        }
+      });
+    },
+    { threshold: 0.5 },
+  ); // video will play when 50% visible
+
+  videos.forEach((video) => {
+    observer.observe(video);
+  });
+</script>
+
 <video
   class={`rounded-[20px] ${videoWidth}`}
-  autoplay
+  preload="none"
   loop
   muted
   playsinline
