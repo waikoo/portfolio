@@ -68,9 +68,9 @@ const isThriftStudio = pathname.includes("thriftstudio");
     if (hamburgerIcon) {
       hamburgerIcon.addEventListener("click", () => {
         hamburgerMenu?.classList.remove("hidden");
-        hamburgerMenuInner.classList.add("animate-fade-left");
+        hamburgerMenuInner.classList.add("motion-safe:animate-fade-left");
         setTimeout(() => {
-          hamburgerMenuInner?.classList.remove("animate-fade-left");
+          hamburgerMenuInner?.classList.remove("motion-safe:animate-fade-left");
         }, 1000);
       });
     }
