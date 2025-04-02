@@ -7,8 +7,9 @@ const color = {
 
 <script is:inline define:vars={{ color }}>
   window.addEventListener("scroll", () => {
+    if (window.location.pathname !== "/evelin/projects/quizzical") return;
     const header = document.querySelector("header");
-    const paths = document.querySelectorAll("path");
+    const paths = header.querySelectorAll("path");
 
     if (header) {
       if (window.scrollY > 0) {
