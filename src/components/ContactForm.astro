@@ -187,13 +187,13 @@ const successBorderColor =
           if (res.status === 200) {
             const successMessage = document.getElementById("success-message");
             if (successMessage) {
-              successMessage.classList.add("animate-up");
+              successMessage.classList.add("motion-safe:animate-up");
               successMessage.classList.remove("hidden");
             }
             setTimeout(() => {
               if (successMessage) {
-                successMessage.classList.remove("animate-up");
-                successMessage.classList.add("animate-down");
+                successMessage.classList.remove("motion-safe:animate-up");
+                successMessage.classList.add("motion-safe:animate-down");
                 setTimeout(() => {
                   successMessage.classList.add("hidden");
                 }, 500);
@@ -333,7 +333,7 @@ const successBorderColor =
   </form>
 
   <section
-    class={`fixed left-0 right-0 bottom-10 mx-auto animate-up grid place-items-center  rounded-full w-[80%] max-w-[300px] lg:max-w-full h-[72px] sm:w-[50%] lg:w-[550px] lg:h-[70px] ${successShadowColor} ${successOuterGradient} ${successBorderColor} border-[4px] hidden`}
+    class={`fixed left-0 right-0 bottom-10 mx-auto motion-safe:animate-up grid place-items-center  rounded-full w-[80%] max-w-[300px] lg:max-w-full h-[72px] sm:w-[50%] lg:w-[550px] lg:h-[70px] ${successShadowColor} ${successOuterGradient} ${successBorderColor} border-[4px] hidden`}
     id="success-message"
   >
     <div

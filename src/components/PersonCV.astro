@@ -29,12 +29,12 @@ const lowercaseName = name.toLowerCase();
 >
   <div class="">
     <button
-      class="font-['Jost'] border-none flex flex-col justify-center mx-auto mb-[30px] uppercase text-[14px] hover:animate-wiggle hover:animate-once hover:animate-duration-[500ms] hover:animate-ease-in-out"
+      class="font-['Jost'] border-none flex flex-col justify-center mx-auto mb-[30px] uppercase text-[14px] motion-safe:hover:animate-wiggle motion-safe:hover:animate-once motion-safe:hover:animate-duration-[500ms] motion-safe:hover:animate-ease-in-out"
     >
       <a
         href={pdfSrc}
         target="_blank"
-        class={`z-50 flex gap-2 items-center text-[16px] sm:text-[18px] lg:text-[16px] ${lowercaseName === "barna" ? "text-[#FFFB20] border-[#FFFB20] duration-200 hover:shadow-[0_0_7px_#FFFB20]" : "text-[#e296f5] border-[#e296f5] duration-200 hover:shadow-[0_0_7px_#e296f5]"} border-[1px] rounded-full py-[10px] px-[17px] drop-shadow-[5px_5px_8px_rgba(0,0,0,0.60)] transition-all backdrop-blur-md cv_download animate-fade-down animate-once animate-duration-[1500ms] animate-ease-out`}
+        class={`z-50 flex gap-2 items-center text-[16px] sm:text-[18px] lg:text-[16px] ${lowercaseName === "barna" ? "text-[#FFFB20] border-[#FFFB20] duration-200 hover:shadow-[0_0_7px_#FFFB20]" : "text-[#e296f5] border-[#e296f5] duration-200 hover:shadow-[0_0_7px_#e296f5]"} border-[1px] rounded-full py-[10px] px-[17px] drop-shadow-[5px_5px_8px_rgba(0,0,0,0.60)] transition-all backdrop-blur-md cv_download motion-safe:animate-fade-down motion-safe:animate-once motion-safe:animate-duration-[1500ms] motion-safe:animate-ease-out`}
       >
         <IconCVDownload lowercaseName={lowercaseName} />
         Download
@@ -46,7 +46,7 @@ const lowercaseName = name.toLowerCase();
       <img
         src={imgSrc}
         alt={`${fullName}'s CV`}
-        class="block w-full animate-flip-down animate-once animate-duration-[1500ms] animate-ease-out"
+        class="block w-full motion-safe:animate-flip-down motion-safe:animate-once motion-safe:animate-duration-[1500ms] motion-safe:animate-ease-out"
       />
     </picture>
   </div>

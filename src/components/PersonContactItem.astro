@@ -11,12 +11,12 @@ const contentTextColor = name === "Evelin" ? "text-[#e296f5]" : "text-white";
   class={`flex flex-col items-center gap-[10px] font-['Jost'] px-[20px] ${className}`}
 >
   <span
-    class={`${titleTextColor} text-[40px] sm:text-[70px] font-bold tracking-[-3px] sm:tracking-[-5px] text-center animate-rotate-y animate-once animate-duration-[600ms]`}
+    class={`${titleTextColor} text-[40px] sm:text-[70px] font-bold tracking-[-3px] sm:tracking-[-5px] text-center motion-safe:animate-rotate-y motion-safe:animate-once motion-safe:animate-duration-[600ms]`}
     >{title}</span
   >
 
   <div
-    class={`${contentTextColor} text-[16px] sm:text-[20px] font-regular animate-fade animate-once animate-duration-[1000ms] animate-ease-in mt-[-10px] `}
+    class={`${contentTextColor} text-[16px] sm:text-[20px] font-regular motion-safe:animate-fade motion-safe:animate-once motion-safe:animate-duration-[1000ms] motion-safe:animate-ease-in mt-[-10px] `}
   >
     <a class="" href={value.includes("@") ? `mailto:${value}` : value}>
       {value}

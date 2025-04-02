@@ -44,7 +44,7 @@ const getId = () => {
 ---
 
 <section
-  class={`relative grid project gap-[30px] items-center justify-items-center backdrop-blur-lg rounded-[30px] bg-black/5 sm:p-[30px] p-[12px] grid-cols-1 hover:bg-black/30 transition-all duration-300 animate-fade-right animate-once animate-duration-[1500ms] animate-ease-in-out ${projectWrapper} ${evelinStyles}`}
+  class={`relative grid project gap-[30px] items-center justify-items-center backdrop-blur-lg rounded-[30px] bg-black/5 sm:p-[30px] p-[12px] grid-cols-1 hover:bg-black/30 transition-all duration-300 motion-safe:animate-fade-right motion-safe:animate-once motion-safe:animate-duration-[1500ms] motion-safe:animate-ease-in-out ${projectWrapper} ${evelinStyles}`}
   id={getId()}
 >
   <div
@@ -88,7 +88,7 @@ const getId = () => {
     fullName.split(" ")[1].toLowerCase() === "evelin" ? (
       <IconArrow
         isInverted={isInverted}
-        className={`row-start-5 row-end-6 justify-self-end mt-5 ${isInverted ? "justify-self-start lg:col-start-1 lg:col-end-2" : "lg:justify-self-end lg:col-start-2 lg:col-end-3"}  ${lowerCasedName === "evelin" ? "lg:row-start-4 lg:row-end-5" : "lg:row-start-3 lg:row-end-4"} hover:animate-wiggle hover:animate-once hover:animate-duration-[500ms] hover:animate-ease-in-out`}
+        className={`row-start-5 row-end-6 justify-self-end mt-5 ${isInverted ? "justify-self-start lg:col-start-1 lg:col-end-2" : "lg:justify-self-end lg:col-start-2 lg:col-end-3"}  ${lowerCasedName === "evelin" ? "lg:row-start-4 lg:row-end-5" : "lg:row-start-3 lg:row-end-4"} motion-safe:hover:animate-wiggle motion-safe:hover:animate-once motion-safe:hover:animate-duration-[500ms] motion-safe:hover:animate-ease-in-out`}
         projectLink={projectLink}
       />
     ) : null
