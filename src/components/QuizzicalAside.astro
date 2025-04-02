@@ -2,23 +2,137 @@
 const { bgColor } = Astro.props;
 ---
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = document.querySelectorAll(
+      ".nav-link a",
+    ) as NodeListOf<HTMLAnchorElement>;
+    const color = "text-[#1A2D55]";
+    const sections = [
+      { id: "quizzical-overview", bgColor: "#E1CA02", textColor: color },
+      { id: "quizzical-ideate", bgColor: "#F76331", textColor: color },
+      { id: "quizzical-design", bgColor: "#E1CA02", textColor: color },
+      { id: "quizzical-prototype", bgColor: "#E1CA02", textColor: color },
+    ];
+
+    let lastScrollY = window.scrollY;
+    let hasScrolled = false;
+    let isScrollingFromClick = false;
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        hasScrolled = true;
+      },
+      { once: true },
+    );
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "-30% 0px -30% 0px",
+      threshold: [0, 1.0],
+    };
+
+    function updateActiveSection(sectionId: string) {
+      const section = sections.find((s) => s.id === sectionId);
+
+      if (section) {
+        navLinks.forEach((link) => {
+          link.parentElement?.classList.remove("bg-[#141412]");
+          link.parentElement?.classList.remove("text-white");
+          link.parentElement?.classList.remove("rounded-full");
+          link.parentElement?.classList.remove("px-2");
+        });
+
+        const activeLink = document.querySelector(
+          `.nav-link a[href="#${sectionId}"]`,
+        );
+        activeLink?.parentElement?.classList.add("bg-[#141412]");
+        activeLink?.parentElement?.classList.add("text-white");
+        activeLink?.parentElement?.classList.add("rounded-full");
+        activeLink?.parentElement?.classList.add("px-2");
+      }
+    }
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        const targetId = link.getAttribute("href")?.substring(1);
+        if (targetId) {
+          e.preventDefault();
+          isScrollingFromClick = true;
+          updateActiveSection(targetId);
+
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            e.preventDefault();
+            targetElement.scrollIntoView({ behavior: "smooth" });
+
+            setTimeout(() => {
+              isScrollingFromClick = false;
+            }, 1000);
+          }
+        }
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      if (!hasScrolled || isScrollingFromClick) return;
+      const scrollingDown = window.scrollY > lastScrollY;
+      lastScrollY = window.scrollY;
+
+      entries.forEach((entry) => {
+        if (!scrollingDown) {
+          const currentIndex = sections.findIndex(
+            (s) => s.id === entry.target.id,
+          );
+
+          if (entry.isIntersecting) {
+            updateActiveSection(entry.target.id);
+          } else if (entry.boundingClientRect.top >= 0) {
+            if (currentIndex > 0) {
+              updateActiveSection(sections[currentIndex - 1].id);
+            }
+          }
+        } else {
+          if (
+            entry.isIntersecting &&
+            entry.boundingClientRect.top <= entry.rootBounds!.top
+          ) {
+            updateActiveSection(entry.target.id);
+          }
+        }
+      });
+    }, observerOptions);
+
+    updateActiveSection("quizzical-overview");
+    sections.forEach((section) => {
+      const element = document.getElementById(section.id);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+  });
+</script>
+
 <aside
-  class="fixed h-screen left-[-124px] top-0 bottom-0 content-center w-[39px] sm:w-[50px] xl:w-[70px] z-100"
+  class="fixed h-screen left-[-132px] top-0 bottom-0 content-center w-[39px] sm:w-[50px] xl:w-[70px] z-100"
 >
   <ul
-    class="flex justify-center -rotate-90 gap-[20px] relative text-[15px] sm:text-[16px] font-['Jost'] w-fit pl-[0.9rem] pr-[0.6rem] xl:pl-[2rem] xl:pr-[2rem] 2xl:pr-[2rem] py-1 rounded-full"
+    class="flex justify-center -rotate-90 gap-[20px] relative text-[15px] sm:text-[16px] font-['Jost'] h-[33px] w-fit pl-[0.9rem] pr-[0.6rem] xl:pl-[2rem] xl:pr-[2rem] 2xl:pr-[2rem] py-1 rounded-full"
     style={{ backgroundColor: bgColor }}
   >
-    <li class="cursor-pointer nav-link">
+    <li
+      class="cursor-pointer nav-link relative border-transparent border-[1px]"
+    >
       <a href="#quizzical-prototype">Prototype</a>
     </li>
-    <li class="cursor-pointer nav-link">
+    <li class="cursor-pointer nav-link relative">
       <a href="#quizzical-design">Design</a>
     </li>
-    <li class="cursor-pointer nav-link">
+    <li class="cursor-pointer nav-link relative">
       <a href="#quizzical-ideate">Ideate</a>
     </li>
-    <li class="cursor-pointer nav-link">
+    <li class="cursor-pointer nav-link relative">
       <a href="#quizzical-overview">Overview</a>
     </li>
   </ul>
