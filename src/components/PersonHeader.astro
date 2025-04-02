@@ -84,9 +84,9 @@ const isThriftStudio = pathname.includes("thriftstudio");
   >
     <a href=`/${lowercasedName}/projects`>
       {
-        isThriftStudio || isQuizzical ? (
+        isThriftStudio ? (
           <LogoEvelinDark />
-        ) : lowercasedName === "evelin" ? (
+        ) : isQuizzical || lowercasedName === "evelin" ? (
           <LogoEvelin />
         ) : (
           <LogoBarna />
