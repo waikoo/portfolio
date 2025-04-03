@@ -14,6 +14,7 @@ import EvelinThriftstudioFile5 from "../../../components/EvelinThriftstudioFile5
 import ViewProjectCard from "../../../components/ViewProjectCard.astro";
 import quizzicalPreview from "../../../assets/images/quizzical.png";
 import rpsPreview from "../../../assets/images/rps.png";
+import ContactForm from "../../../components/ContactForm.astro";
 
 const fullName = "Szász Evelin";
 const bgColor = "#d2d62e";
@@ -69,12 +70,12 @@ const cardBgColor = "#F9F9F9";
       cardBgColor={cardBgColor}
       id={"thriftstudio-prototype"}
     />
-    <ThriftstudioAside />
+    <ThriftstudioAside bgColor={bgColor} />
     <ReactScrollToTop client:only />
   </main>
 
   <footer
-    class="relative bg-[#141412] sm:px-[50px] xl:px-[82px] sm:mr-[-20px] h-[250px]"
+    class="relative bg-linear-to-b from-[#141412] to-[#16000c] sm:px-[50px] xl:px-[82px] sm:mr-[-20px] h-[250px] pb-[55rem]"
   >
     <div
       class="translate-y-[-150px] sm:translate-y-[-88px] xl:translate-y-[-170px] grid grid-cols-2 gap-[152px] sm:gap-[40px] sm:grid-cols-[250px_250px] justify-between w-full xl:grid-cols-[450px_450px] mx-auto h-[250px] sm:h-auto xl:h-[313px]"
@@ -106,5 +107,6 @@ const cardBgColor = "#F9F9F9";
         link="/evelin/projects/rps"
       />
     </div>
+    <ContactForm />
   </footer>
 </Layout>
