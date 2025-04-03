@@ -28,7 +28,7 @@ const getHomeTextColor = (isHamburger: boolean, currentUrl: string) => {
 
 const getEvelinOrBarnaTextColor = (href: string, isCurrentPage: boolean) => {
   if (href.includes("evelin")) {
-    return isCurrentPage ? "text-[#efd6f5]" : "text-[#e296f5]";
+    return !isCurrentPage ? "text-[#efd6f5]" : "text-[#e296f5]";
   }
   if (href.includes("barna")) {
     return isCurrentPage ? "text-[#D9D62D]" : "text-white";
@@ -42,6 +42,6 @@ const getProjectSpecificTextColor = (href: string, isHamburger: boolean) => {
   if (href.includes("quizzical") && isHamburger) {
     return "text-black";
   } else if (href.includes("quizzical")) {
-    return "text-[#EBD302]";
+    return "text-[#efd6f5]";
   }
 }
