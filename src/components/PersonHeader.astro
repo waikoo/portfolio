@@ -15,6 +15,25 @@ const isQuizzical = pathname.includes("quizzical");
 const isThriftStudio = pathname.includes("thriftstudio");
 ---
 
+<script is:inline define:vars={{ isQuizzical, isThriftStudio }}>
+  const attachHamburgerEventListener = () => {
+    const hamburgerIcon = document.querySelector(".hamburger-icon");
+    const hamburgerMenu = document.querySelector(".hamburger-menu");
+    const hamburgerMenuInner = document.querySelector(".hamburger-inner");
+
+    if (hamburgerIcon) {
+      hamburgerIcon.addEventListener("click", () => {
+        hamburgerMenu?.classList.remove("hidden");
+        hamburgerMenuInner.classList.add("motion-safe:animate-fade-left");
+        setTimeout(() => {
+          hamburgerMenuInner?.classList.remove("motion-safe:animate-fade-left");
+        }, 1000);
+      });
+    }
+  };
+  document.addEventListener("DOMContentLoaded", attachHamburgerEventListener);
+</script>
+
 <header class={`relative top-0 z-[10]`} data-bg-color={bgColor}>
   <div
     class={`mx-auto w-[80%] sm:w-[90%] flex content-center flex-row justify-between items-center py-6 `}
@@ -23,7 +42,7 @@ const isThriftStudio = pathname.includes("thriftstudio");
       {
         isThriftStudio ? (
           <LogoEvelinDark />
-        ) : isQuizzical || lowercasedName === "evelin" ? (
+        ) : lowercasedName === "evelin" ? (
           <LogoEvelin />
         ) : (
           <LogoBarna />
