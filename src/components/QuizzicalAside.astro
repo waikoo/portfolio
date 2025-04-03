@@ -7,12 +7,12 @@ const { bgColor } = Astro.props;
     const navLinks = document.querySelectorAll(
       ".nav-link a",
     ) as NodeListOf<HTMLAnchorElement>;
-    const color = "text-[#1A2D55]";
+
     const sections = [
-      { id: "quizzical-overview", bgColor: "#E1CA02", textColor: color },
-      { id: "quizzical-ideate", bgColor: "#F76331", textColor: color },
-      { id: "quizzical-design", bgColor: "#E1CA02", textColor: color },
-      { id: "quizzical-prototype", bgColor: "#E1CA02", textColor: color },
+      "quizzical-overview",
+      "quizzical-ideate",
+      "quizzical-design",
+      "quizzical-prototype",
     ];
 
     let lastScrollY = window.scrollY;
@@ -34,7 +34,7 @@ const { bgColor } = Astro.props;
     };
 
     function updateActiveSection(sectionId: string) {
-      const section = sections.find((s) => s.id === sectionId);
+      const section = sections.filter((id) => id === sectionId);
 
       if (section) {
         navLinks.forEach((link) => {
@@ -82,15 +82,13 @@ const { bgColor } = Astro.props;
 
       entries.forEach((entry) => {
         if (!scrollingDown) {
-          const currentIndex = sections.findIndex(
-            (s) => s.id === entry.target.id,
-          );
+          const currentIndex = sections.indexOf(entry.target.id);
 
           if (entry.isIntersecting) {
             updateActiveSection(entry.target.id);
           } else if (entry.boundingClientRect.top >= 0) {
             if (currentIndex > 0) {
-              updateActiveSection(sections[currentIndex - 1].id);
+              updateActiveSection(sections[currentIndex - 1]);
             }
           }
         } else {
@@ -106,7 +104,7 @@ const { bgColor } = Astro.props;
 
     updateActiveSection("quizzical-overview");
     sections.forEach((section) => {
-      const element = document.getElementById(section.id);
+      const element = document.getElementById(section);
       if (element) {
         observer.observe(element);
       }

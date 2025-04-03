@@ -1,18 +1,133 @@
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = document.querySelectorAll(
+      ".nav-link a",
+    ) as NodeListOf<HTMLAnchorElement>;
+
+    const sections = [
+      "thriftstudio-overview",
+      "thriftstudio-research",
+      "thriftstudio-ideate",
+      "thriftstudio-design",
+      "thriftstudio-prototype",
+    ];
+
+    let lastScrollY = window.scrollY;
+    let hasScrolled = false;
+    let isScrollingFromClick = false;
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        hasScrolled = true;
+      },
+      { once: true },
+    );
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "-30% 0px -30% 0px",
+      threshold: [0, 1.0],
+    };
+
+    function updateActiveSection(sectionId: string) {
+      const section = sections.filter((id) => id === sectionId);
+
+      if (section) {
+        navLinks.forEach((link) => {
+          link.parentElement?.classList.remove("bg-[#141412]");
+          link.parentElement?.classList.remove("text-white");
+          link.parentElement?.classList.remove("rounded-full");
+          link.parentElement?.classList.remove("px-2");
+        });
+
+        const activeLink = document.querySelector(
+          `.nav-link a[href="#${sectionId}"]`,
+        );
+        activeLink?.parentElement?.classList.add("bg-[#141412]");
+        activeLink?.parentElement?.classList.add("text-white");
+        activeLink?.parentElement?.classList.add("rounded-full");
+        activeLink?.parentElement?.classList.add("px-2");
+      }
+    }
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        const targetId = link.getAttribute("href")?.substring(1);
+        if (targetId) {
+          e.preventDefault();
+          isScrollingFromClick = true;
+          updateActiveSection(targetId);
+
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            e.preventDefault();
+            targetElement.scrollIntoView({ behavior: "smooth" });
+
+            setTimeout(() => {
+              isScrollingFromClick = false;
+            }, 1000);
+          }
+        }
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      if (!hasScrolled || isScrollingFromClick) return;
+      const scrollingDown = window.scrollY > lastScrollY;
+      lastScrollY = window.scrollY;
+
+      entries.forEach((entry) => {
+        if (!scrollingDown) {
+          const currentIndex = sections.indexOf(entry.target.id);
+
+          if (entry.isIntersecting) {
+            updateActiveSection(entry.target.id);
+          } else if (entry.boundingClientRect.top >= 0) {
+            if (currentIndex > 0) {
+              updateActiveSection(sections[currentIndex - 1]);
+            }
+          }
+        } else {
+          if (
+            entry.isIntersecting &&
+            entry.boundingClientRect.top <= entry.rootBounds!.top
+          ) {
+            updateActiveSection(entry.target.id);
+          }
+        }
+      });
+    }, observerOptions);
+
+    updateActiveSection("thriftstudio-overview");
+    sections.forEach((section) => {
+      const element = document.getElementById(section);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+  });
+</script>
+
 <aside
   class="fixed h-screen left-0 top-0 bottom-0 content-center w-[39px] sm:w-[50px] xl:w-[70px]"
 >
   <ul
     class="flex justify-center -rotate-90 gap-[20px] z-100 text-[15px] sm:text-[16px] font-['Jost']"
   >
-    <li class="cursor-pointer">
+    <li class="cursor-pointer nav-link">
       <a href="#thriftstudio-prototype">Prototype</a>
     </li>
-    <li class="cursor-pointer"><a href="#thriftstudio-design">Design</a></li>
-    <li class="cursor-pointer"><a href="#thriftstudio-ideate">Ideate</a></li>
-    <li class="cursor-pointer">
+    <li class="cursor-pointer nav-link">
+      <a href="#thriftstudio-design">Design</a>
+    </li>
+    <li class="cursor-pointer nav-link">
+      <a href="#thriftstudio-ideate">Ideate</a>
+    </li>
+    <li class="cursor-pointer nav-link">
       <a href="#thriftstudio-research">Research</a>
     </li>
-    <li class="cursor-pointer">
+    <li class="cursor-pointer nav-link">
       <a href="#thriftstudio-overview">Overview</a>
     </li>
   </ul>
