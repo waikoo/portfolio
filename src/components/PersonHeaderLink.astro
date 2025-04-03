@@ -1,5 +1,5 @@
 ---
-import "@fontsource/jost/400.css";
+import "@fontsource/jost/500.css";
 import { getHeaderNavLinkTextColor } from "../utils/getHeaderNavLinkTextColor.js";
 import { getHeaderNavLinkShadow } from "../utils/getHeaderNavLinkShadow.js";
 import PersonHeaderLinkCurrent from "./PersonHeaderLinkCurrent.astro";
@@ -12,9 +12,9 @@ const boxShadow = getHeaderNavLinkShadow(lowercasedName);
 const textColor = getHeaderNavLinkTextColor(isCurrentPage, isHamburger, url);
 ---
 
-<li class={`font-['Jost'] font-regular ${textColor} quizzicalFont`}>
+<li class={`font-['Jost'] font-medium ${textColor} quizzicalFont`}>
   <a
-    class={`${textSize} lg:text-[17px] flex flex-col relative transition-all duration-200 ${boxShadow}`}
+    class={`${textSize} lg:text-[17px] xl:text-[18px] flex flex-col relative transition-all duration-200 ${boxShadow}`}
     href={href}
   >
     <slot />

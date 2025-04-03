@@ -37,7 +37,7 @@ const getEvelinOrBarnaTextColor = (href: string, isCurrentPage: boolean) => {
 
 const getProjectSpecificTextColor = (href: string, isHamburger: boolean) => {
   if (href.includes("thriftstudio")) {
-    return "text-black";
+    return "text-[#0d0d0d]";
   }
   if (href.includes("quizzical") && isHamburger) {
     return "text-black";
