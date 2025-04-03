@@ -25,12 +25,19 @@ const color = colors[lowerCaseName as keyof typeof colors];
 ---
 
 <HeroPersonBg name={name} className={className}>
-  <img
-    src={`/images/${lowerCaseName}.png`}
-    alt={`avatar of ${fullName}`}
-    aspect-ratio="1:1"
-    class="absolute left-[21px] top-[21px] sm:left-[50px] sm:top-[50px] lg:left-[75px] lg:top-[75px] max-w-[150px] w-[30vw] sm:size-[150px] lg:size-[200px] lg:max-w-[200px] 2xl:size-[300px] 2xl:max-w-[300px] rounded-full z-[1] motion-safe:animate-fade-up"
-  />
+  <picture>
+    <source
+      type="image/png"
+      srcset=`/images/${lowerCaseName}_small.png`
+      media="(max-width: 1023px)"
+    />
+    <img
+      src={`/images/${lowerCaseName}.png`}
+      alt={`avatar of ${fullName}`}
+      aspect-ratio="1:1"
+      class="absolute left-[21px] top-[21px] sm:left-[50px] sm:top-[50px] lg:left-[75px] lg:top-[75px] max-w-[150px] w-[30vw] sm:size-[150px] lg:size-[200px] lg:max-w-[200px] 2xl:size-[300px] 2xl:max-w-[300px] rounded-full z-[1] motion-safe:animate-fade-up"
+    />
+  </picture>
   <section
     class="translate-y-[70px] lg:translate-y-[110px] z-10 motion-safe:animate-fade-up motion-safe:animate-once motion-safe:animate-duration-[2000ms] motion-safe:animate-ease-in-out"
   >
