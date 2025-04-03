@@ -18,7 +18,11 @@ const contentTextColor = name === "Evelin" ? "text-[#e296f5]" : "text-white";
   <div
     class={`${contentTextColor} text-[16px] sm:text-[20px] font-regular motion-safe:animate-fade motion-safe:animate-once motion-safe:animate-duration-[1000ms] motion-safe:animate-ease-in mt-[-10px] `}
   >
-    <a class="" href={value.includes("@") ? `mailto:${value}` : value}>
+    <a
+      class=""
+      href={value.includes("@") ? `mailto:${value}` : value}
+      target="_blank"
+    >
       {value}
     </a>
   </div>
