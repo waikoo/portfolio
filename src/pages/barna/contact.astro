@@ -4,6 +4,7 @@ import PersonLayout from "../../components/PersonLayout.astro";
 import PersonContactItem from "../../components/PersonContactItem.astro";
 import { extractName } from "../../utils/extractName";
 import ContactForm from "../../components/ContactForm.astro";
+import ReactScrollToTop from "../../components/ReactScrollToTop";
 
 const fullName = "Szász Barna";
 const { name } = extractName(fullName);
@@ -29,6 +30,7 @@ const bgColor = "#0d1205";
           title="LinkedIn"
           value="https://www.linkedin.com/in/barna-szász-a4a319359/"
         />
+        <ReactScrollToTop client:only />
       </div>
     </main>
     <div

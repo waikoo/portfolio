@@ -5,6 +5,7 @@ import { projects } from "../../projects/data";
 import PersonLayout from "../../components/PersonLayout.astro";
 import ContactForm from "../../components/ContactForm.astro";
 import IntroBarna from "../../components/IntroBarna.astro";
+import ReactScrollToTop from "../../components/ReactScrollToTop";
 
 const fullName = "Szász Barna";
 const bgColor = "#0d1205";
@@ -24,6 +25,7 @@ const bgColor = "#0d1205";
       }
     </div>
 
+    <ReactScrollToTop client:only />
     <ContactForm lowercaseName="barna" />
   </PersonLayout>
 </Layout>

@@ -3,6 +3,7 @@ import PersonLayout from "../../components/PersonLayout.astro";
 import Layout from "../../layouts/Layout.astro";
 import PersonCV from "../../components/PersonCV.astro";
 import ContactForm from "../../components/ContactForm.astro";
+import ReactScrollToTop from "../../components/ReactScrollToTop";
 
 const fullName = "Szász Evelin";
 const bgColor = "#1c000c";
@@ -16,6 +17,7 @@ const bgColor = "#1c000c";
       pdfSrc="/Szasz_Evelin-UI-UX_Designer.pdf"
     />
 
+    <ReactScrollToTop client:only />
     <ContactForm lowercaseName="evelin" />
   </PersonLayout>
 </Layout>
