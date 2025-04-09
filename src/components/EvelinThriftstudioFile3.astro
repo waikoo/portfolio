@@ -3,6 +3,7 @@ import EvelinFileWrapper from "./EvelinFileWrapper.astro";
 import EvelinFilePainPoint from "./EvelinFilePainPoint.astro";
 import MustardBgTitle from "./MustardBgTitle.astro";
 import ReactImageWrapper from "./ReactImageWrapper";
+import "@fontsource/jost/400.css";
 
 const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
 ---
@@ -14,6 +15,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
   id={id}
   paddingX="px-[20px] sm:px-[30px] xl:px-[0px] 2xl:px-[172px]"
   paddingY="py-[80px] sm:py-[90px] xl:py-[130px]"
+  className="font-regular"
 >
   <h3
     class="mb-[50px] sm:mb-[45px] xl:mb-[65px] text-[21px] sm:text-[26px] xl:text-[40px] text-[#1e1e1e] font-extrabold text-center"

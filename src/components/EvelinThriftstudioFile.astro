@@ -3,6 +3,7 @@ import EvelinFileSegment from "./EvelinFileSegment.astro";
 import EvelinMap from "./EvelinMap.astro";
 import EvelinFileWrapper from "./EvelinFileWrapper.astro";
 const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
+import "@fontsource/jost/400.css";
 ---
 
 <EvelinFileWrapper
@@ -20,7 +21,7 @@ const { fileTitle, bgColor, cardBgColor, id } = Astro.props;
       <EvelinFileSegment
         title="THE PRODUCT"
         bgColor={bgColor}
-        pClass="xl:w-[557px] sm:text-[16px]"
+        pClass="xl:w-[557px] sm:text-[16px] font-regular"
         className="text-[#1e1e1e]"
       >
         Thriftstudio is an <strong

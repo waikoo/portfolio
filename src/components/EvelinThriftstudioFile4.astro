@@ -24,6 +24,7 @@ import DynamicImgSrc from "./DynamicImgSrc";
 import ThriftstudioDesignQuickLinks from "./ThriftstudioDesignQuickLinks.astro";
 import WithMagnifyingGlass from "./WithMagnifyingGlass";
 import ReactImage from "./ReactImage";
+import "@fontsource/jost/400.css";
 
 const { fileTitle, bgColor, cardBgColor, id, quickLinkMargin } = Astro.props;
 ---
@@ -36,6 +37,7 @@ const { fileTitle, bgColor, cardBgColor, id, quickLinkMargin } = Astro.props;
   paddingX="px-[20px] sm:px-[30px] xl:px-[0px] 2xl:px-[172px]"
   paddingY="py-[80px] sm:py-[90px] xl:py-[130px]"
   quickLinkMargin={quickLinkMargin}
+  className="font-regular"
 >
   <ThriftstudioDesignQuickLinks className="sm:hidden" />
   <h3
